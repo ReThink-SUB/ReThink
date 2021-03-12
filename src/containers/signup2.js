@@ -2,7 +2,7 @@ import React from "react";
 import { SignUp2 } from "../components";
 import * as ROUTES from "../constants/routes";
 
-export function SignUp2Container() {
+export function SignUp2Container({ businesses }) {
   return (
     <>
       <SignUp2>

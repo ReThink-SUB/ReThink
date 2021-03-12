@@ -72,8 +72,8 @@ SignUp2.Select = function SignUp2Select({
     <Select {...restProps}>
       <select>
         <option value="0">Select:</option>
-        <option value="1">Yes</option>
-        <option value="2">No</option>
+        <option value="1">Retailer</option>
+        <option value="2">Food Service</option>
       </select>
     </Select>
   );

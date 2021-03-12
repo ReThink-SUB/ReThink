@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
+import { BusinessContext } from "../context/business";
 
 export function SignUpContainer() {
   return (
