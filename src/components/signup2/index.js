@@ -55,25 +55,37 @@ SignUp2.SecondaryInputs = function SignUp2SecondaryInputs({
   return <SecondaryInputs {...restProps}>{children}</SecondaryInputs>;
 };
 
-SignUp2.Input = function SignUp2Input({ placeholder, children, ...restProps }) {
+SignUp2.Input = function SignUp2Input({
+  value,
+  setValue,
+  placeholder,
+  children,
+  ...restProps
+}) {
   return (
     <Input {...restProps}>
-      <textarea placeholder={placeholder}></textarea>
+      <textarea
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></textarea>
     </Input>
   );
 };
 
 SignUp2.Select = function SignUp2Select({
+  setValue,
+  value,
   placeholder,
   children,
   ...restProps
 }) {
   return (
     <Select {...restProps}>
-      <select>
-        <option value="0">Select:</option>
-        <option value="1">Retailer</option>
-        <option value="2">Food Service</option>
+      <select onChange={(event) => setValue(event.target.value)} value={value}>
+        <option value="">Select:</option>
+        <option value="Retailer">Retailer</option>
+        <option value="Food Services">Food Service</option>
       </select>
     </Select>
   );

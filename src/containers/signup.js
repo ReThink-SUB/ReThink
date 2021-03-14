@@ -73,10 +73,10 @@ export function SignUpContainer() {
             />
           </SignUp.HalfInputs>
         </SignUp.Inputs>
-        <SignUp.SecondaryDescription setValue={setContact} value={contact}>
+        <SignUp.SecondaryDescription>
           Can we contact you?
         </SignUp.SecondaryDescription>
-        <SignUp.Select />
+        <SignUp.Select setValue={setContact} value={contact} />
         <SignUp.SecondaryDescription>
           How should we contact you?
         </SignUp.SecondaryDescription>
