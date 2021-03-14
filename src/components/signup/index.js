@@ -71,34 +71,56 @@ SignUp.SecondaryInputs = function SignUpSecondaryInputs({
   return <SecondaryInputs {...restProps}>{children}</SecondaryInputs>;
 };
 
-SignUp.Input = function SignUpInput({ placeholder, children, ...restProps }) {
+SignUp.Input = function SignUpInput({
+  setValue,
+  value,
+  placeholder,
+  children,
+  ...restProps
+}) {
   return (
     <Input {...restProps}>
-      <input placeholder={placeholder}></input>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></input>
     </Input>
   );
 };
 
 SignUp.SecondaryInput = function SignUpSecondaryInput({
+  setValue,
+  value,
   placeholder,
   children,
   ...restProps
 }) {
   return (
     <SecondaryInput {...restProps}>
-      <input placeholder={placeholder}></input>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></input>
     </SecondaryInput>
   );
 };
 
 SignUp.HalfInput = function SignUpHalfInput({
+  setValue,
+  value,
   placeholder,
   children,
   ...restProps
 }) {
   return (
     <HalfInput {...restProps}>
-      <input placeholder={placeholder}></input>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></input>
     </HalfInput>
   );
 };
@@ -111,13 +133,19 @@ SignUp.LeafDots = function SignUpLeafDots({ children, ...restProps }) {
   );
 };
 
-SignUp.Select = function SignUpSelect({ placeholder, children, ...restProps }) {
+SignUp.Select = function SignUpSelect({
+  setValue,
+  value,
+  placeholder,
+  children,
+  ...restProps
+}) {
   return (
     <Select {...restProps}>
-      <select>
-        <option value="0">Select:</option>
-        <option value="1">Yes</option>
-        <option value="2">No</option>
+      <select onChange={(event) => setValue(event.target.value)} value={value}>
+        <option value="">Select:</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
       </select>
     </Select>
   );

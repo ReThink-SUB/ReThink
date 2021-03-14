@@ -4,6 +4,29 @@ import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 
 export function SignUpContainer() {
+  const {
+    businessName,
+    setBusinessName,
+    addressOne,
+    setAddressOne,
+    addressTwo,
+    setAddressTwo,
+    city,
+    setCity,
+    state,
+    setState,
+    zipCode,
+    setZipCode,
+    email,
+    setEmail,
+    first,
+    setFirst,
+    last,
+    setLast,
+    contact,
+    setContact,
+  } = useContext(BusinessContext);
+
   return (
     <>
       <SignUp>
@@ -15,18 +38,42 @@ export function SignUpContainer() {
           Start by entering details about your business
         </SignUp.Description>
         <SignUp.Inputs>
-          <SignUp.Input placeholder="Name of business" />
+          <SignUp.Input
+            setValue={setBusinessName}
+            value={businessName}
+            placeholder="Name of business"
+          />
           <SignUp.HalfInputs>
-            <SignUp.HalfInput placeholder="Address Line 1" />
-            <SignUp.HalfInput placeholder="Address Line 2" />
+            <SignUp.HalfInput
+              setValue={setAddressOne}
+              value={addressOne}
+              placeholder="Address Line 1"
+            />
+            <SignUp.HalfInput
+              setValue={setAddressTwo}
+              value={addressTwo}
+              placeholder="Address Line 2"
+            />
           </SignUp.HalfInputs>
           <SignUp.HalfInputs>
-            <SignUp.HalfInput placeholder="City" />
-            <SignUp.HalfInput placeholder="State" />
-            <SignUp.HalfInput placeholder="Zip Code" />
+            <SignUp.HalfInput
+              setValue={setCity}
+              value={city}
+              placeholder="City"
+            />
+            <SignUp.HalfInput
+              setValue={setState}
+              value={state}
+              placeholder="State"
+            />
+            <SignUp.HalfInput
+              setValue={setZipCode}
+              value={zipCode}
+              placeholder="Zip Code"
+            />
           </SignUp.HalfInputs>
         </SignUp.Inputs>
-        <SignUp.SecondaryDescription>
+        <SignUp.SecondaryDescription setValue={setContact} value={contact}>
           Can we contact you?
         </SignUp.SecondaryDescription>
         <SignUp.Select />
@@ -35,10 +82,22 @@ export function SignUpContainer() {
         </SignUp.SecondaryDescription>
         <SignUp.InputsAndButton>
           <SignUp.SecondaryInputs>
-            <SignUp.Input placeholder="Email Address" />
+            <SignUp.Input
+              setValue={setEmail}
+              value={email}
+              placeholder="Email Address"
+            />
             <SignUp.HalfInputs>
-              <SignUp.HalfInput placeholder="First Name" />
-              <SignUp.HalfInput placeholder="Last Name" />
+              <SignUp.HalfInput
+                setValue={setFirst}
+                value={first}
+                placeholder="First Name"
+              />
+              <SignUp.HalfInput
+                setValue={setLast}
+                value={last}
+                placeholder="Last Name"
+              />
             </SignUp.HalfInputs>
           </SignUp.SecondaryInputs>
           <SignUp.Button to={ROUTES.SIGNUP2}>Next</SignUp.Button>
