@@ -32,8 +32,8 @@ export function SignUp2Container({ businesses }) {
           What sustainable practices does your company follow?
         </SignUp2.Description>
         <SignUp2.Input
-          setValue={sustainablePractices}
-          value={setSustainablePractices}
+          setValue={setSustainablePractices}
+          value={sustainablePractices}
         />
         <SignUp2.Button to={ROUTES.SIGNUP3}>Next</SignUp2.Button>
         <SignUp2.TallPlant />
