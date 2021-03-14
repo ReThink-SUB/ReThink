@@ -65,8 +65,8 @@ SignUp2.Input = function SignUp2Input({
   return (
     <Input {...restProps}>
       <textarea
-        onChange={(event) => setValue(event.target.value)}
-        value={value}
+        // onChange={(event) => setValue(event.target.value)}
+        // value={value}
         placeholder={placeholder}
       ></textarea>
     </Input>

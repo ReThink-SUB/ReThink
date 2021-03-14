@@ -6,19 +6,44 @@ import { BusinessContext } from "../context/business";
 export function SignUp3Container() {
   const {
     businessName,
+    setBusinessName,
     addressOne,
-    addressTwo,
+    setAddressOne,
+    setAddressTwo,
     category,
+    setCategory,
     city,
+    setCity,
     state,
+    setState,
     zipCode,
+    setZipCode,
     email,
+    setEmail,
     first,
+    setFirst,
     last,
-    signUpReason,
-    sustainablePractices,
-    contact,
+    setLast,
+    setSignUpReason,
+    setSustainablePractices,
+    setContact,
   } = useContext(BusinessContext);
+
+  const resetValues = () => {
+    setBusinessName("");
+    setAddressOne("");
+    setAddressTwo("");
+    setCategory("");
+    setCity("");
+    setState("");
+    setZipCode("");
+    setEmail("");
+    setFirst("");
+    setLast("");
+    setSignUpReason("");
+    setSustainablePractices("");
+    setContact("");
+  };
 
   return (
     <>
@@ -45,7 +70,9 @@ export function SignUp3Container() {
           </SignUp3.InfoDescr>
           <SignUp3.InfoSecDescr>{email}</SignUp3.InfoSecDescr>
         </SignUp3.Rectangle>
-        <SignUp3.Button to={ROUTES.SIGNUP}>Submit</SignUp3.Button>
+        <SignUp3.Button onClick={() => resetValues()} to={ROUTES.SIGNUP}>
+          Submit
+        </SignUp3.Button>
         <SignUp3.DarkTallPlant />
         <SignUp3.TallPlant />
       </SignUp3>
