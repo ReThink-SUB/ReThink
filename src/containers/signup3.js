@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { SignUp3 } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
+import { db } from "../firebase";
+import firebase from "firebase";
 
 export function SignUp3Container() {
   const {
@@ -9,6 +11,7 @@ export function SignUp3Container() {
     setBusinessName,
     addressOne,
     setAddressOne,
+    addressTwo,
     setAddressTwo,
     category,
     setCategory,
@@ -24,12 +27,32 @@ export function SignUp3Container() {
     setFirst,
     last,
     setLast,
+    signUpReason,
     setSignUpReason,
+    sustainablePractices,
     setSustainablePractices,
     setContact,
+    contact,
   } = useContext(BusinessContext);
 
-  const resetValues = () => {
+  const submitValues = () => {
+    db.collection("businesses").add({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
+      address: addressOne,
+      address2: addressTwo,
+      category: category,
+      city: city,
+      contact: contact,
+      email: email,
+      firstName: first,
+      lastName: last,
+      name: businessName,
+      signUpReason: signUpReason,
+      state: state,
+      sustainablePractices: sustainablePractices,
+      zipcode: zipCode,
+    });
+
     setBusinessName("");
     setAddressOne("");
     setAddressTwo("");
@@ -70,7 +93,7 @@ export function SignUp3Container() {
           </SignUp3.InfoDescr>
           <SignUp3.InfoSecDescr>{email}</SignUp3.InfoSecDescr>
         </SignUp3.Rectangle>
-        <SignUp3.Button onClick={() => resetValues()} to={ROUTES.SIGNUP}>
+        <SignUp3.Button onClick={() => submitValues()} to={ROUTES.SIGNUP}>
           Submit
         </SignUp3.Button>
         <SignUp3.DarkTallPlant />
