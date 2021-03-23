@@ -15,7 +15,6 @@ export const Container = styled.div`
   z-index: 1;
 
   @media (min-width: 1500px) {
-    width: 80%;
     padding-top: 1%;
   }
 `;
@@ -53,7 +52,7 @@ export const Slogan = styled.div`
   }
 
   @media (min-width: 1500px) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -75,59 +74,9 @@ export const Description = styled.p`
     text-align: left;
     font-size: 20px;
   }
-`;
 
-export const Inputs = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  margin-bottom: 5%;
-
-  @media (min-width: 675px) {
-    margin-bottom: 2%;
-  }
-
-  @media (min-width: 1300px) {
-    width: 75%;
-  }
-
-  @media (min-width: 1500px) {
-    margin-bottom: 1.5%;
-  }
-`;
-
-export const InputsAndButton = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 1300px) {
-    flex-direction: row;
-  }
-`;
-
-export const SecondaryInputs = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  margin-bottom: 5%;
-
-  @media (min-width: 675px) {
-    margin-bottom: 2%;
-  }
-
-  @media (min-width: 1300px) {
-    margin-right: auto;
-    margin-left: 12%;
-    width: 45%;
-  }
-
-  @media (min-width: 1500px) {
-    margin-bottom: 1.5%;
+  @media (min-width: 1400px) {
+    width: 65%;
   }
 `;
 
@@ -167,6 +116,10 @@ export const Input = styled.div`
   @media (min-width: 500px) {
     width: 75%;
   }
+
+  @media (min-width: 1400px) {
+    width: 65%;
+  }
 `;
 
 export const Select = styled.div`
@@ -205,6 +158,10 @@ export const Select = styled.div`
   @media (min-width: 1500px) {
     margin-bottom: 2%;
   }
+
+  @media (min-width: 1400px) {
+    width: 65%;
+  }
 `;
 
 export const Button = styled.div`
@@ -234,6 +191,10 @@ export const Button = styled.div`
   @media (min-width: 1300px) {
     width: 75%;
     justify-content: flex-end;
+  }
+
+  @media (min-width: 1400px) {
+    width: 65%;
   }
 `;
 

@@ -15,7 +15,6 @@ export const Container = styled.div`
   z-index: 1;
 
   @media (min-width: 1500px) {
-    width: 80%;
     padding-top: 1%;
   }
 `;
@@ -166,11 +165,15 @@ export const Button = styled.div`
     width: 55%;
     justify-content: flex-end;
   }
+
+  @media (min-width: 1600px) {
+    width: 910px;
+  }
 `;
 
 export const Rectangle = styled.div`
-  width: 656px;
-  height: 303px;
+  width: 910px;
+  height: 441px;
   background: rgba(220, 255, 245, 0.7);
   border-radius: 15px;
   display: flex;
@@ -214,7 +217,6 @@ export const DarkTallPlant = styled.div`
   img {
     width: auto;
     height: auto;
-    ${"" /* transform: rotate(-123.84deg); */}
 
     @media (max-width: 1400px) {
       height: 450px;
@@ -230,6 +232,10 @@ export const DarkTallPlant = styled.div`
       height: 250px;
       width: auto;
     }
+  }
+
+  @media (min-width: 1400px) {
+    right: -10%;
   }
 `;
 

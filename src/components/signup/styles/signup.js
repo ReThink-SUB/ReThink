@@ -17,10 +17,6 @@ export const Container = styled.div`
   @media (min-width: 1300px) {
     padding-top: 1%;
   }
-
-  @media (min-width: 1500px) {
-    width: 80%;
-  }
 `;
 
 export const Slogan = styled.div`
@@ -381,6 +377,18 @@ export const WebLady = styled.div`
   @media (min-width: 1300px) {
     bottom: 0;
     right: -15%;
+    display: flex;
+  }
+
+  @media (min-width: 1450px) {
+    bottom: 0;
+    right: -13%;
+    display: flex;
+  }
+
+  @media (min-width: 1650px) {
+    bottom: 0;
+    right: -11%;
     display: flex;
   }
 `;

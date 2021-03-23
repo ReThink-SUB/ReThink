@@ -5,10 +5,7 @@ import {
   Container,
   Slogan,
   Description,
-  Inputs,
   Input,
-  SecondaryInputs,
-  InputsAndButton,
   Select,
   Button,
   TallPlant,
@@ -29,30 +26,6 @@ SignUp2.Slogan = function SignUp2Slogan({ children, ...restProps }) {
 
 SignUp2.Description = function SignUp2Description({ children, ...restProps }) {
   return <Description {...restProps}>{children}</Description>;
-};
-
-SignUp2.Inputs = function SignUp2Inputs({
-  placeholder,
-  children,
-  ...restProps
-}) {
-  return <Inputs {...restProps}>{children}</Inputs>;
-};
-
-SignUp2.InputsAndButton = function SignUp2InputsAndButton({
-  placeholder,
-  children,
-  ...restProps
-}) {
-  return <InputsAndButton {...restProps}>{children}</InputsAndButton>;
-};
-
-SignUp2.SecondaryInputs = function SignUp2SecondaryInputs({
-  placeholder,
-  children,
-  ...restProps
-}) {
-  return <SecondaryInputs {...restProps}>{children}</SecondaryInputs>;
 };
 
 SignUp2.Input = function SignUp2Input({
