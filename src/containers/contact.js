@@ -42,7 +42,8 @@ export function ContactContainer() {
         </Alert>
       )}
       <Contact.Slogan>
-        Contact us! <span>We'll be in touch soon</span>
+        Contact us! <br />
+        <span>We'll be in touch soon</span>
       </Contact.Slogan>
       <Contact.Inputs>
         <Contact.Input

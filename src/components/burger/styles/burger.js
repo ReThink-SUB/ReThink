@@ -77,8 +77,7 @@ export const Menu = styled.nav`
   }
 
   @media (min-width: 1500px) {
-    transform: translateX(525%);
-    width: 20%;
+    display: none;
   }
 `;
 

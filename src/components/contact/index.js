@@ -72,7 +72,7 @@ Contact.MessageInput = function ContactMessageInput({
 Contact.Button = function SignUp3Button({ to, children, ...restProps }) {
   return (
     <Button {...restProps}>
-      <button>{children}</button>;
+      <button>{children}</button>
     </Button>
   );
 };

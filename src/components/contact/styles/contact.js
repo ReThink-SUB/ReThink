@@ -6,24 +6,43 @@ export const Container = styled.div`
   height: 90vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: #ffffff;
   padding: 0 5%;
-  padding-top: 5%;
+  padding-top: 1.5rem;
   ${"" /* overflow-x: hidden; */}
   ${"" /* overflow-y: scroll; */}
+  overflow: hidden;
 `;
 
 export const Slogan = styled.h2`
   width: 70%;
-  height: 20%;
   font-weight: 600;
   font-size: 30px;
   color: #3e3b3b;
   line-height: 43px;
-  padding-left: 5%;
+  padding-left: 0.5rem;
+  align-self: flex-start;
+  margin-bottom: 4rem;
 
   span {
     color: #00cc92;
+  }
+
+  @media (min-width: 400px) {
+    width: 90%;
+    font-size: 35px;
+  }
+
+  @media (min-width: 100px) {
+    width: 90%;
+    font-size: 44px;
+    line-height: 55px;
+  }
+
+  @media (min-width: 1550px) {
+    margin-bottom: 3.5rem;
+    font-size: 48px;
   }
 `;
 
@@ -41,13 +60,43 @@ export const Inputs = styled.div`
     top: 0;
     width: 243px;
     height: auto;
+
+    @media (min-width: 1200px) {
+      right: -25%;
+    }
+
+    @media (min-width: 1350px) {
+      transform: rotate(56.16deg);
+      top: 70%;
+      right: -10%;
+    }
+
+    @media (min-width: 1550px) {
+      top: 75%;
+    }
+  }
+
+  @media (min-width: 700px) {
+    width: 80%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 70%;
+  }
+
+  @media (min-width: 1550px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1600px) {
+    width: 55%;
   }
 `;
 
 export const Input = styled.div`
   position: relative;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 2rem;
 
   input {
     width: 100%;
@@ -60,6 +109,7 @@ export const Input = styled.div`
     color: #00cc92;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
+    z-index: 2;
 
     &::placeholder {
       color: #00cc92;
@@ -71,7 +121,12 @@ export const Input = styled.div`
     top: 0;
     right: 0;
     width: 44px;
-    height: auto;
+    z-index: 1;
+    transform: rotate(0deg);
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 `;
 
@@ -104,6 +159,11 @@ export const MessageInput = styled.div`
     right: 0;
     width: 44px;
     height: auto;
+    transform: rotate(0deg);
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 `;
 
@@ -111,7 +171,7 @@ export const Label = styled.p`
   font-size: 16px;
   color: #1f2421;
   margin-bottom: 2%;
-  padding-left: 3%;
+  padding-left: 0.3rem;
 `;
 
 export const Button = styled.div`
