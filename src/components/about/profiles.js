@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Takes in a profile and creates a profile card
 function ProfileCard(props) {
@@ -6,18 +6,9 @@ function ProfileCard(props) {
     let lname = props.lastname;
     let desc = props.description;
     return(
-        <Col style={{flex: 1}}>
-            <Card>
-                <CardBody>
-                    <CardTitle tag="h2">{fname + " " + lname}</CardTitle>
-                    <CardText tag="p">{desc}</CardText>
-                </CardBody>
-            </Card>
-        </Col>
+        <div></div>
     )
 }
-
-export default ProfileCard;
 
 // Creates a container of all the profile cards
 function ProfileList(props) {
@@ -30,9 +21,9 @@ function ProfileList(props) {
     });
 
     return(
-        <Container>
-            <Row style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>{cards}</Row>
-        </Container>
+        <div>
+
+        </div>
     )
 }
 

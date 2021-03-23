@@ -1,9 +1,17 @@
 import React from 'react';
 
-export default function SearchBar(props) {
-    // TODO: add code
+export function SearchBar(props) {
+    return (
+        <div>
+
+        </div>
+    )
 }
 
-export default function FilterButtons(props) {
-    // TODO: add code
+export function FilterButtons(props) {
+    return (
+        <div>
+
+        </div>
+    )
 }
