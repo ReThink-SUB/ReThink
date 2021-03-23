@@ -21,6 +21,10 @@ export default function App() {
   const [sustainablePractices, setSustainablePractices] = useState("");
   const [contact, setContact] = useState("Yes");
   const [submit, setSubmit] = useState(false);
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [contactAlert, setContactAlert] = useState("");
 
   useEffect(() => {
     db.collection("businesses")
@@ -66,6 +70,14 @@ export default function App() {
           setContact,
           submit,
           setSubmit,
+          name,
+          setName,
+          subject, 
+          setSubject,
+          message,
+          setMessage,
+          contactAlert,
+          setContactAlert
         }}
       >
         <Router>

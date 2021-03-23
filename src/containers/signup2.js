@@ -3,7 +3,7 @@ import { SignUp2 } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 
-export function SignUp2Container({ businesses }) {
+export function SignUp2Container() {
   const {
     signUpReason,
     setSignUpReason,

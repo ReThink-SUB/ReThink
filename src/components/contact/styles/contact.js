@@ -30,7 +30,6 @@ export const Slogan = styled.h2`
 export const Inputs = styled.div`
   position: relative;
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,4 +112,36 @@ export const Label = styled.p`
   color: #1f2421;
   margin-bottom: 2%;
   padding-left: 3%;
+`;
+
+export const Button = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  margin-top: 2.5rem;
+
+  button {
+    width: 128px;
+    height: 41px;
+    outline: none;
+    border: none;
+    background: #86b390;
+    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
+    border-radius: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    margin-bottom: 10%;
+    transition: 0.5s ease all;
+    margin: 0 auto;
+
+    &:hover {
+      background: #00cc92;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    width: 55%;
+    justify-content: flex-end;
+  }
 `;

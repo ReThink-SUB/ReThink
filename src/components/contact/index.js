@@ -7,6 +7,7 @@ import {
   MessageInput,
   Input,
   Label,
+  Button,
 } from "./styles/contact";
 
 export default function Contact({ children, ...restProps }) {
@@ -27,6 +28,8 @@ Contact.Inputs = function ContactInputs({ children, ...restProps }) {
 };
 
 Contact.Input = function ContactInput({
+  value,
+  setValue,
   label,
   placeholder,
   children,
@@ -35,13 +38,19 @@ Contact.Input = function ContactInput({
   return (
     <Input {...restProps}>
       <Label>{label}</Label>
-      <input placeholder={placeholder}></input>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></input>
       <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </Input>
   );
 };
 
 Contact.MessageInput = function ContactMessageInput({
+  setValue,
+  value,
   label,
   placeholder,
   children,
@@ -50,8 +59,20 @@ Contact.MessageInput = function ContactMessageInput({
   return (
     <MessageInput {...restProps}>
       <Label>{label}</Label>
-      <textarea placeholder={placeholder}></textarea>
+      <textarea
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      ></textarea>
       <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </MessageInput>
+  );
+};
+
+Contact.Button = function SignUp3Button({ to, children, ...restProps }) {
+  return (
+    <Button {...restProps}>
+      <button>{children}</button>;
+    </Button>
   );
 };
