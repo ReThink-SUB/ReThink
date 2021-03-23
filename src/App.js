@@ -20,6 +20,7 @@ export default function App() {
   const [signUpReason, setSignUpReason] = useState("");
   const [sustainablePractices, setSustainablePractices] = useState("");
   const [contact, setContact] = useState("Yes");
+  const [submit, setSubmit] = useState(false);
 
   useEffect(() => {
     db.collection("businesses")
@@ -63,6 +64,8 @@ export default function App() {
           setSustainablePractices,
           contact,
           setContact,
+          submit,
+          setSubmit,
         }}
       >
         <Router>

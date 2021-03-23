@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
+import { Alert } from "@material-ui/lab";
 
 export function SignUpContainer() {
   const {
@@ -25,11 +26,21 @@ export function SignUpContainer() {
     setLast,
     contact,
     setContact,
+    submit,
+    setSubmit,
   } = useContext(BusinessContext);
 
   return (
     <>
       <SignUp>
+        {submit && (
+          <Alert
+            style={{ marginBottom: "15px" }}
+            onClose={() => setSubmit(false)}
+          >
+            Business information Sent!
+          </Alert>
+        )}
         <SignUp.Slogan>
           Sign up <br />
           <span>with us, you'll like it here</span>

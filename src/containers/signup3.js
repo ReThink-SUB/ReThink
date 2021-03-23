@@ -33,6 +33,7 @@ export function SignUp3Container() {
     setSustainablePractices,
     setContact,
     contact,
+    setSubmit,
   } = useContext(BusinessContext);
 
   const submitValues = () => {
@@ -66,6 +67,7 @@ export function SignUp3Container() {
     setSignUpReason("");
     setSustainablePractices("");
     setContact("");
+    setSubmit(true);
   };
 
   return (
