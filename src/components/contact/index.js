@@ -8,11 +8,20 @@ import {
   Input,
   Label,
   Button,
+  Plant,
 } from "./styles/contact";
 
 export default function Contact({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+Contact.Plant = function ContactPlant({ children, ...restProps }) {
+  return (
+    <Plant {...restProps}>
+      <img src="/images/TallPlant.png" alt="TallPlant" />
+    </Plant>
+  );
+};
 
 Contact.Slogan = function ContactSlogan({ children, ...restProps }) {
   return <Slogan {...restProps}>{children}</Slogan>;

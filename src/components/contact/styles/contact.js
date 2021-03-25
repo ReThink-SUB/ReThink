@@ -12,7 +12,28 @@ export const Container = styled.div`
   padding-top: 1.5rem;
   ${"" /* overflow-x: hidden; */}
   ${"" /* overflow-y: scroll; */}
-  overflow: hidden;
+  ${"" /* overflow: hidden; */}
+`;
+
+export const Plant = styled.div`
+  position: absolute;
+  top: -40%;
+  left: 20%;
+
+  img {
+    height: 490px;
+    width: auto;
+    transform: rotate(-123.84deg);
+
+    @media (max-width: 1350px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    top: -38%;
+    left: 35%;
+  }
 `;
 
 export const Slogan = styled.h2`

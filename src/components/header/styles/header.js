@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0 3rem;
+  z-index: 5;
 
   @media (min-width: 1500px) {
     justify-content: space-between;
@@ -24,6 +25,7 @@ export const Title = styled.h3`
 export const Links = styled.div`
   width: 70%;
   padding-top: 15px;
+  padding-right: 1.5rem;
   display: none;
   justify-content: space-between;
   align-items: center;

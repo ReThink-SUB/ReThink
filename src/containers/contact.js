@@ -45,6 +45,7 @@ export function ContactContainer() {
         Contact us! <br />
         <span>We'll be in touch soon</span>
       </Contact.Slogan>
+      <Contact.Plant />
       <Contact.Inputs>
         <Contact.Input
           setValue={setName}
