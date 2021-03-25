@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding: 0 3rem;
 
   @media (min-width: 1500px) {
-    width: 80%;
+    justify-content: space-between;
   }
 `;
 
@@ -19,4 +19,32 @@ export const Title = styled.h3`
   font-family: Poppins;
   color: #9e9e9e;
   letter-spacing: 0.35em;
+`;
+
+export const Links = styled.div`
+  width: 70%;
+  padding-top: 15px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 1500px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+export const Link = styled.h2`
+  font-weight: 600;
+  font-size: 16px;
+  color: #3e3b3b;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: #00cc92;
+  }
 `;

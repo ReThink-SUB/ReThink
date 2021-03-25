@@ -24,7 +24,7 @@ export const Slogan = styled.div`
   margin-bottom: 2%;
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 
   h2 {
     width: 80%;
@@ -52,7 +52,7 @@ export const Slogan = styled.div`
   }
 
   @media (min-width: 1300px) {
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
   }
 `;
 

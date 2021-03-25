@@ -1,6 +1,7 @@
 import React from "react";
+import { Link as ReactRouterLink } from "react-router-dom";
 
-import { Container, Title } from "./styles/header";
+import { Container, Title, Links, Link } from "./styles/header";
 
 export default function Header({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -8,4 +9,16 @@ export default function Header({ children, ...restProps }) {
 
 Header.Title = function HeaderTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
+};
+
+Header.Links = function HeaderLinks({ children, ...restProps }) {
+  return <Links {...restProps}>{children}</Links>;
+};
+
+Header.Link = function HeaderLink({ to, children, ...restProps }) {
+  return (
+    <ReactRouterLink to={to}>
+      <Link {...restProps}>{children}</Link>;
+    </ReactRouterLink>
+  );
 };

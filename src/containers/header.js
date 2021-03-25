@@ -42,6 +42,15 @@ export function HeaderContainer() {
             <i class="fas fa-envelope"></i>
           </Burger.Socials>
         </Burger.Menu>
+        <Header.Links>
+          <Header.Link to={ROUTES.SIGNUP}>Home</Header.Link>
+          <Header.Link to={ROUTES.SIGNUP}>Find Businesses</Header.Link>
+          <Header.Link to={ROUTES.SIGNUP}>About Us</Header.Link>
+          <Header.Link to={ROUTES.SIGNUP}>Criteria</Header.Link>
+          <Header.Link to={ROUTES.SIGNUP}>Meet The Team</Header.Link>
+          <Header.Link to={ROUTES.CONTACT}>Contact Us</Header.Link>
+          <Header.Link to={ROUTES.SIGNUP}>Sign Up</Header.Link>
+        </Header.Links>
       </Header>
     </>
   );
