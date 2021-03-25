@@ -25,12 +25,13 @@ export const Logo = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
-    color: #00cc92;
+    letter-spacing: 8px;
+    color: #c0c0c0;
   }
 `;
 
 export const Links = styled.div`
-  width: 35%;
+  width: 75%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -38,9 +39,10 @@ export const Links = styled.div`
 `;
 
 export const Link = styled.a`
-  font-size: 18px;
+  font-size: .8em;
   font-weight: 600;
-  color: #00cc92;
+  color: #666666;
+  letter-spacing: 1px;
   margin-bottom: 2.5px;
 
   &:hover {
@@ -48,21 +50,21 @@ export const Link = styled.a`
   }
 `;
 
-export const Promote = styled.div`
-  width: 25%;
+export const Signup = styled.div`
+  width: 15%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 2em;
 
   button {
-    width: 205px;
+    width: 8em;
     height: 38px;
-    background: #00cc92;
-    border-radius: 50px;
-    color: #ffffff;
-    font-size: 1rem;
+    color: #000000;
+    border: #C0C0C0 solid;
+    border-radius: 5px;
+    font-size: .85em;
     font-weight: 600;
     display: flex;
     justify-content: center;
@@ -71,7 +73,7 @@ export const Promote = styled.div`
 
     i {
       font-size: 1rem;
-      color: #ffffff;
+      color: #000000;
       margin-left: 1rem;
     }
   }

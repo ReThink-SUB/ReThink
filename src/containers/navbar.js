@@ -8,13 +8,15 @@ export function NavbarContainer() {
       <Navbar.Logo />
 
       <Navbar.Links>
-        <Navbar.Link to={ROUTES.HOME}>Home</Navbar.Link>
-        <Navbar.Link to={ROUTES.BUSINESSES}>Find a Business</Navbar.Link>
-        <Navbar.Link to={ROUTES.ABOUT}>About Us</Navbar.Link>
-        <Navbar.Link to={ROUTES.CONTACT}>Contact Us</Navbar.Link>
+        <Navbar.Link to={ROUTES.HOME}>HOME</Navbar.Link>
+        <Navbar.Link to={ROUTES.BUSINESSES}>FIND BUSINESSES</Navbar.Link>
+        <Navbar.Link to={ROUTES.ABOUT}>ABOUT US</Navbar.Link>
+        <Navbar.Link to={ROUTES.CRITERIA}>CRITERIA</Navbar.Link>
+        <Navbar.Link to={ROUTES.TEAM}>MEET THE TEAM</Navbar.Link>
+        <Navbar.Link to={ROUTES.CONTACT}>CONTACT US</Navbar.Link>
       </Navbar.Links>
 
-      <Navbar.Promote to={ROUTES.PROMOTE} />
+      <Navbar.Signup to={ROUTES.SIGNUP} />
     </Navbar>
   );
 }

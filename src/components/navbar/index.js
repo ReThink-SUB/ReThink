@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 
-import { Container, Logo, Links, Link, Promote } from "./styles/navbar";
+import { Container, Logo, Links, Link, Signup } from "./styles/navbar";
 
 export default function Navbar({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -10,7 +10,6 @@ export default function Navbar({ children, ...restProps }) {
 Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
   return (
     <Logo {...restProps}>
-      <img src="/images/TemporaryLogo.png" alt="Logo" />
       <h3>SUB</h3>
     </Logo>
   );
@@ -28,14 +27,14 @@ Navbar.Link = function NavbarLink({ to, children, ...restProps }) {
   );
 };
 
-Navbar.Promote = function NavbarPromote({ to, children, ...restProps }) {
+Navbar.Signup = function NavBarSignup({ to, children, ...restProps }) {
   return (
-    <Promote {...restProps}>
+    <Signup {...restProps}>
       <ReactRouterLink to={to}>
         <button>
-          Promote Business <i class="fas fa-caret-right"></i>
+          SIGN UP <i class="fas fa-caret-right"></i>
         </button>
       </ReactRouterLink>
-    </Promote>
+    </Signup>
   );
 };

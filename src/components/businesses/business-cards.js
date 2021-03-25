@@ -3,19 +3,7 @@ import React from 'react';
 // Takes in a business and creates a business card
 function BusinessCard(props) {
     // TODO: set prop variables
-    let name = "";
-    let desc = "";
-    return(
-        <Col style={{flex: 1}}>
-            <Card>
-                <CardBody>
-                    {/* TODO: add image */}
-                    <CardTitle tag="h2">{name}</CardTitle>
-                    <CardText tag="p">{desc}</CardText>
-                </CardBody>
-            </Card>
-        </Col>
-    )
+
 }
 
 export default BusinessCard;
