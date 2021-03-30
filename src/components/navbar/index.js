@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { NavLink as ReactRouterLink } from "react-router-dom";
 
 import { Container, Logo, Links, Link, Signup } from "./styles/navbar";
 
@@ -21,7 +21,7 @@ Navbar.Links = function NavbarLinks({ children, ...restProps }) {
 
 Navbar.Link = function NavbarLink({ to, children, ...restProps }) {
   return (
-    <ReactRouterLink to={to}>
+    <ReactRouterLink to={to} activeClassName="active">
       <Link {...restProps}>{children}</Link>;
     </ReactRouterLink>
   );

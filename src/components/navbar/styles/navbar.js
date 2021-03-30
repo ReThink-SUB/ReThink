@@ -36,6 +36,10 @@ export const Links = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  &.active& {
+    border-bottom: 2px solid #00cc92;
+  }
 `;
 
 export const Link = styled.a`
