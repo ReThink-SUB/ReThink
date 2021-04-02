@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
 `;
 
@@ -12,6 +12,7 @@ export const LeftSect = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 8rem;
+  padding-top: 3rem;
 `;
 
 export const RightSect = styled.div`
@@ -27,12 +28,15 @@ export const Navbar = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  margin-bottom: 4rem;
 `;
 
 export const Links = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 6rem;
 `;
 
 export const Link = styled.h2`
@@ -183,33 +187,46 @@ export const CardThree = styled.div`
 
 export const Title = styled.h2`
   font-weight: bold;
-  font-size: 36px;
+  font-size: 42px;
   font-family: Poppins;
   color: #9e9e9e;
   letter-spacing: 0.35em;
+  margin-bottom: 3.5rem;
 `;
 
 export const SubTitle = styled.h3`
   font-weight: 800;
-  font-size: 40px;
+  font-size: 56px;
   color: #00cc92;
+  width: 50%;
+  margin-bottom: 2.5rem;
 `;
 
 export const Description = styled.p`
   font-weight: 500;
-  font-size: 15px;
+  font-size: 19px;
   color: #828282;
+  line-height: 30px;
+  width: 50%;
+  margin-bottom: 3rem;
 `;
 
 export const Button = styled.button`
-  width: 168px;
-  height: 39px;
+  width: 207px;
+  height: 48px;
   background: #3e3b3b;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fffffc;
   font-weight: bold;
   font-family: Roboto;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+
+  &:hover {
+    background: #00cc92;
+  }
 `;
