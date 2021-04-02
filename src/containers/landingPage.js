@@ -30,7 +30,23 @@ export function LandingPageContainer() {
           </LandingPage.Description>
           <LandingPage.Button>Find Businesses</LandingPage.Button>
         </LandingPage.LeftSect>
-        <LandingPage.RightSect></LandingPage.RightSect>
+        <LandingPage.RightSect>
+          <LandingPage.CardOne
+            src="BallardMarket.jpg"
+            label="Ballard Market"
+            type="Clothing Store $$$"
+          />
+          <LandingPage.CardTwo
+            src="Corner42.png"
+            label="Corner 42"
+            type="Grocery Store $$"
+          />
+          <LandingPage.CardThree
+            src="IndianMarket.png"
+            label="Indian Market"
+            type="Grocery Store $$"
+          />
+        </LandingPage.RightSect>
       </LandingPage>
     </>
   );

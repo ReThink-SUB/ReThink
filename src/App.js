@@ -4,6 +4,7 @@ import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SignUp, Contact, SignUp2, SignUp3 } from "./pages";
 import { BusinessContext } from "./context/business";
+import { LandingPageContainer } from "./containers";
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -72,16 +73,19 @@ export default function App() {
           setSubmit,
           name,
           setName,
-          subject, 
+          subject,
           setSubject,
           message,
           setMessage,
           contactAlert,
-          setContactAlert
+          setContactAlert,
         }}
       >
         <Router>
           <Switch>
+            <Route path={ROUTES.HOME} exact>
+              <LandingPageContainer />
+            </Route>
             <Route path={ROUTES.SIGNUP} exact>
               <SignUp />
             </Route>

@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 100%;
   height: 90vh;
   display: flex;
-  padding-left: 3rem;
 `;
 
 export const LeftSect = styled.div`
@@ -12,6 +11,7 @@ export const LeftSect = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding-left: 8rem;
 `;
 
 export const RightSect = styled.div`
@@ -49,21 +49,112 @@ export const Link = styled.h2`
   }
 `;
 
-export const Card = styled.div`
+export const CardOne = styled.div`
   position: absolute;
-  top: $({(top)} => top);
-  right: $({(bottom)} => bottom);
+  top: 0;
+  right: 0;
   width: 230px;
   height: 295px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
 
   img {
     width: 175px;
     height: auto;
     border-radius: 50%;
-    filter: drop-shadow(0px 30px 60px rgba(57, 57, 57, 0.1));
+    box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1f2421;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-weight: normal;
+      font-size: 10px;
+      color: #00cc92;
+    }
+
+    i {
+      font-size: 13px;
+      color: #00cc92;
+    }
+  }
+`;
+
+export const CardTwo = styled.div`
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 230px;
+  height: 295px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+
+  img {
+    width: 175px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1f2421;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-weight: normal;
+      font-size: 10px;
+      color: #00cc92;
+    }
+
+    i {
+      font-size: 13px;
+      color: #00cc92;
+    }
+  }
+`;
+
+export const CardThree = styled.div`
+  position: absolute;
+  top: 45%;
+  right: 0;
+  width: 230px;
+  height: 295px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+
+  img {
+    width: 175px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
   }
 
   h2 {

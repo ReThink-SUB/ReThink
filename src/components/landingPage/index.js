@@ -12,7 +12,9 @@ import {
   SubTitle,
   Description,
   Button,
-  Card,
+  CardOne,
+  CardTwo,
+  CardThree,
 } from "./styles/landingPage";
 
 export default function LandingPage({ children, ...restProps }) {
@@ -33,9 +35,7 @@ LandingPage.RightSect = function LandingPageRightSect({
   return <RightSect {...restProps}>{children}</RightSect>;
 };
 
-LandingPage.Card = function LandingPageCard({
-  top,
-  bottom,
+LandingPage.CardOne = function LandingPageCardOne({
   type,
   label,
   src,
@@ -43,15 +43,55 @@ LandingPage.Card = function LandingPageCard({
   ...restProps
 }) {
   return (
-    <Card top={top} bottom={bottom} {...restProps}>
-      <img src={src} alt="card" />
+    <CardOne {...restProps}>
+      <img src={`/images/${src}`} alt="CardOne" />
       <h2>{label}</h2>
       <div>
         <p>{type}</p>
         <i class="fas fa-lightbulb"></i>
         <i class="fas fa-leaf"></i>
       </div>
-    </Card>
+    </CardOne>
+  );
+};
+
+LandingPage.CardTwo = function LandingPageCardTwo({
+  type,
+  label,
+  src,
+  children,
+  ...restProps
+}) {
+  return (
+    <CardTwo {...restProps}>
+      <img src={`/images/${src}`} alt="CardTwo" />
+      <h2>{label}</h2>
+      <div>
+        <p>{type}</p>
+        <i class="fas fa-lightbulb"></i>
+        <i class="fas fa-leaf"></i>
+      </div>
+    </CardTwo>
+  );
+};
+
+LandingPage.CardThree = function LandingPageCardThree({
+  type,
+  label,
+  src,
+  children,
+  ...restProps
+}) {
+  return (
+    <CardThree {...restProps}>
+      <img src={`/images/${src}`} alt="CardThree" />
+      <h2>{label}</h2>
+      <div>
+        <p>{type}</p>
+        <i class="fas fa-lightbulb"></i>
+        <i class="fas fa-leaf"></i>
+      </div>
+    </CardThree>
   );
 };
 
