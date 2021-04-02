@@ -32,11 +32,10 @@ export const Navbar = styled.div`
 `;
 
 export const Links = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 6rem;
 `;
 
 export const Link = styled.h2`
@@ -68,12 +67,21 @@ export const CardOne = styled.div`
   padding: 0.8rem 0;
   z-index: 3;
 
+  @media (max-width: 1650px) {
+    width: 245px;
+    height: 314px;
+  }
+
   img {
     width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
     margin-bottom: 3rem;
+
+    @media (max-width: 1650px) {
+      margin-bottom: 2rem;
+    }
   }
 
   h2 {
@@ -117,12 +125,21 @@ export const CardTwo = styled.div`
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
   padding: 0.8rem 0;
 
+  @media (max-width: 1650px) {
+    width: 245px;
+    height: 314px;
+  }
+
   img {
     width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
     margin-bottom: 3rem;
+
+    @media (max-width: 1650px) {
+      margin-bottom: 2rem;
+    }
   }
 
   h2 {
@@ -166,12 +183,21 @@ export const CardThree = styled.div`
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
   padding: 0.8rem 0;
 
+  @media (max-width: 1650px) {
+    width: 245px;
+    height: 314px;
+  }
+
   img {
     width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
     margin-bottom: 3rem;
+
+    @media (max-width: 1650px) {
+      margin-bottom: 2rem;
+    }
   }
 
   h2 {
@@ -240,6 +266,10 @@ export const SubTitle = styled.h3`
   color: #00cc92;
   width: 50%;
   margin-bottom: 2.5rem;
+
+  @media (max-width: 1650px) {
+    font-size: 52px;
+  }
 `;
 
 export const Description = styled.p`
@@ -249,6 +279,10 @@ export const Description = styled.p`
   line-height: 30px;
   width: 50%;
   margin-bottom: 3rem;
+
+  @media (max-width: 1650px) {
+    font-size: 18px;
+  }
 `;
 
 export const Button = styled.button`

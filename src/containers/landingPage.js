@@ -18,6 +18,8 @@ export function LandingPageContainer() {
               <LandingPage.Link to={ROUTES.SIGNUP}>
                 meet the team
               </LandingPage.Link>
+              <LandingPage.Link to={ROUTES.CONTACT}>contact</LandingPage.Link>
+              <LandingPage.Link to={ROUTES.SIGNUP}>sign up</LandingPage.Link>
             </LandingPage.Links>
           </LandingPage.Navbar>
           <LandingPage.Title>SUB</LandingPage.Title>
