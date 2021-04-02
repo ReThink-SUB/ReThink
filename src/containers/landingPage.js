@@ -46,6 +46,7 @@ export function LandingPageContainer() {
             label="Indian Market"
             type="Grocery Store $$"
           />
+          <LandingPage.Ellipse />
         </LandingPage.RightSect>
       </LandingPage>
     </>

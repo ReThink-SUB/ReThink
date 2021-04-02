@@ -28,7 +28,7 @@ export const Navbar = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 `;
 
 export const Links = styled.div`
@@ -55,28 +55,31 @@ export const Link = styled.h2`
 
 export const CardOne = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 230px;
-  height: 295px;
+  top: 11%;
+  right: 18%;
+  width: 265px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
   border-radius: 30px;
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+  padding: 0.8rem 0;
 
   img {
-    width: 175px;
+    width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+    margin-bottom: 3rem;
   }
 
   h2 {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 19px;
     color: #1f2421;
+    margin-bottom: 0.5rem;
   }
 
   div {
@@ -86,41 +89,46 @@ export const CardOne = styled.div`
 
     p {
       font-weight: normal;
-      font-size: 10px;
+      font-size: 13px;
       color: #00cc92;
+      margin-right: 0.6rem;
     }
 
     i {
-      font-size: 13px;
+      font-size: 15px;
       color: #00cc92;
+      margin-right: 0.4rem;
     }
   }
 `;
 
 export const CardTwo = styled.div`
   position: absolute;
-  top: 20%;
-  left: 0;
-  width: 230px;
-  height: 295px;
+  top: 30%;
+  left: -15%;
+  width: 265px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
   border-radius: 30px;
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+  padding: 0.8rem 0;
 
   img {
-    width: 175px;
+    width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+    margin-bottom: 3rem;
   }
 
   h2 {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 19px;
     color: #1f2421;
+    margin-bottom: 0.5rem;
   }
 
   div {
@@ -130,41 +138,46 @@ export const CardTwo = styled.div`
 
     p {
       font-weight: normal;
-      font-size: 10px;
+      font-size: 13px;
       color: #00cc92;
+      margin-right: 0.6rem;
     }
 
     i {
-      font-size: 13px;
+      font-size: 15px;
       color: #00cc92;
+      margin-right: 0.4rem;
     }
   }
 `;
 
 export const CardThree = styled.div`
   position: absolute;
-  top: 45%;
-  right: 0;
-  width: 230px;
-  height: 295px;
+  top: 55%;
+  right: 15%;
+  width: 265px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #ffffff;
   border-radius: 30px;
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+  padding: 0.8rem 0;
 
   img {
-    width: 175px;
+    width: 195px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+    margin-bottom: 3rem;
   }
 
   h2 {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 19px;
     color: #1f2421;
+    margin-bottom: 0.5rem;
   }
 
   div {
@@ -174,14 +187,28 @@ export const CardThree = styled.div`
 
     p {
       font-weight: normal;
-      font-size: 10px;
+      font-size: 13px;
       color: #00cc92;
+      margin-right: 0.6rem;
     }
 
     i {
-      font-size: 13px;
+      font-size: 15px;
       color: #00cc92;
+      margin-right: 0.4rem;
     }
+  }
+`;
+
+export const Ellipse = styled.div`
+  position: absolute;
+  top: 42%;
+  right: -17%;
+  z-index: 5;
+
+  img {
+    width: 537px;
+    height: auto;
   }
 `;
 
