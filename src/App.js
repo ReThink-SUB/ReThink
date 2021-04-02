@@ -103,7 +103,7 @@ export default function App() {
                 </div>
               }
             >
-              <Route path={ROUTES.HOME} exact>
+              <Route path={ROUTES.LANDING} exact>
                 <LandingPage />
               </Route>
               <Route path={ROUTES.SIGNUP} exact>

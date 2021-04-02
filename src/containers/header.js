@@ -43,7 +43,7 @@ export function HeaderContainer() {
           </Burger.Socials>
         </Burger.Menu>
         <Header.Links>
-          <Header.Link to={ROUTES.HOME}>Home</Header.Link>
+          <Header.Link to={ROUTES.LANDING}>Home</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Find Businesses</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>About Us</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Criteria</Header.Link>

@@ -9,7 +9,7 @@ export function LandingPageContainer() {
         <LandingPage.LeftSect>
           <LandingPage.Navbar>
             <LandingPage.Links>
-              <LandingPage.Link to={ROUTES.HOME}>home</LandingPage.Link>
+              <LandingPage.Link to={ROUTES.LANDING}>home</LandingPage.Link>
               <LandingPage.Link to={ROUTES.SIGNUP}>
                 find businesses
               </LandingPage.Link>
