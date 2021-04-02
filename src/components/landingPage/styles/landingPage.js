@@ -95,6 +95,7 @@ export const Title = styled.h2`
   font-size: 36px;
   font-family: Poppins;
   color: #9e9e9e;
+  letter-spacing: 0.35em;
 `;
 
 export const SubTitle = styled.h3`
@@ -114,4 +115,10 @@ export const Button = styled.button`
   height: 39px;
   background: #3e3b3b;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fffffc;
+  font-weight: bold;
+  font-family: Roboto;
 `;
