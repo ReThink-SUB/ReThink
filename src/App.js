@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import * as ROUTES from "./constants/routes";
 import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { SignUp, Contact, SignUp2, SignUp3 } from "./pages";
+import { Loading } from "./components";
 import { BusinessContext } from "./context/business";
-import { LandingPageContainer } from "./containers";
+
+const LandingPage = lazy(() => import("./pages/landingPage"));
+const SignUp = lazy(() => import("./pages/signup"));
+const Contact = lazy(() => import("./pages/contact"));
+const SignUp2 = lazy(() => import("./pages/signup2"));
+const SignUp3 = lazy(() => import("./pages/signup3"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -83,27 +88,37 @@ export default function App() {
       >
         <Router>
           <Switch>
-            <Route path={ROUTES.HOME} exact>
-              <LandingPageContainer />
-            </Route>
-            <Route path={ROUTES.SIGNUP} exact>
-              <SignUp />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path={ROUTES.SIGNUP2} exact>
-              <SignUp2 businesses={businesses} />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path={ROUTES.SIGNUP3} exact>
-              <SignUp3 />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route path={ROUTES.CONTACT} exact>
-              <Contact />
-            </Route>
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100vh",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Loading />
+                </div>
+              }
+            >
+              <Route path={ROUTES.HOME} exact>
+                <LandingPage />
+              </Route>
+              <Route path={ROUTES.SIGNUP} exact>
+                <SignUp />
+              </Route>
+              <Route path={ROUTES.SIGNUP2} exact>
+                <SignUp2 businesses={businesses} />
+              </Route>
+              <Route path={ROUTES.SIGNUP3} exact>
+                <SignUp3 />
+              </Route>
+              <Route path={ROUTES.CONTACT} exact>
+                <Contact />
+              </Route>
+            </Suspense>
           </Switch>
         </Router>
       </BusinessContext.Provider>
