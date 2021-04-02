@@ -47,6 +47,7 @@ export function LandingPageContainer() {
             type="Grocery Store $$"
           />
           <LandingPage.Ellipse />
+          <LandingPage.SmallEllipse />
         </LandingPage.RightSect>
       </LandingPage>
     </>

@@ -16,6 +16,7 @@ import {
   CardTwo,
   CardThree,
   Ellipse,
+  SmallEllipse,
 } from "./styles/landingPage";
 
 export default function LandingPage({ children, ...restProps }) {
@@ -137,7 +138,18 @@ LandingPage.Button = function LandingPageButton({ children, ...restProps }) {
 LandingPage.Ellipse = function LandingPageEllipse({ children, ...restProps }) {
   return (
     <Ellipse {...restProps}>
-      <img src="/images/Ellipse.png" alt="CardThree" />
+      <img src="/images/Ellipse.png" alt="Ellipse" />
     </Ellipse>
+  );
+};
+
+LandingPage.SmallEllipse = function LandingPageSmallEllipse({
+  children,
+  ...restProps
+}) {
+  return (
+    <SmallEllipse {...restProps}>
+      <img src="/images/SmallEllipse.png" alt="Small Ellipse" />
+    </SmallEllipse>
   );
 };

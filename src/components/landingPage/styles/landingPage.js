@@ -66,6 +66,7 @@ export const CardOne = styled.div`
   border-radius: 30px;
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
   padding: 0.8rem 0;
+  z-index: 3;
 
   img {
     width: 195px;
@@ -203,11 +204,23 @@ export const CardThree = styled.div`
 export const Ellipse = styled.div`
   position: absolute;
   top: 42%;
-  right: -17%;
+  right: -4%;
   z-index: 5;
 
   img {
     width: 537px;
+    height: auto;
+  }
+`;
+
+export const SmallEllipse = styled.div`
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  z-index: 1;
+
+  img {
+    width: 177px;
     height: auto;
   }
 `;
