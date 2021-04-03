@@ -1,0 +1,82 @@
+{
+    "member1": {
+        "name": "Kayla Lee",
+        "pronouns": "She/Her",
+        "position": "Developer",
+        "linkedin_url": "https://www.linkedin.com/in/kaylalee44/",
+        "bio": "Kayla is a fourth-year undergraduate student majoring in informatics. Kayla joined the SUB Initiative to help encourage sustainability in business while refining her technical skills. Her primary responsibility as a front-end developer is to help create the team’s website using React, JavaScript, and CSS among many other tools. A sustainable, daily habit that she has picked up is saving eggshells for her grandma’s garden.",
+        "profile_img": "aditi_joshi.jpg"
+    },
+    "member2": {
+        "name": "Brendan Tran",
+        "pronouns": "He/Him",
+        "position": "",
+        "linkedin_url": "http://linkedin.com/in/brendanptran/",
+        "bio": "Brendan is a third-year undergraduate student majoring in informatics and exploring human-computer interaction. He was eager to join the SUB Initiation because he saw potential in diverse students’ collective efforts fighting toward a common cause. Brendan has contributed significantly to the website design and ensures that users have a seamless experience with the interface. Outside of the SUB Initiative, he practices waste diversion to combat environmental degradation.",
+        "profile_img": "brendan_tran.jpg"
+    },
+    "member3": {
+        "name": "Paul Sereeyothin",
+        "pronouns": "He/Him",
+        "position": "",
+        "linkedin_url": "https://www.linkedin.com/in/paul-sereeyothin/",
+        "bio": "Paul is a fourth-year undergraduate student majoring in communications. He joined the SUB Initiative marketing team because he believes in technology and sustainability’s inevitable coupling as a future trend. He also saw this as an opportunity to increase his skills while working alongside others with diverse backgrounds. His primary responsibility is to help with branding through copywriting, logo design, and leveraging social media to drive traffic to the team’s platforms. A small lifestyle change that he has implemented to become greener is to donate unused personal items to those living in Thailand’s countryside.",
+        "profile_img": "paul_sereeyothin.jpg"
+    },
+    "member4": {
+        "name": "Leary Lebanlic",
+        "pronouns": "He/Him",
+        "position": "UX/UI Designer",
+        "linkedin_url": "https://www.linkedin.com/in/learylabanlic/",
+        "bio": "Leary is a third-year undergraduate student majoring in community, environment and planning while minoring in architectural design, informatics, and entrepreneurship. Leary joined the SUB Initiative to try his hand at designing a web-app. His role is to help design and create wireframes for both the mobile application and website to align with the team’s vision. Leary aims to become more energy efficient through unplugging unnecessary electrical appliances, especially when they are unused.",
+        "profile_img": "leary_lebanlic.jpg"
+    },
+    "member5": {
+        "name": "YuYu Madigan",
+        "pronouns": "She/Her",
+        "position": "",
+        "linkedin_url": "http://www.linkedin.com/in/fymadiagn",
+        "bio": "YuYu is a fourth-year undergraduate student majoring in economics with a minor in informatics, data science, and entrepreneurship. YuYu is one of the student-leads. The SUB Initiative was born from ReThink UW to create a sustainable but cross-disciplinary project that would engage their three central values: business, sustainability, and technology. Her responsibilities involve team-management, goal-setting, and communicating with stakeholders. One way she incorporates sustainability in her everyday life is by reducing the use of single-waste plastics.",
+        "profile_img": "yuyu_madigan.jpg"
+    },
+    "member6": {
+        "name": "Kailin Spencer",
+        "pronouns": "She/Her",
+        "position": "",
+        "linkedin_url": "https://www.linkedin.com/in/kailinspencer/",
+        "bio": "Kailin is a second-year undergraduate student majoring in business and minoring in environmental studies. Kailin became part of the SUB Initiative to create a world where people can live in harmony with nature. As part of the research team, she helped develop the sustainability criteria to verify that the small businesses in the Seattle area are genuinely green. One way that she is incorporating the green lifestyle is by adopting a meatless diet.",
+        "profile_img": "kailin_spencer.jpg"
+    },
+    "member7": {
+        "name": "Grace Chun",
+        "pronouns": "She/Her",
+        "position": "",
+        "linkedin_url": "https://www.linkedin.com/in/ghchun/",
+        "bio": "Grace is a fourth-year undergraduate student majoring in international studies with a minor in informatics and entrepreneurship. In hopes of diving deeper into sustainability-related topics, she joined the SUB Initiative. Grace is part of the research team that conducts surveys and interviews to understand stakeholders better to define what it means to be a “sustainable business.” When she is out and about, she always uses containers and boxes to reduce waste.",
+        "profile_img": "grace_chun.jpg"
+    },
+    "member8": {
+        "name": "Devon Chapman",
+        "pronouns": "She/Her",
+        "position": "Researcher",
+        "linkedin_url": "http://www.linkedin.com/in/devontchapman",
+        "bio": "Devon is a fourth-year undergraduate student majoring in political science with a minor in environmental studies. Devon is on the research team and is highly passionate about the intersectionality of business and sustainability. She helps to define “sustainable” and collaborates with others to maximize business outreach. Devon helps the environment by composting, being a vegetarian, and reusing water bottles.",
+        "profile_img": "devon_chapman.jpg"
+    },
+    "member9": {
+        "name": "Aditi Joshi",
+        "pronouns": "She/Her",
+        "position": "Developer",
+        "linkedin_url": "https://www.linkedin.com/in/aditi-joshi-019405190/",
+        "bio": "Aditi Joshi is a second-year undergraduate majoring in computer science and minoring in environmental studies. For Aditi, the SUB initiative is an opportunity to work on big-scale projects while exploring how technology can instigate positive ecological outcomes. Her primary responsibility is to work with the development team to create backend pipelines to display all of the business information on the website. Additionally, she also works on the landing page. To help mitigate environmental damage, she has switched to using soap bars instead of the bottled ones that produce unnecessary waste.",
+        "profile_img": "aditi_joshi.jpg"
+    },
+    "member10": {
+        "name": "Julius Cecilia",
+        "pronouns": "He/Him",
+        "position": "Developer",
+        "linkedin_url": "https://www.linkedin.com/in/julius-cecilia/",
+        "bio": "Julius is a first-year undergraduate student who is planning to major in informatics. Because Julius wanted to contribute and learn from a community of developers with varying skill sets, the SUB initiative appealed to him. His responsibility as a front-end developer is to optimize the website’s client-side by making an interactive user interface with JavaScript and React. On the side, he also helps to set up the Firebase backend services. To conserve energy, he is very conscious about how much water and energy he uses on a daily basis.",
+        "profile_img": "julius_cecilia.jpg"
+    }
+}
