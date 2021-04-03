@@ -23,7 +23,7 @@ function ProfileCard(props) {
         <CardImg
           top
           width="100%"
-          src={"../../public/images/profile_pics/" + props.profile.profile_img}
+          src={`/images/profile_pics/${props.profile.profile_img}`}
           alt={props.profile.name + " profile picture"}
         />
         <CardBody>
