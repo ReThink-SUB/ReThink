@@ -1,14 +1,12 @@
- import React from 'react';
- import ProfileList from '../components/about/profiles.js';
+import React from "react";
+import Team from "../components/team/index";
 
- function AboutPage(props) {
+export default function TeamContainer(props) {
     return (
         <div>
             <h1>Meet the SUB Team</h1>
             <p>A ragtag team of UW students deciding to give a damn about the environment, in the most enjoyable way possible.</p>
-            <ProfileList />
+            <Team profiles={props.profiles}/>
         </div>
     )
- }
-
- export default AboutPage;
+}

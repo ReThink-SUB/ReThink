@@ -12,5 +12,3 @@ render(
   </>,
   document.getElementById("root")
 );
-
-// ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));

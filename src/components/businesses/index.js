@@ -1,4 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { CardBody, CardText, CardTitle, Container, Col, Card, Row } from 'reactstrap';
+
+export default function Businesses() {
+    return (
+        <Container></Container>
+    )
+}
 
 // Takes in a business and creates a business card
 function BusinessCard(props) {
@@ -18,8 +25,6 @@ function BusinessCard(props) {
     )
 }
 
-export default BusinessCard;
-
 // Creates a container of all the business cards
 function BusinessCardSearchList(props) {
     const [cards, setCards] = useState([]);
@@ -37,4 +42,10 @@ function BusinessCardSearchList(props) {
     )
 }
 
-export default BusinessCardSearchList;
+// export default function SearchBar(props) {
+//     // TODO: add code
+// }
+
+// export default function FilterButtons(props) {
+//     // TODO: add code
+// }
