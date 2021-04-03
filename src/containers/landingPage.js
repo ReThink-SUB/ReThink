@@ -10,12 +10,12 @@ export function LandingPageContainer() {
           <LandingPage.Navbar>
             <LandingPage.Links>
               <LandingPage.Link to={ROUTES.LANDING}>home</LandingPage.Link>
-              <LandingPage.Link to={ROUTES.SIGNUP}>
+              <LandingPage.Link to={ROUTES.BUSINESSES}>
                 find businesses
               </LandingPage.Link>
               <LandingPage.Link to={ROUTES.SIGNUP}>about us</LandingPage.Link>
               <LandingPage.Link to={ROUTES.SIGNUP}>criteria</LandingPage.Link>
-              <LandingPage.Link to={ROUTES.SIGNUP}>
+              <LandingPage.Link to={ROUTES.TEAM}>
                 meet the team
               </LandingPage.Link>
               <LandingPage.Link to={ROUTES.CONTACT}>contact</LandingPage.Link>

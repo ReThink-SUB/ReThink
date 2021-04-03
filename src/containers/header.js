@@ -16,7 +16,7 @@ export function HeaderContainer() {
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
               Home
             </Burger.Link>
-            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BUSINESSES}>
               Find Businesses
             </Burger.Link>
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
@@ -25,7 +25,7 @@ export function HeaderContainer() {
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
               Criteria
             </Burger.Link>
-            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.TEAM}>
               Meet The Team
             </Burger.Link>
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.CONTACT}>
@@ -44,10 +44,10 @@ export function HeaderContainer() {
         </Burger.Menu>
         <Header.Links>
           <Header.Link to={ROUTES.LANDING}>Home</Header.Link>
-          <Header.Link to={ROUTES.SIGNUP}>Find Businesses</Header.Link>
+          <Header.Link to={ROUTES.BUSINESSES}>Find Businesses</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>About Us</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Criteria</Header.Link>
-          <Header.Link to={ROUTES.SIGNUP}>Meet The Team</Header.Link>
+          <Header.Link to={ROUTES.TEAM}>Meet The Team</Header.Link>
           <Header.Link to={ROUTES.CONTACT}>Contact Us</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Sign Up</Header.Link>
         </Header.Links>

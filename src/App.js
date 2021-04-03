@@ -10,6 +10,8 @@ const SignUp = lazy(() => import("./pages/signup"));
 const Contact = lazy(() => import("./pages/contact"));
 const SignUp2 = lazy(() => import("./pages/signup2"));
 const SignUp3 = lazy(() => import("./pages/signup3"));
+const Team = lazy(() => import("./pages/team"));
+const Businesses = lazy(() => import("./pages/businesses"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -31,6 +33,18 @@ export default function App() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [contactAlert, setContactAlert] = useState("");
+
+  // fetch profiles json
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("./profiles.json")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
 
   useEffect(() => {
     db.collection("businesses")
@@ -118,6 +132,13 @@ export default function App() {
               <Route path={ROUTES.CONTACT} exact>
                 <Contact />
               </Route>
+              <Route
+                path={ROUTES.TEAM}
+                render={(...routerProps) => (
+                  <Team {...routerProps} profiles={data} />
+                )}
+              />
+              <Route path={ROUTES.BUSINESSES} component={Businesses} />
             </Suspense>
           </Switch>
         </Router>
