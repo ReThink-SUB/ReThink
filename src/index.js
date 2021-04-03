@@ -1,16 +1,17 @@
 import React from "react";
-import { render, ReactDOM } from "react-dom";
+import { render } from "react-dom";
 import "normalize.css";
 import App from "./App";
 import { GlobalStyles } from "./global-styles";
-import { BrowserRouter } from "react-router-dom";
+import { firebaseApp } from "./firebase";
+import { FirebaseContext } from "./context/firebase";
 
 render(
   <>
-    <GlobalStyles />
-    <App />
+    <FirebaseContext.Provider value={{ firebaseApp }}>
+      <GlobalStyles />
+      <App />
+    </FirebaseContext.Provider>
   </>,
   document.getElementById("root")
 );
-
-// ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
