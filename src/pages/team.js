@@ -1,9 +1,10 @@
 import React from "react";
-import { TeamContainer } from "../containers";
+import { TeamContainer, HeaderContainer } from "../containers";
 
 export default function Team(props) {
   return (
     <>
+      <HeaderContainer />
       <TeamContainer profiles={props.profiles} />
     </>
   );
