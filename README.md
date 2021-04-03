@@ -7,3 +7,5 @@ ReThink is a Foster RSO interested in exploring the intersection of business, su
 
 ## Meet the team
 ![Team](https://github.com/ReThink-SUB/ReThink/blob/julius/public/images/Team.png)
+
+## Try out a beta demo [here!](https://rethink-test.netlify.app/)
