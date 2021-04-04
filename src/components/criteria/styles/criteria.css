@@ -1,0 +1,8 @@
+circle {
+  height: 1.1em;
+  width: 1.1em;
+  background-color: hsl(163, 100%, 40%);
+  border-radius: 50%;
+  display: inline;
+  margin: 0 1em;
+}
