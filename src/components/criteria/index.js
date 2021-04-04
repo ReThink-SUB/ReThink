@@ -7,13 +7,35 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import "./styles/criteria.css";
 
+export default function Container() {
+  return (
+    <div className="container">
+      <div className="text-content">
+        <h1>So how do we know businesses are <em>actually</em> being sustainable?</h1>
+        <div className="centered">
+          <h1>Criteria</h1>
+          <p>We have conducted <em>research</em> on characteristics of businesses that maximize sustainbility. We have implemented a certification <em>system</em> to reward busineses for specific eco-friendly categories.</p>
+        </div>
+        <CriteriaCat title="Sustainable Ingredients and Foods" content="hello"/>
+      </div>
+      <div className="images">
+        <img src={process.env.PUBLIC_URL + '/images/criteria_img.png'} />
+      </div>
+    </div>
+)
+}
+
 const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: '1em',
+  },
   summary: {
     backgroundColor: '#DCFFF5',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(16),
     fontWeight: theme.typography.fontWeightRegular,
+    marginLeft: '1.2em',
   },
 }));
 

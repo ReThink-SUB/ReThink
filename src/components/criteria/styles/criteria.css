@@ -1,8 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container > * {
+  margin: 2em;
+}
+
+h1 {
+  color: #535461;
+  margin-bottom: .5em !important;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.centered {
+  text-align: center;
+  margin: 2em 5em;
+  margin-bottom: 6em;
+}
+
+em {
+  color: #00CC92;
+  font-style: normal;
+}
+
+img {
+  width: 35em;
+}
+
 circle {
-  height: 1.1em;
-  width: 1.1em;
+  height: 1.3em;
+  width: 1.3em;
   background-color: hsl(163, 100%, 40%);
   border-radius: 50%;
   display: inline;
-  margin: 0 1em;
 }
