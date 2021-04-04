@@ -31,9 +31,11 @@ export default function Container() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginBottom: '.4em',
   },
   summary: {
     backgroundColor: '#DCFFF5',
+    borderRadius: '8px',
   },
   heading: {
     fontSize: theme.typography.pxToRem(16),
