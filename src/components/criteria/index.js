@@ -17,8 +17,12 @@ export default function Container() {
           <p>We have conducted <em>research</em> on characteristics of businesses that maximize sustainbility. We have implemented a certification <em>system</em> to reward busineses for specific eco-friendly categories.</p>
         </div>
         <CriteriaCat title="Sustainable Ingredients and Foods" content="hello"/>
+        <CriteriaCat title="Resource Management" content="hello"/>
+        <CriteriaCat title="Waste Management" content="hello"/>
+        <CriteriaCat title="Beyond the Business" content="hello"/>
+        <CriteriaCat title="Company Demographic" content="hello"/>
       </div>
-      <div className="images">
+      <div className="image">
         <img src={process.env.PUBLIC_URL + '/images/criteria_img.png'} />
       </div>
     </div>
@@ -27,7 +31,6 @@ export default function Container() {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: '1em',
   },
   summary: {
     backgroundColor: '#DCFFF5',
