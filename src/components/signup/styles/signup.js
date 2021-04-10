@@ -394,15 +394,16 @@ export const WebLady = styled.div`
 `;
 
 export const UploadContainer = styled.div`
-  width: 100%;
+  width: 75%;
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 export const ImageInput = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
+  margin-right: 1.5rem;
 
   input {
     width: 0.1px;
@@ -414,9 +415,9 @@ export const ImageInput = styled.div`
   }
 
   input + label {
-    width: 13.28125vw;
-    height: 2.2rem;
-    font-size: 1vw;
+    width: 150px;
+    height: 2.5rem;
+    font-size: 0.9rem;
     /* 20px */
     font-weight: 700;
     text-overflow: ellipsis;
@@ -431,7 +432,7 @@ export const ImageInput = styled.div`
     /* 10px 20px */
     color: #f1e5e6;
     background: #86b390;
-    border-radius: 10px;
+    border-radius: 200px;
     transition: 0.5s all ease;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
@@ -469,7 +470,8 @@ export const Progress = styled.progress`
     appearance: none;
 
     width: 25%;
-    height: 25%;
+    height: 35%;
+    margin-right: 1.5rem;
   }
 
   &[value]::-webkit-progress-bar {
@@ -487,7 +489,7 @@ export const Progress = styled.progress`
         transparent 66%
       ),
       -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-      -webkit-linear-gradient(left, #e45257, #e45257);
+      -webkit-linear-gradient(left, #00cc92, #00cc92);
 
     border-radius: 10px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -523,7 +525,7 @@ export const UploadButton = styled.button`
   padding: 0.625rem 1.25rem;
   /* 10px 20px */
   color: #f1e5e6;
-  background-color: #e45257;
+  background-color: #86b390;
   border-radius: 10px;
   transition: 0.5s all ease;
   border: none;
@@ -531,7 +533,7 @@ export const UploadButton = styled.button`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   &:hover {
-    background-color: #722040;
+    background-color: #00cc92;
   }
 
   &:disabled {

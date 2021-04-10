@@ -130,11 +130,7 @@ export function SignUpContainer() {
         </SignUp.SecondaryDescription>
         <SignUp.UploadContainer>
           <SignUp.ImageInput handleChange={handleChange}>
-            {image ? (
-              <span>Ready to Upload</span>
-            ) : (
-              <span>Upload your image</span>
-            )}
+            {image ? <span>Ready to Upload</span> : <span>Upload image</span>}
           </SignUp.ImageInput>
           <SignUp.Progress progress={progress} />
           <SignUp.UploadButton handleUpload={handleUpload} image={image} />
