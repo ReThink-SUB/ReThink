@@ -8,7 +8,7 @@ export function HeaderContainer() {
   return (
     <>
       <Header>
-        <Header.Title>SUB</Header.Title>
+        <Header.Title to={ROUTES.LANDING}>SUB</Header.Title>
         <Burger open={open} setOpen={setOpen} />
         <Burger.Menu open={open} setOpen={setOpen}>
           <Burger.Heading>Hi there!</Burger.Heading>

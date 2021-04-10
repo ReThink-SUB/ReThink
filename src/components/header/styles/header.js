@@ -20,6 +20,7 @@ export const Title = styled.h3`
   font-family: Poppins;
   color: #9e9e9e;
   letter-spacing: 0.35em;
+  cursor: pointer;
 `;
 
 export const Links = styled.div`
