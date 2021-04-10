@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 import { Alert } from "@material-ui/lab";
+import { storage } from "../firebase";
 
 export function SignUpContainer() {
   const {
@@ -24,11 +25,51 @@ export function SignUpContainer() {
     setFirst,
     last,
     setLast,
-    contact,
-    setContact,
+    imageUrl,
+    setImageUrl,
     submit,
     setSubmit,
   } = useContext(BusinessContext);
+
+  const [progress, setProgress] = useState(0);
+  const [image, setImage] = useState(null);
+
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  const handleUpload = () => {
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // progress function ...
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
+      (error) => {
+        // Error function...
+        alert(error.message);
+      },
+      () => {
+        // when the upload completes...
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL() // thet image is already uploaded, this gives us a download link for the uploaded image
+          .then((url) => {
+            // post image inside database
+            setImageUrl(url);
+            setProgress(0);
+            setImage(null);
+          });
+      }
+    );
+  };
 
   return (
     <>
@@ -85,9 +126,19 @@ export function SignUpContainer() {
           </SignUp.HalfInputs>
         </SignUp.Inputs>
         <SignUp.SecondaryDescription>
-          Can we contact you?
+          Upload an image for your business profile
         </SignUp.SecondaryDescription>
-        <SignUp.Select setValue={setContact} value={contact} />
+        <SignUp.UploadContainer>
+          <SignUp.ImageInput handleChange={handleChange}>
+            {image ? (
+              <span>Ready to Upload</span>
+            ) : (
+              <span>Upload your image</span>
+            )}
+          </SignUp.ImageInput>
+          <SignUp.Progress progress={progress} />
+          <SignUp.UploadButton handleUpload={handleUpload} image={image} />
+        </SignUp.UploadContainer>
         <SignUp.SecondaryDescription>
           How should we contact you?
         </SignUp.SecondaryDescription>

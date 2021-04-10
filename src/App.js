@@ -33,6 +33,7 @@ export default function App() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [contactAlert, setContactAlert] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   // fetch profiles json
   const [data, setData] = useState([]);
@@ -98,6 +99,8 @@ export default function App() {
           setMessage,
           contactAlert,
           setContactAlert,
+          imageUrl,
+          setImageUrl,
         }}
       >
         <Router>

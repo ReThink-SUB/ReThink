@@ -34,6 +34,8 @@ export function SignUp3Container() {
     setContact,
     contact,
     setSubmit,
+    imageUrl,
+    setImageUrl,
   } = useContext(BusinessContext);
 
   const submitValues = () => {
@@ -52,6 +54,7 @@ export function SignUp3Container() {
       state: state,
       sustainablePractices: sustainablePractices,
       zipcode: zipCode,
+      imageUrl: imageUrl,
     });
 
     setBusinessName("");
@@ -68,6 +71,7 @@ export function SignUp3Container() {
     setSustainablePractices("");
     setContact("");
     setSubmit(true);
+    setImageUrl("");
   };
 
   return (
