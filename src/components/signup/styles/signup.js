@@ -443,7 +443,7 @@ export const ImageInput = styled.div`
     outline: none;
     padding: 0.625rem 1.25rem;
     /* 10px 20px */
-    color: #f1e5e6;
+    color: #ffffff;
     background: #86b390;
     border-radius: 200px;
     transition: 0.5s all ease;
@@ -564,5 +564,28 @@ export const UploadButton = styled.button`
   &:disabled {
     background-color: #a5a5a5;
     cursor: default;
+  }
+`;
+
+export const BusinessImg = styled.div`
+  width: 75%;
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 7px 30px rgba(57, 57, 57, 0.06);
+
+    @media (min-width: 1300px) {
+      align-self: start;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;

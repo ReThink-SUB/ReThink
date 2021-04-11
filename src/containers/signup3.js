@@ -36,6 +36,10 @@ export function SignUp3Container() {
     setSubmit,
     imageUrl,
     setImageUrl,
+    image,
+    setImage,
+    progress,
+    setProgress,
   } = useContext(BusinessContext);
 
   const submitValues = () => {
@@ -72,6 +76,8 @@ export function SignUp3Container() {
     setContact("");
     setSubmit(true);
     setImageUrl("");
+    setProgress(0);
+    setImage(null);
   };
 
   return (

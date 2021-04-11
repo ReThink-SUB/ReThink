@@ -34,6 +34,8 @@ export default function App() {
   const [message, setMessage] = useState("");
   const [contactAlert, setContactAlert] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [image, setImage] = useState(null);
 
   // fetch profiles json
   const [data, setData] = useState([]);
@@ -101,6 +103,10 @@ export default function App() {
           setContactAlert,
           imageUrl,
           setImageUrl,
+          progress,
+          setProgress,
+          image,
+          setImage,
         }}
       >
         <Router>

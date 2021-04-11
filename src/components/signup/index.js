@@ -22,6 +22,7 @@ import {
   Progress,
   UploadButton,
   UploadContainer,
+  BusinessImg,
 } from "./styles/signup";
 
 export default function SignUp({ children, ...restProps }) {
@@ -176,6 +177,14 @@ SignUp.WebLady = function SignUpWebLady({ children, ...restProps }) {
     <WebLady {...restProps}>
       <img src="/images/WebLady.png" alt="Web Lady" />
     </WebLady>
+  );
+};
+
+SignUp.BusinessImg = function SignUpBusinessImg({ src,children, ...restProps }) {
+  return (
+    <BusinessImg {...restProps}>
+      <img src={src} alt="Business" />
+    </BusinessImg>
   );
 };
 

@@ -29,10 +29,11 @@ export function SignUpContainer() {
     setImageUrl,
     submit,
     setSubmit,
+    image,
+    setImage,
+    progress,
+    setProgress,
   } = useContext(BusinessContext);
-
-  const [progress, setProgress] = useState(0);
-  const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -64,8 +65,6 @@ export function SignUpContainer() {
           .then((url) => {
             // post image inside database
             setImageUrl(url);
-            setProgress(0);
-            setImage(null);
           });
       }
     );
@@ -135,6 +134,7 @@ export function SignUpContainer() {
           <SignUp.Progress progress={progress} />
           <SignUp.UploadButton handleUpload={handleUpload} image={image} />
         </SignUp.UploadContainer>
+        {imageUrl && <SignUp.BusinessImg src={imageUrl} />}
         <SignUp.SecondaryDescription>
           How should we contact you?
         </SignUp.SecondaryDescription>
