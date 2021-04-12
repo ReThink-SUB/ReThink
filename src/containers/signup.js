@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
@@ -34,6 +34,15 @@ export function SignUpContainer() {
     progress,
     setProgress,
   } = useContext(BusinessContext);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log("timeout for 5 sec");
+      setSubmit(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [submit]);
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
