@@ -12,6 +12,7 @@ const SignUp2 = lazy(() => import("./pages/signup2"));
 const SignUp3 = lazy(() => import("./pages/signup3"));
 const Team = lazy(() => import("./pages/team"));
 const Businesses = lazy(() => import("./pages/businesses"));
+const About = lazy(() => import("./pages/about"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -148,6 +149,7 @@ export default function App() {
                 )}
               />
               <Route path={ROUTES.BUSINESSES} component={Businesses} />
+              <Route path={ROUTES.ABOUT} component={About} />
             </Suspense>
           </Switch>
         </Router>

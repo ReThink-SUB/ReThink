@@ -5,3 +5,4 @@ export { default as Contact } from "./contact";
 export { default as LandingPage } from "./landingPage";
 export { default as Businesses } from "./businesses";
 export { default as Team } from "./team";
+export { default as About } from "./about";

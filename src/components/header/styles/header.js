@@ -25,7 +25,6 @@ export const Title = styled.h3`
 
 export const Links = styled.div`
   width: 70%;
-  padding-top: 15px;
   padding-right: 1.5rem;
   display: none;
   justify-content: space-between;

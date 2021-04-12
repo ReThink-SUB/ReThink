@@ -6,3 +6,4 @@ export { default as SignUp3 } from "./signup3";
 export { default as Contact } from "./contact";
 export { default as LandingPage } from "./landingPage";
 export { default as Loading } from "./loading";
+export { default as Navbar } from "./navbar";

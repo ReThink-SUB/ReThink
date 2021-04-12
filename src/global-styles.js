@@ -60,6 +60,9 @@ export const GlobalStyles = createGlobalStyle`
         outline: none;
         color: #fff;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     button {
