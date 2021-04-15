@@ -8,11 +8,9 @@ export function NavbarContainer() {
       <Navbar.Logo />
 
       <Navbar.Links>
-        <Navbar.Link to={ROUTES.HOME}>HOME</Navbar.Link>
         <Navbar.Link to={ROUTES.BUSINESSES}>FIND BUSINESSES</Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>ABOUT US</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>CRITERIA</Navbar.Link>
-        <Navbar.Link to={ROUTES.TEAM}>MEET THE TEAM</Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>CONTACT US</Navbar.Link>
       </Navbar.Links>
 

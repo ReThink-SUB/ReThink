@@ -4,34 +4,25 @@ export const Container = styled.div`
   width: 100%;
   height: 9vh;
   display: flex;
-  padding: 0 1rem;
+  padding: 3em 1rem;
 `;
 
 export const Logo = styled.div`
-  width: 40%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1em;
 
   img {
-    width: 51px;
+    width: 4.5em;
     height: auto;
     margin-right: 1.5rem;
-  }
-
-  h3 {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    letter-spacing: 8px;
-    color: #c0c0c0;
   }
 `;
 
 export const Links = styled.div`
-  width: 75%;
+  width: 36%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -55,7 +46,7 @@ export const Link = styled.a`
 `;
 
 export const Signup = styled.div`
-  width: 15%;
+  width: 19%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -63,21 +54,22 @@ export const Signup = styled.div`
   padding: 0 2em;
 
   button {
-    width: 8em;
-    height: 38px;
-    color: #000000;
-    border: #C0C0C0 solid;
-    border-radius: 5px;
-    font-size: .85em;
+    width: 16em;
+    height: 36px;
+    color: #ffffff;
+    padding: 0 2em;
+    border-radius: 8px;
+    font-size: .8em;
     font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #67923D;
 
     i {
       font-size: 1rem;
-      color: #000000;
+      color: #ffffff;
       margin-left: 1rem;
     }
   }

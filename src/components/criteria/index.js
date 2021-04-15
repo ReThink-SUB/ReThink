@@ -54,7 +54,6 @@ export function CriteriaCat(props) {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel-content"
         >
-          <circle></circle>
           <Typography className={classes.heading}>{props.title}</Typography>
         </AccordionSummary>
         <AccordionDetails>

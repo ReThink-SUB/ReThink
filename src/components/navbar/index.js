@@ -10,7 +10,7 @@ export default function Navbar({ children, ...restProps }) {
 Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
   return (
     <Logo {...restProps}>
-      <h3>SUB</h3>
+      <img src={process.env.PUBLIC_URL + '/images/sub_logo.png'}/>
     </Logo>
   );
 };
@@ -32,7 +32,7 @@ Navbar.Signup = function NavBarSignup({ to, children, ...restProps }) {
     <Signup {...restProps}>
       <ReactRouterLink to={to}>
         <button>
-          SIGN UP <i class="fas fa-caret-right"></i>
+          PROMOTE BUSINESS <i class="fas fa-caret-right"></i>
         </button>
       </ReactRouterLink>
     </Signup>
