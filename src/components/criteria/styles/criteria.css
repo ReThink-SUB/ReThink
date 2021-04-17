@@ -30,15 +30,19 @@ p {
   line-height: 1.5em;
 }
 
-.centered {
-  text-align: center;
-  margin: 3em 5em;
-  margin-bottom: 6em;
+.criteria-txt {
+  width: 89%;
+  margin: 4em 0;
 }
 
-em {
-  color: #00CC92;
+em, i {
+  color: #67923D;
   font-style: normal;
+}
+
+.fa {
+  line-height: 2em;
+  margin-right: .3em;
 }
 
 img {

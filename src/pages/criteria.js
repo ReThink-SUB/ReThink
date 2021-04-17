@@ -1,7 +1,7 @@
 import React from 'react';
 import Page from "../components/criteria/index";
 
-function CriteriaPage(props) {
+function CriteriaPage() {
    return (
        <Page/>
    )
