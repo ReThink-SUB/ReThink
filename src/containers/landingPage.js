@@ -14,7 +14,7 @@ export function LandingPageContainer() {
                 find businesses
               </LandingPage.Link>
               <LandingPage.Link to={ROUTES.SIGNUP}>about us</LandingPage.Link>
-              <LandingPage.Link to={ROUTES.SIGNUP}>criteria</LandingPage.Link>
+              <LandingPage.Link to={ROUTES.CRITERIA}>criteria</LandingPage.Link>
               <LandingPage.Link to={ROUTES.TEAM}>
                 meet the team
               </LandingPage.Link>

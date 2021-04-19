@@ -12,6 +12,7 @@ const SignUp2 = lazy(() => import("./pages/signup2"));
 const SignUp3 = lazy(() => import("./pages/signup3"));
 const Team = lazy(() => import("./pages/team"));
 const Businesses = lazy(() => import("./pages/businesses"));
+const Criteria = lazy(() => import("./pages/criteria"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -131,6 +132,9 @@ export default function App() {
               </Route>
               <Route path={ROUTES.CONTACT} exact>
                 <Contact />
+              </Route>
+              <Route path={ROUTES.CRITERIA} exact>
+                <Criteria />
               </Route>
               <Route
                 path={ROUTES.TEAM}

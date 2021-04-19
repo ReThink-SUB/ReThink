@@ -1,9 +1,9 @@
 import React from 'react';
-import Page from "../components/criteria/index";
+import Criteria from "../components/criteria";
 
 function CriteriaPage() {
    return (
-       <Page/>
+        <Criteria/>
    )
 }
 
