@@ -1,10 +1,11 @@
-import React from 'react';
-import BusinessesContainer from "../containers/businesses";
+import React from "react";
+import { BusinessesContainer, HeaderContainer } from "../containers";
 
-export default function Businesses(props) {
-    return (
-        <div>
-            <BusinessesContainer />
-        </div>
-    )
- }
+export default function Businesses() {
+  return (
+    <div>
+      <HeaderContainer />
+      <BusinessesContainer />
+    </div>
+  );
+}
