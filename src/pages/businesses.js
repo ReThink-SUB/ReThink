@@ -1,15 +1,11 @@
-import React from 'react';
-import BusinessCardSearchList from '../components/about/profiles.js';
-import { SearchBar, FilterButtons } from '../components/businesses/search-filter.js';
+import React from "react";
+import { BusinessesContainer, HeaderContainer } from "../containers";
 
-function BusinessesPage(props) {
-    return (
-        <div>
-            <SearchBar />
-            <FilterButtons />
-            <BusinessCardSearchList />
-        </div>
-    )
- }
-
- export default BusinessesPage;
+export default function Businesses() {
+  return (
+    <div>
+      <HeaderContainer />
+      <BusinessesContainer />
+    </div>
+  );
+}

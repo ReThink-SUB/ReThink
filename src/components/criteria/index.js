@@ -74,7 +74,7 @@ export default function Container() {
       <div className="text-content">
         <h1>So how do we know businesses are <em>actually</em> being sustainable?</h1>
         <div className="criteria-txt">
-          <h1>Criteria</h1>
+          <h1>Criteria <div className="bar"></div></h1>
           <p>We have conducted <em>research</em> on characteristics of businesses that maximize sustainbility. We have implemented a certification <em>system</em> to reward busineses for specific eco-friendly categories.</p>
         </div>
         <CriteriaCat title="Certifications" content={one}/>

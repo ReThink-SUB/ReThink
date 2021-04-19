@@ -1,7 +1,10 @@
-export const HOME = "/";
-export const BUSINESSES = "/businesses";
-export const ABOUT = "/about";
-export const CRITERIA = "/criteria";
-export const TEAM = "/team";
-export const CONTACT = "/contact";
 export const SIGNUP = "/signup";
+export const SIGNUP2 = "/signup-2";
+export const SIGNUP3 = "/signup-3";
+export const CONTACT = "/contact";
+export const LANDING = "/";
+export const BUSINESSES = "/businesses";
+export const PROMOTE = "/promote";
+export const TEAM = "/team";
+export const CRITERIA = "/criteria";
+

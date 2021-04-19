@@ -21,6 +21,15 @@
   left: 55%;
 }
 
+.bar {
+  display: inline-block;
+  width: 2.3em;
+  height: .12em;
+  background-color: #67923D;
+  margin-left: .6em;
+  margin-bottom: .25em;
+}
+
 h1 {
   color: #535461;
   margin-bottom: .5em !important;
