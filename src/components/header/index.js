@@ -7,8 +7,12 @@ export default function Header({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 
-Header.Title = function HeaderTitle({ children, ...restProps }) {
-  return <Title {...restProps}>{children}</Title>;
+Header.Title = function HeaderTitle({ to, children, ...restProps }) {
+  return (
+    <ReactRouterLink to={to}>
+      <Title {...restProps}>{children}</Title>;
+    </ReactRouterLink>
+  );
 };
 
 Header.Links = function HeaderLinks({ children, ...restProps }) {

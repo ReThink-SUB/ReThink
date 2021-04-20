@@ -13,6 +13,7 @@ const SignUp3 = lazy(() => import("./pages/signup3"));
 const Team = lazy(() => import("./pages/team"));
 const Businesses = lazy(() => import("./pages/businesses"));
 const Criteria = lazy(() => import("./pages/criteria"));
+const About = lazy(() => import("./pages/about"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -34,6 +35,9 @@ export default function App() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [contactAlert, setContactAlert] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [image, setImage] = useState(null);
 
   // fetch profiles json
   const [data, setData] = useState([]);
@@ -99,6 +103,12 @@ export default function App() {
           setMessage,
           contactAlert,
           setContactAlert,
+          imageUrl,
+          setImageUrl,
+          progress,
+          setProgress,
+          image,
+          setImage,
         }}
       >
         <Router>
@@ -143,6 +153,7 @@ export default function App() {
                 )}
               />
               <Route path={ROUTES.BUSINESSES} component={Businesses} />
+              <Route path={ROUTES.ABOUT} component={About} />
             </Suspense>
           </Switch>
         </Router>

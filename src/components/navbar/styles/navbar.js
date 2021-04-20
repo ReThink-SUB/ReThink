@@ -4,11 +4,11 @@ export const Container = styled.div`
   width: 100%;
   height: 9vh;
   display: flex;
-  padding: 3em .5em;
+  padding: 3em 0em;
 `;
 
 export const Logo = styled.div`
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;

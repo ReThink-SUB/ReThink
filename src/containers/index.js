@@ -6,3 +6,4 @@ export { ContactContainer } from "./contact";
 export { LandingPageContainer } from "./landingPage";
 export { TeamContainer } from "./team";
 export { BusinessesContainer } from "./businesses";
+export { NavbarContainer } from "./navbar";

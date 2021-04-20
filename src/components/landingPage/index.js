@@ -50,8 +50,8 @@ LandingPage.CardOne = function LandingPageCardOne({
       <h2>{label}</h2>
       <div>
         <p>{type}</p>
-        <i class="fas fa-lightbulb"></i>
-        <i class="fas fa-leaf"></i>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
       </div>
     </CardOne>
   );
@@ -70,8 +70,8 @@ LandingPage.CardTwo = function LandingPageCardTwo({
       <h2>{label}</h2>
       <div>
         <p>{type}</p>
-        <i class="fas fa-lightbulb"></i>
-        <i class="fas fa-leaf"></i>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
       </div>
     </CardTwo>
   );
@@ -90,8 +90,8 @@ LandingPage.CardThree = function LandingPageCardThree({
       <h2>{label}</h2>
       <div>
         <p>{type}</p>
-        <i class="fas fa-lightbulb"></i>
-        <i class="fas fa-leaf"></i>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
       </div>
     </CardThree>
   );
