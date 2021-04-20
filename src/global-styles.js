@@ -24,6 +24,18 @@ export const GlobalStyles = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         overflow-x: hidden;
         overflow-y: visible;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F6F6F2;
+
+            border-radius: 15px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #c4c4c4;
+            border-radius: 15px;
+        }
     }
 
     ul {
@@ -48,6 +60,9 @@ export const GlobalStyles = createGlobalStyle`
         outline: none;
         color: #fff;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     button {
