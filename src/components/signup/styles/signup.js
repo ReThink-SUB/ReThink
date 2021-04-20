@@ -392,3 +392,200 @@ export const WebLady = styled.div`
     display: flex;
   }
 `;
+
+export const UploadContainer = styled.div`
+  width: 75%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
+export const ImageInput = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+
+  @media (max-width: 800px) {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  input + label {
+    width: 150px;
+    height: 2.5rem;
+    font-size: 0.9rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    outline: none;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+    color: #ffffff;
+    background: #86b390;
+    border-radius: 200px;
+    transition: 0.5s all ease;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .no-js input + label {
+    display: none;
+  }
+
+  input:focus + label,
+  input.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+  }
+
+  input:focus + label,
+  input.has-focus + label,
+  input + label:hover {
+    background-color: #00cc92;
+  }
+
+  input + label svg {
+    width: 1.25vw;
+    height: auto;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+  }
+`;
+
+export const Progress = styled.progress`
+  &[value] {
+    appearance: none;
+
+    width: 20%;
+    height: 35%;
+    margin-right: 1.5rem;
+
+    @media (max-width: 800px) {
+      margin: 0;
+      margin-bottom: 1rem;
+      width: 35%;
+    }
+  }
+
+  &[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+  &[value]::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(
+        -45deg,
+        transparent 33%,
+        rgba(0, 0, 0, 0.1) 33%,
+        rgba(0, 0, 0, 0.1) 66%,
+        transparent 66%
+      ),
+      -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+      -webkit-linear-gradient(left, #00cc92, #00cc92);
+
+    border-radius: 10px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    animation: animate-stripes 5s linear infinite;
+  }
+
+  @-webkit-keyframes animate-stripes {
+    100% {
+      background-position: -100px 0px;
+    }
+  }
+
+  @keyframes animate-stripes {
+    100% {
+      background-position: -100px 0px;
+    }
+  }
+`;
+
+export const UploadButton = styled.button`
+  width: 140px;
+  height: 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  outline: none;
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+  color: #f1e5e6;
+  background-color: #86b390;
+  border-radius: 500px;
+  transition: 0.5s all ease;
+  border: none;
+  outline: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  @media (max-width: 800px) {
+    font-size: 0.9rem;
+    width: 120px;
+    height: 2.7rem;
+  }
+
+  &:hover {
+    background-color: #00cc92;
+  }
+
+  &:disabled {
+    background-color: #a5a5a5;
+    cursor: default;
+  }
+`;
+
+export const BusinessImg = styled.div`
+  width: 75%;
+  margin-bottom: 1.5rem;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 7px 30px rgba(57, 57, 57, 0.06);
+
+    @media (min-width: 1300px) {
+      align-self: start;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;

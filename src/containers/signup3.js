@@ -4,6 +4,14 @@ import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 import { db } from "../firebase";
 import firebase from "firebase";
+import emailjs from "emailjs-com";
+import { init } from "emailjs-com";
+const {
+  REACT_APP_USER_ID,
+  REACT_APP_SERVICE_ID,
+  REACT_APP_TEMPLATE_ID,
+} = process.env;
+init(REACT_APP_USER_ID);
 
 export function SignUp3Container() {
   const {
@@ -34,7 +42,25 @@ export function SignUp3Container() {
     setContact,
     contact,
     setSubmit,
+    imageUrl,
+    setImageUrl,
+    image,
+    setImage,
+    progress,
+    setProgress,
   } = useContext(BusinessContext);
+
+  let templateParams = {
+    name: businessName,
+    email: email,
+    address: addressOne,
+    category: category,
+    city: city,
+    state: state,
+    zipCode: zipCode,
+    signUpReason: signUpReason,
+    sustainablePractices: sustainablePractices,
+  };
 
   const submitValues = () => {
     db.collection("businesses").add({
@@ -52,7 +78,19 @@ export function SignUp3Container() {
       state: state,
       sustainablePractices: sustainablePractices,
       zipcode: zipCode,
+      imageUrl: imageUrl,
     });
+
+    emailjs
+      .send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, templateParams)
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
 
     setBusinessName("");
     setAddressOne("");
@@ -68,6 +106,9 @@ export function SignUp3Container() {
     setSustainablePractices("");
     setContact("");
     setSubmit(true);
+    setImageUrl("");
+    setProgress(0);
+    setImage(null);
   };
 
   return (

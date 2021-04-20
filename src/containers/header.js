@@ -8,7 +8,7 @@ export function HeaderContainer() {
   return (
     <>
       <Header>
-        <Header.Title>SUB</Header.Title>
+        <Header.Title to={ROUTES.LANDING}>SUB</Header.Title>
         <Burger open={open} setOpen={setOpen} />
         <Burger.Menu open={open} setOpen={setOpen}>
           <Burger.Heading>Hi there!</Burger.Heading>
@@ -19,7 +19,7 @@ export function HeaderContainer() {
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BUSINESSES}>
               Find Businesses
             </Burger.Link>
-            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.ABOUT}>
               About Us
             </Burger.Link>
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
@@ -45,7 +45,7 @@ export function HeaderContainer() {
         <Header.Links>
           <Header.Link to={ROUTES.LANDING}>Home</Header.Link>
           <Header.Link to={ROUTES.BUSINESSES}>Find Businesses</Header.Link>
-          <Header.Link to={ROUTES.SIGNUP}>About Us</Header.Link>
+          <Header.Link to={ROUTES.ABOUT}>About Us</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Criteria</Header.Link>
           <Header.Link to={ROUTES.TEAM}>Meet The Team</Header.Link>
           <Header.Link to={ROUTES.CONTACT}>Contact Us</Header.Link>

@@ -18,6 +18,11 @@ import {
   Button,
   TallPlant,
   WebLady,
+  ImageInput,
+  Progress,
+  UploadButton,
+  UploadContainer,
+  BusinessImg,
 } from "./styles/signup";
 
 export default function SignUp({ children, ...restProps }) {
@@ -172,5 +177,61 @@ SignUp.WebLady = function SignUpWebLady({ children, ...restProps }) {
     <WebLady {...restProps}>
       <img src="/images/WebLady.png" alt="Web Lady" />
     </WebLady>
+  );
+};
+
+SignUp.BusinessImg = function SignUpBusinessImg({ src,children, ...restProps }) {
+  return (
+    <BusinessImg {...restProps}>
+      <img src={src} alt="Business" />
+    </BusinessImg>
+  );
+};
+
+SignUp.UploadContainer = function SignUpUploadContainer({
+  children,
+  ...restProps
+}) {
+  return <UploadContainer {...restProps}>{children}</UploadContainer>;
+};
+
+SignUp.ImageInput = function SignUpImageInput({
+  handleChange,
+  children,
+  ...restProps
+}) {
+  return (
+    <ImageInput {...restProps}>
+      <input
+        type="file"
+        name="file-1[]"
+        id="file-1"
+        data-multiple-caption="{count} files selected"
+        multiple
+        onChange={handleChange}
+      />
+      <label for="file-1">{children}</label>
+    </ImageInput>
+  );
+};
+
+SignUp.Progress = function SignUpProgress({
+  progress,
+  children,
+  ...restProps
+}) {
+  return <Progress value={progress} max="100" {...restProps} />;
+};
+
+SignUp.UploadButton = function SignUpUploadButton({
+  handleUpload,
+  image,
+  children,
+  ...restProps
+}) {
+  return (
+    <UploadButton onClick={handleUpload} disabled={!image}>
+      Upload!
+    </UploadButton>
   );
 };

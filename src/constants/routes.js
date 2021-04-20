@@ -6,3 +6,4 @@ export const LANDING = "/";
 export const BUSINESSES = "/businesses";
 export const PROMOTE = "/promote";
 export const TEAM = "/team";
+export const ABOUT = "/about";
