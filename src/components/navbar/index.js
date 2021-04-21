@@ -10,7 +10,9 @@ export default function Navbar({ children, ...restProps }) {
 Navbar.Title = function NavbarTitle({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
-      <Title {...restProps}>{children}</Title>;
+      <Title {...restProps}>
+        <img src="/images/Logo.png" alt="Logo" />
+      </Title>
     </ReactRouterLink>
   );
 };
