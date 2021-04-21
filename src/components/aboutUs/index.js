@@ -29,6 +29,9 @@ import {
   Arrow,
   FeatureArea,
   Feature,
+  ImageSec,
+  TextSec,
+  Donate,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -177,10 +180,29 @@ AboutUs.FeatureArea = function AboutUsFeatureArea({ children, ...restProps }) {
   return <FeatureArea {...restProps}>{children}</FeatureArea>;
 };
 
-AboutUs.Feature = function AboutUsFeature({ children, ...restProps }) {
-  return <Feature {...restProps}>{children}</Feature>;
+AboutUs.Feature = function AboutUsFeature({
+  action,
+  description,
+  children,
+  ...restProps
+}) {
+  return (
+    <Feature {...restProps}>
+      <ImageSec>{children}</ImageSec>
+      <TextSec>
+        <h3>{description}</h3>
+        <h3>Our Key Priorities: </h3>
+        <p>{action}</p>
+        <Donate>Donate Now</Donate>
+      </TextSec>
+    </Feature>
+  );
 };
 
-AboutUs.Arrow = function AboutUsArrow({ children, ...restProps }) {
-  return <Arrow {...restProps}>{children}</Arrow>;
+AboutUs.Arrow = function AboutUsArrow({ rotate, children, ...restProps }) {
+  return (
+    <Arrow rotate={rotate} {...restProps}>
+      <img src="/images/SecArrow.png" alt="Arrow" />
+    </Arrow>
+  );
 };
