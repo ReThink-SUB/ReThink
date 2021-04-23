@@ -14,6 +14,8 @@ import {
   Description,
   SubSec,
   Card,
+  Cards,
+  Circles,
   Frame,
   TextArea,
   InvolvedSec,
@@ -32,6 +34,8 @@ import {
   ImageSec,
   TextSec,
   Donate,
+  Link,
+  Image,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -40,6 +44,10 @@ export default function AboutUs({ children, ...restProps }) {
 
 AboutUs.Side = function AboutUsSide({ children, ...restProps }) {
   return <Side {...restProps}>{children}</Side>;
+};
+
+AboutUs.Link = function AboutUsLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>;
 };
 
 AboutUs.Main = function AboutUsMain({ children, ...restProps }) {
@@ -52,6 +60,34 @@ AboutUs.AboutSec = function AboutUsAboutSec({ children, ...restProps }) {
 
 AboutUs.Images = function AboutUsImages({ children, ...restProps }) {
   return <Images {...restProps}>{children}</Images>;
+};
+
+AboutUs.Image = function AboutUsImage({
+  height,
+  src,
+  top,
+  left,
+  children,
+  ...restProps
+}) {
+  return (
+    <Image top={top} left={left} {...restProps}>
+      <img height={height} src={src} alt="about" />
+    </Image>
+  );
+};
+
+AboutUs.Circles = function AboutUsCircles({
+  top,
+  left,
+  children,
+  ...restProps
+}) {
+  return (
+    <Circles top={top} left={left} {...restProps}>
+      <img src="/images/CirclePattern.png" alt="circles" />
+    </Circles>
+  );
 };
 
 AboutUs.Text = function AboutUsText({ children, ...restProps }) {
@@ -81,12 +117,17 @@ AboutUs.SubSec = function AboutUsSubSec({ children, ...restProps }) {
   return <SubSec {...restProps}>{children}</SubSec>;
 };
 
+AboutUs.Cards = function AboutUsCards({ children, ...restProps }) {
+  return <Cards {...restProps}>{children}</Cards>;
+};
+
 AboutUs.Card = function AboutUsCard({ children, ...restProps }) {
   return <Card {...restProps}>{children}</Card>;
 };
 
 AboutUs.Frame = function AboutUsFrame({
   color,
+  background,
   src,
   person,
   label,
@@ -94,11 +135,11 @@ AboutUs.Frame = function AboutUsFrame({
   ...restProps
 }) {
   return (
-    <Frame color={color} {...restProps}>
+    <Frame background={background} {...restProps}>
       <img src={src} alt="Card" />
       <h2>{person}</h2>
-      <p>{label}</p>
-      <img className="circle" src="/images/CirclePattern.png" alt="Circle" />
+      <p color={color}>{label}</p>
+      {children}
     </Frame>
   );
 };
