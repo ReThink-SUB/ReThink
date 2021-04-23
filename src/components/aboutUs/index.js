@@ -36,6 +36,10 @@ import {
   Donate,
   Link,
   Image,
+  ClubImage,
+  ClubName,
+  ClubDescription,
+  LearnMore,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -185,6 +189,30 @@ AboutUs.ClubCard = function AboutUsClubCard({ children, ...restProps }) {
   return <ClubCard {...restProps}>{children}</ClubCard>;
 };
 
+AboutUs.ClubImage = function AboutUsClubImage({ src, children, ...restProps }) {
+  return (
+    <ClubImage {...restProps}>
+      <img src={src} alt="club" />
+    </ClubImage>
+  );
+};
+
+AboutUs.ClubName = function AboutUsClubName({ src, children, ...restProps }) {
+  return <ClubName {...restProps}>{children}</ClubName>;
+};
+
+AboutUs.ClubDescription = function AboutUsClubDescription({
+  src,
+  children,
+  ...restProps
+}) {
+  return <ClubDescription {...restProps}>{children}</ClubDescription>;
+};
+
+AboutUs.LearnMore = function AboutUsLearnMore({ src, children, ...restProps }) {
+  return <LearnMore {...restProps}>{children}</LearnMore>;
+};
+
 AboutUs.LocalOrgsSec = function AboutUsLocalOrgsSec({
   children,
   ...restProps
@@ -200,17 +228,16 @@ AboutUs.Organizations = function AboutUsOrganizations({
 };
 
 AboutUs.Organization = function AboutUsOrganization({
+  src,
   children,
   ...restProps
 }) {
-  return <Organization {...restProps}>{children}</Organization>;
-};
-
-AboutUs.Organizations = function AboutUsOrganizations({
-  children,
-  ...restProps
-}) {
-  return <Organizations {...restProps}>{children}</Organizations>;
+  return (
+    <Organization {...restProps}>
+      <img src={src} alt="Organization" />
+      <h3>{children}</h3>
+    </Organization>
+  );
 };
 
 AboutUs.WeeklySec = function AboutUsWeeklySec({ children, ...restProps }) {
@@ -232,7 +259,7 @@ AboutUs.Feature = function AboutUsFeature({
       <ImageSec>{children}</ImageSec>
       <TextSec>
         <h3>{description}</h3>
-        <h3>Our Key Priorities: </h3>
+        <h2>Our Key Priorities: </h2>
         <p>{action}</p>
         <Donate>Donate Now</Donate>
       </TextSec>
