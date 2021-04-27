@@ -1,24 +1,66 @@
 import React, {useEffect, useState} from 'react';
-import { CardBody, CardText, CardTitle, Container, Col, Card, Row } from 'reactstrap';
+import {
+    CardBody,
+    CardTitle,
+    Container,
+    Col,
+    Card,
+    Row,
+    CardImg,
+    CardSubtitle,
+    CardText
+} from "reactstrap";
+import "./styles/businesses.css";
 
+const dummy = {
+    "card1": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market",
+        "category": "Clothing Store"
+    },
+    "card2": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market",
+        "category": "Clothing Store"
+    },
+    "card3": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market",
+        "category": "Clothing Store"
+    },
+    "card4": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market",
+        "category": "Clothing Store"
+    },
+    "card5": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market",
+        "category": "Clothing Store"
+    }
+}
 export default function Businesses() {
     return (
-        <Container></Container>
+        <div className="businesses-container">
+            <div className="business-background"></div>
+            <BusinessCardSearchList businesses={dummy} />
+        </div>
     )
 }
 
 // Takes in a business and creates a business card
 function BusinessCard(props) {
-    // TODO: set prop variables
-    let name = "";
-    let desc = "";
+    let business = props.business;
     return(
         <Col style={{flex: 1}}>
             <Card>
+                <CardImg
+                    src={business["img"]}
+                    alt={business["title"] + " image"}
+                />
                 <CardBody>
-                    {/* TODO: add image */}
-                    <CardTitle tag="h2">{name}</CardTitle>
-                    <CardText tag="p">{desc}</CardText>
+                    <CardTitle tag="h2">{business["title"]}</CardTitle>
+                    <CardSubtitle tag="p">{business["category"]}</CardSubtitle>
                 </CardBody>
             </Card>
         </Col>
@@ -27,18 +69,23 @@ function BusinessCard(props) {
 
 // Creates a container of all the business cards
 function BusinessCardSearchList(props) {
-    const [cards, setCards] = useState([]);
+    let data = props.businesses;
+    const [businesses, setBusinesses] = useState([]);
 
     useEffect(() => {
-        // TODO:
-        // get card objects from firebase
-        // set the cards in the state variable to render
-    });
+        let businessesHolder = [];
+        for (let b of Object.keys(data)) {
+            businessesHolder.push(<BusinessCard key={b} business={data[b]} />);
+        }
+        setBusinesses(businessesHolder);
+      }, []);
 
     return(
-        <Container>
-            <Row style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>{cards}</Row>
-        </Container>
+        <Container className="businesses-container">
+            <Row style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+            {businesses}
+            </Row>
+      </Container>
     )
 }
 

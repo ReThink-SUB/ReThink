@@ -1,0 +1,33 @@
+.businesses-container {
+    /* margin-top: 10em; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.business-background {
+    width: 20em;
+    background: #47A84E36;
+    height: 10em;
+}
+
+.card {
+    border-radius: 30px;
+    position: relative;
+}
+
+.card-body {
+    height: 10em;
+    display: flex;
+    justify-content: center;
+}
+
+.card-subtitle {
+    color: #67923D;
+}
+
+
+.card-subtitle, .card-title {
+    position: absolute;
+    bottom: 0;
+}
