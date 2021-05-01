@@ -134,15 +134,15 @@ AboutUs.Frame = function AboutUsFrame({
   background,
   src,
   person,
-  label,
+  position,
   children,
   ...restProps
 }) {
   return (
     <Frame background={background} {...restProps}>
-      <img src={src} alt="Card" />
+      <img src={`/images/profile_pics/${src}.jpg`} alt="Card" />
       <h2>{person}</h2>
-      <p color={color}>{label}</p>
+      <p color={color}>{position}</p>
       {children}
     </Frame>
   );
@@ -155,7 +155,7 @@ AboutUs.TextArea = function AboutUsTextArea({
 }) {
   return (
     <TextArea {...restProps}>
-      <p>{description}</p>
+      <p>{children}</p>
       <img src="/images/Linkedin.png" alt="Linkedin" />
       <img src="/images/Logo.png" alt="Email" />
     </TextArea>
