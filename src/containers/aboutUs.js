@@ -264,6 +264,84 @@ export function BusinessesContainer() {
             </AboutUs.Card>
           </AboutUs.Cards>
         </AboutUs.SubSec>
+        <AboutUs.InvolvedSec>
+          <AboutUs.Title>Get Involved</AboutUs.Title>
+          <AboutUs.Heading>How to get involved</AboutUs.Heading>
+          <AboutUs.SecTitle>SUB Team</AboutUs.SecTitle>
+          <AboutUs.Description>
+            Apply now to be part of the SUB Team!
+          </AboutUs.Description>
+          <AboutUs.Description>
+            Positions Available: Marketing, Business Development, Researchers,
+            Back End Developers, Front End Developers
+          </AboutUs.Description>
+          <AboutUs.Btn>Apply</AboutUs.Btn>
+        </AboutUs.InvolvedSec>
+        <AboutUs.OtherClubsSec>
+          <AboutUs.Description>
+            Clubs at UW focused on environmental sustainability:
+          </AboutUs.Description>
+          <AboutUs.ClubCards>
+            <AboutUs.ClubCard>
+              <AboutUs.ClubImage src="seed" />
+              <AboutUs.ClubName>SEED</AboutUs.ClubName>
+              <AboutUs.ClubDescription>
+                Sustainability club for students living in residence halls.
+              </AboutUs.ClubDescription>
+              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+            </AboutUs.ClubCard>
+            <AboutUs.ClubCard>
+              <AboutUs.ClubImage src="Farm" />
+              <AboutUs.ClubName>UW Farm</AboutUs.ClubName>
+              <AboutUs.ClubDescription>
+                Opportunities for hands-on agricultural learning at UW.
+              </AboutUs.ClubDescription>
+              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+            </AboutUs.ClubCard>
+            <AboutUs.ClubCard>
+              <AboutUs.ClubImage src="EcoReps" />
+              <AboutUs.ClubName>UW EcoReps</AboutUs.ClubName>
+              <AboutUs.ClubDescription>
+                Connecting students with sustainability projects.
+              </AboutUs.ClubDescription>
+              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+            </AboutUs.ClubCard>
+            <AboutUs.ClubCard>
+              <AboutUs.ClubImage src="Solar" />
+              <AboutUs.ClubName>UW Solar</AboutUs.ClubName>
+              <AboutUs.ClubDescription>
+                Students working to increase and promote solar power at UW.
+              </AboutUs.ClubDescription>
+              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+            </AboutUs.ClubCard>
+          </AboutUs.ClubCards>
+        </AboutUs.OtherClubsSec>
+        <AboutUs.LocalOrgsSec>
+          <AboutUs.Heading>
+            Some local organizations that we support
+          </AboutUs.Heading>
+          <AboutUs.Description>
+            These organizations use their platform to educate the public on ways
+            to protect the environment in order to live more sustainably.
+          </AboutUs.Description>
+          <AboutUs.Organizations>
+            <AboutUs.Organization src="Sustainable">
+              Sustainable Seattle
+            </AboutUs.Organization>
+            <AboutUs.Organization src="Interweave">
+              INTERWEAVE
+            </AboutUs.Organization>
+            <AboutUs.Organization src="Earthshare">
+              EarthShare Washington
+            </AboutUs.Organization>
+          </AboutUs.Organizations>
+        </AboutUs.LocalOrgsSec>
+        <AboutUs.WeeklySec>
+          <AboutUs.Heading>Check out our weekly features</AboutUs.Heading>
+          <AboutUs.Description>
+            Help preserve the environment by donating to these places!
+          </AboutUs.Description>
+        </AboutUs.WeeklySec>
       </AboutUs.Main>
     </AboutUs>
   );
