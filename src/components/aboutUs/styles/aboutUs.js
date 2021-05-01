@@ -8,9 +8,10 @@ export const Container = styled.div`
 `;
 
 export const Side = styled.div`
-  width: 90%;
+  width: 10%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.02);
+  ${"" /* background: rgba(0, 0, 0, 0.02); */}
+  background: red;
   display: flex;
   flex-direction: column;
 `;
@@ -52,8 +53,8 @@ export const Image = styled.div`
   left: ${({ left }) => left};
 
   img {
-    height: ${({ height }) => height};
-    width: auto;
+    height: auto;
+    width: ${({ width }) => width};
   }
 `;
 
@@ -383,4 +384,15 @@ export const Arrow = styled.div`
     height: auto;
     transform: ${({ rotate }) => rotate};
   }
+`;
+
+export const Donate = styled.p`
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: #67923d;
 `;

@@ -67,7 +67,7 @@ AboutUs.Images = function AboutUsImages({ children, ...restProps }) {
 };
 
 AboutUs.Image = function AboutUsImage({
-  height,
+  width,
   src,
   top,
   left,
@@ -76,7 +76,7 @@ AboutUs.Image = function AboutUsImage({
 }) {
   return (
     <Image top={top} left={left} {...restProps}>
-      <img height={height} src={src} alt="about" />
+      <img width={width} src={`/images/${src}.png`} alt="about" />
     </Image>
   );
 };
@@ -192,7 +192,7 @@ AboutUs.ClubCard = function AboutUsClubCard({ children, ...restProps }) {
 AboutUs.ClubImage = function AboutUsClubImage({ src, children, ...restProps }) {
   return (
     <ClubImage {...restProps}>
-      <img src={src} alt="club" />
+      <img src={`/images/${src}.png`} alt="club" />
     </ClubImage>
   );
 };
@@ -234,7 +234,7 @@ AboutUs.Organization = function AboutUsOrganization({
 }) {
   return (
     <Organization {...restProps}>
-      <img src={src} alt="Organization" />
+      <img src={`/images/${src}.png`} alt="Organization" />
       <h3>{children}</h3>
     </Organization>
   );
