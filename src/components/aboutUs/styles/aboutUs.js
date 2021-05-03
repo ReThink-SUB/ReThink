@@ -8,12 +8,14 @@ export const Container = styled.div`
 `;
 
 export const Side = styled.div`
-  width: 10%;
+  width: 14%;
   height: 100%;
-  ${"" /* background: rgba(0, 0, 0, 0.02); */}
-  background: red;
+  background: rgba(0, 0, 0, 0.02);
+  ${"" /* background: red; */}
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 35%;
 `;
 
 export const Link = styled.p`
@@ -25,10 +27,12 @@ export const Link = styled.p`
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #c4c4c4;
+  margin: 20% 0;
+  cursor: pointer;
 `;
 
 export const Main = styled.div`
-  width: 90%;
+  width: 86%;
   display: flex;
   flex-direction: column;
 `;
@@ -74,29 +78,35 @@ export const Text = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 10rem;
 `;
 
 export const Title = styled.h1`
   font-style: normal;
   font-weight: 800;
-  font-size: 48px;
+  font-size: 52px;
   letter-spacing: 0.035em;
+  color: #67923d;
+  margin-bottom: 2.5rem;
 `;
 
 export const Heading = styled.h2`
   font-style: italic;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 30px;
   letter-spacing: 0.035em;
   color: #585858;
+  margin-bottom: 2rem;
 `;
 
 export const Description = styled.p`
-  font-family: SF Pro Text;
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
   color: #828282;
+  line-height: 25px;
+  margin-bottom: 2rem;
+  width: 70%;
 `;
 
 export const SecDescription = styled.p`
@@ -106,12 +116,15 @@ export const SecDescription = styled.p`
   line-height: 26px;
   letter-spacing: 0.025em;
   color: #6a6565;
+  margin-bottom: 2.5rem;
+  width: 40%;
 `;
 
 export const SubSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: rem 0;
 `;
 
 export const Cards = styled.div`
@@ -123,24 +136,34 @@ export const Cards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 47%;
+  width: 45%;
   display: flex;
   align-items: center;
+  margin: 2rem 1rem;
+  position: relative;
+  padding: 1.5rem 0;
 `;
 
 export const Frame = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   background: ${({ background }) => background};
-  width: 201px;
+  width: 207px;
+  padding: 1.9rem 0;
+  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  border-radius: 30px;
+  margin-right: 2.5rem;
 
   img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+    margin-bottom: 1rem;
   }
 
   h2 {
@@ -150,6 +173,7 @@ export const Frame = styled.div`
     line-height: 17px;
     text-align: center;
     color: #6a6565;
+    margin-bottom: 0.5rem;
   }
 
   p {
@@ -167,6 +191,7 @@ export const TextArea = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 50%;
 
   p {
     font-style: normal;

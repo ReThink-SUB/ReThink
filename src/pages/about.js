@@ -1,6 +1,11 @@
 import React from "react";
-import { NavbarContainer } from "../containers";
+import { NavbarContainer, AboutUsContainer } from "../containers";
 
 export default function About() {
-  return <NavbarContainer />;
+  return (
+    <>
+      <NavbarContainer />
+      <AboutUsContainer />
+    </>
+  );
 }

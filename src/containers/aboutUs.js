@@ -1,7 +1,7 @@
 import React from "react";
 import { AboutUs } from "../components";
 
-export function BusinessesContainer() {
+export function AboutUsContainer() {
   return (
     <AboutUs>
       <AboutUs.Side>
@@ -12,12 +12,17 @@ export function BusinessesContainer() {
       <AboutUs.Main>
         <AboutUs.AboutSec>
           <AboutUs.Images>
-            <AboutUs.Image src="IceCream" width="200px" top="0%" left="0%" />
-            <AboutUs.Image src="Water" width="120px" top="30%" left="0%" />
-            <AboutUs.Image src="ToothBrush" width="200px" top="60%" left="0%" />
-            <AboutUs.Circles top="0%" left="10%" />
-            <AboutUs.Circles top="30%" left="30%" />
-            <AboutUs.Circles top="60%" left="50%" />
+            <AboutUs.Image src="IceCream" width="200px" top="2%" left="10%" />
+            <AboutUs.Image src="Water" width="120px" top="23%" left="41%" />
+            <AboutUs.Image
+              src="ToothBrush"
+              width="200px"
+              top="53%"
+              left="18%"
+            />
+            <AboutUs.Circles top="15%" left="40%" />
+            <AboutUs.Circles top="46%" left="5%" />
+            <AboutUs.Circles top="55%" left="47%" />
           </AboutUs.Images>
           <AboutUs.Text>
             <AboutUs.Title>About Us</AboutUs.Title>
@@ -42,7 +47,7 @@ export function BusinessesContainer() {
           </AboutUs.Text>
         </AboutUs.AboutSec>
         <AboutUs.SubSec>
-          <AboutUs.Heading>SUB Team</AboutUs.Heading>
+          <AboutUs.Title>SUB Team</AboutUs.Title>
           <AboutUs.SecDescription>
             A ragtag team of UW students deciding to give a damn about the
             environment, in the most enjoyable way possible.
@@ -54,16 +59,16 @@ export function BusinessesContainer() {
                 src="yuyu_madigan"
                 person="Yuyu Madigan"
                 position="President"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#ffffff"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 YuYu is a fourth-year undergraduate student majoring in
                 economics with a minor in informatics, data science, and
                 entrepreneurship. YuYu is one of the student-leads. The SUB
                 Initiative was born from ReThink UW to create a sustainable but
                 cross-disciplinary project that would engage their three central
-                values: business, sustainability, and technology. <br />
+                values: business, sustainability, and technology. <br /> <br />
                 Her responsibilities involve team-management, goal-setting, and
                 communicating with stakeholders. One way she incorporates
                 sustainability in her everyday life is by reducing the use of
@@ -76,15 +81,15 @@ export function BusinessesContainer() {
                 src="aditi_joshi"
                 person="Aditi Joshi"
                 position="Developer"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#BBBBBD"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Aditi Joshi is a second-year undergraduate majoring in computer
                 science and minoring in environmental studies. For Aditi, the
                 SUB initiative is an opportunity to work on big-scale projects
                 while exploring how technology can instigate positive ecological
-                outcomes. <br />
+                outcomes. <br /> <br />
                 Her primary responsibility is to work with the development team
                 to create backend pipelines to display all of the business
                 information on the website. Additionally, she also works on the
@@ -95,19 +100,19 @@ export function BusinessesContainer() {
             </AboutUs.Card>
             <AboutUs.Card>
               <AboutUs.Frame
-                background="#D4E9D6"
+                background="#ffffff"
                 src="leary_lebanlic"
                 person="Leary Lebanlic"
                 position="UI/UX Designer"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#BBBBBD"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Leary is a third-year undergraduate student majoring in
                 community, environment and planning while minoring in
                 architectural design, informatics, and entrepreneurship. Leary
                 joined the SUB Initiative to try his hand at designing a
-                web-app. <br />
+                web-app. <br /> <br />
                 His role is to help design and create wireframes for both the
                 mobile application and website to align with the team’s vision.
                 Leary aims to become more energy efficient through unplugging
@@ -117,18 +122,18 @@ export function BusinessesContainer() {
             </AboutUs.Card>
             <AboutUs.Card>
               <AboutUs.Frame
-                background="#ffffff"
+                background="#D4E9D6"
                 src="devon_chapman"
                 person="Devon Chapman"
                 position="Researcher"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#ffffff"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Devon is a fourth-year undergraduate student majoring in
                 political science with a minor in environmental studies. Devon
                 is on the research team and is highly passionate about the
-                intersectionality of business and sustainability. <br />
+                intersectionality of business and sustainability. <br /> <br />
                 She helps to define “sustainable” and collaborates with others
                 to maximize business outreach. Devon helps the environment by
                 composting, being a vegetarian, and reusing water bottles.
@@ -140,15 +145,15 @@ export function BusinessesContainer() {
                 src="grace_chun"
                 person="Grace Chun"
                 position="Researcher"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#ffffff"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Grace is a fourth-year undergraduate student majoring in
                 international studies with a minor in informatics and
                 entrepreneurship. In hopes of diving deeper into
                 sustainability-related topics, she joined the SUB Initiative.
-                <br />
+                <br /> <br />
                 Grace is part of the research team that conducts surveys and
                 interviews to understand stakeholders better to define what it
                 means to be a “sustainable business.” When she is out and about,
@@ -161,14 +166,14 @@ export function BusinessesContainer() {
                 src="kailin_spencer"
                 person="Kailin Spencer"
                 position="Researcher"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#BBBBBD"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Kailin is a second-year undergraduate student majoring in
                 business and minoring in environmental studies. Kailin became
                 part of the SUB Initiative to create a world where people can
-                live in harmony with nature. <br />
+                live in harmony with nature. <br /> <br />
                 As part of the research team, she helped develop the
                 sustainability criteria to verify that the small businesses in
                 the Seattle area are genuinely green. One way that she is
@@ -178,18 +183,18 @@ export function BusinessesContainer() {
             </AboutUs.Card>
             <AboutUs.Card>
               <AboutUs.Frame
-                background="#D4E9D6"
+                background="#ffffff"
                 src="julius_cecilia"
                 person="Julius Cecilia"
                 position="Developer"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#BBBBBD"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Julius is a first-year undergraduate student who is planning to
                 major in informatics. Because Julius wanted to contribute and
                 learn from a community of developers with varying skill sets,
-                the SUB initiative appealed to him. <br />
+                the SUB initiative appealed to him. <br /> <br />
                 His responsibility as a front-end developer is to optimize the
                 website’s client-side by making an interactive user interface
                 with JavaScript and React. On the side, he also helps to set up
@@ -200,20 +205,20 @@ export function BusinessesContainer() {
             </AboutUs.Card>
             <AboutUs.Card>
               <AboutUs.Frame
-                background="#ffffff"
+                background="#D4E9D6"
                 src="paul_sereeyothin"
                 person="Paul Sereeyothin"
                 position="Marketing"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#ffffff"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Paul is a fourth-year undergraduate student majoring in
                 communications. He joined the SUB Initiative marketing team
                 because he believes in technology and sustainability’s
                 inevitable coupling as a future trend. He also saw this as an
                 opportunity to increase his skills while working alongside
-                others with diverse backgrounds. <br />
+                others with diverse backgrounds. <br /> <br />
                 His primary responsibility is to help with branding through
                 copywriting, logo design, and leveraging social media to drive
                 traffic to the team’s platforms. A small lifestyle change that
@@ -227,15 +232,15 @@ export function BusinessesContainer() {
                 src="brendan_tran"
                 person="Brendan Tran"
                 position="UI/UX Designer"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#ffffff"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Brendan is a third-year undergraduate student majoring in
                 informatics and exploring human-computer interaction. He was
                 eager to join the SUB Initiation because he saw potential in
                 diverse students’ collective efforts fighting toward a common
-                cause. <br />
+                cause. <br /> <br />
                 Brendan has contributed significantly to the website design and
                 ensures that users have a seamless experience with the
                 interface. Outside of the SUB Initiative, he practices waste
@@ -248,14 +253,14 @@ export function BusinessesContainer() {
                 src="kayla_lee"
                 person="Kayla Lee"
                 position="Developer"
-              >
-                <AboutUs.Circles top="0%" left="10%" />
-              </AboutUs.Frame>
+                color="#BBBBBD"
+              ></AboutUs.Frame>
+              <AboutUs.Circles top="40%" left="25.1%" />
               <AboutUs.TextArea>
                 Kayla is a fourth-year undergraduate student majoring in
                 informatics. Kayla joined the SUB Initiative to help encourage
                 sustainability in business while refining her technical skills.
-                <br />
+                <br /> <br />
                 Her primary responsibility as a front-end developer is to help
                 create the team’s website using React, JavaScript, and CSS among
                 many other tools. A sustainable, daily habit that she has picked

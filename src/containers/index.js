@@ -7,3 +7,4 @@ export { LandingPageContainer } from "./landingPage";
 export { TeamContainer } from "./team";
 export { BusinessesContainer } from "./businesses";
 export { NavbarContainer } from "./navbar";
+export { AboutUsContainer } from "./aboutUs";
