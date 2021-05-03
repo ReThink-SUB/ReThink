@@ -2,65 +2,68 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 100%;
-  height: 10vh;
+  height: 9vh;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 3rem;
-  z-index: 5;
-  background: #ffffff;
-  box-shadow: 0px 8px 80px rgba(0, 0, 0, 0.05);
-  border-radius: 30px;
+  padding: 3em 0em;
 `;
 
-export const Title = styled.h3`
-  font-size: 36px;
-  font-weight: 700;
-  font-family: Poppins;
-  color: #9e9e9e;
-  letter-spacing: 0.35em;
-  cursor: pointer;
+export const Logo = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 4.5em;
+    height: auto;
+  }
 `;
 
 export const Links = styled.div`
-  width: 50%;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const Link = styled.h2`
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 21px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #3e3b3b;
-  transition: 0.5s ease all;
+export const Link = styled.a`
+  font-size: .75em;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: .8px;
+  margin-bottom: 2.5px;
 
   &:hover {
-    color: #00cc92;
+    color: #67923D;
   }
 `;
 
-export const Button = styled.button`
+export const Signup = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  border-radius: 50px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  color: #ffffff;
-  width: 165px;
-  height: 40px;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: #86b390;
-  transition: 0.5s ease all;
+  margin-left: 2em;
+  margin-right: 1em;
 
-  &:hover {
-    background: #00cc92;
+  button {
+    width: 16.5em;
+    height: 2.8em;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: .7em;
+    font-weight: 700;
+    letter-spacing: .5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #67923D;
+
+    i {
+      font-size: 1.2em;
+      color: #ffffff;
+      margin-left: 1em;
+    }
   }
 `;

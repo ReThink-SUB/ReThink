@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-content {
+  margin: 0 .8em;
+  margin-right: 26em;
+  margin-bottom: 2em;
+  padding-top: 2em;
+}
+
+.image {
+  position: fixed;
+  bottom: 0;
+  left: 55%;
+}
+
+.bar {
+  display: inline-block;
+  width: 2.3em;
+  height: .12em;
+  background-color: #67923D;
+  margin-left: .6em;
+  margin-bottom: .25em;
+}
+
+h1 {
+  color: #535461;
+  margin-bottom: .5em !important;
+  font-size: 2em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.criteria-txt {
+  width: 89%;
+  margin: 4em 0;
+}
+
+em, i {
+  color: #67923D;
+  font-style: normal;
+}
+
+.fa {
+  line-height: 2em;
+  margin-right: .3em;
+}
+
+img {
+  width: 40em;
+  bottom: 0;
+}
+
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+}
