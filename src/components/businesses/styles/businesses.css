@@ -1,33 +1,122 @@
-.businesses-container {
-    /* margin-top: 10em; */
+.businesses-div-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .business-background {
-    width: 20em;
-    background: #47A84E36;
-    height: 10em;
+    align-self: center;
+    width: 75em;
+    height: 6em;
+    background: rgba(71, 168, 78, 0.21);
+    border-radius: 54px;
+    z-index: -1;
+    position: absolute;
+    margin-bottom: 7em;
+}
+
+.row {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    margin: 7em 0em 0em 2.5em;
 }
 
 .card {
     border-radius: 30px;
     position: relative;
+    box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+    border: #FFFFFF;
+}
+
+.card-img {
+    width: 13em;
+    object-fit: contain;
 }
 
 .card-body {
-    height: 10em;
+    height: 12em;
     display: flex;
     justify-content: center;
 }
 
 .card-subtitle {
     color: #67923D;
+    margin-bottom: 1em;
 }
 
+.card-title {
+    margin-bottom: 2em;
+}
 
 .card-subtitle, .card-title {
     position: absolute;
     bottom: 0;
+}
+
+.filters-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dropdown {
+    margin: 0em 2em 0em 0em;
+    box-sizing: border-box;
+}
+
+.dropdown-toggle {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ADADAF;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #AFAFAF;
+    width: 10em;
+}
+
+.dropdown-item {
+    width: 11em;
+}
+
+.search-bar {
+    background: rgba(236, 236, 236, 0.57);
+    border-radius: 10px;
+    border: #FFFFFF;
+    height: 2em;
+    width: 50em;
+    padding-left: 1em;
+}
+
+.search-bar-btn {
+    background: #67923D;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    height: 2em;
+    width: 5em;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2em 0em 2.5em 0em;
+}
+
+.search-bar-header h6 {
+    color: #828282;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.search-bar-header h1 {
+    font-weight: bold;
+}
+
+.search-bar-and-btn {
+    margin: 2.5em 0em 0em 2em;
 }

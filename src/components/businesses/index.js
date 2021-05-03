@@ -8,7 +8,11 @@ import {
     Row,
     CardImg,
     CardSubtitle,
-    CardText
+    CardText,
+    Dropdown, 
+    DropdownToggle, 
+    DropdownMenu, 
+    DropdownItem
 } from "reactstrap";
 import "./styles/businesses.css";
 
@@ -38,11 +42,25 @@ const dummy = {
         "title": "Ballad Market",
         "category": "Clothing Store"
     }
+    // "card6": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store"
+    // }
 }
 export default function Businesses() {
+    let filterHeaders = ["Category", "Price", "Eco Badge", "Featured", "Zip Code"];
+    let filterOptions = ["Option1", "Option2", "Option3"];
+    let filters = [];
+    for (let i of filterHeaders) {
+        filters.push(<FilterButton filter={i} options={filterOptions}/>)
+    }
     return (
-        <div className="businesses-container">
-            <div className="business-background"></div>
+        <div>
+            <SearchBar />
+            <div className="filters-container">
+                {filters}
+            </div>
             <BusinessCardSearchList businesses={dummy} />
         </div>
     )
@@ -67,6 +85,8 @@ function BusinessCard(props) {
     )
 }
 
+// TODO: wrap the cards + green bar around to make new rows (grid)
+// TODO: add the dots on the green bar
 // Creates a container of all the business cards
 function BusinessCardSearchList(props) {
     let data = props.businesses;
@@ -81,18 +101,60 @@ function BusinessCardSearchList(props) {
       }, []);
 
     return(
-        <Container className="businesses-container">
-            <Row style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-            {businesses}
-            </Row>
-      </Container>
+        <div className="businesses-div-container">
+            <div className="business-background"></div>
+            <Container className="businesses-container">
+                <Row style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                    {businesses}
+                </Row>
+        </Container>
+      </div>
     )
 }
 
-// export default function SearchBar(props) {
-//     // TODO: add code
-// }
+// TODO: add filtering
+// https://medium.com/@reneecruz/search-bar-in-react-js-in-six-simple-steps-4849118b2134
+function SearchBar(props) {
+    return (
+        <div className="search-bar-container">
+            <div className="search-bar-header">
+                <h6>Businesses in</h6>
+                <h1>Seattle</h1>
+            </div>
+            <div className="search-bar-and-btn">
+                <input className="search-bar" type="text" value={props.inputValue} onChange={props.businessFilterOnChange} placeholder="Search..."/>
+                <button className="search-bar-btn">Go</button>
+            </div>
+        </div>
+    );
+}
 
-// export default function FilterButtons(props) {
-//     // TODO: add code
-// }
+// https://reactstrap.github.io/components/dropdowns/
+function FilterButton(props) {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const toggle = () => setDropdownOpen(prevState => !prevState);
+    let filterOptions = [];
+    for (let i of props.options) {
+        filterOptions.push(<DropdownItem>{i}</DropdownItem>)
+    }
+
+    return (
+        <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+            <DropdownToggle caret>
+                {props.filter}
+            </DropdownToggle>
+            <DropdownMenu>
+                {filterOptions}
+            </DropdownMenu>
+        </Dropdown>
+    );
+}
+
+// TODO: implement pagination where this shows up if the business page is full and there are more businesses
+function Next() {
+    return (
+        <div>
+
+        </div>
+    );
+}
