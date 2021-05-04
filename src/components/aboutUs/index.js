@@ -40,6 +40,7 @@ import {
   ClubName,
   ClubDescription,
   LearnMore,
+  Links,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -48,6 +49,10 @@ export default function AboutUs({ children, ...restProps }) {
 
 AboutUs.Side = function AboutUsSide({ children, ...restProps }) {
   return <Side {...restProps}>{children}</Side>;
+};
+
+AboutUs.Links = function AboutUsLinks({ children, ...restProps }) {
+  return <Links {...restProps}>{children}</Links>;
 };
 
 AboutUs.Link = function AboutUsLink({ children, ...restProps }) {
@@ -156,8 +161,10 @@ AboutUs.TextArea = function AboutUsTextArea({
   return (
     <TextArea {...restProps}>
       <p>{children}</p>
-      <img src="/images/Linkedin.png" alt="Linkedin" />
-      <img src="/images/Mail.png" alt="Email" />
+      <div>
+        <img src="/images/Linkedin.png" alt="Linkedin" />
+        <img src="/images/Mail.png" alt="Email" />
+      </div>
     </TextArea>
   );
 };

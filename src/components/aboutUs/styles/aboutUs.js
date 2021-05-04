@@ -14,27 +14,43 @@ export const Side = styled.div`
   ${"" /* background: red; */}
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: sticky;
-  top: 35%;
+  top: 16%;
+  padding: 10rem 0;
+`;
+
+export const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 export const Link = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #c4c4c4;
-  margin: 20% 0;
   cursor: pointer;
+  transition: 0.5s ease all;
+  margin: 3.2rem 0;
+  display: list-item; /* This has to be "list-item"                                               */
+  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+  list-style-position: inside;
+
+  &:hover {
+    font-size: 17px;
+    color: #67923d;
+  }
 `;
 
 export const Main = styled.div`
   width: 86%;
   display: flex;
   flex-direction: column;
+  padding: 0 2rem;
 `;
 
 export const AboutSec = styled.div`
@@ -202,10 +218,18 @@ export const TextArea = styled.div`
     color: #6a6565;
   }
 
-  img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1rem 0;
+
+    img {
+      width: 15px;
+      height: auto;
+      margin: 0 1rem;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -213,6 +237,7 @@ export const InvolvedSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 8rem 0;
 `;
 
 export const SecTitle = styled.h3`
@@ -221,6 +246,7 @@ export const SecTitle = styled.h3`
   font-size: 25px;
   letter-spacing: 0.035em;
   color: #67923d;
+  margin-bottom: 2rem;
 `;
 
 export const Btn = styled.button`
@@ -237,6 +263,12 @@ export const Btn = styled.button`
   font-size: 15px;
   line-height: 22px;
   color: #ffffff;
+  cursor: pointer;
+  transition: 0.5s ease all;
+
+  &:hover {
+    background: #8cce4b;
+  }
 `;
 
 export const OtherClubsSec = styled.div`
@@ -244,6 +276,7 @@ export const OtherClubsSec = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 5rem 0 7rem 0;
 `;
 
 export const ClubCards = styled.div`
@@ -260,13 +293,13 @@ export const ClubCard = styled.div`
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  margin: 0 4rem;
 `;
 
 export const ClubImage = styled.div`
   width: 100%;
-  height: 60%;
+  height: 55%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 
@@ -280,10 +313,13 @@ export const ClubImage = styled.div`
 export const ClubDescription = styled.p`
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 15px;
   color: #000000;
   opacity: 0.75;
+  text-align: center;
+  width: 85%;
+  margin-bottom: 0.5rem;
 `;
 
 export const ClubName = styled.h3`
@@ -294,29 +330,35 @@ export const ClubName = styled.h3`
   /* identical to box height */
   color: #1f2421;
   opacity: 0.75;
+  margin: 0.5rem 0;
+  margin-top: 1rem;
 `;
 
 export const LearnMore = styled.p`
   font-style: normal;
   font-weight: normal;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 11px;
   /* identical to box height */
   color: #67923d;
   opacity: 0.75;
+  cursor: pointer;
+  margin-top: 0.8rem;
 `;
 
 export const LocalOrgsSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 7rem 0;
 `;
 
 export const Organizations = styled.div`
-  width: 100%;
+  width: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const Organization = styled.div`
@@ -326,16 +368,15 @@ export const Organization = styled.div`
   align-items: center;
 
   img {
-    width: 110px;
-    height: 110px;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
-    margin-bottom: 0.8rem;
   }
 
   h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 10px;
+    font-size: 15px;
     color: #1f2421;
   }
 `;
@@ -344,6 +385,7 @@ export const WeeklySec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 5rem 0;
 `;
 
 export const FeatureArea = styled.div`

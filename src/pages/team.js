@@ -1,10 +1,10 @@
 import React from "react";
-import { TeamContainer, HeaderContainer } from "../containers";
+import { TeamContainer, NavbarContainer } from "../containers";
 
 export default function Team(props) {
   return (
     <>
-      <HeaderContainer />
+      <NavbarContainer />
       <TeamContainer profiles={props.profiles} />
     </>
   );

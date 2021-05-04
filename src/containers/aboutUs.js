@@ -5,9 +5,11 @@ export function AboutUsContainer() {
   return (
     <AboutUs>
       <AboutUs.Side>
-        <AboutUs.Link>About Us</AboutUs.Link>
-        <AboutUs.Link>Sub Team</AboutUs.Link>
-        <AboutUs.Link>Get Involved</AboutUs.Link>
+        <AboutUs.Links>
+          <AboutUs.Link>About Us</AboutUs.Link>
+          <AboutUs.Link>Sub Team</AboutUs.Link>
+          <AboutUs.Link>Get Involved</AboutUs.Link>
+        </AboutUs.Links>
       </AboutUs.Side>
       <AboutUs.Main>
         <AboutUs.AboutSec>
@@ -283,6 +285,7 @@ export function AboutUsContainer() {
           <AboutUs.Btn>Apply</AboutUs.Btn>
         </AboutUs.InvolvedSec>
         <AboutUs.OtherClubsSec>
+          <AboutUs.SecTitle>Other Clubs</AboutUs.SecTitle>
           <AboutUs.Description>
             Clubs at UW focused on environmental sustainability:
           </AboutUs.Description>
