@@ -283,18 +283,19 @@ export const ClubCards = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
 `;
 
 export const ClubCard = styled.div`
-  width: 226px;
-  height: 295px;
+  width: 236px;
+  height: 305px;
   background: #ffffff;
   box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 4rem;
+  margin: 0 3rem;
 `;
 
 export const ClubImage = styled.div`
