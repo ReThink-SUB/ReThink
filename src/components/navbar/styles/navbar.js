@@ -23,8 +23,11 @@ export const Title = styled.div`
   align-items: center;
 
   img {
-    width: 90px;
+    width: 80px;
     height: auto;
+    @media (max-width: 1000px) {
+      width: 70px;
+    }
   }
 `;
 

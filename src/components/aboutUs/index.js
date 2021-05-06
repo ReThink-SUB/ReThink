@@ -41,6 +41,10 @@ import {
   ClubDescription,
   LearnMore,
   Links,
+  IceCream,
+  Water,
+  ToothBrush,
+  SecCircles,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -86,6 +90,34 @@ AboutUs.Image = function AboutUsImage({
   );
 };
 
+AboutUs.IceCream = function AboutUsIceCream({ src, children, ...restProps }) {
+  return (
+    <IceCream {...restProps}>
+      <img src={`/images/${src}.png`} alt="about" />
+    </IceCream>
+  );
+};
+
+AboutUs.Water = function AboutUsWater({ src, children, ...restProps }) {
+  return (
+    <Water {...restProps}>
+      <img src={`/images/${src}.png`} alt="about" />
+    </Water>
+  );
+};
+
+AboutUs.ToothBrush = function AboutUsToothBrush({
+  src,
+  children,
+  ...restProps
+}) {
+  return (
+    <ToothBrush {...restProps}>
+      <img src={`/images/${src}.png`} alt="about" />
+    </ToothBrush>
+  );
+};
+
 AboutUs.Circles = function AboutUsCircles({
   top,
   left,
@@ -96,6 +128,14 @@ AboutUs.Circles = function AboutUsCircles({
     <Circles top={top} left={left} {...restProps}>
       <img src="/images/CirclePattern.png" alt="circles" />
     </Circles>
+  );
+};
+
+AboutUs.SecCircles = function AboutUsSecCircles({ children, ...restProps }) {
+  return (
+    <SecCircles {...restProps}>
+      <img src="/images/CirclePattern.png" alt="SecCircles" />
+    </SecCircles>
   );
 };
 

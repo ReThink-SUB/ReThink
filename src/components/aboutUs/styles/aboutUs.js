@@ -18,12 +18,21 @@ export const Side = styled.div`
   position: sticky;
   top: 16%;
   padding: 10rem 0;
+
+  @media (max-width: 1050px) {
+    display: none;
+    width: 0%;
+  }
 `;
 
 export const Links = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  ${"" /* @media (max-width: 1050px) {
+    display: none;
+  } */}
 `;
 
 export const Link = styled.p`
@@ -35,7 +44,7 @@ export const Link = styled.p`
   color: #c4c4c4;
   cursor: pointer;
   transition: 0.5s ease all;
-  margin: 3.2rem 0;
+  margin: 2.2rem 0;
   display: list-item; /* This has to be "list-item"                                               */
   list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
   list-style-position: inside;
@@ -44,6 +53,15 @@ export const Link = styled.p`
     font-size: 17px;
     color: #67923d;
   }
+
+  @media (max-width: 1200px) {
+    font-size: 14px;
+
+    &:hover {
+      font-size: 15px;
+      color: #67923d;
+    }
+  }
 `;
 
 export const Main = styled.div`
@@ -51,6 +69,14 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
+
+  @media (max-width: 1550px) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 1050px) {
+    width: 100%;
+  }
 `;
 
 export const AboutSec = styled.div`
@@ -58,13 +84,18 @@ export const AboutSec = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 95vh;
+  padding-top: 5rem;
+  padding-bottom: 10rem;
 `;
 
 export const Images = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const Image = styled.div`
@@ -78,6 +109,91 @@ export const Image = styled.div`
   }
 `;
 
+export const IceCream = styled.div`
+  position: absolute;
+  top: 2%;
+  left: 10%;
+
+  @media (max-width: 1200px) {
+    top: 8%;
+  }
+
+  img {
+    height: auto;
+    width: 200px;
+
+    @media (max-width: 1400px) {
+      width: 180px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 160px;
+    }
+
+    @media (max-width: 930px) {
+      width: 140px;
+    }
+  }
+`;
+
+export const Water = styled.div`
+  position: absolute;
+  top: 23%;
+  left: 51%;
+
+  @media (max-width: 1670px) {
+    left: 50%;
+  }
+
+  @media (max-width: 1200px) {
+    top: 32%;
+  }
+
+  img {
+    height: auto;
+    width: 120px;
+
+    @media (max-width: 1400px) {
+      width: 100px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 80px;
+    }
+  }
+`;
+
+export const ToothBrush = styled.div`
+  position: absolute;
+  top: 70%;
+  left: 18%;
+
+  @media (max-width: 1670px) {
+    left: 23%;
+  }
+
+  @media (max-width: 1200px) {
+    top: 58%;
+  }
+
+  img {
+    height: auto;
+    width: 200px;
+
+    @media (max-width: 1400px) {
+      width: 180px;
+    }
+
+    @media (max-width: 1200px) {
+      width: 160px;
+    }
+
+    @media (max-width: 930px) {
+      width: 140px;
+    }
+  }
+`;
+
 export const Circles = styled.div`
   position: absolute;
   top: ${({ top }) => top};
@@ -87,6 +203,45 @@ export const Circles = styled.div`
     width: 51px;
     height: auto;
   }
+
+  @media (max-width: 1670px) {
+    ${({ left }) => `left: calc(${left} + 70px)`};
+  }
+
+  @media (max-width: 1150px) {
+    ${({ left }) => `left: calc(${left} + 90px)`};
+  }
+`;
+
+export const SecCircles = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 26.1%;
+
+  img {
+    width: 51px;
+    height: auto;
+
+    @media (max-width: 1400px) {
+      width: 45px;
+    }
+  }
+
+  @media (max-width: 1700px) {
+    left: 29%;
+  }
+
+  @media (max-width: 1650px) {
+    left: 33%;
+  }
+
+  @media (max-width: 1450px) {
+    left: 37%;
+  }
+
+  @media (max-width: 1300px) {
+    left: 65%;
+  }
 `;
 
 export const Text = styled.div`
@@ -95,6 +250,24 @@ export const Text = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-right: 10rem;
+
+  @media (max-width: 1550px) {
+    padding-right: 8rem;
+  }
+
+  @media (max-width: 1150px) {
+    padding-right: 5rem;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 0 5rem;
+    text-align: center;
+  }
+
+  @media (max-width: 550px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -104,6 +277,14 @@ export const Title = styled.h1`
   letter-spacing: 0.035em;
   color: #67923d;
   margin-bottom: 2.5rem;
+
+  @media (max-width: 1299px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 930px) {
+    font-size: 36px;
+  }
 `;
 
 export const Heading = styled.h2`
@@ -113,6 +294,15 @@ export const Heading = styled.h2`
   letter-spacing: 0.035em;
   color: #585858;
   margin-bottom: 2rem;
+  line-height: 40px;
+
+  @media (max-width: 1299px) {
+    font-size: 29px;
+  }
+
+  @media (max-width: 930px) {
+    font-size: 26px;
+  }
 `;
 
 export const Description = styled.p`
@@ -123,6 +313,19 @@ export const Description = styled.p`
   line-height: 25px;
   margin-bottom: 2rem;
   width: 70%;
+
+  @media (max-width: 1550px) {
+    width: 80%;
+  }
+
+  @media (max-width: 1299px) {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  @media (max-width: 1150px) {
+    width: 100%;
+  }
 `;
 
 export const SecDescription = styled.p`
@@ -158,6 +361,10 @@ export const Card = styled.div`
   margin: 2rem 1rem;
   position: relative;
   padding: 1.5rem 0;
+
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 `;
 
 export const Frame = styled.div`
@@ -173,6 +380,10 @@ export const Frame = styled.div`
   border-radius: 30px;
   margin-right: 2.5rem;
 
+  @media (max-width: 1400px) {
+    width: 197px;
+  }
+
   img {
     width: 130px;
     height: 130px;
@@ -180,6 +391,11 @@ export const Frame = styled.div`
     object-fit: cover;
     filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
     margin-bottom: 1rem;
+
+    @media (max-width: 1400px) {
+      width: 120px;
+      height: 120px;
+    }
   }
 
   h2 {
@@ -209,6 +425,10 @@ export const TextArea = styled.div`
   justify-content: center;
   width: 50%;
 
+  @media (max-width: 1300px) {
+    display: none;
+  }
+
   p {
     font-style: normal;
     font-weight: 600;
@@ -216,6 +436,10 @@ export const TextArea = styled.div`
     line-height: 17px;
     letter-spacing: 0.025em;
     color: #6a6565;
+
+    @media (max-width: 1400px) {
+      font-size: 12px;
+    }
   }
 
   div {

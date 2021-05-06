@@ -14,9 +14,14 @@ export function AboutUsContainer() {
       <AboutUs.Main>
         <AboutUs.AboutSec>
           <AboutUs.Images>
-            <AboutUs.Image src="IceCream" width="200px" top="2%" left="10%" />
-            <AboutUs.Image src="Water" width="120px" top="23%" left="41%" />
-            <AboutUs.Image
+            <AboutUs.IceCream
+              src="IceCream"
+              width="200px"
+              top="2%"
+              left="10%"
+            />
+            <AboutUs.Water src="Water" width="120px" top="23%" left="41%" />
+            <AboutUs.ToothBrush
               src="ToothBrush"
               width="200px"
               top="53%"
@@ -63,7 +68,7 @@ export function AboutUsContainer() {
                 position="President"
                 color="#ffffff"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 YuYu is a fourth-year undergraduate student majoring in
                 economics with a minor in informatics, data science, and
@@ -85,7 +90,7 @@ export function AboutUsContainer() {
                 position="Developer"
                 color="#BBBBBD"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Aditi Joshi is a second-year undergraduate majoring in computer
                 science and minoring in environmental studies. For Aditi, the
@@ -108,7 +113,7 @@ export function AboutUsContainer() {
                 position="UI/UX Designer"
                 color="#BBBBBD"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Leary is a third-year undergraduate student majoring in
                 community, environment and planning while minoring in
@@ -130,7 +135,7 @@ export function AboutUsContainer() {
                 position="Researcher"
                 color="#ffffff"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Devon is a fourth-year undergraduate student majoring in
                 political science with a minor in environmental studies. Devon
@@ -149,7 +154,7 @@ export function AboutUsContainer() {
                 position="Researcher"
                 color="#ffffff"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Grace is a fourth-year undergraduate student majoring in
                 international studies with a minor in informatics and
@@ -170,7 +175,7 @@ export function AboutUsContainer() {
                 position="Researcher"
                 color="#BBBBBD"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Kailin is a second-year undergraduate student majoring in
                 business and minoring in environmental studies. Kailin became
@@ -191,7 +196,7 @@ export function AboutUsContainer() {
                 position="Developer"
                 color="#BBBBBD"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Julius is a first-year undergraduate student who is planning to
                 major in informatics. Because Julius wanted to contribute and
@@ -213,7 +218,7 @@ export function AboutUsContainer() {
                 position="Marketing"
                 color="#ffffff"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Paul is a fourth-year undergraduate student majoring in
                 communications. He joined the SUB Initiative marketing team
@@ -236,7 +241,7 @@ export function AboutUsContainer() {
                 position="UI/UX Designer"
                 color="#ffffff"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Brendan is a third-year undergraduate student majoring in
                 informatics and exploring human-computer interaction. He was
@@ -257,7 +262,7 @@ export function AboutUsContainer() {
                 position="Developer"
                 color="#BBBBBD"
               ></AboutUs.Frame>
-              <AboutUs.Circles top="40%" left="25.1%" />
+              <AboutUs.SecCircles />
               <AboutUs.TextArea>
                 Kayla is a fourth-year undergraduate student majoring in
                 informatics. Kayla joined the SUB Initiative to help encourage
