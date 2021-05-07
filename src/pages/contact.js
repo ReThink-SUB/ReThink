@@ -1,11 +1,13 @@
 import React from "react";
-import { HeaderContainer, ContactContainer } from "../containers";
+import { NavbarContainer, ContactContainer } from "../containers";
+import Footer from "../components/footer/index";
 
 export default function Contact() {
   return (
     <>
-      <HeaderContainer />
+      <NavbarContainer />
       <ContactContainer />
+      <Footer />
     </>
   );
 }

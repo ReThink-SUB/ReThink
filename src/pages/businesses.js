@@ -1,11 +1,13 @@
 import React from "react";
-import { BusinessesContainer, HeaderContainer } from "../containers";
+import { BusinessesContainer, NavbarContainer } from "../containers";
+import Footer from "../components/footer/index";
 
 export default function Businesses() {
   return (
     <div>
-      <HeaderContainer />
+      <NavbarContainer />
       <BusinessesContainer />
+      <Footer />
     </div>
   );
 }

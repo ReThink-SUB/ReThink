@@ -1,11 +1,13 @@
 import React from "react";
-import { SignUpContainer, HeaderContainer } from "../containers";
+import { SignUpContainer, NavbarContainer } from "../containers";
+import Footer from "../components/footer/index";
 
 export default function SignUp() {
   return (
     <>
-      <HeaderContainer />
+      <NavbarContainer />
       <SignUpContainer />
+      <Footer />
     </>
   );
 }

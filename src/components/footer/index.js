@@ -50,7 +50,6 @@ function FooterSocials() {
     );
 }
 
-// TODO: align text left (not working for some reason)
 function FooterMenu() {
     return (
         <div className="footer-menu">
