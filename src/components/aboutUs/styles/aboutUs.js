@@ -242,6 +242,10 @@ export const SecCircles = styled.div`
   @media (max-width: 1300px) {
     left: 65%;
   }
+
+  @media (max-width: 800px) {
+    left: 75%;
+  }
 `;
 
 export const Text = styled.div`
@@ -337,13 +341,21 @@ export const SecDescription = styled.p`
   color: #6a6565;
   margin-bottom: 2.5rem;
   width: 40%;
+
+  @media (max-width: 800px) {
+    width: 70%;
+  }
 `;
 
 export const SubSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: rem 0;
+
+  @media (max-width: 800px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const Cards = styled.div`
@@ -365,6 +377,10 @@ export const Card = styled.div`
   @media (max-width: 1300px) {
     justify-content: center;
   }
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const Frame = styled.div`
@@ -384,6 +400,16 @@ export const Frame = styled.div`
     width: 197px;
   }
 
+  @media (max-width: 1300px) {
+    width: 230px;
+    padding: 2.3rem;
+  }
+
+  @media (max-width: 750px) {
+    width: 207px;
+    padding: 1.9rem 0;
+  }
+
   img {
     width: 130px;
     height: 130px;
@@ -395,6 +421,11 @@ export const Frame = styled.div`
     @media (max-width: 1400px) {
       width: 120px;
       height: 120px;
+    }
+
+    @media (max-width: 1300px) {
+      width: 130px;
+      height: 130px;
     }
   }
 
