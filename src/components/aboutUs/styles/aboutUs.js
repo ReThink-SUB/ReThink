@@ -536,6 +536,7 @@ export const OtherClubsSec = styled.div`
 
 export const ClubCards = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
@@ -550,7 +551,12 @@ export const ClubCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 3rem;
+  margin: 3rem;
+
+  @media (max-width: 400px) {
+    width: 226px;
+    height: 293px;
+  }
 `;
 
 export const ClubImage = styled.div`
@@ -612,6 +618,7 @@ export const LocalOrgsSec = styled.div`
 export const Organizations = styled.div`
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
