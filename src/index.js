@@ -5,6 +5,7 @@ import App from "./App";
 import { GlobalStyles } from "./global-styles";
 import { firebaseApp } from "./firebase";
 import { FirebaseContext } from "./context/firebase";
+import 'bootstrap/dist/css/bootstrap.css';
 
 render(
   <>
