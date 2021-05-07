@@ -108,7 +108,7 @@ LandingPage.Links = function LandingPageLinks({ children, ...restProps }) {
 LandingPage.Link = function LandingPageLink({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
-      <Link {...restProps}>{children}</Link>;
+      <Link {...restProps}>{children}</Link>
     </ReactRouterLink>
   );
 };
