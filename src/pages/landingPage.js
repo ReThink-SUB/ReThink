@@ -1,10 +1,15 @@
 import React from "react";
-import { LandingPageContainer } from "../containers";
+import { LandingPageContainer, NavbarContainer } from "../containers";
+import Footer from "../components/footer/index";
+import Businesses from "../components/businesses/index";
 
-export default function Contact() {
+export default function LandingPage() {
   return (
     <>
+      <NavbarContainer />
       <LandingPageContainer />
+      <Businesses />
+      <Footer />
     </>
   );
 }
