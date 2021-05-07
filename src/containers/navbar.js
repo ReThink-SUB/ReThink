@@ -44,7 +44,7 @@ export function NavbarContainer() {
       <Navbar.Links>
         <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
-        <Navbar.Link to={ROUTES.SIGNUP}>Criteria </Navbar.Link>
+        <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
         <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button>
       </Navbar.Links>

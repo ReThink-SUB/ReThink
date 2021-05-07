@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
+import { NavbarContainer } from "../containers";
 import Criteria from "../components/criteria";
 
 function CriteriaPage() {
-   return (
-        <Criteria/>
-   )
+  return (
+    <>
+      <NavbarContainer />
+      <Criteria />
+    </>
+  );
 }
 
 export default CriteriaPage;
