@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink as ReactRouterLink } from "react-router-dom";
+import { Link as ReactRouterLink } from "react-router-dom";
 
-import { Container, Logo, Links, Link, Signup } from "./styles/navbar";
+import { Container, Links, Title, Link, Button } from "./styles/navbar";
 
 export default function Navbar({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 
-Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
+Navbar.Title = function NavbarTitle({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
       <Title {...restProps}>
@@ -23,20 +23,16 @@ Navbar.Links = function NavbarLinks({ children, ...restProps }) {
 
 Navbar.Link = function NavbarLink({ to, children, ...restProps }) {
   return (
-    <ReactRouterLink to={to} activeClassName="active">
-      <Link {...restProps}>{children}</Link>;
+    <ReactRouterLink to={to}>
+      <Link {...restProps}>{children}</Link>
     </ReactRouterLink>
   );
 };
 
-Navbar.Signup = function NavBarSignup({ to, children, ...restProps }) {
+Navbar.Button = function NavbarButton({ to, children, ...restProps }) {
   return (
-    <Signup {...restProps}>
-      <ReactRouterLink to={to}>
-        <button>
-          PROMOTE BUSINESS <i class="fas fa-caret-right"></i>
-        </button>
-      </ReactRouterLink>
-    </Signup>
+    <ReactRouterLink to={to}>
+      <Button {...restProps}>{children}</Button>;
+    </ReactRouterLink>
   );
 };

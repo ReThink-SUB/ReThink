@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 100%;
-  height: 9vh;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,21 +44,26 @@ export const Links = styled.div`
   }
 `;
 
-export const Link = styled.a`
-  font-size: .75em;
-  font-weight: 600;
-  color: #000000;
-  letter-spacing: .8px;
-  margin-bottom: 2.5px;
+export const Link = styled.h2`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 21px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #3e3b3b;
+  text-decoration: none;
+  transition: 0.5s ease all;
 
   &:hover {
-    color: #67923D;
+    color: #00cc92;
+    text-decoration: none;
   }
 `;
 
-export const Signup = styled.div`
+export const Button = styled.button`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   font-style: normal;
@@ -72,24 +77,7 @@ export const Signup = styled.div`
   transition: 0.5s ease all;
   background: #67923d;
 
-  button {
-    width: 16.5em;
-    height: 2.8em;
-    color: #ffffff;
-    border-radius: 6px;
-    font-size: .7em;
-    font-weight: 700;
-    letter-spacing: .5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #67923D;
-
-    i {
-      font-size: 1.2em;
-      color: #ffffff;
-      margin-left: 1em;
-    }
+  &:hover {
+    background: #00cc92;
   }
 `;
