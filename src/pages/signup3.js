@@ -1,10 +1,10 @@
 import React from "react";
-import { SignUp3Container, HeaderContainer } from "../containers";
+import { SignUp3Container, NavbarContainer } from "../containers";
 
 export default function SignUp2() {
   return (
     <>
-      <HeaderContainer />
+      <NavbarContainer />
       <SignUp3Container />
     </>
   );

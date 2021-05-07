@@ -9,12 +9,11 @@ export default function Navbar({ children, ...restProps }) {
 
 Navbar.Logo = function NavbarLogo({ to, children, ...restProps }) {
   return (
-    <Logo {...restProps}>
-      <ReactRouterLink to={to} activeClassName="active">
-        <Link {...restProps}>{children}</Link>;
-        <img src={process.env.PUBLIC_URL + '/images/sub_logo.png'}/>
-      </ReactRouterLink>
-    </Logo>
+    <ReactRouterLink to={to}>
+      <Title {...restProps}>
+        <img src="/images/Logo.png" alt="Logo" />
+      </Title>
+    </ReactRouterLink>
   );
 };
 
