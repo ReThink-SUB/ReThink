@@ -52,10 +52,12 @@ export const Link = styled.h2`
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #3e3b3b;
+  text-decoration: none;
   transition: 0.5s ease all;
 
   &:hover {
     color: #00cc92;
+    text-decoration: none;
   }
 `;
 

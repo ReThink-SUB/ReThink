@@ -24,7 +24,7 @@ Navbar.Links = function NavbarLinks({ children, ...restProps }) {
 Navbar.Link = function NavbarLink({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
-      <Link {...restProps}>{children}</Link>;
+      <Link {...restProps}>{children}</Link>
     </ReactRouterLink>
   );
 };

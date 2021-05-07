@@ -63,6 +63,10 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     button {
