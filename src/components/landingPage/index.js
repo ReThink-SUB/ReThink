@@ -17,6 +17,8 @@ import {
   CardThree,
   Ellipse,
   SmallEllipse,
+  CirclePattern1,
+  CirclePattern2,
 } from "./styles/landingPage";
 
 export default function LandingPage({ children, ...restProps }) {
@@ -153,3 +155,25 @@ LandingPage.SmallEllipse = function LandingPageSmallEllipse({
     </SmallEllipse>
   );
 };
+
+LandingPage.CirclePattern1 = function LandingPageCirclePattern1({
+  children,
+  ...restProps
+}) {
+  return (
+    <CirclePattern1 {...restProps}>
+      <img src="/images/CirclePattern.png" alt="Circle Pattern" />
+    </CirclePattern1>
+  )
+}
+
+LandingPage.CirclePattern2 = function LandingPageCirclePattern2({
+  children,
+  ...restProps
+}) {
+  return (
+    <CirclePattern2 {...restProps}>
+      <img src="/images/CirclePattern.png" alt="Circle Pattern" />
+    </CirclePattern2>
+  )
+}

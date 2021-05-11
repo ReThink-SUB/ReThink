@@ -1,13 +1,13 @@
 import React from "react";
 import { LandingPage } from "../components";
-import * as ROUTES from "../constants/routes";
+// import * as ROUTES from "../constants/routes";
 
 export function LandingPageContainer() {
   return (
     <>
       <LandingPage>
         <LandingPage.LeftSect>
-          <LandingPage.Navbar>
+          {/* <LandingPage.Navbar>
             <LandingPage.Links>
               <LandingPage.Link to={ROUTES.LANDING}>home</LandingPage.Link>
               <LandingPage.Link to={ROUTES.BUSINESSES}>
@@ -21,16 +21,15 @@ export function LandingPageContainer() {
               <LandingPage.Link to={ROUTES.CONTACT}>contact</LandingPage.Link>
               <LandingPage.Link to={ROUTES.SIGNUP}>sign up</LandingPage.Link>
             </LandingPage.Links>
-          </LandingPage.Navbar>
-          <LandingPage.Title>SUB</LandingPage.Title>
+          </LandingPage.Navbar> */}
+          {/* <LandingPage.Title>SUB</LandingPage.Title> */}
           <LandingPage.SubTitle>
-            Shop and dine at climate concious businesses
+            Sustainable consumerism made <em style={{color: "black"}}>easy</em>
           </LandingPage.SubTitle>
           <LandingPage.Description>
-            Find local and online businesses rethinking traditional consumerism
-            and shifting towards sustainable business practices{" "}
+            Shop, eat, and dine at climate concious businesses in your area {" "}
           </LandingPage.Description>
-          <LandingPage.Button>Find Businesses</LandingPage.Button>
+          {/* <LandingPage.Button>Find Businesses</LandingPage.Button> */}
         </LandingPage.LeftSect>
         <LandingPage.RightSect>
           <LandingPage.CardOne
@@ -38,18 +37,20 @@ export function LandingPageContainer() {
             label="Ballard Market"
             type="Clothing Store $$$"
           />
-          <LandingPage.CardTwo
+          {/* <LandingPage.CardTwo
             src="Corner42.png"
             label="Corner 42"
             type="Grocery Store $$"
-          />
+          /> */}
           <LandingPage.CardThree
             src="IndianMarket.png"
             label="Indian Market"
             type="Grocery Store $$"
           />
-          <LandingPage.Ellipse />
-          <LandingPage.SmallEllipse />
+          {/* <LandingPage.Ellipse />
+          <LandingPage.SmallEllipse /> */}
+          <LandingPage.CirclePattern1 />
+          <LandingPage.CirclePattern2 />
         </LandingPage.RightSect>
       </LandingPage>
     </>

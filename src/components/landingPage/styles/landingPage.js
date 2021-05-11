@@ -20,7 +20,7 @@ export const RightSect = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: rgba(220, 255, 245, 0.85);
+  // background: rgba(220, 255, 245, 0.85);
   position: relative;
 `;
 
@@ -54,8 +54,8 @@ export const Link = styled.h2`
 
 export const CardOne = styled.div`
   position: absolute;
-  top: 11%;
-  right: 18%;
+  top: 23%;
+  right: 100%;
   width: 265px;
   height: 340px;
   display: flex;
@@ -171,8 +171,8 @@ export const CardTwo = styled.div`
 
 export const CardThree = styled.div`
   position: absolute;
-  top: 55%;
-  right: 15%;
+  top: 13%;
+  right: 45%;
   width: 265px;
   height: 340px;
   display: flex;
@@ -263,9 +263,9 @@ export const Title = styled.h2`
 export const SubTitle = styled.h3`
   font-weight: 800;
   font-size: 56px;
-  color: #00cc92;
-  width: 50%;
-  margin-bottom: 2.5rem;
+  color: #67923D;
+  width: 45%;
+  margin: 3em 0rem 2.5rem 5rem;
 
   @media (max-width: 1650px) {
     font-size: 52px;
@@ -277,8 +277,8 @@ export const Description = styled.p`
   font-size: 19px;
   color: #828282;
   line-height: 30px;
-  width: 50%;
-  margin-bottom: 3rem;
+  width: 35%;
+  margin: 0em 0em 3rem 5rem;
 
   @media (max-width: 1650px) {
     font-size: 18px;
@@ -303,4 +303,18 @@ export const Button = styled.button`
   &:hover {
     background: #00cc92;
   }
+`;
+
+export const CirclePattern1 = styled.div`
+  position: absolute;
+  top: 15%;
+  right: 100%;
+  z-index: 1;
+`;
+
+export const CirclePattern2 = styled.div`
+  position: absolute;
+  top: 60%;
+  right: 75%;
+  z-index: 1;
 `;
