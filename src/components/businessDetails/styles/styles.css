@@ -1,0 +1,73 @@
+.content {
+  margin: 2em 12em !important;
+}
+
+h1 {
+  font-weight: 800 !important;
+  margin-top: 2em !important;
+}
+
+.breadcrumb {
+  background-color: white !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.breadcrumb li, .breadcrumb a {
+  color: #67923D !important;
+}
+
+.breadcrumb a:hover {
+  color: #466824 !important;
+}
+
+.eco {
+  color: #6A6565;
+  font-weight: 700;
+  margin: 2em 3.25em;
+  margin-right: .6em;
+}
+
+.main-img {
+  width: 32%;
+  margin-right: 3.5em;
+}
+
+.bar {
+  display: inline-block;
+  width: 2.3em;
+  height: .12em;
+  background-color: #67923D;
+  margin-left: .6em;
+  margin-bottom: .25em;
+}
+
+.main-details {
+  margin-top: 3em;
+  line-height: 2em;
+}
+
+.buttons {
+  margin-top: 3em;
+}
+
+.buttons img {
+  width: 2em;
+}
+
+button {
+  margin-right: .8em !important;
+  border-radius: 10px !important;
+  padding: .6em 1.6em !important;
+  box-shadow: 0 5px 8px #6a65653f;
+}
+
+button:hover {
+  transition: all 0.4s ease;
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(.98);
+  transition: transform 0.2s ease;
+}

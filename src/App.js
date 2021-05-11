@@ -4,6 +4,7 @@ import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Loading } from "./components";
 import { BusinessContext } from "./context/business";
+import DetailPage from "./pages/businessDetails";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
@@ -145,6 +146,10 @@ export default function App() {
               </Route>
               <Route path={ROUTES.CRITERIA} exact>
                 <Criteria />
+              </Route>
+              {/* FOR DEBUGGING ONLY */}
+              <Route path={'/details'} exact>
+                <DetailPage />
               </Route>
               <Route
                 path={ROUTES.TEAM}
