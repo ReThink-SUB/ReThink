@@ -3,8 +3,15 @@
 }
 
 h1 {
-  font-weight: 800 !important;
+  color: #3E3B3B;
+  font-weight: 900 !important;
   margin-top: 2em !important;
+}
+
+h2 {
+  color: #3E3B3B;
+  font-weight: 900 !important;
+  margin-top: 3em !important;
 }
 
 .breadcrumb {
@@ -13,11 +20,11 @@ h1 {
   padding: 0 !important;
 }
 
-.breadcrumb li, .breadcrumb a {
+.breadcrumb a {
   color: #67923D !important;
 }
 
-.breadcrumb a:hover {
+.breadcrumb a:hover, .breadcrumb li {
   color: #466824 !important;
 }
 
@@ -29,26 +36,28 @@ h1 {
 }
 
 .main-img {
-  width: 32%;
+  width: 34%;
+  object-fit: contain;
   margin-right: 3.5em;
 }
 
 .bar {
   display: inline-block;
-  width: 2.3em;
+  width: 4.5em;
   height: .12em;
   background-color: #67923D;
-  margin-left: .6em;
+  margin-left: 1.45em !important;
   margin-bottom: .25em;
 }
 
 .main-details {
   margin-top: 3em;
   line-height: 2em;
+  align-items: flex-start;
 }
 
 .buttons {
-  margin-top: 3em;
+  margin: 3em 0;
 }
 
 .buttons img {
@@ -60,9 +69,12 @@ button {
   border-radius: 10px !important;
   padding: .6em 1.6em !important;
   box-shadow: 0 5px 8px #6a65653f;
+  transition: transform 0.4s ease;
+  transform: scale(1);
 }
 
 button:hover {
+  box-shadow: 0 5px 8px #6a656556;
   transition: all 0.4s ease;
   transform: scale(1.02);
 }
@@ -70,4 +82,56 @@ button:hover {
 button:active {
   transform: scale(.98);
   transition: transform 0.2s ease;
+}
+
+.card {
+  border-radius: .5em !important;
+  width: 12.6em;
+  box-shadow: 0 5px 8px #6a65652a;
+  margin-top: 5em;
+}
+
+.card > p {
+  color: #6A6565;
+  font-size: .75em;
+  line-height: 1.6em;
+  padding: 1.6em;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1.3em;
+  color: white;
+  background-color: #67923D !important;
+  border-radius: .5em !important;
+  width: 100%;
+  height: 100%;
+  padding: 1.6em 1.25em !important;
+}
+
+.card img {
+  margin-top: -1em;
+  margin-left: 10.8em;
+}
+
+.card em {
+  font-size: 2em;
+  margin-right: .6em;
+  font-weight: 300 !important;
+}
+
+.card a {
+  color: #6A6565;
+  font-size: .65em;
+  text-decoration: underline;
+  margin-top: 4.5em;
+  margin-bottom: 2em;
+}
+
+.card a:hover {
+  color: #3b3b3b;
+  font-weight: 500;
+  text-decoration: underline;
 }

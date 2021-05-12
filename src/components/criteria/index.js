@@ -5,7 +5,6 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { NavbarContainer } from "../../containers/navbar";
 import "./styles/criteria.css";
 
 export default function Container() {
@@ -72,7 +71,6 @@ export default function Container() {
 
   return (
     <div className="container">
-      {/* <NavbarContainer/> */}
       <div className="text-content">
         <h1>
           So how do we know businesses are <em>actually</em> being sustainable?

@@ -2,6 +2,13 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import "./styles/styles.css";
 
 export default function Details(props) {
+  let impactKeys = Array.from(props.cards.keys());
+  let impact = props.cards;
+  let cardNum = 0;
+  let cards = impactKeys.map((key) => {
+    cardNum++;
+    return <ImpactCard key={key} name={key} desc={impact.get(key)} num={cardNum} />
+  });
   return (
     <div className="content">
       <h1>{props.name}</h1>
@@ -27,11 +34,38 @@ export default function Details(props) {
             <button><img src={process.env.PUBLIC_URL + "/images/insta.png"}></img></button>
             <button><img src={process.env.PUBLIC_URL + "/images/fb.png"}></img></button>
           </div>
+          <p><strong>Hours:</strong></p>
+          <p>
+          Tuesday:	1–9PM <br/>
+          Wednesday:	1–9PM <br/>
+          Thursday:	1–9PM <br/>
+          Friday:	1–9PM <br/>
+          Saturday:	1–9PM <br/>
+          Sunday:	1–9PM <br/>
+          Monday:	1–9PM <br/>
+          </p>
         </div>
       </div>
-      <h1>
+      <h2>
         Sustainability Impact <div className="bar"></div>
-      </h1>
+      </h2>
+      <div className="d-flex flex-row">
+        {cards}
+      </div>
+    </div>
+  );
+}
+
+function ImpactCard(props) {
+  return (
+    <div className="card">
+      <img src="/images/CirclePattern.png" alt="Circle pattern" className="circle-pattern-img"/>
+      <div className="card-header d-flex flex-row justify-content-between">
+        <p><em>0{props.num}</em></p>
+        <p><strong>{props.name}</strong></p>
+      </div>
+      <p>{props.desc}</p>
+      <a href="#">See the checklist</a>
     </div>
   );
 }
