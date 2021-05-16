@@ -3,11 +3,11 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 90vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #ffffff;
+  // background: #ffffff;
   padding: 0 5%;
   padding-top: 1.5rem;
   ${"" /* overflow-x: hidden; */}
@@ -17,23 +17,16 @@ export const Container = styled.div`
 
 export const Plant = styled.div`
   position: absolute;
-  top: -40%;
-  left: 20%;
-
+  height: 100%;
+  width: 100%;
+  z-index: -1;
   img {
-    height: 490px;
-    width: auto;
-    transform: rotate(-123.84deg);
-
-    @media (max-width: 1350px) {
-      display: none;
-    }
+    bottom: 0;
+    height: 80%;
+    position: absolute;
+    margin-left: 80%
   }
 
-  @media (max-width: 1400px) {
-    top: -38%;
-    left: 35%;
-  }
 `;
 
 export const Slogan = styled.h2`
@@ -201,7 +194,7 @@ export const Button = styled.div`
   justify-content: center;
   z-index: 2;
   margin-top: 2.5rem;
-
+  padding-bottom: 3em;
   button {
     width: 128px;
     height: 41px;
