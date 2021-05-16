@@ -29,7 +29,9 @@ export const Links = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-
+  a {
+    justify-content: left;
+  }
   ${"" /* @media (max-width: 1050px) {
     display: none;
   } */}
@@ -48,7 +50,7 @@ export const LinkS = styled.p`
   display: list-item; /* This has to be "list-item"                                               */
   list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
   list-style-position: inside;
-
+ 
   &:hover {
     font-size: 17px;
     color: #67923d;

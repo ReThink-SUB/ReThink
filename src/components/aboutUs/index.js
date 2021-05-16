@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
-
+import "./styles/style.css";
 import {
   Container,
   Side,
@@ -48,7 +48,7 @@ import {
   SecCircles,
 } from "./styles/aboutUs";
 
-import "./styles/style.css";
+
 
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
