@@ -1,5 +1,6 @@
 import React from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
+// import { Link as ReactRouterLink } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 
 import {
   Container,
@@ -34,7 +35,7 @@ import {
   ImageSec,
   TextSec,
   Donate,
-  Link,
+  LinkS,
   Image,
   ClubImage,
   ClubName,
@@ -59,8 +60,8 @@ AboutUs.Links = function AboutUsLinks({ children, ...restProps }) {
   return <Links {...restProps}>{children}</Links>;
 };
 
-AboutUs.Link = function AboutUsLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+AboutUs.Link = function AboutUsLink({ children, myID, ...restProps }) {
+  return <Link {...restProps} to={myID} ><LinkS>{children}</LinkS></Link>;
 };
 
 AboutUs.Main = function AboutUsMain({ children, ...restProps }) {

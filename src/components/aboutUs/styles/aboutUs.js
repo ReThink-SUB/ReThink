@@ -35,7 +35,7 @@ export const Links = styled.div`
   } */}
 `;
 
-export const Link = styled.p`
+export const LinkS = styled.p`
   font-style: normal;
   font-weight: bold;
   font-size: 15px;
