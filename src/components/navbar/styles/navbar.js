@@ -21,7 +21,7 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding-top: 2em;
   img {
     width: 80px;
     height: auto;

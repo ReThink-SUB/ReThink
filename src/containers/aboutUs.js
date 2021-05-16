@@ -6,9 +6,9 @@ export function AboutUsContainer() {
     <AboutUs>
       <AboutUs.Side>
         <AboutUs.Links>
-          <AboutUs.Link myID="/about/#about">About Us!</AboutUs.Link>
-          <AboutUs.Link myID="/about/#team">Sub Team!</AboutUs.Link>
-          <AboutUs.Link myID="/about/#involved">Get Involved!</AboutUs.Link>
+          <AboutUs.Link myID="/about/#about">About Us</AboutUs.Link>
+          <AboutUs.Link myID="/about/#team">Sub Team</AboutUs.Link>
+          <AboutUs.Link myID="/about/#involved">Get Involved</AboutUs.Link>
         </AboutUs.Links>
       </AboutUs.Side>
       <AboutUs.Main>
@@ -277,7 +277,7 @@ export function AboutUsContainer() {
           </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec>
-          <AboutUs.Title> <span id = "involved">Get Involved</span></AboutUs.Title>
+          <AboutUs.Title id = "involved">Get Involved</AboutUs.Title>
           <AboutUs.Heading>How to get involved</AboutUs.Heading>
           <AboutUs.SecTitle>SUB Team</AboutUs.SecTitle>
           <AboutUs.Description>
