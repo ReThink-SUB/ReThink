@@ -6,9 +6,9 @@ export function AboutUsContainer() {
     <AboutUs>
       <AboutUs.Side>
         <AboutUs.Links>
-          <AboutUs.Link>About Us</AboutUs.Link>
-          <AboutUs.Link>Sub Team</AboutUs.Link>
-          <AboutUs.Link>Get Involved</AboutUs.Link>
+          <AboutUs.Link myID="/about/#about">About Us</AboutUs.Link>
+          <AboutUs.Link myID="/about/#team">Sub Team</AboutUs.Link>
+          <AboutUs.Link myID="/about/#involved">Get Involved</AboutUs.Link>
         </AboutUs.Links>
       </AboutUs.Side>
       <AboutUs.Main>
@@ -32,7 +32,7 @@ export function AboutUsContainer() {
             <AboutUs.Circles top="55%" left="47%" />
           </AboutUs.Images>
           <AboutUs.Text>
-            <AboutUs.Title>About Us</AboutUs.Title>
+            <AboutUs.Title id="about">About Us</AboutUs.Title>
             <AboutUs.Heading>Who we are</AboutUs.Heading>
             <AboutUs.Description>
               A community of passionate University of Washington Seattle
@@ -54,7 +54,7 @@ export function AboutUsContainer() {
           </AboutUs.Text>
         </AboutUs.AboutSec>
         <AboutUs.SubSec>
-          <AboutUs.Title>SUB Team</AboutUs.Title>
+          <AboutUs.Title><span id = "team">SUB Team</span></AboutUs.Title>
           <AboutUs.SecDescription>
             A ragtag team of UW students deciding to give a damn about the
             environment, in the most enjoyable way possible.
@@ -64,7 +64,7 @@ export function AboutUsContainer() {
               <AboutUs.Frame
                 background="#D4E9D6"
                 src="yuyu_madigan"
-                person="Yuyu Madigan"
+                person="YuYu Madigan"
                 position="President"
                 color="#ffffff"
               ></AboutUs.Frame>
@@ -277,7 +277,7 @@ export function AboutUsContainer() {
           </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec>
-          <AboutUs.Title>Get Involved</AboutUs.Title>
+          <AboutUs.Title id = "involved">Get Involved</AboutUs.Title>
           <AboutUs.Heading>How to get involved</AboutUs.Heading>
           <AboutUs.SecTitle>SUB Team</AboutUs.SecTitle>
           <AboutUs.Description>

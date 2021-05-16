@@ -30,7 +30,6 @@ Contact.Slogan = function ContactSlogan({ children, ...restProps }) {
 Contact.Inputs = function ContactInputs({ children, ...restProps }) {
   return (
     <Inputs {...restProps}>
-      <img src="/images/TallPlant.png" alt="TallPlant" />
       {children}
     </Inputs>
   );
