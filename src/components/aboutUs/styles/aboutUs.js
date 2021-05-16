@@ -71,7 +71,7 @@ export const Main = styled.div`
   padding: 0 2rem;
 
   @media (max-width: 1550px) {
-    padding: 0 1rem;
+    padding: 0 3rem;
   }
 
   @media (max-width: 1050px) {

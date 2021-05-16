@@ -48,6 +48,8 @@ import {
   SecCircles,
 } from "./styles/aboutUs";
 
+import "./styles/style.css";
+
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
@@ -219,7 +221,13 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 };
 
 AboutUs.Btn = function AboutUsBtn({ children, ...restProps }) {
-  return <Btn {...restProps}>{children}</Btn>;
+  return (
+    <a href = "http://www.bit.ly/rethink-sub-app" target = "_new" {...restProps}>
+      <Btn>
+          {children}
+      </Btn>
+    </a>
+    );
 };
 
 AboutUs.OtherClubsSec = function AboutUsOtherClubsSec({
