@@ -10,7 +10,7 @@ export const Container = styled.div`
   z-index: 5;
   position: relative;
 
-  @media (min-width: 1300px) {
+  @media (min-width: 800px) {
     justify-content: space-between;
     padding: 0 6rem;
   }
@@ -25,7 +25,7 @@ export const Title = styled.div`
   img {
     width: 80px;
     height: auto;
-    @media (max-width: 1000px) {
+    @media (max-width: 800px) {
       width: 70px;
     }
   }
@@ -37,7 +37,7 @@ export const Links = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: 1300px) {
+  @media (min-width: 800px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
