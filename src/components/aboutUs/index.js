@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 import "./styles/style.css";
 import {
   Container,
@@ -48,8 +48,6 @@ import {
   SecCircles,
 } from "./styles/aboutUs";
 
-
-
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
@@ -63,7 +61,11 @@ AboutUs.Links = function AboutUsLinks({ children, ...restProps }) {
 };
 
 AboutUs.Link = function AboutUsLink({ children, myID, ...restProps }) {
-  return <Link {...restProps} to={myID} ><LinkS>{children}</LinkS></Link>;
+  return (
+    <Link {...restProps} to={myID}>
+      <LinkS>{children}</LinkS>
+    </Link>
+  );
 };
 
 AboutUs.Main = function AboutUsMain({ children, ...restProps }) {
@@ -197,6 +199,7 @@ AboutUs.Frame = function AboutUsFrame({
 };
 
 AboutUs.TextArea = function AboutUsTextArea({
+  linkedin,
   description,
   children,
   ...restProps
@@ -205,7 +208,9 @@ AboutUs.TextArea = function AboutUsTextArea({
     <TextArea {...restProps}>
       <p>{children}</p>
       <div>
-        <img src="/images/Linkedin.png" alt="Linkedin" />
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <img src="/images/Linkedin.png" alt="Linkedin" />
+        </a>
         <img src="/images/Mail.png" alt="Email" />
       </div>
     </TextArea>
@@ -222,12 +227,10 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 
 AboutUs.Btn = function AboutUsBtn({ children, ...restProps }) {
   return (
-    <a href = "http://www.bit.ly/rethink-sub-app" target = "_new" {...restProps}>
-      <Btn>
-          {children}
-      </Btn>
+    <a href="http://www.bit.ly/rethink-sub-app" target="_new" {...restProps}>
+      <Btn>{children}</Btn>
     </a>
-    );
+  );
 };
 
 AboutUs.OtherClubsSec = function AboutUsOtherClubsSec({

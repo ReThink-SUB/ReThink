@@ -42,6 +42,10 @@ export const Links = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  @media (max-width: 950px) {
+    width: 65%;
+  }
 `;
 
 export const Link = styled.h2`

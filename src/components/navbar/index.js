@@ -11,7 +11,11 @@ Navbar.Title = function NavbarTitle({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
       <Title {...restProps}>
-        <img src="/images/Logo.png" alt="Logo" />
+        <img
+          onClick={() => window.location.reload()}
+          src="/images/Logo.png"
+          alt="Logo"
+        />
       </Title>
     </ReactRouterLink>
   );
