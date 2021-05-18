@@ -12,20 +12,10 @@ export function NavbarContainer() {
       <Burger.Menu open={open} setOpen={setOpen}>
         <Burger.Heading>Hi there!</Burger.Heading>
         <Burger.Links>
-          <Burger.Link
-            onClick={() => window.location.reload()}
-            open={open}
-            setOpen={setOpen}
-            to={ROUTES.SIGNUP}
-          >
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
             Home
           </Burger.Link>
-          <Burger.Link
-            onClick={() => window.location.reload()}
-            open={open}
-            setOpen={setOpen}
-            to={ROUTES.BUSINESSES}
-          >
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BUSINESSES}>
             Find Businesses
           </Burger.Link>
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.ABOUT}>
@@ -53,7 +43,6 @@ export function NavbarContainer() {
       </Burger.Menu>
       <Navbar.Links>
         <Navbar.Link
-          onClick={() => window.location.reload()}
           to={ROUTES.BUSINESSES}
         >
           Find Businesses
