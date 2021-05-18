@@ -17,6 +17,8 @@ import {
   CardThree,
   Ellipse,
   SmallEllipse,
+  LeftCard,
+  RightCard,
   CirclePattern1,
   CirclePattern2,
 } from "./styles/landingPage";
@@ -38,6 +40,47 @@ LandingPage.RightSect = function LandingPageRightSect({
 }) {
   return <RightSect {...restProps}>{children}</RightSect>;
 };
+
+LandingPage.LeftCard = function LandingPageLeftCard({
+  src, type, label, children, ...restProps
+}) {
+  return (
+    <LeftCard {...restProps}>
+    <CardOne>
+    <img src={`/images/${src}`} alt="CardThree" />
+      <h2>{label}</h2>
+      <div>
+        <p>{type}</p>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
+      </div>
+      </CardOne>
+      <img src="/images/CirclePattern.png" alt="Circle Pattern" />
+    </LeftCard>
+  )
+}
+
+LandingPage.RightCard = function LandingPageRightCard({
+  type,
+  label,
+  src,
+  children, ...restProps
+}) {
+  return (
+    <RightCard {...restProps}>
+     <CardThree>
+      <img src={`/images/${src}`} alt="CardThree" />
+      <h2>{label}</h2>
+      <div>
+        <p>{type}</p>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
+      </div>
+    </CardThree>
+    <img src="/images/CirclePattern.png" alt="Circle Pattern" />
+    </RightCard>
+  )
+}
 
 LandingPage.CardOne = function LandingPageCardOne({
   type,

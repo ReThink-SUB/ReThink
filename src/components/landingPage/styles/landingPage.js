@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const LeftSect = styled.div`
-  width: 65%;
+  width: 55%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -24,17 +24,17 @@ export const LeftSect = styled.div`
 `;
 
 export const RightSect = styled.div`
-  width: 35%;
-  height: 100%;
+  width: 45%;
+  height: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   // background: rgba(220, 255, 245, 0.85);
-  position: relative;
-  margin-top: 15%;
+  margin-top: 5em;
   @media (max-width: 1200px) {
     display: none
   }
-
+  postion: relative;
+  justify-content: space-around;
 `;
 
 export const Navbar = styled.div`
@@ -66,9 +66,7 @@ export const Link = styled.h2`
 `;
 
 export const CardOne = styled.div`
-  position: absolute;
-  top: 23%;
-  right: 100%;
+
   width: 265px;
   height: 340px;
   display: flex;
@@ -125,9 +123,6 @@ export const CardOne = styled.div`
 `;
 
 export const CardTwo = styled.div`
-  position: absolute;
-  top: 30%;
-  left: -15%;
   width: 265px;
   height: 340px;
   display: flex;
@@ -183,9 +178,6 @@ export const CardTwo = styled.div`
 `;
 
 export const CardThree = styled.div`
-  position: absolute;
-  top: 13%;
-  right: 45%;
   width: 265px;
   height: 340px;
   display: flex;
@@ -195,6 +187,7 @@ export const CardThree = styled.div`
   border-radius: 30px;
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
   padding: 0.8rem 0;
+  margin-top: 40%;
 
   @media (max-width: 1650px) {
     width: 245px;
@@ -327,16 +320,32 @@ export const Button = styled.button`
   }
 `;
 
-export const CirclePattern1 = styled.div`
-  position: absolute;
-  top: 15%;
-  right: 100%;
-  z-index: 1;
+export const CirclePattern1 = styled.div` 
+position: absolute;
+top: 0;
+margin-left: 80%;
 `;
 
 export const CirclePattern2 = styled.div`
+position: absolute;
+top: 0;
+margin-left: 80%;
+`;
+
+
+export const RightCard = styled.div`
+  position: relative;
+  img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    margin-left: 80%;
+  }
+`;
+
+export const LeftCard = styled.div`
+position: relative;
+img:nth-child(2) {
   position: absolute;
-  top: 60%;
-  right: 75%;
-  z-index: 1;
+  margin-top: 25%;
+}
 `;
