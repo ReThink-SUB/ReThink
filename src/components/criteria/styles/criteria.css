@@ -22,12 +22,12 @@
   position: absolute;
   width: 40em;
   z-index: -1;
+  margin-left: 50%;
 }
 
 
 .image > img {
   width: 40em;
-  margin-left: 100%;
   bottom: 0;
 }
 
