@@ -11,7 +11,7 @@ export const Icon = styled.button`
   width: 2rem;
   height: 2rem;
   background: transparent;
-  color: #1f2421;
+  color: #001a23;
   border: none;
   cursor: pointer;
   padding: 0;
