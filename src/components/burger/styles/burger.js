@@ -48,7 +48,7 @@ export const Icon = styled.button`
     }
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: 800px) {
     display: none;
   }
 `;
