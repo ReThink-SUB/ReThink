@@ -1,6 +1,7 @@
 import React from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
-
+// import { Link as ReactRouterLink } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
+import "./styles/style.css";
 import {
   Container,
   Side,
@@ -34,7 +35,7 @@ import {
   ImageSec,
   TextSec,
   Donate,
-  Link,
+  LinkS,
   Image,
   ClubImage,
   ClubName,
@@ -46,6 +47,8 @@ import {
   ToothBrush,
   SecCircles,
 } from "./styles/aboutUs";
+
+
 
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -59,8 +62,8 @@ AboutUs.Links = function AboutUsLinks({ children, ...restProps }) {
   return <Links {...restProps}>{children}</Links>;
 };
 
-AboutUs.Link = function AboutUsLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+AboutUs.Link = function AboutUsLink({ children, myID, ...restProps }) {
+  return <Link {...restProps} to={myID} ><LinkS>{children}</LinkS></Link>;
 };
 
 AboutUs.Main = function AboutUsMain({ children, ...restProps }) {
@@ -218,7 +221,13 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 };
 
 AboutUs.Btn = function AboutUsBtn({ children, ...restProps }) {
-  return <Btn {...restProps}>{children}</Btn>;
+  return (
+    <a href = "http://www.bit.ly/rethink-sub-app" target = "_new" {...restProps}>
+      <Btn>
+          {children}
+      </Btn>
+    </a>
+    );
 };
 
 AboutUs.OtherClubsSec = function AboutUsOtherClubsSec({

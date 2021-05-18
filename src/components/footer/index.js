@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <footer className="footer-main">
             <div className="footer-content">
-                <FooterDesc />
-                <FooterSocials />
-                <FooterMenu />
+                <div> <FooterDesc /> </div>
+                <div><FooterSocials /></div>
+                <div><FooterMenu /></div>
             </div>
         </footer>
     );

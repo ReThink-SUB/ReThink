@@ -32,7 +32,7 @@ Navbar.Link = function NavbarLink({ to, children, ...restProps }) {
 Navbar.Button = function NavbarButton({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
-      <Button {...restProps}>{children}</Button>;
+      <Button {...restProps}>{children}</Button>
     </ReactRouterLink>
   );
 };

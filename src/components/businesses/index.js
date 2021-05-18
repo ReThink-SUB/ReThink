@@ -86,60 +86,60 @@ const dummy = {
         "category": "Clothing Store",
         "price": "$$"
     },
-    "card12": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card13": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card14": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card15": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card16": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card17": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card18": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card19": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card20": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    }
+    // "card12": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card13": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card14": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card15": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card16": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card17": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card18": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card19": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // },
+    // "card20": {
+    //     "img": "/images/BallardMarket.png",
+    //     "title": "Ballad Market",
+    //     "category": "Clothing Store",
+    //     "price": "$$"
+    // }
 }
 export default function Businesses() {
     let filterHeaders = ["Category", "Price", "Eco Badge", "Featured", "Zip Code"];
@@ -202,11 +202,11 @@ function BusinessCardSearchList(props) {
 
     return(
         <Container className="businesses-container">
-            <Col className="businesses-col">
-                <Row className="businesses-row">
+            {/* <Col className="businesses-col"> */}
+                {/* <Row className="businesses-row"> */}
                     {businesses}
-                </Row>
-            </Col>
+                {/* </Row> */}
+            {/* </Col> */}
         </Container>
     )
 }

@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
 `;
 
@@ -13,6 +13,14 @@ export const LeftSect = styled.div`
   flex-direction: column;
   padding-left: 8rem;
   padding-top: 3rem;
+  @media (max-width: 1200px) {
+    width: 90%;
+    margin: 0
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0
+  }
 `;
 
 export const RightSect = styled.div`
@@ -22,6 +30,11 @@ export const RightSect = styled.div`
   flex-direction: column;
   // background: rgba(220, 255, 245, 0.85);
   position: relative;
+  margin-top: 15%;
+  @media (max-width: 1200px) {
+    display: none
+  }
+
 `;
 
 export const Navbar = styled.div`
@@ -270,6 +283,15 @@ export const SubTitle = styled.h3`
   @media (max-width: 1650px) {
     font-size: 52px;
   }
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin: 0
+    
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 `;
 
 export const Description = styled.p`
