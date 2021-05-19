@@ -42,7 +42,11 @@ export function NavbarContainer() {
         </Burger.Socials>
       </Burger.Menu>
       <Navbar.Links>
-        <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
+        <Navbar.Link
+          to={ROUTES.BUSINESSES}
+        >
+          Find Businesses
+        </Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
