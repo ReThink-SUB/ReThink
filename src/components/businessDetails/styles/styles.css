@@ -1,0 +1,148 @@
+.content {
+  margin: 2em 12em !important;
+}
+
+.content > h1 {
+  color: #3E3B3B;
+  font-weight: 900 !important;
+  margin-top: 2em !important;
+}
+
+.content > h2 {
+  color: #3E3B3B;
+  font-weight: 900 !important;
+  margin-top: 3em !important;
+}
+/* 
+.breadcrumb {
+  background-color: white !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.breadcrumb a {
+  color: #67923D !important;
+}
+
+.breadcrumb a:hover, .breadcrumb li {
+  color: #466824 !important;
+} */
+
+/* .eco {
+  color: #6A6565;
+  font-weight: 700;
+  margin: 2em 3.25em;
+  margin-right: .6em;
+} */
+
+.main-img {
+  width: 34%;
+  object-fit: contain;
+  margin-right: 3.5em;
+}
+
+.bar {
+  display: inline-block;
+  width: 4.5em;
+  height: .12em;
+  background-color: #67923D;
+  margin-left: 1.45em !important;
+  margin-bottom: .25em;
+}
+
+.main-details {
+  margin-top: 3em;
+  line-height: 2em;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.social-buttons {
+  margin: 3em 0;
+}
+
+.social-buttons img {
+  width: 2em;
+}
+
+.social-buttons > button {
+  margin-right: .8em !important;
+  border-radius: 10px !important;
+  padding: .6em 1.6em !important;
+  box-shadow: 0 5px 8px #6a65653f;
+  transition: transform 0.4s ease;
+  transform: scale(1);
+}
+
+.social-buttons > button:hover {
+  box-shadow: 0 5px 8px #6a656556;
+  transition: all 0.4s ease;
+  transform: scale(1.02);
+}
+
+.social-buttons > button:active {
+  transform: scale(.98);
+  transition: transform 0.2s ease;
+}
+
+.specific-card {
+  border-radius: .5em !important;
+  width: 12.6em;
+  box-shadow: 0 5px 8px #6a65652a;
+  margin-top: 5em;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.specific-card > p {
+  color: #6A6565;
+  font-size: .75em;
+  line-height: 1.6em;
+  padding: 1.6em;
+}
+
+.specific-card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 1.3em;
+  color: white;
+  background-color: #67923D !important;
+  border-radius: .5em !important;
+  width: 100%;
+  padding: 1.6em 1.25em !important;
+}
+
+.specific-card > img {
+  margin-top: -1em;
+  margin-left: 10.8em;
+}
+
+.specific-card > em {
+  font-size: 2em;
+  margin-right: .6em;
+  font-weight: 300 !important;
+}
+
+.specific-card a {
+  color: #6A6565;
+  font-size: .65em;
+  text-decoration: underline;
+  margin-top: 4.5em;
+  margin-bottom: 2em;
+}
+
+.speciifc-card a:hover {
+  color: #3b3b3b;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.sustainability-cards {
+  display: flex;
+  width: 100%;
+} 
+
+.specific-card-header > p:first-child {
+  margin-right: 1em;
+}

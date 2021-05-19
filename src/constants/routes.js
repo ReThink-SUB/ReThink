@@ -8,3 +8,5 @@ export const PROMOTE = "/promote";
 export const TEAM = "/team";
 export const CRITERIA = "/criteria";
 export const ABOUT = "/about";
+export const DETAILS = "/details";
+

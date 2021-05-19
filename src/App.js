@@ -4,6 +4,7 @@ import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Loading } from "./components";
 import { BusinessContext } from "./context/business";
+// import DetailPage from "./pages/businessDetails";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
@@ -14,6 +15,7 @@ const Team = lazy(() => import("./pages/team"));
 const Businesses = lazy(() => import("./pages/businesses"));
 const Criteria = lazy(() => import("./pages/criteria"));
 const About = lazy(() => import("./pages/about"));
+const Details = lazy(() => import("./pages/businessDetails"));
 
 export default function App() {
   const [businesses, setBusinesses] = useState([]);
@@ -145,6 +147,10 @@ export default function App() {
               </Route>
               <Route path={ROUTES.CRITERIA} exact>
                 <Criteria />
+              </Route>
+              {/* FOR DEBUGGING ONLY */}
+              <Route path={ROUTES.DETAILS} exact>
+                <Details />
               </Route>
               <Route
                 path={ROUTES.TEAM}
