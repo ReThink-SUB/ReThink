@@ -1,0 +1,68 @@
+{
+    "card1": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market1",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card2": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market2",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card3": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market3",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card4": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market4",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card5": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market5",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card6": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market6",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card7": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market7",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card8": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market8",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card9": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market9",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card10": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market10",
+        "category": "Clothing Store",
+        "price": "$$"
+    },
+    "card11": {
+        "img": "/images/BallardMarket.png",
+        "title": "Ballad Market11",
+        "category": "Clothing Store",
+        "price": "$$"
+    }
+}
