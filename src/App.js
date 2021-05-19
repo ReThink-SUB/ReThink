@@ -63,7 +63,7 @@ export default function App() {
       });
   }, []);
 
-  console.log(businesses);
+  // console.log(businesses);
 
   return (
     <>
