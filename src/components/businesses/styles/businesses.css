@@ -1,19 +1,20 @@
 .businesses-container {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-content: center; */
+    flex-wrap: wrap;
     margin-top: 5em;
+    margin-bottom: 3em;
 }
 
 .business-background {
     /* align-self: center;
     width: 75em; */
-    width: 10em;
+    width: 100%;
     height: 6em;
     background: rgba(71, 168, 78, 0.21);
-    border-radius: 54px;
+   
     z-index: -2;
     position: absolute;
     margin-top: -4em;
@@ -29,6 +30,15 @@
 .card-container {
     position: relative;
     margin-top: 5em;
+    min-width: 13em;
+    width: 20%;
+    display: flex
+}
+
+.business-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .business-card {
@@ -38,7 +48,10 @@
     z-index: 1;
     height: 14.5em;
     width: 11em;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .circle-pattern-img {
     margin: -2em 0em 0em 8.5em;
@@ -74,6 +87,7 @@
 .businesses-pagination-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 3em;
 }
 
 .business-page-link {
@@ -101,11 +115,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .dropdown {
-    margin: 0em 2em 0em 0em;
     box-sizing: border-box;
+    padding: 1em;
 }
 
 .dropdown-toggle {
@@ -127,7 +142,7 @@
     border-radius: 10px;
     border: #FFFFFF;
     height: 2em;
-    width: 50em;
+    width: 85%;
     padding-left: 1em;
 }
 
@@ -140,13 +155,15 @@
     color: #FFFFFF;
     height: 2em;
     width: 5em;
+    margin: 1em;
 }
 
 .search-bar-container {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
-    margin: 2em 0em 2.5em 0em;
+    margin: 2em 1em 2.5em 1em;
+    width: 100%;
 }
 
 .search-bar-header h6 {
@@ -161,4 +178,44 @@
 
 .search-bar-and-btn {
     margin: 2.5em 0em 0em 2em;
+    width: 75%;
+    margin-top: auto;
 }
+
+.search-bar-header {
+    min-width: 20%;
+}
+
+
+
+
+/* TEST
+.businesses-container {
+width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+.card-container {
+    position: relative;
+    margin-top: 5em;
+    min-width: 20%;
+    display: inherit;
+}
+
+.business-card {
+    border-radius: 30px;
+    box-shadow: 0px 4px 45px rgb(57 57 57 / 6%);
+    border: #FFFFFF;
+    z-index: 1;
+    height: 15em;
+    display: flex;
+    width: 10em;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/

@@ -41,11 +41,11 @@ export function ContactContainer() {
           Message Sent!
         </Alert>
       )}
+      <Contact.Plant />
       <Contact.Slogan>
         Contact us! <br />
         <span>We'll be in touch soon</span>
       </Contact.Slogan>
-      <Contact.Plant />
       <Contact.Inputs>
         <Contact.Input
           setValue={setName}
