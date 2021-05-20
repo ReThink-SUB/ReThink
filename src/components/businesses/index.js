@@ -96,7 +96,7 @@ function Businesses() {
     let filterOptions = [
         ["Home Goods", "Restaurants", "Cafes", "Grocery Stores", "Personal Care", "Beauty"],
         ["$", "$$", "$$$", "$$$$", "$$$$$"],
-        ["Natural", "USDA Organic", "Fair Trade", "Certified Humane", "Non-GMO", "Local"],
+        ["Sustainable Ingredients", "Resource Management", "Waste Management", "Beyond the Business"],
         ["Greater Seattle Area", "Portland", "Remote"]
     ]; 
     let filters = [];
