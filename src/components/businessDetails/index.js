@@ -26,7 +26,7 @@ export default function Details(props) {
       <div className="main-details">
         <img
           className="main-img"
-          src={process.env.PUBLIC_URL + "/images/frankie.png"}
+          src="/images/frankie.png"
           alt="business image"
         />
         <div>
@@ -49,14 +49,14 @@ export default function Details(props) {
               <strong>View on Google Maps</strong>{" "}
               <img
                 className="ml-2"
-                src={process.env.PUBLIC_URL + "/images/gmaps.png"}
+                src="/images/gmaps.png"
               ></img>
             </button>
             <button>
-              <img src={process.env.PUBLIC_URL + "/images/insta.png"}></img>
+              <img src="/images/insta.png"></img>
             </button>
             <button>
-              <img src={process.env.PUBLIC_URL + "/images/fb.png"}></img>
+              <img src="/images/fb.png"></img>
             </button>
           </div>
           <p>
@@ -85,7 +85,7 @@ function ImpactCard(props) {
   return (
     <div className="specific-card">
       <img
-        src="/images/CirclePattern.png"
+        src={process.env.PUBLIC_URL + "/images/CirclePattern.png"}
         alt="Circle pattern"
         className="circle-pattern-img"
       />

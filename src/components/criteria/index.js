@@ -70,14 +70,14 @@ export default function Container() {
   ];
 
   return (
-    <div className="container">
-      <div className="text-content">
+    <div className="criteria-container">
+      <div className="criteria-text-content">
         <h1>
           So how do we know businesses are <em>actually</em> being sustainable?
         </h1>
         <div className="criteria-txt">
           <h1>
-            Criteria <div className="bar"></div>
+            Criteria <div className="criteria-bar"></div>
           </h1>
           <p>
             We have conducted <em>research</em> on characteristics of businesses
@@ -93,8 +93,8 @@ export default function Container() {
         <CriteriaCat title="Beyond the Business" content={five} />
         <CriteriaCat title="Other Badges" content={six} />
       </div>
-      <div className="image">
-        <img src={process.env.PUBLIC_URL + "/images/criteria_img.png"} />
+      <div className="criteria-image">
+        <img src="/images/criteria_img.png" />
       </div>
     </div>
   );
@@ -103,11 +103,11 @@ export default function Container() {
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: ".4em",
+    width: "40em",
   },
   summary: {
     backgroundColor: "#A9D0A9",
     borderRadius: "10px",
-    width: "85%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(20),
