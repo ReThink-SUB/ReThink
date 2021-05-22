@@ -120,6 +120,7 @@ function Businesses() {
     // }, []);
     
     //TODO: read data in from firestore
+    // https://firebase.google.com/docs/firestore/query-data/get-data
     // const businessesRef = db.collection('businesses').doc('DummyData');
     // const doc = await businessesRef.get();
     // if (!doc.exists) {
