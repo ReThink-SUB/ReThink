@@ -21,6 +21,7 @@ import "./styles/businesses.css";
 import 'whatwg-fetch';
 import { render } from '@testing-library/react';
 import { Link } from 'react-router-dom';
+import db from "../../firebase";
 
 const dummy = {
     "card1": {
@@ -117,6 +118,16 @@ function Businesses() {
     //             setData(data);
     //         })
     // }, []);
+    
+    //TODO: read data in from firestore
+    // const businessesRef = db.collection('businesses').doc('DummyData');
+    // const doc = await businessesRef.get();
+    // if (!doc.exists) {
+    //     console.log('No such document!');
+    // } else {
+    //     console.log('Document data:', doc.data());
+    // }
+
     return (
         <div>
             <SearchBar />
