@@ -24,15 +24,15 @@ export function NavbarContainer() {
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
             Criteria
           </Burger.Link>
-          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.TEAM}>
+          {/* <Burger.Link open={open} setOpen={setOpen} to={ROUTES.TEAM}>
             Meet The Team
-          </Burger.Link>
+          </Burger.Link> */}
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.CONTACT}>
             Contact Us
           </Burger.Link>
-          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+          {/* <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
             Sign Up
-          </Burger.Link>
+          </Burger.Link> */}
         </Burger.Links>
         <Burger.Squiggle />
         <Burger.Socials>
@@ -42,11 +42,15 @@ export function NavbarContainer() {
         </Burger.Socials>
       </Burger.Menu>
       <Navbar.Links>
-        <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
+        <Navbar.Link
+          to={ROUTES.BUSINESSES}
+        >
+          Find Businesses
+        </Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
-        <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button>
+        {/* <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button> */}
       </Navbar.Links>
     </Navbar>
   );

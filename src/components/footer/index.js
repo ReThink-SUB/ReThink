@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <footer className="footer-main">
             <div className="footer-content">
-                <FooterDesc />
-                <FooterSocials />
-                <FooterMenu />
+                <div> <FooterDesc /> </div>
+                <div><FooterSocials /></div>
+                <div><FooterMenu /></div>
             </div>
         </footer>
     );
@@ -63,7 +63,7 @@ function FooterMenu() {
         <div className="footer-menu">
             <h6>Menu</h6>
             <div className="footer-links">
-                <Link to={ROUTES.TEAM}>Meet the Team</Link>
+                <Link to={ROUTES.ABOUT}>Meet the Team</Link>
                 <Link to={ROUTES.BUSINESSES}>Find Businesses</Link>
                 <Link to={ROUTES.CRITERIA}>Criteria</Link>
                 <Link to={ROUTES.CONTACT}>Contact us</Link>

@@ -11,7 +11,7 @@ export const Icon = styled.button`
   width: 2rem;
   height: 2rem;
   background: transparent;
-  color: #1f2421;
+  color: #001a23;
   border: none;
   cursor: pointer;
   padding: 0;
@@ -48,7 +48,7 @@ export const Icon = styled.button`
     }
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: 800px) {
     display: none;
   }
 `;
@@ -87,7 +87,7 @@ export const Links = styled.div`
   flex-direction: column;
   justify-content: space-around;
   text-align: left;
-
+  align-items: end;
   @media (min-width: 1500px) {
     height: 50%;
   }

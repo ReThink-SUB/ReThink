@@ -6,9 +6,9 @@ export function AboutUsContainer() {
     <AboutUs>
       <AboutUs.Side>
         <AboutUs.Links>
-          <AboutUs.Link>About Us</AboutUs.Link>
-          <AboutUs.Link>Sub Team</AboutUs.Link>
-          <AboutUs.Link>Get Involved</AboutUs.Link>
+          <AboutUs.Link myID="/about/#about">About Us</AboutUs.Link>
+          <AboutUs.Link myID="/about/#team">Sub Team</AboutUs.Link>
+          <AboutUs.Link myID="/about/#involved">Get Involved</AboutUs.Link>
         </AboutUs.Links>
       </AboutUs.Side>
       <AboutUs.Main>
@@ -32,7 +32,7 @@ export function AboutUsContainer() {
             <AboutUs.Circles top="55%" left="47%" />
           </AboutUs.Images>
           <AboutUs.Text>
-            <AboutUs.Title>About Us</AboutUs.Title>
+            <AboutUs.Title id="about">About Us</AboutUs.Title>
             <AboutUs.Heading>Who we are</AboutUs.Heading>
             <AboutUs.Description>
               A community of passionate University of Washington Seattle
@@ -54,7 +54,9 @@ export function AboutUsContainer() {
           </AboutUs.Text>
         </AboutUs.AboutSec>
         <AboutUs.SubSec>
-          <AboutUs.Title>SUB Team</AboutUs.Title>
+          <AboutUs.Title>
+            <span id="team">SUB Team</span>
+          </AboutUs.Title>
           <AboutUs.SecDescription>
             A ragtag team of UW students deciding to give a damn about the
             environment, in the most enjoyable way possible.
@@ -64,12 +66,12 @@ export function AboutUsContainer() {
               <AboutUs.Frame
                 background="#D4E9D6"
                 src="yuyu_madigan"
-                person="Yuyu Madigan"
+                person="YuYu Madigan"
                 position="President"
                 color="#ffffff"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="http://www.linkedin.com/in/fymadiagn">
                 YuYu is a fourth-year undergraduate student majoring in
                 economics with a minor in informatics, data science, and
                 entrepreneurship. YuYu is one of the student-leads. The SUB
@@ -91,7 +93,7 @@ export function AboutUsContainer() {
                 color="#BBBBBD"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/aditi-joshi-019405190/">
                 Aditi Joshi is a second-year undergraduate majoring in computer
                 science and minoring in environmental studies. For Aditi, the
                 SUB initiative is an opportunity to work on big-scale projects
@@ -114,7 +116,7 @@ export function AboutUsContainer() {
                 color="#BBBBBD"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/learylabanlic/">
                 Leary is a third-year undergraduate student majoring in
                 community, environment and planning while minoring in
                 architectural design, informatics, and entrepreneurship. Leary
@@ -136,7 +138,7 @@ export function AboutUsContainer() {
                 color="#ffffff"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="http://www.linkedin.com/in/devontchapman">
                 Devon is a fourth-year undergraduate student majoring in
                 political science with a minor in environmental studies. Devon
                 is on the research team and is highly passionate about the
@@ -155,7 +157,7 @@ export function AboutUsContainer() {
                 color="#ffffff"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/ghchun/">
                 Grace is a fourth-year undergraduate student majoring in
                 international studies with a minor in informatics and
                 entrepreneurship. In hopes of diving deeper into
@@ -176,7 +178,7 @@ export function AboutUsContainer() {
                 color="#BBBBBD"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/kailinspencer/">
                 Kailin is a second-year undergraduate student majoring in
                 business and minoring in environmental studies. Kailin became
                 part of the SUB Initiative to create a world where people can
@@ -197,7 +199,7 @@ export function AboutUsContainer() {
                 color="#BBBBBD"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/julius-cecilia/">
                 Julius is a first-year undergraduate student who is planning to
                 major in informatics. Because Julius wanted to contribute and
                 learn from a community of developers with varying skill sets,
@@ -219,7 +221,7 @@ export function AboutUsContainer() {
                 color="#ffffff"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/paul-sereeyothin/">
                 Paul is a fourth-year undergraduate student majoring in
                 communications. He joined the SUB Initiative marketing team
                 because he believes in technology and sustainability’s
@@ -242,7 +244,7 @@ export function AboutUsContainer() {
                 color="#ffffff"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="http://linkedin.com/in/brendanptran/">
                 Brendan is a third-year undergraduate student majoring in
                 informatics and exploring human-computer interaction. He was
                 eager to join the SUB Initiation because he saw potential in
@@ -263,7 +265,7 @@ export function AboutUsContainer() {
                 color="#BBBBBD"
               ></AboutUs.Frame>
               <AboutUs.SecCircles />
-              <AboutUs.TextArea>
+              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/kaylalee44/">
                 Kayla is a fourth-year undergraduate student majoring in
                 informatics. Kayla joined the SUB Initiative to help encourage
                 sustainability in business while refining her technical skills.
@@ -277,7 +279,7 @@ export function AboutUsContainer() {
           </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec>
-          <AboutUs.Title>Get Involved</AboutUs.Title>
+          <AboutUs.Title id="involved">Get Involved</AboutUs.Title>
           <AboutUs.Heading>How to get involved</AboutUs.Heading>
           <AboutUs.SecTitle>SUB Team</AboutUs.SecTitle>
           <AboutUs.Description>

@@ -32,7 +32,7 @@ export function LandingPageContainer() {
           {/* <LandingPage.Button>Find Businesses</LandingPage.Button> */}
         </LandingPage.LeftSect>
         <LandingPage.RightSect>
-          <LandingPage.CardOne
+          <LandingPage.RightCard
             src="BallardMarket.jpg"
             label="Ballard Market"
             type="Clothing Store $$$"
@@ -42,15 +42,15 @@ export function LandingPageContainer() {
             label="Corner 42"
             type="Grocery Store $$"
           /> */}
-          <LandingPage.CardThree
+          <LandingPage.LeftCard
             src="IndianMarket.png"
             label="Indian Market"
             type="Grocery Store $$"
           />
           {/* <LandingPage.Ellipse />
           <LandingPage.SmallEllipse /> */}
-          <LandingPage.CirclePattern1 />
-          <LandingPage.CirclePattern2 />
+          {/* <LandingPage.CirclePattern1 />
+          <LandingPage.CirclePattern2 /> */}
         </LandingPage.RightSect>
       </LandingPage>
     </>
