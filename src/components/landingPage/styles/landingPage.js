@@ -11,7 +11,7 @@ export const LeftSect = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 8rem;
+  padding-left: 2%;
   padding-top: 3rem;
   @media (max-width: 1200px) {
     width: 90%;
@@ -270,7 +270,6 @@ export const SubTitle = styled.h3`
   font-weight: 800;
   font-size: 56px;
   color: #67923D;
-  width: 45%;
   margin: 3em 0rem 2.5rem 5rem;
 
   @media (max-width: 1650px) {

@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavbarContainer } from "../containers";
 import Details from "../components/businessDetails";
 import Footer from "../components/footer/index";
 
 function DetailPage() {
-  useEffect(() => {
-    window.location.reload();
-  }, []);
-
   let impact = new Map();
   let cats = [
     "Plant-based ingredients",
