@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   background: #ffffff;
   padding: 0 1.5rem;
+  margin-bottom: 5rem;
 `;
 
 export const Side = styled.div`
@@ -32,9 +33,11 @@ export const Links = styled.div`
   a {
     justify-content: left;
   }
-  ${"" /* @media (max-width: 1050px) {
+  ${
+    "" /* @media (max-width: 1050px) {
     display: none;
-  } */}
+  } */
+  }
 `;
 
 export const LinkS = styled.p`
@@ -50,7 +53,7 @@ export const LinkS = styled.p`
   display: list-item; /* This has to be "list-item"                                               */
   list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
   list-style-position: inside;
- 
+
   &:hover {
     font-size: 17px;
     color: #67923d;
@@ -508,8 +511,7 @@ export const SecTitle = styled.h3`
 
 export const Btn = styled.button`
   background: #67923d;
-  width: 128px;
-  height: 41px;
+  padding: 0.8rem 2.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -522,6 +524,29 @@ export const Btn = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.5s ease all;
+  margin: 0.7rem 0;
+
+  &:hover {
+    background: #8cce4b;
+  }
+`;
+
+export const DownloadBtn = styled.button`
+  background: #67923d;
+  padding: 0.8rem 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  margin: 0.7rem 0;
 
   &:hover {
     background: #8cce4b;

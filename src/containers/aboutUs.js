@@ -2,6 +2,19 @@ import React from "react";
 import { AboutUs } from "../components";
 
 export function AboutUsContainer() {
+  async function downloadImage(imageSrc) {
+    const image = await fetch(imageSrc);
+    const imageBlog = await image.blob();
+    const imageURL = URL.createObjectURL(imageBlog);
+
+    const link = document.createElement("a");
+    link.href = imageURL;
+    link.download = "AvailablePositions.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <AboutUs>
       <AboutUs.Side>
@@ -289,7 +302,15 @@ export function AboutUsContainer() {
             Positions Available: Marketing, Business Development, Researchers,
             Back End Developers, Front End Developers
           </AboutUs.Description>
-          <AboutUs.Btn>Apply</AboutUs.Btn>
+          <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app">
+            Apply
+          </AboutUs.Btn>
+          <AboutUs.DownloadBtn
+            downloadImage={downloadImage}
+            href="https://i.imgur.com/mhTBjpQ.png"
+          >
+            View Positions
+          </AboutUs.DownloadBtn>
         </AboutUs.InvolvedSec>
         <AboutUs.OtherClubsSec>
           <AboutUs.SecTitle>Other Clubs</AboutUs.SecTitle>
@@ -351,12 +372,12 @@ export function AboutUsContainer() {
             </AboutUs.Organization>
           </AboutUs.Organizations>
         </AboutUs.LocalOrgsSec>
-        <AboutUs.WeeklySec>
+        {/* <AboutUs.WeeklySec>
           <AboutUs.Heading>Check out our weekly features</AboutUs.Heading>
           <AboutUs.Description>
             Help preserve the environment by donating to these places!
           </AboutUs.Description>
-        </AboutUs.WeeklySec>
+        </AboutUs.WeeklySec> */}
       </AboutUs.Main>
     </AboutUs>
   );
