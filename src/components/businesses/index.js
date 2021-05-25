@@ -19,78 +19,8 @@ import {
 } from "reactstrap";
 import "./styles/businesses.css";
 import 'whatwg-fetch';
-import { render } from '@testing-library/react';
 import { Link } from 'react-router-dom';
-import db from "../../firebase";
-
-const dummy = {
-    "card1": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market1",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card2": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market2",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card3": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market3",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card4": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market4",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card5": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market5",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card6": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market6",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card7": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market7",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card8": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market8",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card9": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market9",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card10": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market10",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card11": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market11",
-        "category": "Clothing Store",
-        "price": "$$"
-    }
-}
+import { db } from "../../firebase";
 
 function Businesses() {
     let filterHeaders = ["Category", "Price", "Eco Badge", "Zip Code"]; //"Featured" commented out for now
@@ -107,35 +37,13 @@ function Businesses() {
         iterator++;
     }
 
-    // // fetch json
-    // const [data, setData] = useState([]);
-    // useEffect(() => {
-    //     fetch("dummy.json")
-    //         .then((response) => {
-    //             return response.json();
-    //         })
-    //         .then((data) => {
-    //             setData(data);
-    //         })
-    // }, []);
-    
-    //TODO: read data in from firestore
-    // https://firebase.google.com/docs/firestore/query-data/get-data
-    // const businessesRef = db.collection('businesses').doc('DummyData');
-    // const doc = await businessesRef.get();
-    // if (!doc.exists) {
-    //     console.log('No such document!');
-    // } else {
-    //     console.log('Document data:', doc.data());
-    // }
-
     return (
         <div>
             <SearchBar />
             <div className="filters-container">
                 {filters}
             </div>
-            <BusinessCardSearchList businesses={dummy} />
+            <BusinessCardSearchList />
             {/* <Next /> */}
         </div>
     )
@@ -153,15 +61,16 @@ function BusinessCard(props) {
             <Link to="/details" className="business-card">
                 <Card className="business-card">
                     <CardImg
-                        src={business["img"]}
-                        alt={business["title"] + " image"}
+                        // src={business["img"]}
+                        src="/images/BallardMarket.png" //TODO: should come from firestore
+                        alt={business["name"] + " image"}
                         className="business-card-img"
                     />
                     <CardBody className="business-card-body">
-                        <CardTitle tag="h2" className="business-card-title">{business["title"]}</CardTitle>
+                        <CardTitle tag="h2" className="business-card-title">{business["name"]}</CardTitle>
                         <CardSubtitle tag="p" className="business-card-subtitle">
-                            {business["category"] + " " + business["price"] + " "}
-                            <img src="/images/lightning.png"/> {/*//should come from json */}
+                            {business["category"] + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
+                            <img src="/images/lightning.png"/> {/*TODO: should come from json */}
                             <img src="/images/fish.png"/>
                         </CardSubtitle>
                     </CardBody>
@@ -171,18 +80,22 @@ function BusinessCard(props) {
     )
 }
 
-// TODO: make the green bar shrink and stretch with the cards
 // Creates a container of all the business cards
-function BusinessCardSearchList(props) {
-    let data = props.businesses;
+function BusinessCardSearchList() {
     const [businesses, setBusinesses] = useState([]);
 
     useEffect(() => {
+        // read data in from firestore
+        // https://firebase.google.com/docs/firestore/query-data/get-data
+
         let businessesHolder = [];
-        for (let b of Object.keys(data)) {
-            businessesHolder.push(<BusinessCard key={b} business={data[b]} />);
-        }
-        setBusinesses(businessesHolder);
+        db.collection('businesses').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                businessesHolder.push(<BusinessCard key={doc.data()} business={doc.data()} />);
+            });
+            setBusinesses(businessesHolder);
+        });
       }, []);
 
     return(
