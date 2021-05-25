@@ -46,6 +46,7 @@ import {
   Water,
   ToothBrush,
   SecCircles,
+  DownloadBtn,
 } from "./styles/aboutUs";
 
 export default function AboutUs({ children, ...restProps }) {
@@ -225,10 +226,23 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
   return <SecTitle {...restProps}>{children}</SecTitle>;
 };
 
-AboutUs.Btn = function AboutUsBtn({ children, ...restProps }) {
+AboutUs.Btn = function AboutUsBtn({ href, children, ...restProps }) {
   return (
-    <a href="http://www.bit.ly/rethink-sub-app" target="_new" {...restProps}>
+    <a href={href} target="_new" {...restProps}>
       <Btn>{children}</Btn>
+    </a>
+  );
+};
+
+AboutUs.DownloadBtn = function AboutUsDownloadBtn({
+  downloadImage,
+  href,
+  children,
+  ...restProps
+}) {
+  return (
+    <a onClick={() => downloadImage(href)} {...restProps}>
+      <DownloadBtn>{children}</DownloadBtn>
     </a>
   );
 };
