@@ -6,7 +6,7 @@ ReThink is a Foster RSO interested in exploring the intersection of business, su
 
 ## Technologies Used
 
-![Technologies](src/components/images/Logos.png)
+![Technologies](public/images/Logos.png)
 
 ## Meet the team
 
