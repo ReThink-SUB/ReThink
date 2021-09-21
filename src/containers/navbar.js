@@ -12,7 +12,7 @@ export function NavbarContainer() {
       <Burger.Menu open={open} setOpen={setOpen}>
         <Burger.Heading>Hi there!</Burger.Heading>
         <Burger.Links>
-          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.LANDING}>
             Home
           </Burger.Link>
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BUSINESSES}>
@@ -21,7 +21,7 @@ export function NavbarContainer() {
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.ABOUT}>
             About Us
           </Burger.Link>
-          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.CRITERIA}>
             Criteria
           </Burger.Link>
           {/* <Burger.Link open={open} setOpen={setOpen} to={ROUTES.TEAM}>
@@ -42,7 +42,11 @@ export function NavbarContainer() {
         </Burger.Socials>
       </Burger.Menu>
       <Navbar.Links>
-        <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
+        <Navbar.Link
+          to={ROUTES.BUSINESSES}
+        >
+          Find Businesses
+        </Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>

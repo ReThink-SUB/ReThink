@@ -18,147 +18,38 @@ import {
     PaginationLink
 } from "reactstrap";
 import "./styles/businesses.css";
+import 'whatwg-fetch';
+import { Link } from 'react-router-dom';
+import { db } from "../../firebase";
 
-const dummy = {
-    "card1": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card2": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card3": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card4": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card5": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card6": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card7": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card8": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card9": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card10": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    "card11": {
-        "img": "/images/BallardMarket.png",
-        "title": "Ballad Market",
-        "category": "Clothing Store",
-        "price": "$$"
-    },
-    // "card12": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card13": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card14": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card15": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card16": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card17": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card18": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card19": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // },
-    // "card20": {
-    //     "img": "/images/BallardMarket.png",
-    //     "title": "Ballad Market",
-    //     "category": "Clothing Store",
-    //     "price": "$$"
-    // }
-}
-export default function Businesses() {
-    let filterHeaders = ["Category", "Price", "Eco Badge", "Featured", "Zip Code"];
-    let filterOptions = ["Option1", "Option2", "Option3"]; //will be props most likely
+function Businesses() {
+    let filterHeaders = ["Category", "Price", "Eco Badge", "Zip Code"]; //"Featured" commented out for now
+    let filterOptions = [
+        ["Home Goods", "Restaurants", "Cafes", "Grocery Stores", "Personal Care", "Beauty"],
+        ["$", "$$", "$$$", "$$$$", "$$$$$"],
+        ["Sustainable Ingredients", "Resource Management", "Waste Management", "Beyond the Business"],
+        ["Greater Seattle Area", "Portland", "Remote"]
+    ]; 
     let filters = [];
+    let iterator = 0;
     for (let i of filterHeaders) {
-        filters.push(<FilterButton filter={i} options={filterOptions}/>)
+        filters.push(<FilterButton filter={i} options={filterOptions[iterator]}/>)
+        iterator++;
     }
+
     return (
         <div>
             <SearchBar />
             <div className="filters-container">
                 {filters}
             </div>
-            <BusinessCardSearchList businesses={dummy} />
-            <Next />
+            <BusinessCardSearchList />
+            {/* <Next /> */}
         </div>
     )
 }
+
+export default Businesses;
 
 // Takes in a business and creates a business card
 function BusinessCard(props) {
@@ -167,37 +58,44 @@ function BusinessCard(props) {
         <div className="card-container">
             <div className="business-background"></div>
             <img src="/images/CirclePattern.png" alt="Circle pattern" className="circle-pattern-img"/>
-            <Card className="business-card">
-                <CardImg
-                    src={business["img"]}
-                    alt={business["title"] + " image"}
-                    className="business-card-img"
-                />
-                <CardBody className="business-card-body">
-                    <CardTitle tag="h2" className="business-card-title">{business["title"]}</CardTitle>
-                    <CardSubtitle tag="p" className="business-card-subtitle">
-                        {business["category"] + " " + business["price"] + " "}
-                        <img src="/images/lightning.png"/> {/*//should come from json */}
-                        <img src="/images/fish.png"/>
-                    </CardSubtitle>
-                </CardBody>
-            </Card>
+            <Link to="/details" className="business-card">
+                <Card className="business-card">
+                    <CardImg
+                        // src={business["img"]}
+                        src="/images/BallardMarket.png" //TODO: should come from firestore
+                        alt={business["name"] + " image"}
+                        className="business-card-img"
+                    />
+                    <CardBody className="business-card-body">
+                        <CardTitle tag="h2" className="business-card-title">{business["name"]}</CardTitle>
+                        <CardSubtitle tag="p" className="business-card-subtitle">
+                            {business["category"] + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
+                            <img src="/images/lightning.png"/> {/*TODO: should come from json */}
+                            <img src="/images/fish.png"/>
+                        </CardSubtitle>
+                    </CardBody>
+                </Card>
+            </Link>
         </div>
     )
 }
 
-// TODO: make the green bar shrink and stretch with the cards
 // Creates a container of all the business cards
-function BusinessCardSearchList(props) {
-    let data = props.businesses;
+function BusinessCardSearchList() {
     const [businesses, setBusinesses] = useState([]);
 
     useEffect(() => {
+        // read data in from firestore
+        // https://firebase.google.com/docs/firestore/query-data/get-data
+
         let businessesHolder = [];
-        for (let b of Object.keys(data)) {
-            businessesHolder.push(<BusinessCard key={b} business={data[b]} />);
-        }
-        setBusinesses(businessesHolder);
+        db.collection('businesses').get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                businessesHolder.push(<BusinessCard key={doc.data()} business={doc.data()} />);
+            });
+            setBusinesses(businessesHolder);
+        });
       }, []);
 
     return(
@@ -240,7 +138,9 @@ function FilterButton(props) {
     return (
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
             <DropdownToggle caret>
-                {props.filter}
+                <span className="dropdown-toggle-text">
+                    {props.filter}
+                </span>
             </DropdownToggle>
             <DropdownMenu>
                 {filterOptions}

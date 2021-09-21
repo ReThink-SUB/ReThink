@@ -65,6 +65,7 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    max-width: 13em;
 }
 
 

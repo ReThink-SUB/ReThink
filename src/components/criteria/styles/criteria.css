@@ -2,36 +2,30 @@
   box-sizing: border-box;
 }
 
-.container {
+.criteria-container {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: space-between;
 }
 
 
-.text-content {
-  margin: 0 .8em;
-  margin-right: 26em;
+.criteria-text-content {
+  margin-left: 8%;
   margin-bottom: 2em;
   padding-top: 2em;
+  z-index: 2;
 }
 
-.image {
-  position: absolute;
+.criteria-image {
+  display: flex;
+  align-items: flex-end;
+}
+
+.criteria-image > img {
   width: 40em;
-  z-index: -1;
-  margin-left: 50%;
 }
 
-
-.image > img {
-  width: 40em;
-  bottom: 0;
-}
-
-.bar {
+.criteria-bar {
   display: inline-block;
   width: 2.3em;
   height: .12em;
