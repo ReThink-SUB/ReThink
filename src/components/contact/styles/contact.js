@@ -25,7 +25,8 @@ export const Plant = styled.div`
     bottom: 0;
     height: 80%;
     position: absolute;
-    margin-left: 80%;
+    margin-left: 80%
+    width: auto
   }
 `;
 
