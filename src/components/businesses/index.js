@@ -21,6 +21,7 @@ import "./styles/businesses.css";
 import 'whatwg-fetch';
 import { Link } from 'react-router-dom';
 import { db } from "../../firebase";
+import { Redirect } from "react-router-dom";
 
 function Businesses() {
     let filterHeaders = ["Category", "Price", "Eco Badge", "Zip Code"]; //"Featured" commented out for now
@@ -37,8 +38,27 @@ function Businesses() {
         iterator++;
     }
 
+    // let state = {
+    //     businesses: [],
+    //     business: {},
+    //     sortValue: '',
+    //     inputValue: '',
+    // }
+
+    // const businessFilterOnChange = (event) => {
+    //     console.log("hi from onChange", event.target.value);
+    //     this.setState({
+    //         inputValue: event.target.value
+    //     })
+    // }
+
+    // const filteredBusinesses = this.state.busiensses.filter(business => {
+    //     return business.name.toLowerCase().includes(this.state.inputValue.toLowerCase());
+    // })
+
     return (
         <div>
+            {/* <SearchBar businessFilterOnChange={this.businessFilterOnChange} inputValue={this.state.inputValue} /> */}
             <SearchBar />
             <div className="filters-container">
                 {filters}
@@ -54,22 +74,30 @@ export default Businesses;
 // Takes in a business and creates a business card
 function BusinessCard(props) {
     let business = props.business;
+    const [redirectTo, setRedirectTo] = useState(undefined);
+    const handleClick = () => {
+        setRedirectTo(business.name.replaceAll(" ", ""));
+    }
+
+    if (redirectTo) {
+        return <Redirect push to={"/details/" + redirectTo} />;
+    }
     return(
         <div className="card-container">
             <div className="business-background"></div>
             <img src="/images/CirclePattern.png" alt="Circle pattern" className="circle-pattern-img"/>
             <Link to="/details" className="business-card">
-                <Card className="business-card">
+                <Card className="business-card" onClick={handleClick}>
                     <CardImg
                         // src={business["img"]}
                         src="/images/BallardMarket.png" //TODO: should come from firestore
-                        alt={business["name"] + " image"}
+                        alt={business.name + " image"}
                         className="business-card-img"
                     />
                     <CardBody className="business-card-body">
-                        <CardTitle tag="h2" className="business-card-title">{business["name"]}</CardTitle>
+                        <CardTitle tag="h2" className="business-card-title">{business.name}</CardTitle>
                         <CardSubtitle tag="p" className="business-card-subtitle">
-                            {business["category"] + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
+                            {business.category + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
                             <img src="/images/lightning.png"/> {/*TODO: should come from json */}
                             <img src="/images/fish.png"/>
                         </CardSubtitle>
@@ -95,6 +123,7 @@ function BusinessCardSearchList() {
                 businessesHolder.push(<BusinessCard key={doc.data()} business={doc.data()} />);
             });
             setBusinesses(businessesHolder);
+            console.log()
         });
       }, []);
 

@@ -1,7 +1,17 @@
+import { useEffect, useState } from "react";
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
+import { db } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
 import "./styles/businessDetails.css";
 
+
+// TODO: to pull data, use the url params to get the name and use that name for pulling the data
 export default function Details(props) {
+  let details = props; // details data from props
+  console.log(props.data)
+  let date = new Date();
+  let currentDay = date.getDay(); // get the current day so we can get the correct hours
+
   let impactKeys = Array.from(props.cards.keys());
   let impact = props.cards;
   let cardNum = 0;
@@ -13,7 +23,7 @@ export default function Details(props) {
   });
   return (
     <div className="content">
-      <h1>{props.name}</h1>
+      <h1>{details.name}</h1>
       {/* <div className="d-flex flex-row align-items-center"> */}
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
@@ -32,18 +42,18 @@ export default function Details(props) {
         <div>
           <p>
             <strong>Today's Hours: </strong>
-            {props.hours}
+            {details.hours[currentDay]}
           </p>
           <p>
             <strong>Phone: </strong>
-            {props.phone}
+            {details.phone}
           </p>
           <p>
             <strong>Address: </strong>
-            {props.address}
+            {details.address}
           </p>
           <br></br>
-          {props.desc}
+          {details.profile}
           <div className="social-buttons">
             <button className="mr-5">
               <strong>View on Google Maps</strong>{" "}
@@ -63,13 +73,13 @@ export default function Details(props) {
             <strong>Hours:</strong>
           </p>
           <p>
-            Tuesday: 1–9PM <br />
-            Wednesday: 1–9PM <br />
-            Thursday: 1–9PM <br />
-            Friday: 1–9PM <br />
-            Saturday: 1–9PM <br />
-            Sunday: 1–9PM <br />
-            Monday: 1–9PM <br />
+            Tuesday: {details.hours.tue} <br />
+            Wednesday: {details.hours.wed} <br />
+            Thursday: {details.hours.thu} <br />
+            Friday: {details.hours.fri} <br />
+            Saturday: {details.hours.sat} <br />
+            Sunday: {details.hours.sun} <br />
+            Monday: {details.hours.mon} <br />
           </p>
         </div>
       </div>

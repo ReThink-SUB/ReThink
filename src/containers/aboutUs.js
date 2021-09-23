@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
 import { AboutUs } from "../components";
+import { db } from "../firebase";
 
 export function AboutUsContainer() {
   async function downloadImage(imageSrc) {
@@ -14,6 +15,32 @@ export function AboutUsContainer() {
     link.click();
     document.body.removeChild(link);
   }
+
+  const [profiles, setProfiles] = useState([]);
+
+  useEffect(() => {
+      // read data in from firestore
+      // https://firebase.google.com/docs/firestore/query-data/get-data
+
+      let profilesHolder = [];
+      let backColor = "#D4E9D6";
+      let color = "#ffffff";
+      db.collection('team').get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              // doc.data() is never undefined for query doc snapshots
+              profilesHolder.push(<ProfileCard key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
+
+              if (backColor === "#D4E9D6") {
+                backColor = "#ffffff";
+                color = "#BBBBBD";
+              } else {
+                backColor = "#D4E9D6";
+                color = "#ffffff";
+              }
+          });
+          setProfiles(profilesHolder);
+      });
+    }, []);
 
   return (
     <AboutUs>
@@ -75,7 +102,7 @@ export function AboutUsContainer() {
             environment, in the most enjoyable way possible.
           </AboutUs.SecDescription>
           <AboutUs.Cards>
-            <AboutUs.Card>
+            {/* <AboutUs.Card>
               <AboutUs.Frame
                 background="#D4E9D6"
                 src="yuyu_madigan"
@@ -288,7 +315,8 @@ export function AboutUsContainer() {
                 many other tools. A sustainable, daily habit that she has picked
                 up is saving eggshells for her grandma’s garden.
               </AboutUs.TextArea>
-            </AboutUs.Card>
+            </AboutUs.Card> */}
+            {profiles}
           </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec>
@@ -380,5 +408,24 @@ export function AboutUsContainer() {
         </AboutUs.WeeklySec> */}
       </AboutUs.Main>
     </AboutUs>
+  );
+}
+
+function ProfileCard(props) {
+  let data = props.data;
+  return (
+    <AboutUs.Card>
+      <AboutUs.Frame
+        background={[props.back_color]}
+        src={data.profile_img}
+        person={data.name}
+        position={data.position}
+        color={props.color}
+      ></AboutUs.Frame>
+      <AboutUs.SecCircles />
+      <AboutUs.TextArea linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}>
+        {data.bio}
+      </AboutUs.TextArea>
+    </AboutUs.Card>
   );
 }
