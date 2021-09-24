@@ -76,7 +76,7 @@ function BusinessCard(props) {
     let business = props.business;
     const [redirectTo, setRedirectTo] = useState(undefined);
     const handleClick = () => {
-        setRedirectTo(business.name.replaceAll(" ", ""));
+        setRedirectTo(props.id);
     }
 
     if (redirectTo) {
@@ -86,24 +86,22 @@ function BusinessCard(props) {
         <div className="card-container">
             <div className="business-background"></div>
             <img src="/images/CirclePattern.png" alt="Circle pattern" className="circle-pattern-img"/>
-            <Link to="/details" className="business-card">
-                <Card className="business-card" onClick={handleClick}>
-                    <CardImg
-                        // src={business["img"]}
-                        src="/images/BallardMarket.png" //TODO: should come from firestore
-                        alt={business.name + " image"}
-                        className="business-card-img"
-                    />
-                    <CardBody className="business-card-body">
-                        <CardTitle tag="h2" className="business-card-title">{business.name}</CardTitle>
-                        <CardSubtitle tag="p" className="business-card-subtitle">
-                            {business.category + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
-                            <img src="/images/lightning.png"/> {/*TODO: should come from json */}
-                            <img src="/images/fish.png"/>
-                        </CardSubtitle>
-                    </CardBody>
-                </Card>
-            </Link>
+            <Card className="business-card" onClick={handleClick}>
+                <CardImg
+                    // src={business["img"]}
+                    src="/images/BallardMarket.png" //TODO: should come from firestore
+                    alt={business.name + " image"}
+                    className="business-card-img"
+                />
+                <CardBody className="business-card-body">
+                    <CardTitle tag="h2" className="business-card-title">{business.name}</CardTitle>
+                    <CardSubtitle tag="p" className="business-card-subtitle">
+                        {business.category + " " + "$$" + " " /*TODO: replace "$$" with business["price"]*/}
+                        <img src="/images/lightning.png"/> {/*TODO: should come from json */}
+                        <img src="/images/fish.png"/>
+                    </CardSubtitle>
+                </CardBody>
+            </Card>
         </div>
     )
 }
@@ -120,10 +118,9 @@ function BusinessCardSearchList() {
         db.collection('businesses').get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 // doc.data() is never undefined for query doc snapshots
-                businessesHolder.push(<BusinessCard key={doc.data()} business={doc.data()} />);
+                businessesHolder.push(<BusinessCard key={doc.data()} business={doc.data()} id={doc.id} />);
             });
             setBusinesses(businessesHolder);
-            console.log()
         });
       }, []);
 

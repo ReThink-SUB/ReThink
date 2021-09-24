@@ -25,18 +25,30 @@ export function AboutUsContainer() {
       let profilesHolder = [];
       let backColor = "#D4E9D6";
       let color = "#ffffff";
+      let counter = 3;
       db.collection('team').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
               // doc.data() is never undefined for query doc snapshots
               profilesHolder.push(<ProfileCard key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
-
-              if (backColor === "#D4E9D6") {
+              
+              // switch for the first one
+              if (counter === 3) {
                 backColor = "#ffffff";
                 color = "#BBBBBD";
-              } else {
+                counter = 0;
+              }
+
+              // every two, switch colors
+              if (counter === 2 && backColor === "#D4E9D6") {
+                backColor = "#ffffff";
+                color = "#BBBBBD";
+                counter = 0;
+              } else if (counter === 2 && backColor === "#ffffff") {
                 backColor = "#D4E9D6";
                 color = "#ffffff";
-              }
+                counter = 0;
+              } 
+              counter++;
           });
           setProfiles(profilesHolder);
       });

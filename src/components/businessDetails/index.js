@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db } from "../../firebase";
-import { doc, getDoc } from "firebase/firestore";
 import "./styles/businessDetails.css";
-
+import { useParams } from "react-router-dom";
 
 // TODO: to pull data, use the url params to get the name and use that name for pulling the data
 export default function Details(props) {
-  let details = props; // details data from props
-  console.log(props.data)
   let date = new Date();
+  let weekday = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  let weekdayFull = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let currentDay = date.getDay(); // get the current day so we can get the correct hours
+  currentDay = weekday[currentDay];
 
   let impactKeys = Array.from(props.cards.keys());
   let impact = props.cards;
@@ -21,9 +21,37 @@ export default function Details(props) {
       <ImpactCard key={key} name={key} desc={impact.get(key)} num={cardNum} />
     );
   });
+
+  // state to hold business details of current business being looked at
+  const [businessDetails, setBusinessDetails] = useState([]);
+  const [hours, setHours] = useState({});
+  const urlParams = useParams();
+
+  useEffect(() => {
+    getBusinessDetails();
+  }, []);
+
+  // pull business data from firestore
+  const getBusinessDetails = async () => {
+    const details = (await db.collection('businesses').doc(urlParams.business).get()).data();
+    if (!details) {
+      console.log('No such business document!');
+    } else {
+      console.log('Business data:', details);
+      setBusinessDetails(details);
+      setHours(details.hours);
+    }
+  }
+
+  let hourReturn = Object.keys(hours).map((i) => {
+    return <p>{weekdayFull[i] + ": " + business.hours[i]}</p>;
+  });
+
+  console.log(businessDetails.hours)
+
   return (
     <div className="content">
-      <h1>{details.name}</h1>
+      <h1>{businessDetails.name}</h1>
       {/* <div className="d-flex flex-row align-items-center"> */}
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
@@ -40,20 +68,20 @@ export default function Details(props) {
           alt="business image"
         />
         <div>
-          <p>
+          {/* <p>
             <strong>Today's Hours: </strong>
-            {details.hours[currentDay]}
-          </p>
+            {businessDetails.hours[currentDay]}
+          </p> */}
           <p>
             <strong>Phone: </strong>
-            {details.phone}
+            {businessDetails.phone}
           </p>
           <p>
             <strong>Address: </strong>
-            {details.address}
+            {businessDetails.address}
           </p>
           <br></br>
-          {details.profile}
+          {businessDetails.profile}
           <div className="social-buttons">
             <button className="mr-5">
               <strong>View on Google Maps</strong>{" "}
@@ -72,15 +100,15 @@ export default function Details(props) {
           <p>
             <strong>Hours:</strong>
           </p>
-          <p>
-            Tuesday: {details.hours.tue} <br />
-            Wednesday: {details.hours.wed} <br />
-            Thursday: {details.hours.thu} <br />
-            Friday: {details.hours.fri} <br />
-            Saturday: {details.hours.sat} <br />
-            Sunday: {details.hours.sun} <br />
-            Monday: {details.hours.mon} <br />
-          </p>
+          {/* <p>
+            Tuesday: {businessDetails.hours.tue} <br />
+            Wednesday: {businessDetails.hours.wed} <br />
+            Thursday: {businessDetails.hours.thu} <br />
+            Friday: {businessDetails.hours.fri} <br />
+            Saturday: {businessDetails.hours.sat} <br />
+            Sunday: {businessDetails.hours.sun} <br />
+            Monday: {businessDetails.hours.mon} <br />
+          </p> */}
         </div>
       </div>
       <h2>
