@@ -1,14 +1,32 @@
 import { useEffect, useState } from "react";
 import { Breadcrumb, BreadcrumbItem } from "reactstrap";
-import { db } from "../../firebase";
+import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
 import { useParams } from "react-router-dom";
 
 // TODO: to pull data, use the url params to get the name and use that name for pulling the data
 export default function Details(props) {
-  let date = new Date();
+  // create weekday map and map abbreviations to full name
+  let weekdayMap = new Map();
   let weekday = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   let weekdayFull = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  for (let i = 0; i < weekday.length; i++) {
+    weekdayMap.set(weekday[i], weekdayFull[i]);
+  }
+
+  // sorter for hours
+  const sorter = {
+    "sun": 0,
+    "mon": 1,
+    "tue": 2,
+    "wed": 3,
+    "thu": 4,
+    "fri": 5,
+    "sat": 6
+  }
+
+  // get the current day for today's hours
+  let date = new Date();
   let currentDay = date.getDay(); // get the current day so we can get the correct hours
   currentDay = weekday[currentDay];
 
@@ -39,15 +57,33 @@ export default function Details(props) {
     } else {
       console.log('Business data:', details);
       setBusinessDetails(details);
-      setHours(details.hours);
+
+      // order the hours properly
+      let h = details.hours;
+      let tmp = [];
+      Object.keys(h).forEach(function(key) {
+        let value = h[key];
+        let index = sorter[key.toLowerCase()];
+        tmp[index] = {
+          key: key,
+          value: value
+        };
+      });
+
+      let orderedData = {};
+      tmp.forEach(function(obj) {
+        orderedData[obj.key] = obj.value;
+      });
+      setHours(orderedData);
     }
   }
 
-  let hourReturn = Object.keys(hours).map((i) => {
-    return <p>{weekdayFull[i] + ": " + business.hours[i]}</p>;
+  // map days to hours
+  let hourReturn = Object.keys(hours).map((day) => {
+    return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
-  console.log(businessDetails.hours)
+  console.log(hours)
 
   return (
     <div className="content">
@@ -68,10 +104,10 @@ export default function Details(props) {
           alt="business image"
         />
         <div>
-          {/* <p>
+          <p>
             <strong>Today's Hours: </strong>
-            {businessDetails.hours[currentDay]}
-          </p> */}
+            {hours[currentDay]}
+          </p>
           <p>
             <strong>Phone: </strong>
             {businessDetails.phone}
@@ -100,15 +136,7 @@ export default function Details(props) {
           <p>
             <strong>Hours:</strong>
           </p>
-          {/* <p>
-            Tuesday: {businessDetails.hours.tue} <br />
-            Wednesday: {businessDetails.hours.wed} <br />
-            Thursday: {businessDetails.hours.thu} <br />
-            Friday: {businessDetails.hours.fri} <br />
-            Saturday: {businessDetails.hours.sat} <br />
-            Sunday: {businessDetails.hours.sun} <br />
-            Monday: {businessDetails.hours.mon} <br />
-          </p> */}
+          {hourReturn}
         </div>
       </div>
       <h2>
