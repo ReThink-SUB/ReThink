@@ -12,7 +12,7 @@ export const LeftSect = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 2%;
-  padding-top: 3rem;
+
   @media (max-width: 1200px) {
     width: 90%;
     margin: 0
@@ -29,9 +29,9 @@ export const RightSect = styled.div`
   display: flex;
   flex-direction: row;
   // background: rgba(220, 255, 245, 0.85);
-  margin-top: 5em;
+  margin-top: 2em;
   @media (max-width: 1200px) {
-    display: none
+    display: none;
   }
   postion: relative;
   justify-content: space-around;
@@ -66,7 +66,6 @@ export const Link = styled.h2`
 `;
 
 export const CardOne = styled.div`
-
   width: 265px;
   height: 340px;
   display: flex;
@@ -270,7 +269,7 @@ export const SubTitle = styled.h3`
   font-weight: 800;
   font-size: 56px;
   color: #67923D;
-  margin: 3em 0rem 2.5rem 5rem;
+  margin: 2em 0rem 2.5rem 5rem;
 
   @media (max-width: 1650px) {
     font-size: 52px;
@@ -319,18 +318,17 @@ export const Button = styled.button`
   }
 `;
 
-export const CirclePattern1 = styled.div` 
-position: absolute;
-top: 0;
-margin-left: 80%;
+export const CirclePattern1 = styled.div`
+  position: absolute;
+  top: 0;
+  margin-left: 80%;
 `;
 
 export const CirclePattern2 = styled.div`
-position: absolute;
-top: 0;
-margin-left: 80%;
+  position: absolute;
+  top: 0;
+  margin-left: 80%;
 `;
-
 
 export const RightCard = styled.div`
   position: relative;
@@ -342,9 +340,9 @@ export const RightCard = styled.div`
 `;
 
 export const LeftCard = styled.div`
-position: relative;
-img:nth-child(2) {
-  position: absolute;
-  margin-top: 25%;
-}
+  position: relative;
+  img:nth-child(2) {
+    position: absolute;
+    margin-top: 25%;
+  }
 `;

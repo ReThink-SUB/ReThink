@@ -13,6 +13,8 @@ export function ContactContainer() {
     setSubject,
     message,
     setMessage,
+    email,
+    setEmail,
     contactAlert,
     setContactAlert,
   } = useContext(BusinessContext);
@@ -21,11 +23,13 @@ export function ContactContainer() {
     db.collection("contacted").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
       name: name,
+      email: email,
       subject: subject,
       message: message,
     });
 
     setName("");
+    setEmail("");
     setSubject("");
     setMessage("");
     setContactAlert(true);
@@ -52,6 +56,12 @@ export function ContactContainer() {
           value={name}
           label="Your name"
           placeholder="Name"
+        />
+        <Contact.Input
+          setValue={setEmail}
+          value={email}
+          label="Your email"
+          placeholder="Email"
         />
         <Contact.Input
           setValue={setSubject}

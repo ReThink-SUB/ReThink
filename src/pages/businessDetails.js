@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
 import { NavbarContainer } from "../containers";
 import Details from "../components/businessDetails";
 import Footer from "../components/footer/index";
@@ -20,17 +20,11 @@ function DetailPage() {
   cats.forEach((cat, index) => {
     impact.set(cat, desc[index]);
   });
+
   return (
     <>
       <NavbarContainer />
-      <Details
-        name="Frankie and Jo's"
-        hours="1pm - 9pm"
-        phone="(206) 453-3135"
-        address="1411 NW 70th St, Seattle, WA 98117"
-        desc="Frankie & Jo’s is a plant-based ice cream shop whose mission is to radically shift the way you think about ice cream. We are steadfast and committed to making the most delicious and creative plant-based, gluten-free ice cream."
-        cards={impact}
-      />
+      <Details cards={impact} />
       <Footer />
     </>
   );

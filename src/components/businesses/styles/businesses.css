@@ -1,145 +1,151 @@
 .businesses-container {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
     align-content: center; */
-    flex-wrap: wrap;
-    margin-top: 5em;
-    margin-bottom: 3em;
+  flex-wrap: wrap;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 .business-background {
-    /* align-self: center;
+  /* align-self: center;
     width: 75em; */
-    width: 100%;
-    height: 6em;
-    background: rgba(71, 168, 78, 0.21);
-   
-    z-index: -2;
-    position: absolute;
-    margin-top: -4em;
+  width: 100%;
+  height: 6em;
+  background: rgba(71, 168, 78, 0.21);
+
+  z-index: -2;
+  position: absolute;
+  margin-top: -4em;
 }
 
 .businesses-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card-container {
-    position: relative;
-    margin-top: 5em;
-    margin-bottom: 1em;
-    min-width: 13em;
-    width: 20%;
-    display: flex
+  position: relative;
+  margin-top: 5em;
+  margin-bottom: 1em;
+  min-width: 13em;
+  width: 20%;
+  display: flex;
 }
 
 .business-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .business-card {
-    border-radius: 30px;
-    box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
-    border: #FFFFFF;
-    z-index: 1;
-    height: 14.5em;
-    width: 11em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1em;
+  border-radius: 30px;
+  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  border: #ffffff;
+  z-index: 1;
+  height: 14.5em;
+  width: 11em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
 }
 
-
 .circle-pattern-img {
-    margin: -2em 0em 0em 10em;
-    position: absolute;
-    z-index: -1;
+  margin: -2em 0em 0em 10em;
+  position: absolute;
+  z-index: -1;
 }
 
 .business-card-img {
-    width: 15em;
-    object-fit: contain;
-    padding-bottom: 1em;
+  padding-bottom: 5em;
+  border-radius: inherit;
+  width: 5em;
+}
+
+.card-img {
+  height: inherit;
+  width: inherit;
 }
 
 .business-card-body {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .business-card-subtitle {
-    color: #67923D;
-    margin-bottom: 1.5em;
+  color: #67923d;
+  margin-bottom: 1.5em;
 }
 
 .business-card-title {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
-.business-card-subtitle, .business-card-title {
-    position: absolute;
-    bottom: 0;
+.business-card-subtitle,
+.business-card-title {
+  position: absolute;
+  bottom: 0;
 }
 
 .businesses-pagination-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 3em;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
 }
 
 .business-page-link {
-    border-radius: 100px;
-    /* background: #91AB94; */
-    border: 1px solid #D4E9D6;
-    box-sizing: border-box;
-    color: #67923D;
-    font-weight: bold;
+  border-radius: 100px;
+  /* background: #91AB94; */
+  border: 1px solid #d4e9d6;
+  box-sizing: border-box;
+  color: #67923d;
+  font-weight: bold;
 }
 
 .business-page-item {
-    margin: 0em 0.3em 0em 0.3em
+  margin: 0em 0.3em 0em 0.3em;
 }
 
-.page-item:first-child .page-link, .page-item:last-child .page-link {
-    border-radius: 100px;
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border-radius: 100px;
 }
 
 .page-item:last-child .page-link {
-    border: 1px solid #67923D;
+  border: 1px solid #67923d;
 }
 
 .filters-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .dropdown {
-    box-sizing: border-box;
-    padding: 1em;
+  box-sizing: border-box;
+  padding: 1em;
 }
 
 .dropdown-toggle {
-    font-weight: 600;
-    font-size: 18px;
-    color: #ADADAF;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #AFAFAF;
-    width: 10em;
+  font-weight: 600;
+  font-size: 18px;
+  color: #adadaf;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #afafaf;
+  width: 10em;
 }
 
 .dropdown-item {
-    width: 11em;
-    height: 3em;
-    white-space: normal;
-    /* border-bottom: #ADADAF solid 1px; */
+  width: 11em;
+  height: 3em;
+  white-space: normal;
+  /* border-bottom: #ADADAF solid 1px; */
 }
 
 /* this is the arrow in the dropdown text */
@@ -152,56 +158,53 @@
 } */
 
 .search-bar {
-    background: rgba(236, 236, 236, 0.57);
-    border-radius: 10px;
-    border: #FFFFFF;
-    height: 2em;
-    width: 85%;
-    padding-left: 1em;
+  background: rgba(236, 236, 236, 0.57);
+  border-radius: 10px;
+  border: #ffffff;
+  height: 2em;
+  width: 85%;
+  padding-left: 1em;
 }
 
 .search-bar-btn {
-    background: #67923D;
-    border-radius: 10px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    color: #FFFFFF;
-    height: 2em;
-    width: 5em;
-    margin: 1em;
+  background: #67923d;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  height: 2em;
+  width: 5em;
+  margin: 1em;
 }
 
 .search-bar-container {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 2em 1em 2.5em 1em;
-    width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2em 1em 2.5em 1em;
+  width: 100%;
 }
 
 .search-bar-header h6 {
-    color: #828282;
-    font-weight: 500;
-    font-size: 18px;
+  color: #828282;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .search-bar-header h1 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .search-bar-and-btn {
-    margin: 2.5em 0em 0em 2em;
-    width: 75%;
-    margin-top: auto;
+  margin: 2.5em 0em 0em 2em;
+  width: 75%;
+  margin-top: auto;
 }
 
 .search-bar-header {
-    min-width: 20%;
+  min-width: 20%;
 }
-
-
-
 
 /* TEST
 .businesses-container {

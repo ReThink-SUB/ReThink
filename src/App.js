@@ -148,8 +148,8 @@ export default function App() {
                 <Criteria />
               </Route>
               {/* FOR DEBUGGING ONLY */}
-              <Route path={ROUTES.DETAILS} exact>
-                <Details />
+              <Route exact path={ROUTES.DETAILS + "/:business"} component={Details}>
+                {/* <Details /> */}
               </Route>
               <Route
                 path={ROUTES.TEAM}

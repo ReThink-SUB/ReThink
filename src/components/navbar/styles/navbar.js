@@ -2,28 +2,24 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: 100%;
-  height: 10vh;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0 1rem;
   z-index: 5;
   position: relative;
 
   @media (min-width: 800px) {
     justify-content: space-between;
-    padding: 0 6rem;
+    padding: 0 3rem;
   }
 `;
 
 export const Title = styled.div`
   cursor: pointer;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2em;
   img {
-    width: 80px;
+    margin-top: 1em;
+    width: 40%;
     height: auto;
     @media (max-width: 800px) {
       width: 70px;
