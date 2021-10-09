@@ -19,46 +19,26 @@ export const Title = styled.h3`
   letter-spacing: 0.35em;
 `;
 
-export const Hero = styled.div`
+export const Hero = styled.div``;
 
-`;
+export const Picture = styled.div``;
 
-export const Picture = styled.div`
+export const Section = styled.div``;
 
-`;
+export const Heading = styled.div``;
 
-export const Section = styled.div`
+export const Cards = styled.div``;
 
-`;
+export const Card = styled.div``;
 
-export const Heading = styled.div`
+export const Image = styled.div``;
 
-`;
-
-export const Cards = styled.div`
-
-`;
-
-export const Card = styled.div`
-
-`;
-
-export const Image = styled.div`
-
-`;
-
-export const Label = styled.div`
-
-`;
+export const Label = styled.div``;
 
 export const Actions = styled.div`
-  color: #00CC92;
+  color: #00cc92;
 `;
 
-export const Action = styled.div`
+export const Action = styled.div``;
 
-`;
-
-export const Type = styled.div`
-
-`;
+export const Type = styled.div``;

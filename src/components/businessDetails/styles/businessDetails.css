@@ -3,13 +3,13 @@
 }
 
 .content > h1 {
-  color: #3E3B3B;
+  color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 2em !important;
 }
 
 .content > h2 {
-  color: #3E3B3B;
+  color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 3em !important;
 }
@@ -35,19 +35,27 @@
   margin-right: .6em;
 } */
 
-.main-img {
+.images {
   width: 34%;
   object-fit: contain;
   margin-right: 3.5em;
 }
 
+.main-img {
+  width: 100%;
+}
+.temp-img {
+  width: 50%;
+  padding: 1em;
+}
+
 .bar {
   display: inline-block;
   width: 4.5em;
-  height: .12em;
-  background-color: #67923D;
+  height: 0.12em;
+  background-color: #67923d;
   margin-left: 1.45em !important;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .main-details {
@@ -66,9 +74,9 @@
 }
 
 .social-buttons > button {
-  margin-right: .8em !important;
+  margin-right: 0.8em !important;
   border-radius: 10px !important;
-  padding: .6em 1.6em !important;
+  padding: 0.6em 1.6em !important;
   box-shadow: 0 5px 8px #6a65653f;
   transition: transform 0.4s ease;
   transform: scale(1);
@@ -81,12 +89,12 @@
 }
 
 .social-buttons > button:active {
-  transform: scale(.98);
+  transform: scale(0.98);
   transition: transform 0.2s ease;
 }
 
 .specific-card {
-  border-radius: .5em !important;
+  border-radius: 0.5em !important;
   width: 12.6em;
   box-shadow: 0 5px 8px #6a65652a;
   margin-top: 5em;
@@ -95,8 +103,8 @@
 }
 
 .specific-card > p {
-  color: #6A6565;
-  font-size: .75em;
+  color: #6a6565;
+  font-size: 0.75em;
   line-height: 1.6em;
   padding: 1.6em;
 }
@@ -107,8 +115,8 @@
   align-items: center;
   line-height: 1.3em;
   color: white;
-  background-color: #67923D !important;
-  border-radius: .5em !important;
+  background-color: #67923d !important;
+  border-radius: 0.5em !important;
   width: 100%;
   padding: 1.6em 1.25em !important;
 }
@@ -120,13 +128,13 @@
 
 .specific-card > em {
   font-size: 2em;
-  margin-right: .6em;
+  margin-right: 0.6em;
   font-weight: 300 !important;
 }
 
 .specific-card a {
-  color: #6A6565;
-  font-size: .65em;
+  color: #6a6565;
+  font-size: 0.65em;
   text-decoration: underline;
   margin-top: 4.5em;
   margin-bottom: 2em;
@@ -141,7 +149,8 @@
 .sustainability-cards {
   display: flex;
   width: 100%;
-} 
+  justify-content: space-around;
+}
 
 .specific-card-header > p:first-child {
   margin-right: 1em;
