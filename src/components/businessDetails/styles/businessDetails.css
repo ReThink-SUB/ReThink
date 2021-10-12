@@ -1,5 +1,5 @@
 .content {
-  margin: 2em 12em !important;
+  margin: 2rem 10% !important;
 }
 
 .content > h1 {
@@ -26,13 +26,6 @@
 
 .breadcrumb a:hover, .breadcrumb li {
   color: #466824 !important;
-} */
-
-/* .eco {
-  color: #6A6565;
-  font-weight: 700;
-  margin: 2em 3.25em;
-  margin-right: .6em;
 } */
 
 .images {
@@ -95,7 +88,7 @@
 
 .specific-card {
   border-radius: 0.5em !important;
-  width: 12.6em;
+  width: 15rem;
   box-shadow: 0 5px 8px #6a65652a;
   margin-top: 5em;
   margin-left: 2%;
@@ -122,8 +115,8 @@
 }
 
 .specific-card > img {
-  margin-top: -1em;
-  margin-left: 10.8em;
+  margin-top: -1.2rem;
+  margin-left: 13.2rem;
 }
 
 .specific-card > em {
@@ -148,6 +141,8 @@
 
 .sustainability-cards {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
 }
