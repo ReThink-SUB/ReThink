@@ -61,19 +61,25 @@
 }
 
 .business-card-img {
-  padding-bottom: 5em;
-  border-radius: inherit;
-  width: 5em;
-}
-
-.card-img {
-  height: inherit;
-  width: inherit;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-bottom: 5em;
+  border-radius: 50%;
+  width: 138px;
+  height: 138px;
+  overflow: hidden;
+  object-fit: contain;
+  transform: translateX(-50%);
 }
 
 .business-card-body {
   display: flex;
   justify-content: center;
+}
+
+.business-card-body:hover {
+  cursor: pointer !important;
 }
 
 .business-card-subtitle {
@@ -215,7 +221,7 @@ width: auto;
     margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
-} 
+}
 
 .card-container {
     position: relative;
