@@ -4,7 +4,6 @@ import {
   CardTitle,
   Container,
   Card,
-  CardImg,
   CardSubtitle,
   Dropdown,
   DropdownToggle,
