@@ -111,21 +111,12 @@ export default function Details(props) {
   return (
     <div className="content">
       <h1>{businessDetails.name}</h1>
-      {/* <div className="d-flex flex-row align-items-center"> */}
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
           <BreadcrumbItem><a href="#">Dessert</a></BreadcrumbItem>
           <BreadcrumbItem active>Ice Cream</BreadcrumbItem>
         </Breadcrumb> */}
-      {/* <p className="eco">Eco-rating:</p> */}
-      {/* <img src={process.env.PUBLIC_URL + "/images/eco.png"} alt="rating"/> */}
-      {/* </div> */}
       <div className="main-details">
-        {/* <img
-          className="main-img"
-          src="images/frankie.png"
-          alt="business image"
-        /> */}
         <span className="images">
           <img className="main-img" src={imgURL[0]} alt="business 1" />
           <img className="temp-img" src={imgURL[1]} alt="business 2" />
