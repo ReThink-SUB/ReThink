@@ -52,6 +52,13 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
+  transition: all 0.3s;
+}
+
+.business-card:hover {
+  cursor: pointer !important;
+  box-shadow: 0 4px 18px rgba(189, 196, 179, 0.7);
+  transform: translateY(-1px);
 }
 
 .circle-pattern-img {
@@ -62,7 +69,7 @@
 
 .business-card-img {
   position: absolute;
-  top: 10px;
+  top: 16px;
   left: 50%;
   margin-bottom: 5em;
   border-radius: 50%;
@@ -76,10 +83,6 @@
 .business-card-body {
   display: flex;
   justify-content: center;
-}
-
-.business-card-body:hover {
-  cursor: pointer !important;
 }
 
 .business-card-subtitle {
