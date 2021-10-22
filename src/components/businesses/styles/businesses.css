@@ -52,6 +52,13 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1em;
+  transition: all 0.3s;
+}
+
+.business-card:hover {
+  cursor: pointer !important;
+  box-shadow: 0 4px 18px rgba(189, 196, 179, 0.7);
+  transform: translateY(-1px);
 }
 
 .circle-pattern-img {
@@ -61,14 +68,16 @@
 }
 
 .business-card-img {
-  padding-bottom: 5em;
-  border-radius: inherit;
-  width: 5em;
-}
-
-.card-img {
-  height: inherit;
-  width: inherit;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  margin-bottom: 5em;
+  border-radius: 50%;
+  width: 138px;
+  height: 138px;
+  overflow: hidden;
+  object-fit: contain;
+  transform: translateX(-50%);
 }
 
 .business-card-body {
@@ -215,7 +224,7 @@ width: auto;
     margin-top: 5em;
     margin-left: auto;
     margin-right: auto;
-} 
+}
 
 .card-container {
     position: relative;

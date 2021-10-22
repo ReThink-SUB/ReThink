@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Breadcrumb, BreadcrumbItem } from "reactstrap";
+// import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
 import { useParams } from "react-router-dom";
@@ -22,17 +22,6 @@ export default function Details(props) {
     weekdayMap.set(weekday[i], weekdayFull[i]);
   }
 
-  // sorter for hours
-  const sorter = {
-    sun: 0,
-    mon: 1,
-    tue: 2,
-    wed: 3,
-    thu: 4,
-    fri: 5,
-    sat: 6,
-  };
-
   // get the current day for today's hours
   let date = new Date();
   let currentDay = date.getDay(); // get the current day so we can get the correct hours
@@ -44,8 +33,50 @@ export default function Details(props) {
   const urlParams = useParams();
 
   const [imgURL, setURL] = useState("");
-  let arr = [1, 2, 3];
+
   useEffect(() => {
+    // sorter for hours
+    const sorter = {
+      sun: 0,
+      mon: 1,
+      tue: 2,
+      wed: 3,
+      thu: 4,
+      fri: 5,
+      sat: 6,
+    };
+    let arr = [1, 2, 3];
+    // pull business data from firestore
+    const getBusinessDetails = async () => {
+      const details = (
+        await db.collection("businesses").doc(urlParams.business).get()
+      ).data();
+      if (!details) {
+        console.log("No such business document!");
+      } else {
+        console.log("Business data:", details);
+        setBusinessDetails(details);
+
+        // order the hours properly
+        let h = details.hours;
+        let tmp = [];
+        Object.keys(h).forEach(function (key) {
+          let value = h[key];
+          let index = sorter[key.toLowerCase()];
+          tmp[index] = {
+            key: key,
+            value: value,
+          };
+        });
+
+        let orderedData = {};
+        tmp.forEach(function (obj) {
+          orderedData[obj.key] = obj.value;
+        });
+        setHours(orderedData);
+      }
+    };
+
     getBusinessDetails();
     let images = [];
     arr.map((key) => {
@@ -60,36 +91,6 @@ export default function Details(props) {
     setURL(images);
   }, [urlParams.business]);
 
-  // pull business data from firestore
-  const getBusinessDetails = async () => {
-    const details = (
-      await db.collection("businesses").doc(urlParams.business).get()
-    ).data();
-    if (!details) {
-      console.log("No such business document!");
-    } else {
-      console.log("Business data:", details);
-      setBusinessDetails(details);
-
-      // order the hours properly
-      let h = details.hours;
-      let tmp = [];
-      Object.keys(h).forEach(function (key) {
-        let value = h[key];
-        let index = sorter[key.toLowerCase()];
-        tmp[index] = {
-          key: key,
-          value: value,
-        };
-      });
-
-      let orderedData = {};
-      tmp.forEach(function (obj) {
-        orderedData[obj.key] = obj.value;
-      });
-      setHours(orderedData);
-    }
-  };
   let num = [1, 2, 3];
   let cards = num.map((key) => {
     return (
@@ -107,8 +108,6 @@ export default function Details(props) {
     return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
-  console.log(hours);
-
   return (
     <div className="content">
       <h1>{businessDetails.name}</h1>
@@ -119,9 +118,9 @@ export default function Details(props) {
         </Breadcrumb> */}
       <div className="main-details">
         <span className="images">
-          <img className="main-img" src={imgURL[0]} alt="business image" />
-          <img className="temp-img" src={imgURL[1]} alt="business image" />
-          <img className="temp-img" src={imgURL[2]} alt="business image" />
+          <img className="main-img" src={imgURL[0]} alt="business 1" />
+          <img className="temp-img" src={imgURL[1]} alt="business 2" />
+          <img className="temp-img" src={imgURL[2]} alt="business 3" />
         </span>
         <div>
           <p>
@@ -141,13 +140,13 @@ export default function Details(props) {
           <div className="social-buttons">
             <button className="mr-5">
               <strong>View on Google Maps</strong>{" "}
-              <img className="ml-2" src="/images/gmaps.png"></img>
+              <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
             </button>
             <button>
-              <img src="/images/insta.png"></img>
+              <img src="/images/insta.png" alt="instagram logo"></img>
             </button>
             <button>
-              <img src="/images/fb.png"></img>
+              <img src="/images/fb.png" alt="facebook logo"></img>
             </button>
           </div>
           <p>
@@ -181,7 +180,7 @@ function ImpactCard(props) {
         </p>
       </div>
       <p>{props.desc}</p>
-      <a href="#">See the checklist</a>
+      <a href="/criteria">See the checklist</a>
     </div>
   );
 }

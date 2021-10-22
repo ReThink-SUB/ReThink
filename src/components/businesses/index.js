@@ -3,12 +3,8 @@ import {
   CardBody,
   CardTitle,
   Container,
-  Col,
   Card,
-  Row,
-  CardImg,
   CardSubtitle,
-  CardText,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -140,7 +136,7 @@ function BusinessCard(props) {
         className="circle-pattern-img"
       />
       <Card className="business-card" onClick={handleClick}>
-        <CardImg
+        <img
           src={imgURL}
           // src="/images/BallardMarket.png" //TODO: should come from firestore (props.logosrc) // need to style image to be a circle
           alt={business.name + " image"}
