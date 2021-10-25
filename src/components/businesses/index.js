@@ -65,9 +65,6 @@ function Businesses() {
       });
 
     fetchLogos(ids);
-
-    console.log(ids);
-    console.log(logos); // BUG: rn it's not loading bc it needs to fulfill promise
   }, []);
 
   const fetchLogos = async (ids) => {
@@ -81,7 +78,7 @@ function Businesses() {
           urls.push(url);
         });
     }
-    console.log(urls);
+
     setLogos(urls);
   };
 
@@ -112,9 +109,8 @@ function BusinessCard(props) {
     var xxx = storage.ref("img/businesses/" + props.id + "/logo.png");
     xxx.getDownloadURL().then(function (url) {
       setURL(url);
-      console.log(url);
     });
-  }, []);
+  }, [props.id]);
 
   const handleClick = () => {
     setRedirectTo(props.id);
@@ -125,7 +121,7 @@ function BusinessCard(props) {
   }
 
   // BUG: rn it's undefined
-  console.log(props.logosrc);
+  // console.log(props.logosrc);
 
   return (
     <div className="card-container">
@@ -153,9 +149,9 @@ function BusinessCard(props) {
                 "$$" +
                 " " /*TODO: replace "$$" with business["price"]*/
             }
-            <img src="/images/lightning.png" />{" "}
+            <img src="/images/lightning.png" alt="fish icon"/>{" "}
             {/*TODO: should come from json */}
-            <img src="/images/fish.png" />
+            <img src="/images/fish.png" alt="lightning icon"/>
           </CardSubtitle>
         </CardBody>
       </Card>
@@ -199,19 +195,14 @@ function BusinessCardSearchList(props) {
   let filteredBusinesses = [];
   for (let business of businesses) {
     let data = business.props.business;
-    if (data.name.toLowerCase().includes(props.query.toLowerCase())) {
+    if (data.name.toLowerCase().includes(props.query.toLowerCase()) && data.published === "true") {
       filteredBusinesses.push(business);
     }
   }
-  console.log(filteredBusinesses);
 
   return (
     <Container className="businesses-container">
-      {/* <Col className="businesses-col"> */}
-      {/* <Row className="businesses-row"> */}
       {filteredBusinesses}
-      {/* </Row> */}
-      {/* </Col> */}
     </Container>
   );
 }
