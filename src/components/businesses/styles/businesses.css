@@ -44,7 +44,7 @@
 
 .business-card {
   border-radius: 30px;
-  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  box-shadow: 0px 4px 38px rgba(57, 57, 57, 0.12);
   border: #ffffff;
   z-index: 1;
   height: 14.5em;
@@ -57,7 +57,7 @@
 
 .business-card:hover {
   cursor: pointer !important;
-  box-shadow: 0 4px 18px rgba(189, 196, 179, 0.7);
+  box-shadow: 0 4px 20px rgba(194, 194, 194, 0.7);
   transform: translateY(-1px);
 }
 
