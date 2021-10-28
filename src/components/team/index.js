@@ -28,7 +28,7 @@ function ProfileCard(props) {
               alt={props.profile.name + " profile picture"}
             />
           </div>
-          <CardTitle tag="h3">{props.profile.name + " " + props.profile.pronouns}</CardTitle>
+          <CardTitle tag="h6">{props.profile.name + " " + props.profile.pronouns}</CardTitle>
           <CardSubtitle tag="p">{props.profile.position}</CardSubtitle>
           {/* <div className="dots-container">
             <svg className="dots" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="55" height="40" fill="none" viewBox="0 0 55 40">
