@@ -7,6 +7,7 @@ export const Container = styled.div`
   padding: 0 1rem;
   z-index: 5;
   position: relative;
+  overflow-x: clip;
 
   @media (min-width: 800px) {
     justify-content: space-between;
