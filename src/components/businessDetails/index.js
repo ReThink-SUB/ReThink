@@ -86,6 +86,12 @@ export default function Details(props) {
         .then(function (url) {
           setURL((prev) => [...prev, url]);
         });
+
+        const jpgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".jpg")
+        jpgRef.getDownloadURL()
+        .then(function (url) {
+          setURL((prev) => [...prev, url]);
+        });
       }
     }
 

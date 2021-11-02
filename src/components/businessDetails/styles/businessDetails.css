@@ -13,7 +13,7 @@
   font-weight: 900 !important;
   margin-top: 3em !important;
 }
-/* 
+/*
 .breadcrumb {
   background-color: white !important;
   margin: 0 !important;
@@ -36,10 +36,12 @@
 
 .main-img {
   width: 100%;
+  min-width: 340px;
 }
+
 .temp-img {
   width: 50%;
-  padding: 1em;
+  padding: 0.4em 0.2em;
 }
 
 .bar {
