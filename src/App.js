@@ -62,8 +62,6 @@ export default function App() {
       });
   }, []);
 
-  // console.log(businesses);
-
   return (
     <>
       <BusinessContext.Provider
@@ -148,9 +146,8 @@ export default function App() {
                 <Criteria />
               </Route>
               {/* FOR DEBUGGING ONLY */}
-              <Route exact path={ROUTES.DETAILS + "/:business"} component={Details}>
+              <Route exact path={ROUTES.DETAILS + "/:business"} key="" component={Details}/>
                 {/* <Details /> */}
-              </Route>
               <Route
                 path={ROUTES.TEAM}
                 render={(...routerProps) => (

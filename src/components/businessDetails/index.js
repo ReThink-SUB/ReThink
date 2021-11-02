@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
@@ -31,8 +31,7 @@ export default function Details(props) {
   const [businessDetails, setBusinessDetails] = useState([]);
   const [hours, setHours] = useState({});
   const urlParams = useParams();
-
-  const [imgURL, setURL] = useState("");
+  const [imgArr, setURL] = useState([]);
 
   useEffect(() => {
     // sorter for hours
@@ -45,7 +44,7 @@ export default function Details(props) {
       fri: 5,
       sat: 6,
     };
-    let arr = [1, 2, 3];
+
     // pull business data from firestore
     const getBusinessDetails = async () => {
       const details = (
@@ -75,20 +74,22 @@ export default function Details(props) {
         });
         setHours(orderedData);
       }
+      return details;
     };
 
     getBusinessDetails();
-    let images = [];
-    arr.map((key) => {
-      console.log(urlParams.business);
-      storage
-        .ref("img/businesses/" + urlParams.business + "/" + key + ".png")
-        .getDownloadURL()
+
+    async function getImgURL() {
+      for (let i = 1; i < 4; i++) {
+        const imgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".png")
+        imgRef.getDownloadURL()
         .then(function (url) {
-          images.push(url);
+          setURL((prev) => [...prev, url]);
         });
-    });
-    setURL(images);
+      }
+    }
+
+    getImgURL();
   }, [urlParams.business]);
 
   let num = [1, 2, 3];
@@ -118,9 +119,9 @@ export default function Details(props) {
         </Breadcrumb> */}
       <div className="main-details">
         <span className="images">
-          <img className="main-img" src={imgURL[0]} alt="business 1" />
-          <img className="temp-img" src={imgURL[1]} alt="business 2" />
-          <img className="temp-img" src={imgURL[2]} alt="business 3" />
+          <img className="main-img" src={imgArr[0]} alt="business 1" />
+          <img className="temp-img" src={imgArr[1]} alt="business 2" />
+          <img className="temp-img" src={imgArr[2]} alt="business 3" />
         </span>
         <div>
           <p>
