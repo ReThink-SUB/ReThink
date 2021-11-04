@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import "./styles/style.css";
+import { db, storage } from "../../firebase";
 import {
   Container,
   Side,
@@ -48,6 +49,7 @@ import {
   SecCircles,
   DownloadBtn,
 } from "./styles/aboutUs";
+import { securityRules } from "firebase-admin";
 
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -189,9 +191,18 @@ AboutUs.Frame = function AboutUsFrame({
   children,
   ...restProps
 }) {
+  // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/profiles/${src}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    })
+  });
   return (
     <Frame color={color} background={background} {...restProps}>
-      <img src={`/images/profile_pics/${src}.jpg`} alt="Card" />
+      <img src={imgURL} alt="Card" />
       <h2>{person}</h2>
       <p color={color}>{position}</p>
       {children}
