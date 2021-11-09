@@ -165,7 +165,7 @@ function BusinessCard(props) {
       </Card>
     </div>
   );
-}
+} 
 
 // Creates a container of all the business cards
 function BusinessCardSearchList(props) {
