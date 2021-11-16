@@ -38,12 +38,7 @@ function Businesses() {
     ],
     ["Greater Seattle Area", "Portland", "Remote"],
   ];
-  let filters = [];
-  let iterator = 0;
-  for (let i of filterHeaders) {
-    filters.push(<FilterButton filter={i} options={filterOptions[iterator]} />);
-    iterator++;
-  }
+  
 
   // TODO: figure out how to get images using id of business
   // rn, im trying to get the ids of each business and get the logos using those ids in the ref
@@ -53,19 +48,48 @@ function Businesses() {
   // https://stackoverflow.com/questions/64708353/how-to-display-all-the-images-from-firebase-storage-in-react
   const [logos, setLogos] = useState([]);
   const [ids, setIDs] = useState([]);
+  const [filterOps, setFilterOps] = useState([]);
+  let filters = [];
+  let iterator = 0;
   useEffect(() => {
     let idHolder = [];
+    let catHolder = [];
+    let priceHolder = [];
+    let areaHolder = [];
+    let badgeHolder = [];
     db.collection("businesses")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           idHolder.push(doc.id);
+          
+          let data = doc.data();
+          if (!catHolder.includes(data.category)) {
+            catHolder.push(data.category);  
+          }
+          if (!priceHolder.includes(data.price)) {
+            priceHolder.push(data.price);  
+          }
+          if (!areaHolder.includes(data.area)) {
+            areaHolder.push(data.area);  
+          }
+          data.badges.forEach(badge => {
+            if(!badgeHolder.includes(badge)) {
+              badgeHolder.push(badge);
+            }
+          });
         });
         setIDs(idHolder);
+        setFilterOps([catHolder, priceHolder, badgeHolder, areaHolder]);
       });
-
-    fetchLogos(ids);
+      
+      fetchLogos(ids);
   }, []);
+
+  filterHeaders.forEach( (filt) => {
+    filters.push(<FilterButton filter={filt} options={filterOps[iterator]}/>);
+    iterator++;
+  });
 
   const fetchLogos = async (ids) => {
     let urls = [];
@@ -256,9 +280,15 @@ function FilterButton(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   let filterOptions = [];
-  for (let i of props.options) {
-    filterOptions.push(<DropdownItem>{i}</DropdownItem>);
-  }
+  let propOp = {};
+  let options = [];
+
+  Object.assign(propOp, props.options);
+  options = Object.values(propOp);
+
+  options.forEach( (option) => {
+    filterOptions.push(<DropdownItem>{option}</DropdownItem>);
+  });
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
