@@ -4,6 +4,7 @@ import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Loading } from "./components";
 import { BusinessContext } from "./context/business";
+import { ScrollToTop } from "./components";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
@@ -66,6 +67,7 @@ export default function App() {
 
   return (
     <>
+      <ScrollToTop/>
       <BusinessContext.Provider
         value={{
           businessName,
