@@ -2,9 +2,8 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import * as ROUTES from "./constants/routes";
 import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Loading } from "./components";
+import { Loading, ScrollToTop } from "./components";
 import { BusinessContext } from "./context/business";
-import { ScrollToTop } from "./components";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
@@ -163,8 +162,8 @@ export default function App() {
             </Suspense>
           </Switch>
         </Router>
+        <ScrollToTop/>
       </BusinessContext.Provider>
-      <ScrollToTop/>
     </>
   );
 }

@@ -30,6 +30,5 @@ export const Button = styled.div`
   @media (min-width: 1300px) {
     width: 55%;
     justify-content: flex-end;
-    border-radius: 100px;
   }
 `;
