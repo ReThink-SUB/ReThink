@@ -67,7 +67,6 @@ export default function App() {
 
   return (
     <>
-      <ScrollToTop/>
       <BusinessContext.Provider
         value={{
           businessName,
@@ -165,6 +164,7 @@ export default function App() {
           </Switch>
         </Router>
       </BusinessContext.Provider>
+      <ScrollToTop/>
     </>
   );
 }

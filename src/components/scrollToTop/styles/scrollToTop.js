@@ -4,12 +4,12 @@ export const Button = styled.div`
     position: fixed;
     bottom: 20px;
     right: 20px;
-    font-size: 1rem;
+    font-size: 0.75rem;
     border-radius: 100px;
     border: none;
     opacity: 0.5;
   button {
-    width: 5rem;
+    width: 3rem;
     height: 41px;
     outline: none;
     border: none;
@@ -30,6 +30,6 @@ export const Button = styled.div`
   @media (min-width: 1300px) {
     width: 55%;
     justify-content: flex-end;
-    left: 100rem;
+    border-radius: 100px;
   }
 `;
