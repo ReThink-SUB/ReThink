@@ -1,3 +1,4 @@
+import { Flippy } from "react-flippy";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -378,6 +379,14 @@ export const Card = styled.div`
   margin: 2rem 1rem;
   position: relative;
   padding: 1.5rem 0;
+  &.flipped {
+        .front {
+            transform: rotateY(180deg);
+        }
+        .back {
+            transform: rotateY(0deg);
+        }
+  }
 
   @media (max-width: 1300px) {
     justify-content: center;
@@ -386,6 +395,10 @@ export const Card = styled.div`
   @media (max-width: 650px) {
     width: 100%;
   }
+`;
+
+export const FlipCard = styled.div`
+  
 `;
 
 export const Frame = styled.div`
@@ -455,6 +468,112 @@ export const Frame = styled.div`
 `;
 
 export const TextArea = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 0.025em;
+    color: #6a6565;
+
+    @media (max-width: 1400px) {
+      font-size: 12px;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1rem 0;
+
+    img {
+      width: 15px;
+      height: auto;
+      margin: 0 1rem;
+      cursor: pointer;
+    }
+  }
+`;
+
+// Copies of Frame and TextArea
+export const FrontCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: ${({ background }) => background};
+  width: 207px;
+  padding: 1.9rem 0;
+  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  border-radius: 30px;
+  margin-right: 2.5rem;
+
+  @media (max-width: 1400px) {
+    width: 197px;
+  }
+
+  @media (max-width: 1300px) {
+    width: 230px;
+    padding: 2.3rem;
+  }
+
+  @media (max-width: 750px) {
+    width: 207px;
+    padding: 1.9rem 0;
+  }
+
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+    margin-bottom: 1rem;
+
+    @media (max-width: 1400px) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @media (max-width: 1300px) {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #6a6565;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: ${({ color }) => color};
+  }
+`;
+
+export const Back = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

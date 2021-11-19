@@ -1,6 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef } from 'react';
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import { AboutUs } from "../components";
-import { db } from "../firebase";
+import { FrontCard } from "../components/aboutUs/styles/aboutUs";
+import "../components/aboutUs/styles/style.css"
+import { db, storage } from "../firebase";
+import About from '../pages/about';
 
 export function AboutUsContainer() {
   async function downloadImage(imageSrc) {
@@ -29,7 +33,7 @@ export function AboutUsContainer() {
       db.collection('team').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
               // doc.data() is never undefined for query doc snapshots
-              profilesHolder.push(<ProfileCard key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
+              profilesHolder.push(<CardProfile key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
               
               // switch for the first one
               if (counter === 3) {
@@ -439,5 +443,51 @@ function ProfileCard(props) {
         {data.bio}
       </AboutUs.TextArea>
     </AboutUs.Card>
+  );
+}
+
+function CardProfile(props) {
+  let data = props.data;
+  // const [flipped, setFlipped] = useState(false);
+  const ref = useRef();
+  // const flip = () => {
+  //   if (!flipped) {
+  //     setFlipped(true);
+  //   } else {
+  //     setFlipped(false);
+  //   }
+  // }
+
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/profiles/${data.profile_img}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    })
+  });
+
+  return (
+      <Flippy
+        flipOnClick={true}
+        flipDirection="horizontal"
+        ref={ref}
+        className="card"
+      >
+        <FrontSide>
+          <FrontCard color={props.color} background={props.back_color}>
+            <img src={imgURL} alt="Card" />
+            <h2>{data.name}</h2>
+            <p color={props.color}>{data.position}</p>
+            {/* {children} */}
+          </FrontCard>
+          <AboutUs.SecCircles />
+        </FrontSide>
+        <BackSide>
+          <AboutUs.Back linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}>
+            {data.bio}
+          </AboutUs.Back>
+        </BackSide>
+      </Flippy>
   );
 }

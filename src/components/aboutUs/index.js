@@ -20,6 +20,9 @@ import {
   Circles,
   Frame,
   TextArea,
+  // copies of frame and textarea
+  FrontCard,
+  Back,
   InvolvedSec,
   SecTitle,
   Btn,
@@ -210,6 +213,35 @@ AboutUs.Frame = function AboutUsFrame({
   );
 };
 
+AboutUs.Front = function AboutUsFront({
+  color,
+  background,
+  src,
+  person,
+  position,
+  className,
+  children,
+  ...restProps
+}) {
+  // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/profiles/${src}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    })
+  });
+  return (
+    <FrontCard color={color} background={background} {...restProps}>
+      <img src={imgURL} alt="Card" />
+      <h2>{person}</h2>
+      <p color={color}>{position}</p>
+      {children}
+    </FrontCard>
+  );
+};
+
 AboutUs.TextArea = function AboutUsTextArea({
   linkedin,
   description,
@@ -226,6 +258,25 @@ AboutUs.TextArea = function AboutUsTextArea({
         <img src="/images/Mail.png" alt="Email" />
       </div>
     </TextArea>
+  );
+};
+
+AboutUs.Back = function AboutUsBack({
+  linkedin,
+  description,
+  children,
+  ...restProps
+}) {
+  return (
+    <Back className={children}{...restProps}>
+      <p>{children}</p>
+      <div>
+        <a href={linkedin} target="_blank" rel="noopener noreferrer">
+          <img src="/images/Linkedin.png" alt="Linkedin" />
+        </a>
+        <img src="/images/Mail.png" alt="Email" />
+      </div>
+    </Back>
   );
 };
 

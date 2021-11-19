@@ -1,3 +1,20 @@
 a {
     justify-content: left;
 }
+
+.card {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    margin: 2rem 1rem;
+    position: relative;
+    padding: 1.5rem 0;
+  
+    @media (max-width: 1300px) {
+      justify-content: center;
+    }
+  
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+}
