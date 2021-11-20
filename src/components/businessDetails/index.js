@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
@@ -115,6 +115,42 @@ export default function Details(props) {
     return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
+  const ref = useRef([]);
+  const [first, setFirst] = useState("details-img-modal hidden");
+  const [second, setSecond] = useState("details-img-modal hidden");
+  const [third, setThird] = useState("details-img-modal hidden");
+  const [bg, setBg] = useState("details-img-modals hidden");
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setBg("details-img-modals");
+    }
+
+    const checkIfClickedOutside = (e) => {
+      if (open && ref.current && !ref.current[0].contains(e.target) && !ref.current[1].contains(e.target) && !ref.current[2].contains(e.target)) {
+        setOpen(false);
+        console.log("hi");
+
+        if (!first.includes("hidden")) {
+          setFirst(first + " hidden");
+        } else if (!second.includes("hidden")) {
+          setSecond(second + " hidden");
+        } else if (!third.includes("hidden")) {
+          setThird(third + " hidden");
+        }
+
+        setBg(bg + " hidden");
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+
+    console.log(first);
+    console.log(second);
+    console.log(third);
+  }, [first, second, third, open, bg])
+
   return (
     <div className="content">
       <h1>{businessDetails.name}</h1>
@@ -125,10 +161,26 @@ export default function Details(props) {
         </Breadcrumb> */}
       <div className="main-details">
         <span className="images">
-          <img className="main-img" src={imgArr[0]} alt="business 1" />
-          <img className="temp-img" src={imgArr[1]} alt="business 2" />
-          <img className="temp-img" src={imgArr[2]} alt="business 3" />
+          <img className="main-img" onClick={() => {
+            setFirst("details-img-modal");
+            setOpen(true);
+          }} src={imgArr[0]} alt="business 1" />
+          <img className="temp-img" onClick={() => {
+            setSecond("details-img-modal");
+            setOpen(true);
+          }} src={imgArr[1]} alt="business 2" />
+          <img className="temp-img" onClick={() => {
+            setThird("details-img-modal");
+            setOpen(true);
+          }} src={imgArr[2]} alt="business 3" />
         </span>
+
+        <div className={bg}>
+          <img className={first} ref={(i) => {ref.current.push(i)}} src={imgArr[0]} alt="business 1" />
+          <img className={second} ref={(i) => {ref.current.push(i)}} src={imgArr[1]} alt="business 2" />
+          <img className={third} ref={(i) => {ref.current.push(i)}} src={imgArr[2]} alt="business 3" />
+        </div>
+
         <div>
           <p>
             <strong>Today's Hours: </strong>
