@@ -36,9 +36,15 @@ export function NavbarContainer() {
         </Burger.Links>
         <Burger.Squiggle />
         <Burger.Socials>
-          <i className="fab fa-facebook"></i>
-          <i className="fab fa-instagram"></i>
-          <i className="fas fa-envelope"></i>
+          <a href="https://www.facebook.com/SUBInitiative/" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/subinitiative/" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:  info@subinitiative.com">
+            <i class="fas fa-envelope"></i>
+          </a>
         </Burger.Socials>
       </Burger.Menu>
       <Navbar.Links>

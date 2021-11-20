@@ -87,7 +87,7 @@ export const Links = styled.div`
   flex-direction: column;
   justify-content: space-around;
   text-align: left;
-  align-items: end;
+  align-items: start;
   @media (min-width: 1500px) {
     height: 50%;
   }
