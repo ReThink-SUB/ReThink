@@ -1,4 +1,3 @@
-import { Flippy } from "react-flippy";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -573,7 +572,7 @@ export const FrontCard = styled.div`
   }
 `;
 
-export const Back = styled.div`
+export const BackCard = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

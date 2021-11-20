@@ -1,8 +1,8 @@
 import React, {useEffect, useState, useRef } from 'react';
-import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import ReactCardFlip from 'react-card-flip';
 import { AboutUs } from "../components";
-import { FrontCard } from "../components/aboutUs/styles/aboutUs";
-import "../components/aboutUs/styles/style.css"
+import { FlipCard, FrontCard, BackCard } from "../components/aboutUs/styles/aboutUs";
+import "../components/aboutUs/styles/style.scss"
 import { db, storage } from "../firebase";
 import About from '../pages/about';
 
@@ -334,6 +334,7 @@ export function AboutUsContainer() {
             </AboutUs.Card> */}
             {profiles}
           </AboutUs.Cards>
+          <BlogCard/><BlogCard/>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec>
           <AboutUs.Title id="involved">Get Involved</AboutUs.Title>
@@ -430,7 +431,7 @@ export function AboutUsContainer() {
 function ProfileCard(props) {
   let data = props.data;
   return (
-    <AboutUs.Card>
+    <AboutUs.Card className="flip-card">
       <AboutUs.Frame
         background={[props.back_color]}
         src={data.profile_img}
@@ -457,37 +458,96 @@ function CardProfile(props) {
   //     setFlipped(false);
   //   }
   // }
-
-  const [imgURL, setURL] = useState([]);
-
-  useEffect(() => {
-    var ref = storage.ref(`img/profiles/${data.profile_img}.jpg`);
-    ref.getDownloadURL().then(function (url) {
-      setURL(url);
-    })
-  });
+  const [isFlipped, setFlipped] = useState(false);
 
   return (
-      <Flippy
-        flipOnClick={true}
-        flipDirection="horizontal"
-        ref={ref}
-        className="card"
-      >
-        <FrontSide>
-          <FrontCard color={props.color} background={props.back_color}>
-            <img src={imgURL} alt="Card" />
-            <h2>{data.name}</h2>
-            <p color={props.color}>{data.position}</p>
-            {/* {children} */}
-          </FrontCard>
-          <AboutUs.SecCircles />
-        </FrontSide>
-        <BackSide>
-          <AboutUs.Back linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}>
-            {data.bio}
-          </AboutUs.Back>
-        </BackSide>
-      </Flippy>
+    <>
+      <AboutUs.Card>
+      <AboutUs.Frame
+        background={[props.back_color]}
+        src={data.profile_img}
+        person={data.name}
+        position={data.position}
+        color={props.color}
+      ></AboutUs.Frame>
+      <AboutUs.SecCircles />
+      <AboutUs.TextArea linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}>
+        {data.bio}
+      </AboutUs.TextArea>
+      </AboutUs.Card>
+    </>
   );
+}
+
+class BlogCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { flipped: false };
+    this.flip = this.flip.bind(this);
+  }
+
+  flip = () => {
+    this.setState({ flipped: !this.state.flipped });
+  }
+  render() {
+    return (
+      <>
+      <div onMouseEnter={this.flip} onMouseLeave={this.flip} className={"flip-card-container" + (this.state.flipped ? " flipped" : "")}>
+        <Front/>
+        <Back />
+        <AboutUs.SecCircles />
+      </div>
+      </>
+    )
+  }
+}
+
+class Front extends React.Component {
+  render() {
+    return (
+      <div className="front" style={{backgroundColor: "#D4E9D6"}}>
+        <ImageArea />
+        <MainArea />
+      </div>
+    )
+  }
+}
+
+class Back extends React.Component {
+  render() {
+    return (
+      <div className="back" style={{backgroundColor: "#D4E9D6"}}>
+        <p>Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post.</p>
+        <p>Bloggity bloggity bloggity blog. This would be the full text of the abbreviated blog post.</p>
+      </div>
+    )
+  }
+}
+
+class ImageArea extends React.Component {
+  render() {
+    return (
+      <div className="image-container">
+        <img className="card-image" src="https://78.media.tumblr.com/d98fb931adb117c70f0dbced9e947520/tumblr_pe582mbWip1tlgv32o1_1280.png"></img>
+        <h2 className="title">An example blog post</h2>
+      </div>
+    )
+  }
+
+}
+
+class MainArea extends React.Component {
+  render() {
+    return (
+      <div className="main-area">
+        <div className="blog-post">
+          <p className="blog-content">
+            Some sample text to
+            </p>
+
+        </div>
+
+      </div>
+    )
+  }
 }

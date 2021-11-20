@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import "./styles/style.css";
+import "./styles/style.scss";
 import { db, storage } from "../../firebase";
 import {
   Container,
@@ -22,7 +22,7 @@ import {
   TextArea,
   // copies of frame and textarea
   FrontCard,
-  Back,
+  BackCard,
   InvolvedSec,
   SecTitle,
   Btn,
@@ -237,7 +237,6 @@ AboutUs.Front = function AboutUsFront({
       <img src={imgURL} alt="Card" />
       <h2>{person}</h2>
       <p color={color}>{position}</p>
-      {children}
     </FrontCard>
   );
 };
@@ -268,7 +267,7 @@ AboutUs.Back = function AboutUsBack({
   ...restProps
 }) {
   return (
-    <Back className={children}{...restProps}>
+    <BackCard className={children}{...restProps}>
       <p>{children}</p>
       <div>
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
@@ -276,7 +275,7 @@ AboutUs.Back = function AboutUsBack({
         </a>
         <img src="/images/Mail.png" alt="Email" />
       </div>
-    </Back>
+    </BackCard>
   );
 };
 

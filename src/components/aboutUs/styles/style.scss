@@ -1,0 +1,199 @@
+$text-margin: 10px;
+$new-white: rgb(248, 246, 234);
+
+a {
+    justify-content: left;
+}
+
+// width: 45%;
+//   display: flex;
+//   align-items: center;
+//   margin: 2rem 1rem;
+//   position: relative;
+//   padding: 1.5rem 0;
+//   &.flipped {
+//         .front {
+//             transform: rotateY(180deg);
+//         }
+//         .back {
+//             transform: rotateY(0deg);
+//         }
+//   }
+
+//   @media (max-width: 1300px) {
+//     justify-content: center;
+//   }
+
+//   @media (max-width: 650px) {
+//     width: 100%;
+//   }
+
+.flip-card-container {
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    top: 20px;
+    width: 330px;
+    margin-left: 35%;
+    margin-right: 35%;
+    position: relative;
+    transform-style: preserve-3d;
+    box-sizing: border-box;
+    // width: 45%;
+    display: flex;
+    align-items: center;
+    margin: 2rem 1rem;
+    // position: relative;
+    // padding: 1.5rem 0;
+    &.flipped {
+        .front {
+            transform: rotateY(180deg);
+        }
+        .back {
+            transform: rotateY(0deg);
+        }
+    }
+    .front,
+    .back {
+        box-sizing: border-box;
+        height: 100%;
+        width: 207px;
+        display: block;
+        background: rgb(248, 246, 234);
+        // padding: 10px;
+        position: absolute;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        transition: -webkit-transform ease 500ms;
+        transition: transform ease 500ms;
+
+        // display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        // position: relative;
+        // background: ${({ background }) => background};
+        // width: 207px;
+        padding: 1.9rem 0;
+        box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+        border-radius: 30px;
+        margin-right: 2.5rem;
+        @media (max-width: 1400px) {
+            width: 197px;
+          }
+        
+        @media (max-width: 1300px) {
+            width: 230px;
+            padding: 2.3rem;
+        }
+        
+        @media (max-width: 750px) {
+            width: 207px;
+            padding: 1.9rem 0;
+        }
+    }
+    .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+        /* front tile styles go here! */
+        h2 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #6a6565;
+            margin-bottom: 0.5rem;
+        }
+    }
+    .back {
+        background: rgb(248, 246, 234);
+        transform: rotateY(-180deg);
+        padding: 1rem;
+        font-size: 20px;
+        /* back tile styles go here! */
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // width: 50%;
+
+        // @media (max-width: 1300px) {
+        //     display: none;
+        // }
+
+        p {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 17px;
+            letter-spacing: 0.025em;
+            color: #6a6565;
+
+            @media (max-width: 1400px) {
+            font-size: 12px;
+            }
+        }
+    }
+    .image-container {
+        position: relative;
+        .card-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+            margin-bottom: 1rem;
+        }
+        .title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+            color: #6a6565;
+            margin-bottom: 0.5rem;
+        }
+    }
+    .main-area {
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        
+        .blog-post {
+            height: 100%;
+            
+            .date {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        // .read-more {
+        //     font-size: 20px;
+        //     position: relative;
+        //     bottom: 0px;
+        //     text-align: right;
+        // }
+        //     .blog-content {
+        //         height: 90%;
+        //         display: block;
+        //         margin-top: 10px;
+        //         margin-bottom: 10px;
+        //         white-space: nowrap;
+        //         overflow: hidden;
+        //         text-overflow: ellipsis;
+        //     }
+        }
+    }
+    @media (max-width: 1300px) {
+        justify-content: center;
+    }
+    
+      @media (max-width: 650px) {
+        width: 100%;
+    }
+}
