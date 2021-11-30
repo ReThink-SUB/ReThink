@@ -13,7 +13,7 @@
   font-weight: 900 !important;
   margin-top: 3em !important;
 }
-/* 
+/*
 .breadcrumb {
   background-color: white !important;
   margin: 0 !important;
@@ -66,22 +66,25 @@
   width: 2em;
 }
 
-.social-buttons > button {
+.social-buttons > a {
+  display: inline;
   margin-right: 0.8em !important;
   border-radius: 10px !important;
-  padding: 0.6em 1.6em !important;
+  padding: 1em 2.2em !important;
+  background-color: #ebebeb;
   box-shadow: 0 5px 8px #6a65653f;
   transition: transform 0.4s ease;
   transform: scale(1);
+  color: #000;
 }
 
-.social-buttons > button:hover {
+.social-buttons > a:hover {
   box-shadow: 0 5px 8px #6a656556;
   transition: all 0.4s ease;
   transform: scale(1.02);
 }
 
-.social-buttons > button:active {
+.social-buttons > a:active {
   transform: scale(0.98);
   transition: transform 0.2s ease;
 }
@@ -133,7 +136,7 @@
   margin-bottom: 2em;
 }
 
-.speciifc-card a:hover {
+.specific-card a:hover {
   color: #3b3b3b;
   font-weight: 500;
   text-decoration: underline;

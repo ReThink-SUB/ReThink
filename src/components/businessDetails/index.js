@@ -108,6 +108,39 @@ export default function Details(props) {
     return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
+  console.log(businessDetails.maps)
+
+  function mapButton() {
+    if (businessDetails.maps) {
+      return (
+        <a href={businessDetails.maps} target="_blank" rel="noreferrer">
+            <strong>View on Google Maps</strong>{" "}
+            <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
+        </a>
+      )
+    }
+  }
+
+  function instagram() {
+    if (businessDetails.instagram) {
+      return (
+        <a href={"https://www.instagram.com/" + businessDetails.instagram.substring(1)} target="_blank" rel="noreferrer">
+            <img src="/images/insta.png" alt="instagram logo"></img>
+        </a>
+      )
+    }
+  }
+
+  function facebook() {
+    if (businessDetails.facebook) {
+      return (
+        <a href={"https://www.facebook.com/" + businessDetails.facebook} target="_blank" rel="noreferrer">
+            <img src="/images/fb.png" alt="facebook logo"></img>
+        </a>
+      )
+    }
+  }
+
   return (
     <div className="content">
       <h1>{businessDetails.name}</h1>
@@ -138,16 +171,9 @@ export default function Details(props) {
           <br></br>
           {businessDetails.profile}
           <div className="social-buttons">
-            <button className="mr-5">
-              <strong>View on Google Maps</strong>{" "}
-              <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
-            </button>
-            <button>
-              <img src="/images/insta.png" alt="instagram logo"></img>
-            </button>
-            <button>
-              <img src="/images/fb.png" alt="facebook logo"></img>
-            </button>
+            {mapButton()}
+            {instagram()}
+            {facebook()}
           </div>
           <p>
             <strong>Hours:</strong>
