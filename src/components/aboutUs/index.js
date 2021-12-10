@@ -20,9 +20,6 @@ import {
   Circles,
   Frame,
   TextArea,
-  // copies of frame and textarea
-  FrontCard,
-  BackCard,
   InvolvedSec,
   SecTitle,
   Btn,
@@ -213,33 +210,33 @@ AboutUs.Frame = function AboutUsFrame({
   );
 };
 
-AboutUs.Front = function AboutUsFront({
-  color,
-  background,
-  src,
-  person,
-  position,
-  className,
-  children,
-  ...restProps
-}) {
-  // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
-  const [imgURL, setURL] = useState([]);
+// AboutUs.Front = function AboutUsFront({
+//   color,
+//   background,
+//   src,
+//   person,
+//   position,
+//   className,
+//   children,
+//   ...restProps
+// }) {
+//   // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
+//   const [imgURL, setURL] = useState([]);
 
-  useEffect(() => {
-    var ref = storage.ref(`img/profiles/${src}.jpg`);
-    ref.getDownloadURL().then(function (url) {
-      setURL(url);
-    })
-  });
-  return (
-    <FrontCard color={color} background={background} {...restProps}>
-      <img src={imgURL} alt="Card" />
-      <h2>{person}</h2>
-      <p color={color}>{position}</p>
-    </FrontCard>
-  );
-};
+//   useEffect(() => {
+//     var ref = storage.ref(`img/profiles/${src}.jpg`);
+//     ref.getDownloadURL().then(function (url) {
+//       setURL(url);
+//     })
+//   });
+//   return (
+//     <FrontCard color={color} background={background} {...restProps}>
+//       <img src={imgURL} alt="Card" />
+//       <h2>{person}</h2>
+//       <p color={color}>{position}</p>
+//     </FrontCard>
+//   );
+// };
 
 AboutUs.TextArea = function AboutUsTextArea({
   linkedin,
@@ -260,24 +257,24 @@ AboutUs.TextArea = function AboutUsTextArea({
   );
 };
 
-AboutUs.Back = function AboutUsBack({
-  linkedin,
-  description,
-  children,
-  ...restProps
-}) {
-  return (
-    <BackCard className={children}{...restProps}>
-      <p>{children}</p>
-      <div>
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">
-          <img src="/images/Linkedin.png" alt="Linkedin" />
-        </a>
-        <img src="/images/Mail.png" alt="Email" />
-      </div>
-    </BackCard>
-  );
-};
+// AboutUs.Back = function AboutUsBack({
+//   linkedin,
+//   description,
+//   children,
+//   ...restProps
+// }) {
+//   return (
+//     <BackCard className={children}{...restProps}>
+//       <p>{children}</p>
+//       <div>
+//         <a href={linkedin} target="_blank" rel="noopener noreferrer">
+//           <img src="/images/Linkedin.png" alt="Linkedin" />
+//         </a>
+//         <img src="/images/Mail.png" alt="Email" />
+//       </div>
+//     </BackCard>
+//   );
+// };
 
 AboutUs.InvolvedSec = function AboutUsInvolvedSec({ children, ...restProps }) {
   return <InvolvedSec {...restProps}>{children}</InvolvedSec>;

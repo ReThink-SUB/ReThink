@@ -1,10 +1,7 @@
 import React, {useEffect, useState, useRef } from 'react';
-import ReactCardFlip from 'react-card-flip';
 import { AboutUs } from "../components";
-import { FlipCard, FrontCard, BackCard } from "../components/aboutUs/styles/aboutUs";
 import "../components/aboutUs/styles/style.scss"
 import { db, storage } from "../firebase";
-import About from '../pages/about';
 
 export function AboutUsContainer() {
   async function downloadImage(imageSrc) {
@@ -33,25 +30,25 @@ export function AboutUsContainer() {
       db.collection('team').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
               // doc.data() is never undefined for query doc snapshots
-              profilesHolder.push(<CardProfile key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
+              profilesHolder.push(<Profile key={doc.data()} data={doc.data()} back_color={backColor} color={color} />);
               
               // switch for the first one
-              if (counter === 3) {
-                backColor = "#ffffff";
-                color = "#BBBBBD";
-                counter = 0;
-              }
+              // if (counter === 3) {
+              //   backColor = "#ffffff";
+              //   color = "#BBBBBD";
+              //   counter = 0;
+              // }
 
               // every two, switch colors
-              if (counter === 2 && backColor === "#D4E9D6") {
-                backColor = "#ffffff";
-                color = "#BBBBBD";
-                counter = 0;
-              } else if (counter === 2 && backColor === "#ffffff") {
-                backColor = "#D4E9D6";
-                color = "#ffffff";
-                counter = 0;
-              } 
+              // if (counter === 2 && backColor === "#D4E9D6") {
+              //   backColor = "#ffffff";
+              //   color = "#BBBBBD";
+              //   counter = 0;
+              // } else if (counter === 2 && backColor === "#ffffff") {
+              //   backColor = "#D4E9D6";
+              //   color = "#ffffff";
+              //   counter = 0;
+              // } 
               counter++;
           });
           setProfiles(profilesHolder);
@@ -59,43 +56,25 @@ export function AboutUsContainer() {
     }, []);
 
   return (
-    <AboutUs>
-      <AboutUs.Side>
-        <AboutUs.Links>
+    <AboutUs className="about-container">
+      <AboutUs.Side className="about-sidebar">
+        <AboutUs.Links className="about-links">
           <AboutUs.Link myID="/about/#about">About Us</AboutUs.Link>
           <AboutUs.Link myID="/about/#team">Sub Team</AboutUs.Link>
           <AboutUs.Link myID="/about/#involved">Get Involved</AboutUs.Link>
         </AboutUs.Links>
       </AboutUs.Side>
-      <AboutUs.Main>
-        <AboutUs.AboutSec>
-          <AboutUs.Images>
-            <AboutUs.IceCream
-              src="IceCream"
-              width="200px"
-              top="2%"
-              left="10%"
-            />
-            <AboutUs.Water src="Water" width="120px" top="23%" left="41%" />
-            <AboutUs.ToothBrush
-              src="ToothBrush"
-              width="200px"
-              top="53%"
-              left="18%"
-            />
-            <AboutUs.Circles top="15%" left="40%" />
-            <AboutUs.Circles top="46%" left="5%" />
-            <AboutUs.Circles top="55%" left="47%" />
-          </AboutUs.Images>
-          <AboutUs.Text>
-            <AboutUs.Title id="about">About Us</AboutUs.Title>
+      <AboutUs.Main className="about-main">
+        <AboutUs.AboutSec className="about-section">
+          <AboutUs.Text className="about-text">
+            <AboutUs.Title id="about" className="about-us">About Us</AboutUs.Title>
             <AboutUs.Heading>Who we are</AboutUs.Heading>
-            <AboutUs.Description>
+            <AboutUs.Description className="about-desc">
               A community of passionate University of Washington Seattle
               students whose purpose is to transform the community by advocating
               for sustainable living at the local level.
             </AboutUs.Description>
-            <AboutUs.Heading>What Businesses Should Be</AboutUs.Heading>
+            <AboutUs.Heading>What businesses should be</AboutUs.Heading>
             <AboutUs.Description>
               These businesses are industry leaders in incorporating
               sustainability in their products, services, or supply chain
@@ -108,8 +87,22 @@ export function AboutUsContainer() {
               economy, and have sustainability upheld in business.
             </AboutUs.Description>
           </AboutUs.Text>
+          <AboutUs.Images className="about-images">
+            <AboutUs.IceCream className="ice-cream" src="IceCream" />
+            <AboutUs.Water className="water" src="Water" />
+            <AboutUs.ToothBrush
+              className="toothbrush"
+              src="ToothBrush"
+              width="200px"
+              top="53%"
+              left="18%"
+            />
+            <AboutUs.Circles className="circle-1" />
+            <AboutUs.Circles className="circle-2" />
+            <AboutUs.Circles className="circle-3" />
+          </AboutUs.Images>
         </AboutUs.AboutSec>
-        <AboutUs.SubSec>
+        <AboutUs.SubSec className="about-subSec">
           <AboutUs.Title>
             <span id="team">SUB Team</span>
           </AboutUs.Title>
@@ -117,314 +110,170 @@ export function AboutUsContainer() {
             A ragtag team of UW students deciding to give a damn about the
             environment, in the most enjoyable way possible.
           </AboutUs.SecDescription>
-          <AboutUs.Cards>
-            {/* <AboutUs.Card>
-              <AboutUs.Frame
-                background="#D4E9D6"
-                src="yuyu_madigan"
-                person="YuYu Madigan"
-                position="President"
-                color="#ffffff"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="http://www.linkedin.com/in/fymadiagn">
-                YuYu is a fourth-year undergraduate student majoring in
-                economics with a minor in informatics, data science, and
-                entrepreneurship. YuYu is one of the student-leads. The SUB
-                Initiative was born from ReThink UW to create a sustainable but
-                cross-disciplinary project that would engage their three central
-                values: business, sustainability, and technology. <br /> <br />
-                Her responsibilities involve team-management, goal-setting, and
-                communicating with stakeholders. One way she incorporates
-                sustainability in her everyday life is by reducing the use of
-                single-waste plastics.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#ffffff"
-                src="aditi_joshi"
-                person="Aditi Joshi"
-                position="Developer"
-                color="#BBBBBD"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/aditi-joshi-019405190/">
-                Aditi Joshi is a second-year undergraduate majoring in computer
-                science and minoring in environmental studies. For Aditi, the
-                SUB initiative is an opportunity to work on big-scale projects
-                while exploring how technology can instigate positive ecological
-                outcomes. <br /> <br />
-                Her primary responsibility is to work with the development team
-                to create backend pipelines to display all of the business
-                information on the website. Additionally, she also works on the
-                landing page. To help mitigate environmental damage, she has
-                switched to using soap bars instead of the bottled ones that
-                produce unnecessary waste.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#ffffff"
-                src="leary_lebanlic"
-                person="Leary Lebanlic"
-                position="UI/UX Designer"
-                color="#BBBBBD"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/learylabanlic/">
-                Leary is a third-year undergraduate student majoring in
-                community, environment and planning while minoring in
-                architectural design, informatics, and entrepreneurship. Leary
-                joined the SUB Initiative to try his hand at designing a
-                web-app. <br /> <br />
-                His role is to help design and create wireframes for both the
-                mobile application and website to align with the team’s vision.
-                Leary aims to become more energy efficient through unplugging
-                unnecessary electrical appliances, especially when they are
-                unused.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#D4E9D6"
-                src="devon_chapman"
-                person="Devon Chapman"
-                position="Researcher"
-                color="#ffffff"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="http://www.linkedin.com/in/devontchapman">
-                Devon is a fourth-year undergraduate student majoring in
-                political science with a minor in environmental studies. Devon
-                is on the research team and is highly passionate about the
-                intersectionality of business and sustainability. <br /> <br />
-                She helps to define “sustainable” and collaborates with others
-                to maximize business outreach. Devon helps the environment by
-                composting, being a vegetarian, and reusing water bottles.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#D4E9D6"
-                src="grace_chun"
-                person="Grace Chun"
-                position="Researcher"
-                color="#ffffff"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/ghchun/">
-                Grace is a fourth-year undergraduate student majoring in
-                international studies with a minor in informatics and
-                entrepreneurship. In hopes of diving deeper into
-                sustainability-related topics, she joined the SUB Initiative.
-                <br /> <br />
-                Grace is part of the research team that conducts surveys and
-                interviews to understand stakeholders better to define what it
-                means to be a “sustainable business.” When she is out and about,
-                she always uses containers and boxes to reduce waste.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#ffffff"
-                src="kailin_spencer"
-                person="Kailin Spencer"
-                position="Researcher"
-                color="#BBBBBD"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/kailinspencer/">
-                Kailin is a second-year undergraduate student majoring in
-                business and minoring in environmental studies. Kailin became
-                part of the SUB Initiative to create a world where people can
-                live in harmony with nature. <br /> <br />
-                As part of the research team, she helped develop the
-                sustainability criteria to verify that the small businesses in
-                the Seattle area are genuinely green. One way that she is
-                incorporating the green lifestyle is by adopting a meatless
-                diet.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#ffffff"
-                src="julius_cecilia"
-                person="Julius Cecilia"
-                position="Developer"
-                color="#BBBBBD"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/julius-cecilia/">
-                Julius is a first-year undergraduate student who is planning to
-                major in informatics. Because Julius wanted to contribute and
-                learn from a community of developers with varying skill sets,
-                the SUB initiative appealed to him. <br /> <br />
-                His responsibility as a front-end developer is to optimize the
-                website’s client-side by making an interactive user interface
-                with JavaScript and React. On the side, he also helps to set up
-                the Firebase backend services. To conserve energy, he is very
-                conscious about how much water and energy he uses on a daily
-                basis.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#D4E9D6"
-                src="paul_sereeyothin"
-                person="Paul Sereeyothin"
-                position="Marketing"
-                color="#ffffff"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/paul-sereeyothin/">
-                Paul is a fourth-year undergraduate student majoring in
-                communications. He joined the SUB Initiative marketing team
-                because he believes in technology and sustainability’s
-                inevitable coupling as a future trend. He also saw this as an
-                opportunity to increase his skills while working alongside
-                others with diverse backgrounds. <br /> <br />
-                His primary responsibility is to help with branding through
-                copywriting, logo design, and leveraging social media to drive
-                traffic to the team’s platforms. A small lifestyle change that
-                he has implemented to become greener is to donate unused
-                personal items to those living in Thailand’s countryside.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#D4E9D6"
-                src="brendan_tran"
-                person="Brendan Tran"
-                position="UI/UX Designer"
-                color="#ffffff"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="http://linkedin.com/in/brendanptran/">
-                Brendan is a third-year undergraduate student majoring in
-                informatics and exploring human-computer interaction. He was
-                eager to join the SUB Initiation because he saw potential in
-                diverse students’ collective efforts fighting toward a common
-                cause. <br /> <br />
-                Brendan has contributed significantly to the website design and
-                ensures that users have a seamless experience with the
-                interface. Outside of the SUB Initiative, he practices waste
-                diversion to combat environmental degradation.
-              </AboutUs.TextArea>
-            </AboutUs.Card>
-            <AboutUs.Card>
-              <AboutUs.Frame
-                background="#ffffff"
-                src="kayla_lee"
-                person="Kayla Lee"
-                position="Developer"
-                color="#BBBBBD"
-              ></AboutUs.Frame>
-              <AboutUs.SecCircles />
-              <AboutUs.TextArea linkedin="https://www.linkedin.com/in/kaylalee44/">
-                Kayla is a fourth-year undergraduate student majoring in
-                informatics. Kayla joined the SUB Initiative to help encourage
-                sustainability in business while refining her technical skills.
-                <br /> <br />
-                Her primary responsibility as a front-end developer is to help
-                create the team’s website using React, JavaScript, and CSS among
-                many other tools. A sustainable, daily habit that she has picked
-                up is saving eggshells for her grandma’s garden.
-              </AboutUs.TextArea>
-            </AboutUs.Card> */}
+          {/* <AboutUs.Cards className="about-cards"> */}
+          <div className="team-cards">
             {profiles}
-          </AboutUs.Cards>
-          <BlogCard/><BlogCard/>
+          </div>
+          {/* </AboutUs.Cards> */}
         </AboutUs.SubSec>
-        <AboutUs.InvolvedSec>
-          <AboutUs.Title id="involved">Get Involved</AboutUs.Title>
-          <AboutUs.Heading>How to get involved</AboutUs.Heading>
-          <AboutUs.SecTitle>SUB Team</AboutUs.SecTitle>
-          <AboutUs.Description>
-            Apply now to be part of the SUB Team!
-          </AboutUs.Description>
-          <AboutUs.Description>
-            Positions Available: Marketing, Business Development, Researchers,
-            Back End Developers, Front End Developers
-          </AboutUs.Description>
+        <AboutUs.InvolvedSec className="involved-sec">
+          <div className="about-section">
+            <h className="about-title">Get Involved</h>
+            <h3 className="about-heading">How to get involed</h3>
+            <h3 className="about-secTitle">SUB Team</h3>
+            <p>Apply now to be part of the SUB Team!</p><br/>
+            <b className="positions-available">Positions Available:</b>
+            <ul>
+              <li>• Marketing</li>
+              <li>• Business Development</li>
+              <li>• Researchers</li>
+              <li>• Back End Developers</li>
+              <li>• Front End Developers</li>
+            </ul>
+          </div>
           <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app">
             Apply
           </AboutUs.Btn>
-          <AboutUs.DownloadBtn
+          {/* <AboutUs.DownloadBtn
             downloadImage={downloadImage}
             href="https://i.imgur.com/mhTBjpQ.png"
           >
             View Positions
-          </AboutUs.DownloadBtn>
+          </AboutUs.DownloadBtn> */}
         </AboutUs.InvolvedSec>
-        <AboutUs.OtherClubsSec>
-          <AboutUs.SecTitle>Other Clubs</AboutUs.SecTitle>
-          <AboutUs.Description>
-            Clubs at UW focused on environmental sustainability:
-          </AboutUs.Description>
-          <AboutUs.ClubCards>
-            <AboutUs.ClubCard>
-              <AboutUs.ClubImage src="seed" />
-              <AboutUs.ClubName>SEED</AboutUs.ClubName>
-              <AboutUs.ClubDescription>
-                Sustainability club for students living in residence halls.
-              </AboutUs.ClubDescription>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
-            </AboutUs.ClubCard>
-            <AboutUs.ClubCard>
-              <AboutUs.ClubImage src="Farm" />
-              <AboutUs.ClubName>UW Farm</AboutUs.ClubName>
-              <AboutUs.ClubDescription>
-                Opportunities for hands-on agricultural learning at UW.
-              </AboutUs.ClubDescription>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
-            </AboutUs.ClubCard>
-            <AboutUs.ClubCard>
-              <AboutUs.ClubImage src="EcoReps" />
-              <AboutUs.ClubName>UW EcoReps</AboutUs.ClubName>
-              <AboutUs.ClubDescription>
-                Connecting students with sustainability projects.
-              </AboutUs.ClubDescription>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
-            </AboutUs.ClubCard>
-            <AboutUs.ClubCard>
-              <AboutUs.ClubImage src="Solar" />
-              <AboutUs.ClubName>UW Solar</AboutUs.ClubName>
-              <AboutUs.ClubDescription>
-                Students working to increase and promote solar power at UW.
-              </AboutUs.ClubDescription>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
-            </AboutUs.ClubCard>
-          </AboutUs.ClubCards>
+        <AboutUs.OtherClubsSec className="other-sec">
+          <div className="about-section">
+            <h3 className="about-title">Other Clubs</h3>
+            <p>Clubs at UW focused on environmental sustainability:</p>
+            <div className="about-cards">
+              <div className="about-card">
+                <div className="club-image">
+                  <img src={`/images/seed.png`} alt="club" />
+                </div>
+                <h3 className="club-name">SEED</h3>
+                <p className="club-desc">Sustainability club for students living in residence halls.</p>
+                <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              </div>
+              <div className="about-card">
+                <div className="club-image">
+                  <img src={`/images/Farm.png`} alt="club" />
+                </div>
+                <h3 className="club-name">UW Farm</h3>
+                <p className="club-desc">Opportunities for hands-on agricultural learning at UW.</p>
+                <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              </div>
+              <div className="about-card">
+                <div className="club-image">
+                  <img src={`/images/EcoReps.png`} alt="club" />
+                </div>
+                <h3 className="club-name">UW EcoReps</h3>
+                <p className="club-desc">Sustainability club for students living in residence halls.</p>
+                <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              </div>
+              <div className="about-card">
+                <div className="club-image">
+                  <img src={`/images/Solar.png`} alt="club" />
+                </div>
+                <h3 className="club-name">UW Solar</h3>
+                <p className="club-desc">Students working to increase and promote solar power at UW.</p>
+                <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              </div>
+            </div>
+          </div>
         </AboutUs.OtherClubsSec>
-        <AboutUs.LocalOrgsSec>
-          <AboutUs.Heading>
-            Some local organizations that we support
-          </AboutUs.Heading>
-          <AboutUs.Description>
-            These organizations use their platform to educate the public on ways
-            to protect the environment in order to live more sustainably.
-          </AboutUs.Description>
-          <AboutUs.Organizations>
-            <AboutUs.Organization src="Sustainable">
-              Sustainable Seattle
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Interweave">
-              INTERWEAVE
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Earthshare">
-              EarthShare Washington
-            </AboutUs.Organization>
-          </AboutUs.Organizations>
+        <AboutUs.LocalOrgsSec className="local-sec">
+          <div className="about-section">
+            <AboutUs.Heading>
+              Some local organizations that we support
+            </AboutUs.Heading>
+            <AboutUs.Description>
+              These organizations use their platform to educate the public on ways
+              to protect the environment in order to live more sustainably.
+            </AboutUs.Description>
+            <AboutUs.Organizations className="organizations">
+              <AboutUs.Organization src="Sustainable">
+                Sustainable Seattle
+              </AboutUs.Organization>
+              <AboutUs.Organization src="Interweave">
+                INTERWEAVE
+              </AboutUs.Organization>
+              <AboutUs.Organization src="Earthshare">
+                EarthShare Washington
+              </AboutUs.Organization>
+            </AboutUs.Organizations>
+          </div>
         </AboutUs.LocalOrgsSec>
-        {/* <AboutUs.WeeklySec>
-          <AboutUs.Heading>Check out our weekly features</AboutUs.Heading>
-          <AboutUs.Description>
-            Help preserve the environment by donating to these places!
-          </AboutUs.Description>
-        </AboutUs.WeeklySec> */}
+        <AboutUs.Btn href="">
+            Learn more
+          </AboutUs.Btn>
       </AboutUs.Main>
     </AboutUs>
+  );
+}
+
+function Profile(props) {
+  let data = props.data;
+  const [flipped, setFlipped] = useState(false);
+
+  const flip = () => {
+    setFlipped(!flipped);
+  }
+
+  return (
+    <div onMouseEnter={flip} onMouseLeave={flip} className={"flip-card-container" + (flipped ? " flipped" : "")}>
+      <Front 
+        background={[props.back_color]}
+        src={data.profile_img}
+        person={data.name}
+        position={data.position}
+        color={props.color}/>
+      <div className="sec-circles">
+        <img src="/images/CirclePattern.png" alt="SecCircles" />
+      </div>
+      <Back background={[props.back_color]} 
+        linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
+        bio={data.bio}/>
+    </div>
+  );
+}
+
+function Front({
+  color,
+  background,
+  src,
+  person,
+  position,
+  children,
+  ...restProps
+}) {
+  let data = restProps.datas;
+
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/profiles/${src}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    })
+  });
+
+  return (
+    <div className="front" style={{backgroundColor: background}}>
+      <div className="image-container">
+        <img className="card-image" src={imgURL}></img>
+      </div>
+      <h2 className="name">{person}</h2>
+      <p className="position" style={{color: color}}>{position}</p>
+    </div>
+  );
+}
+
+function Back(props) {
+  let data = props.data;
+  return (
+    <div className="back" style={{backgroundColor: props.background}}>
+        <p className="bio">{props.bio}</p>
+    </div>
   );
 }
 
@@ -445,109 +294,4 @@ function ProfileCard(props) {
       </AboutUs.TextArea>
     </AboutUs.Card>
   );
-}
-
-function CardProfile(props) {
-  let data = props.data;
-  // const [flipped, setFlipped] = useState(false);
-  const ref = useRef();
-  // const flip = () => {
-  //   if (!flipped) {
-  //     setFlipped(true);
-  //   } else {
-  //     setFlipped(false);
-  //   }
-  // }
-  const [isFlipped, setFlipped] = useState(false);
-
-  return (
-    <>
-      <AboutUs.Card>
-      <AboutUs.Frame
-        background={[props.back_color]}
-        src={data.profile_img}
-        person={data.name}
-        position={data.position}
-        color={props.color}
-      ></AboutUs.Frame>
-      <AboutUs.SecCircles />
-      <AboutUs.TextArea linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}>
-        {data.bio}
-      </AboutUs.TextArea>
-      </AboutUs.Card>
-    </>
-  );
-}
-
-class BlogCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { flipped: false };
-    this.flip = this.flip.bind(this);
-  }
-
-  flip = () => {
-    this.setState({ flipped: !this.state.flipped });
-  }
-  render() {
-    return (
-      <>
-      <div onMouseEnter={this.flip} onMouseLeave={this.flip} className={"flip-card-container" + (this.state.flipped ? " flipped" : "")}>
-        <Front/>
-        <Back />
-        <AboutUs.SecCircles />
-      </div>
-      </>
-    )
-  }
-}
-
-class Front extends React.Component {
-  render() {
-    return (
-      <div className="front" style={{backgroundColor: "#D4E9D6"}}>
-        <ImageArea />
-        <MainArea />
-      </div>
-    )
-  }
-}
-
-class Back extends React.Component {
-  render() {
-    return (
-      <div className="back" style={{backgroundColor: "#D4E9D6"}}>
-        <p>Some sample text to demonstrate how these cards will work, including how they truncate long sentences. This section displays the full-length blog post.</p>
-        <p>Bloggity bloggity bloggity blog. This would be the full text of the abbreviated blog post.</p>
-      </div>
-    )
-  }
-}
-
-class ImageArea extends React.Component {
-  render() {
-    return (
-      <div className="image-container">
-        <img className="card-image" src="https://78.media.tumblr.com/d98fb931adb117c70f0dbced9e947520/tumblr_pe582mbWip1tlgv32o1_1280.png"></img>
-        <h2 className="title">An example blog post</h2>
-      </div>
-    )
-  }
-
-}
-
-class MainArea extends React.Component {
-  render() {
-    return (
-      <div className="main-area">
-        <div className="blog-post">
-          <p className="blog-content">
-            Some sample text to
-            </p>
-
-        </div>
-
-      </div>
-    )
-  }
 }

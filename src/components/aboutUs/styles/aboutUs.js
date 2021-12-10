@@ -4,8 +4,12 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   background: #ffffff;
-  padding: 0 1.5rem;
-  margin-bottom: 5rem;
+  padding: 0 0.3rem;
+
+  margin: 0;
+  overflow-x: hidden;
+
+  margin-bottom: 3rem;
 `;
 
 export const Side = styled.div`
@@ -70,37 +74,47 @@ export const LinkS = styled.p`
 `;
 
 export const Main = styled.div`
-  width: 86%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
+  padding-top: 3rem;
+  
+  margin: 0;
+  overflow-x: hidden;
 
   @media (max-width: 1550px) {
-    padding: 0 3rem;
+    // padding: 0 3rem;
   }
 
   @media (max-width: 1050px) {
-    width: 100%;
+    // width: 100%;
   }
 `;
 
 export const AboutSec = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: left;
   width: 100%;
-  padding-top: 5rem;
-  padding-bottom: 10rem;
+
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
 `;
 
 export const Images = styled.div`
+  width: 10rem;
+  height: 387px;
+  top: 7%;
+  left: 50%;
+  position: absolute;
   width: 50%;
-  height: 100%;
-  position: relative;
-
-  @media (max-width: 800px) {
+  @media (max-width: 338px) {
     display: none;
   }
+
+  // @media (max-width: 800px) {
+  //   display: none;
+  // }
 `;
 
 export const Image = styled.div`
@@ -116,26 +130,30 @@ export const Image = styled.div`
 
 export const IceCream = styled.div`
   position: absolute;
-  top: 2%;
-  left: 10%;
+  height: 220px;
+  width: 113px;
+  z-index: 1;
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     top: 8%;
   }
 
   img {
-    height: auto;
-    width: 200px;
+    height: 220px;
+    width: 113px;
+    position: absolute;
+    top: 1rem;
+    border-radius: 30px;
 
-    @media (max-width: 1400px) {
+    @media (min-width: 1400px) {
       width: 180px;
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       width: 160px;
     }
 
-    @media (max-width: 930px) {
+    @media (min-width: 930px) {
       width: 140px;
     }
   }
@@ -143,26 +161,30 @@ export const IceCream = styled.div`
 
 export const Water = styled.div`
   position: absolute;
-  top: 23%;
-  left: 51%;
+  top: 88%;
+  left: 48%;
+  z-index: 0;
 
-  @media (max-width: 1670px) {
+  @media (min-width: 1670px) {
     left: 50%;
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     top: 32%;
   }
 
   img {
-    height: auto;
-    width: 120px;
+    height: 167px;
+    width: 88px;
+    position: absolute;
+    bottom: 90%;
+    border-radius: 30px;
 
-    @media (max-width: 1400px) {
+    @media (min-width: 1400px) {
       width: 100px;
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       width: 80px;
     }
   }
@@ -172,12 +194,13 @@ export const ToothBrush = styled.div`
   position: absolute;
   top: 70%;
   left: 18%;
+  display: none;
 
-  @media (max-width: 1670px) {
+  @media (min-width: 1670px) {
     left: 23%;
   }
 
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     top: 58%;
   }
 
@@ -185,15 +208,15 @@ export const ToothBrush = styled.div`
     height: auto;
     width: 200px;
 
-    @media (max-width: 1400px) {
+    @media (min-width: 1400px) {
       width: 180px;
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       width: 160px;
     }
 
-    @media (max-width: 930px) {
+    @media (min-width: 930px) {
       width: 140px;
     }
   }
@@ -201,20 +224,24 @@ export const ToothBrush = styled.div`
 
 export const Circles = styled.div`
   position: absolute;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
+  // top: ${({ top }) => top};
+  // left: ${({ left }) => left};
+  z-index: 3;
+
+  top: 39%;
+  left: 49%;
 
   img {
-    width: 51px;
+    width: 40px;
     height: auto;
   }
 
-  @media (max-width: 1670px) {
-    ${({ left }) => `left: calc(${left} + 70px)`};
+  @media (min-width: 1670px) {
+    // ${({ left }) => `left: calc(${left} + 70px)`};
   }
 
-  @media (max-width: 1150px) {
-    ${({ left }) => `left: calc(${left} + 90px)`};
+  @media (min-width: 1150px) {
+    // ${({ left }) => `left: calc(${left} + 90px)`};
   }
 `;
 
@@ -254,102 +281,131 @@ export const SecCircles = styled.div`
 `;
 
 export const Text = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-right: 10rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 
-  @media (max-width: 1550px) {
+  align-content: left;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @media (min-width: 1550px) {
     padding-right: 8rem;
   }
 
-  @media (max-width: 1150px) {
+  @media (min-width: 1150px) {
     padding-right: 5rem;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
     width: 100%;
-    padding: 0 5rem;
     text-align: center;
   }
 
-  @media (max-width: 550px) {
+  @media (min-width: 550px) {
     padding: 0 2.5rem;
   }
 `;
 
 export const Title = styled.h1`
   font-style: normal;
-  font-weight: 800;
-  font-size: 52px;
+  font-weight: 900;
+  font-size: 32px;
   letter-spacing: 0.035em;
   color: #67923d;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+  
+  text-align: left;
+  width: 80vw;
 
-  @media (max-width: 1299px) {
+  @media (min-width: 1299px) {
     font-size: 44px;
   }
 
-  @media (max-width: 930px) {
+  @media (min-width: 930px) {
     font-size: 36px;
   }
 `;
 
 export const Heading = styled.h2`
   font-style: italic;
-  font-weight: 800;
-  font-size: 30px;
+  font-weight: 900;
+  font-size: 24px;
   letter-spacing: 0.035em;
   color: #585858;
-  margin-bottom: 2rem;
-  line-height: 40px;
+  margin-bottom: 0.5rem;
+  line-height: 1.5rem;
+  
+  text-align: left;
+  width: 80vw;
+  padding: 0.25rem 0.5rem;
 
-  @media (max-width: 1299px) {
+  @media (min-width: 1299px) {
     font-size: 29px;
   }
 
-  @media (max-width: 930px) {
+  @media (min-width: 930px) {
     font-size: 26px;
   }
 `;
 
 export const Description = styled.p`
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 17px;
   color: #828282;
   line-height: 25px;
+  margin-right: 1rem;
   margin-bottom: 2rem;
-  width: 70%;
+  z-index: 3;
+  width: 100%;
+  padding-left: 0.5rem;
+  
+  text-align: left;
 
-  @media (max-width: 1550px) {
+  @media (min-width: 1550px) {
     width: 80%;
   }
 
-  @media (max-width: 1299px) {
+  @media (min-width: 1299px) {
     font-size: 16px;
     width: 90%;
   }
 
-  @media (max-width: 1150px) {
+  @media (min-width: 1150px) {
     width: 100%;
   }
 `;
 
 export const SecDescription = styled.p`
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: 0.025em;
+  font-weight: 400;
+  font-size: 17px;
   color: #6a6565;
+  line-height: 26px;
   margin-bottom: 2.5rem;
-  width: 40%;
+  letter-spacing: 0.025em;
+  width: 70%;
+  text-align: left;
 
   @media (max-width: 800px) {
-    width: 70%;
+    width: 80%;
   }
+
+  // @media (max-width: 1550px) {
+  //   width: 80%;
+  // }
+
+  // @media (max-width: 1299px) {
+  //   font-size: 16px;
+  //   width: 90%;
+  // }
+
+  // @media (max-width: 1150px) {
+  //   width: 100%;
+  // }
 `;
 
 export const SubSec = styled.div`
@@ -357,7 +413,14 @@ export const SubSec = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 800px) {
+  position: relative;
+  left: calc(-50vw + 50%);
+  padding-left: 1.6rem;
+  padding-bottom: 3.5rem;
+
+  align-content: left;
+
+  @media (min-width: 800px) {
     text-align: center;
     align-items: center;
   }
@@ -506,130 +569,153 @@ export const TextArea = styled.div`
 `;
 
 // Copies of Frame and TextArea
-export const FrontCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  background: ${({ background }) => background};
-  width: 207px;
-  padding: 1.9rem 0;
-  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
-  border-radius: 30px;
-  margin-right: 2.5rem;
+// export const FrontCard = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+//   position: relative;
+//   background: ${({ background }) => background};
+//   width: 207px;
+//   padding: 1.9rem 0;
+//   box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+//   border-radius: 30px;
+//   margin-right: 2.5rem;
 
-  @media (max-width: 1400px) {
-    width: 197px;
-  }
+//   @media (max-width: 1400px) {
+//     width: 197px;
+//   }
 
-  @media (max-width: 1300px) {
-    width: 230px;
-    padding: 2.3rem;
-  }
+//   @media (max-width: 1300px) {
+//     width: 230px;
+//     padding: 2.3rem;
+//   }
 
-  @media (max-width: 750px) {
-    width: 207px;
-    padding: 1.9rem 0;
-  }
+//   @media (max-width: 750px) {
+//     width: 207px;
+//     padding: 1.9rem 0;
+//   }
 
-  img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
-    margin-bottom: 1rem;
+//   img {
+//     width: 130px;
+//     height: 130px;
+//     border-radius: 50%;
+//     object-fit: cover;
+//     filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+//     margin-bottom: 1rem;
 
-    @media (max-width: 1400px) {
-      width: 120px;
-      height: 120px;
-    }
+//     @media (max-width: 1400px) {
+//       width: 120px;
+//       height: 120px;
+//     }
 
-    @media (max-width: 1300px) {
-      width: 130px;
-      height: 130px;
-    }
-  }
+//     @media (max-width: 1300px) {
+//       width: 130px;
+//       height: 130px;
+//     }
+//   }
 
-  h2 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #6a6565;
-    margin-bottom: 0.5rem;
-  }
+//   h2 {
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 14px;
+//     line-height: 17px;
+//     text-align: center;
+//     color: #6a6565;
+//     margin-bottom: 0.5rem;
+//   }
 
-  p {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 16px;
-    text-align: center;
-    color: ${({ color }) => color};
-  }
-`;
+//   p {
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 13px;
+//     line-height: 16px;
+//     text-align: center;
+//     color: ${({ color }) => color};
+//   }
+// `;
 
-export const BackCard = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
+// export const BackCard = styled.div`
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   width: 50%;
 
-  @media (max-width: 1300px) {
-    display: none;
-  }
+//   @media (max-width: 1300px) {
+//     display: none;
+//   }
 
-  p {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 17px;
-    letter-spacing: 0.025em;
-    color: #6a6565;
+//   p {
+//     font-style: normal;
+//     font-weight: 600;
+//     font-size: 13px;
+//     line-height: 17px;
+//     letter-spacing: 0.025em;
+//     color: #6a6565;
 
-    @media (max-width: 1400px) {
-      font-size: 12px;
-    }
-  }
+//     @media (max-width: 1400px) {
+//       font-size: 12px;
+//     }
+//   }
 
-  div {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 1rem 0;
+//   div {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//     margin: 1rem 0;
 
-    img {
-      width: 15px;
-      height: auto;
-      margin: 0 1rem;
-      cursor: pointer;
-    }
-  }
-`;
+//     img {
+//       width: 15px;
+//       height: auto;
+//       margin: 0 1rem;
+//       cursor: pointer;
+//     }
+//   }
+// `;
 
 export const InvolvedSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 8rem 0;
+  margin: 0;
+  top-margin: 1rem;
+
+  align-content: left;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @media (max-width: 800px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const SecTitle = styled.h3`
   font-style: normal;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 16px;
   letter-spacing: 0.035em;
   color: #67923d;
   margin-bottom: 2rem;
+
+  
+  text-align: left;
+  width: 80vw;
+
+  @media (max-width: 1299px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 930px) {
+    font-size: 36px;
+  }
 `;
 
 export const Btn = styled.button`
   background: #67923d;
-  padding: 0.8rem 2.2rem;
+  padding: 0.8rem 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -642,7 +728,8 @@ export const Btn = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.5s ease all;
-  margin: 0.7rem 0;
+  margin: 2rem 0;
+  height: 41px;
 
   &:hover {
     background: #8cce4b;
@@ -675,8 +762,16 @@ export const OtherClubsSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 5rem 0 7rem 0;
+
+  align-content: left;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @media (max-width: 800px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const ClubCards = styled.div`
@@ -757,11 +852,20 @@ export const LocalOrgsSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 7rem 0;
+
+  align-content: left;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @media (max-width: 800px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const Organizations = styled.div`
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -776,15 +880,15 @@ export const Organization = styled.div`
   align-items: center;
 
   img {
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
   }
 
   h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     color: #1f2421;
   }
 `;
