@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import "./styles/style.css";
+import "./styles/style.scss";
 import { db, storage } from "../../firebase";
 import {
   Container,
@@ -210,6 +210,34 @@ AboutUs.Frame = function AboutUsFrame({
   );
 };
 
+// AboutUs.Front = function AboutUsFront({
+//   color,
+//   background,
+//   src,
+//   person,
+//   position,
+//   className,
+//   children,
+//   ...restProps
+// }) {
+//   // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
+//   const [imgURL, setURL] = useState([]);
+
+//   useEffect(() => {
+//     var ref = storage.ref(`img/profiles/${src}.jpg`);
+//     ref.getDownloadURL().then(function (url) {
+//       setURL(url);
+//     })
+//   });
+//   return (
+//     <FrontCard color={color} background={background} {...restProps}>
+//       <img src={imgURL} alt="Card" />
+//       <h2>{person}</h2>
+//       <p color={color}>{position}</p>
+//     </FrontCard>
+//   );
+// };
+
 AboutUs.TextArea = function AboutUsTextArea({
   linkedin,
   description,
@@ -229,6 +257,25 @@ AboutUs.TextArea = function AboutUsTextArea({
   );
 };
 
+// AboutUs.Back = function AboutUsBack({
+//   linkedin,
+//   description,
+//   children,
+//   ...restProps
+// }) {
+//   return (
+//     <BackCard className={children}{...restProps}>
+//       <p>{children}</p>
+//       <div>
+//         <a href={linkedin} target="_blank" rel="noopener noreferrer">
+//           <img src="/images/Linkedin.png" alt="Linkedin" />
+//         </a>
+//         <img src="/images/Mail.png" alt="Email" />
+//       </div>
+//     </BackCard>
+//   );
+// };
+
 AboutUs.InvolvedSec = function AboutUsInvolvedSec({ children, ...restProps }) {
   return <InvolvedSec {...restProps}>{children}</InvolvedSec>;
 };
@@ -239,9 +286,12 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 
 AboutUs.Btn = function AboutUsBtn({ href, children, ...restProps }) {
   return (
-    <a href={href} target="_new" {...restProps}>
-      <Btn>{children}</Btn>
-    </a>
+    
+      <Btn>
+        <a href={href} target="_new" {...restProps}>
+          {children}
+        </a>
+      </Btn>
   );
 };
 

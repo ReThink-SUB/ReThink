@@ -161,6 +161,7 @@ export default function App() {
         </Router>
         <ScrollToTop/>
       </BusinessContext.Provider>
+      <ScrollToTop/>
     </>
   );
 }
