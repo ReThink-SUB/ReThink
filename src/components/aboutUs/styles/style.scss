@@ -41,10 +41,6 @@ a {
             img {
                 width: 51px;
                 height: auto;
-        
-                @media (min-width: 1400px) {
-                width: 45px;
-                }
             }
         
             // @media (max-width: 1700px) {
@@ -180,147 +176,185 @@ a {
     color: #6a6565;
     line-height: 26px;
     letter-spacing: 0.025em;
-    width: 100%;
+    width: 80%;
     text-align: left;
 
-    .about-us {
-        padding-bottom: 1.5rem;
-        margin-left: 0.5rem;
-    }
-
-    .about-title {
-        font-style: normal;
-        font-weight: 900;
-        font-size: 28px;
-        letter-spacing: 0.035em;
-        color: #67923d;
-        margin-bottom: 1rem;
-        
-        text-align: left;
-        width: 80vw;
-
-        @media (min-width: 1299px) {
-            font-size: 44px;
+    @media (max-width: 799px) {
+        .about-us {
+            padding-bottom: 1.5rem;
         }
-
-        @media (min-width: 930px) {
-            font-size: 36px;
+        .about-desc {
+            margin-bottom: 2rem;
+            width: 50%;
+            padding-bottom: 2rem;
+            @media (max-width: 338px) {
+                width: 100%;
+            }
         }
     }
+}
+
+.about-text {
+    // left: calc(-50vw + 50%);
+    // padding-left: 2.5rem;
+
+    @media (min-width: 960px) {
+        padding-left: unset;
+        padding-right: unset;
+    }
+}
+
+.first {
+    // padding-right: 5rem;
+    max-width: 372px;
+
+    @media (min-width: 800px) {
+        padding-right: unset;
+        // max-width: unset;
+
+        // left: calc(-50vw + 50%);
+        // padding-left: 2.5rem;
+    }
+}
+
+.small-heading {
+    font-size: 16px;
+    @media (min-width: 800px) {
+        font-size: 24px;
+    }
+}
+.small-title {
+    font-size: 16px;
+    @media (min-width: 900px) {
+        font-size: 25px;
+    }
+}
+
+.about-title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 0.035em;
+    color: #67923d;
+    margin-bottom: 1rem;
     
-    .about-heading {
-        font-style: italic;
-        font-weight: 800;
-        font-size: 16px;
-        letter-spacing: 0.035em;
-        color: #585858;
-        margin-bottom: 0.2rem;
-        line-height: 40px;
-        
-        text-align: left;
-        width: 80vw;
+    text-align: left;
+    width: 80vw;
 
-        @media (min-width: 1299px) {
-            font-size: 29px;
-        }
-
-        @media (min-width: 930px) {
-            font-size: 26px;
-        }
+    @media (min-width: 1299px) {
+        font-size: 44px;
     }
 
-    .about-desc {
-        margin-bottom: 2rem;
-        width: 50%;
-        padding-bottom: 2rem;
-        @media (max-width: 338px) {
-            width: 100%;
-        }
-
-        @media (min-width: 600px) {
-            width: 75%;
-        }
+    @media (min-width: 930px) {
+        font-size: 36px;
     }
+}
+
+.about-heading {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.035em;
+    color: #585858;
+    margin-bottom: 0.2rem;
+    line-height: 40px;
     
+    text-align: left;
+    width: 80vw;
 
-    .about-secTitle {
-        font-style: normal;
-        font-weight: 900;
-        font-size: 16px;
-        letter-spacing: 0.035em;
-        color: #67923d;
-        margin-bottom: 1rem;
-        
-        text-align: left;
-        width: 80vw;
-
-        @media (min-width: 1299px) {
-            font-size: 44px;
-        }
-
-        @media (min-width: 930px) {
-            font-size: 36px;
-        }
-    }
-    .positions-available {
-        margin-bottom: 5rem;
+    @media (min-width: 1299px) {
+        font-size: 29px;
     }
 
-    .about-cards {
+    @media (min-width: 930px) {
+        font-size: 26px;
+    }
+}
+
+
+.about-secTitle {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.035em;
+    color: #67923d;
+    margin-bottom: 1rem;
+    
+    text-align: left;
+    width: 80vw;
+
+    @media (min-width: 1299px) {
+        font-size: 44px;
+    }
+
+    @media (min-width: 930px) {
+        font-size: 36px;
+    }
+}
+.positions-available {
+    margin-bottom: 5rem;
+}
+
+.about-cards {
+    display: flex;
+    align-items: left;
+    margin: 1rem 0;
+    width: 100%;
+    
+    overflow-x: auto;
+    scroll-padding: 0 50%;
+    scroll-snap-type: x mandatory;
+    max-width: 1040px;
+
+    @media (min-width: 800px) {
+        width: 90%;
+    }
+
+    @media (min-width: 1500px) {
+        margin-left: 0;
+    }
+    .about-card {
+        width: 226px;
+        height: 295px;
+        background: #ffffff;
+        box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+        border-radius: 30px;
         display: flex;
-        align-items: left;
-        margin: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
         
-        overflow-x: scroll;
-        scroll-padding: 0 50%;
-        scroll-snap-type: x mandatory;
-        .about-card {
-            width: 226px;
-            height: 295px;
-            background: #ffffff;
-            box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
-            border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 1rem;
-            
-            // scroll-snap-align: start;
+        // scroll-snap-align: start;
 
-            .club-image {
-                border-top-left-radius: 30px;
-                border-top-right-radius: 30px;
+        .club-image {
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
 
-                img {
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-            .club-name {
-                font-style: normal;
-                font-weight: 600;
-                font-size: 15px;
-                line-height: 18px;
-                color: #1f2421;
-                opacity: 0.75;
-                margin: 0.5rem 0;
-                margin-top: 1rem;
-            }
-            .club-desc {
-                font-style: normal;
-                font-weight: normal;
-                font-size: 9px;
-                line-height: 11px;
-                color: #000000;
-                opacity: 0.75;
-                text-align: center;
-                width: 85%;
-                margin-bottom: 0.5rem;
+            img {
+                height: 100%;
+                object-fit: cover;
             }
         }
-    }
-
-    @media (max-width: 800px) {
-        width: 80%;
+        .club-name {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+            color: #1f2421;
+            opacity: 0.75;
+            margin: 0.5rem 0;
+            margin-top: 1rem;
+        }
+        .club-desc {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 9px;
+            line-height: 11px;
+            color: #000000;
+            opacity: 0.75;
+            text-align: center;
+            width: 85%;
+            margin-bottom: 0.5rem;
+        }
     }
 }
