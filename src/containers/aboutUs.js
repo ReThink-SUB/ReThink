@@ -62,14 +62,12 @@ export function AboutUsContainer() {
 
       Dimensions.addEventListener(
         "change", (window => {
-        console.log(window['window']['width'], 'widthy');
         setWidth(window['window']['width']);
         generateProfiles(profilesMobile, profilesDesktop);
       }));
     }, []);
 
   const generateProfiles = (mobile, desktop) => {
-    console.log(width, 'generate');
     setProfiles([mobile, desktop]);
   }
 
@@ -159,7 +157,7 @@ let desktop = <AboutUs.AboutSec className="about-section">
         <AboutUs.SubSec className="about-subSec">
           <AboutUs.Text>
             <AboutUs.Title>
-              <span id="team">SUB Team {width}</span>
+              <span id="team">SUB Team</span>
             </AboutUs.Title>
             <AboutUs.SecDescription>
               A ragtag team of UW students deciding to give a damn about the
