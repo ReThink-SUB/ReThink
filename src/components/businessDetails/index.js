@@ -53,7 +53,6 @@ export default function Details(props) {
       if (!details) {
         console.log("No such business document!");
       } else {
-        console.log("Business data:", details);
         setBusinessDetails(details);
 
         // order the hours properly
@@ -112,10 +111,8 @@ export default function Details(props) {
 
   // map days to hours
   let hourReturn = Object.keys(hours).map((day) => {
-    return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
+    return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
-
-  console.log(businessDetails.maps)
 
   function mapButton() {
     if (businessDetails.maps) {
@@ -162,7 +159,6 @@ export default function Details(props) {
     const checkIfClickedOutside = (e) => {
       if (open && ref.current && !ref.current[0].contains(e.target) && !ref.current[1].contains(e.target) && !ref.current[2].contains(e.target)) {
         setOpen(false);
-        console.log("hi");
 
         if (!first.includes("hidden")) {
           setFirst(first + " hidden");
@@ -177,14 +173,10 @@ export default function Details(props) {
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside);
-
-    console.log(first);
-    console.log(second);
-    console.log(third);
   }, [first, second, third, open, bg])
 
   return (
-    <div className="content">
+    <div className="business-details-content">
       <h1>{businessDetails.name}</h1>
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
@@ -192,7 +184,7 @@ export default function Details(props) {
           <BreadcrumbItem active>Ice Cream</BreadcrumbItem>
         </Breadcrumb> */}
       <div className="main-details">
-        <span className="images">
+        <div className="business-details-images">
           <img className="main-img" onClick={() => {
             setFirst("details-img-modal");
             setOpen(true);
@@ -205,7 +197,7 @@ export default function Details(props) {
             setThird("details-img-modal");
             setOpen(true);
           }} src={imgArr[2]} alt="business 3" />
-        </span>
+        </div>
 
         <div className={bg}>
           <img className={first} ref={(i) => {ref.current.push(i)}} src={imgArr[0]} alt="business 1" />
@@ -228,10 +220,12 @@ export default function Details(props) {
           </p>
           <br></br>
           {businessDetails.profile}
-          <div className="social-buttons">
+          <div className="business-details-buttons">
             {mapButton()}
-            {instagram()}
-            {facebook()}
+            <div className="business-details-social-buttons">
+              {instagram()}
+              {facebook()}
+            </div>
           </div>
           <p>
             <strong>Hours:</strong>

@@ -2,17 +2,17 @@ body {
   position: relative;
 }
 
-.content {
+.business-details-content {
   margin: 2rem 10% !important;
 }
 
-.content > h1 {
+.business-details-content > h1 {
   color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 2em !important;
 }
 
-.content > h2 {
+.business-details-content > h2 {
   color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 3em !important;
@@ -32,8 +32,8 @@ body {
   color: #466824 !important;
 } */
 
-.images {
-  width: 34%;
+.business-details-images {
+  width: 38%;
   object-fit: contain;
   margin-right: 3.5em;
 }
@@ -47,6 +47,7 @@ body {
 .temp-img {
   width: 50%;
   padding: 0.4em 0.2em;
+  vertical-align: top;
   cursor: pointer;
 }
 
@@ -88,38 +89,53 @@ body {
   margin-top: 3em;
   line-height: 2em;
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
 }
 
-.social-buttons {
+.business-details-buttons {
+  display: flex;
+  align-items: center;
   margin: 3em 0;
 }
 
-.social-buttons img {
-  width: 2em;
+.business-details-buttons img {
+  display: block;
+  width: auto;
+  height: 32px;
 }
 
-.social-buttons > a {
-  display: inline;
+.business-details-buttons > a {
+  flex-grow: 2;
+}
+
+.business-details-buttons a {
+  display: flex;
+  flex-direction: row;
   margin-right: 0.8em !important;
   border-radius: 10px !important;
-  padding: 1em 2.2em !important;
+  padding: 1em 1.6em;
   background-color: #ebebeb;
   box-shadow: 0 5px 8px #6a65653f;
   transition: transform 0.4s ease;
   transform: scale(1);
   color: #000;
+  max-height: 54px;
 }
 
-.social-buttons > a:hover {
+.business-details-buttons a:hover {
   box-shadow: 0 5px 8px #6a656556;
   transition: all 0.4s ease;
   transform: scale(1.01);
 }
 
-.social-buttons > a:active {
+.business-details-buttons a:active {
   transform: scale(0.98);
   transition: transform 0.2s ease;
+}
+
+.business-details-social-buttons {
+  display: flex;
+  flex-grow: 1.2;
 }
 
 .specific-card {
@@ -189,4 +205,25 @@ body {
 
 .hidden {
   display: none !important;
+}
+
+@media (max-width: 1058px) {
+  .business-details-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .business-details-buttons > * {
+    margin-bottom: 20px;
+  }
+
+  .business-details-social-buttons > * {
+    flex-grow: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-details {
+    flex-direction: column;
+  }
 }
