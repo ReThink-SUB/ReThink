@@ -23,7 +23,7 @@ function FooterDesc() {
             Business</h6>
             <p>We promote economic lifestyles that 
             support and sustain our planet for future generations. </p>
-            <p className="footer-green">Rethink consumersim.</p>
+            <p className="footer-green">Rethink consumerism.</p>
         </div>
     );
 }
