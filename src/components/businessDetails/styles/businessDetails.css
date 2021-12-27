@@ -117,13 +117,8 @@ body {
   transform: scale(1.01);
 }
 
-<<<<<<< HEAD
 .social-buttons > a:active {
   transform: scale(0.98);
-=======
-.social-buttons > button:active {
-  transform: scale(0.99);
->>>>>>> 0d7fb1a323187bd2b03cae9a679fe7dcb696960e
   transition: transform 0.2s ease;
 }
 

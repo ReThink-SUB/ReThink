@@ -115,7 +115,6 @@ export default function Details(props) {
     return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
-<<<<<<< HEAD
   console.log(businessDetails.maps)
 
   function mapButton() {
@@ -148,7 +147,6 @@ export default function Details(props) {
       )
     }
   }
-=======
   const ref = useRef([]);
   const [first, setFirst] = useState("details-img-modal hidden");
   const [second, setSecond] = useState("details-img-modal hidden");
@@ -184,7 +182,6 @@ export default function Details(props) {
     console.log(second);
     console.log(third);
   }, [first, second, third, open, bg])
->>>>>>> 0d7fb1a323187bd2b03cae9a679fe7dcb696960e
 
   return (
     <div className="content">
