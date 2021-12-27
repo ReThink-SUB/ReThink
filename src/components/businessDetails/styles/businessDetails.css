@@ -33,9 +33,9 @@ body {
 } */
 
 .business-details-images {
-  width: 38%;
+  width: 50%;
   object-fit: contain;
-  margin-right: 3.5em;
+  margin-right: 34px;
 }
 
 .main-img {
@@ -49,6 +49,7 @@ body {
   padding: 0.4em 0.2em;
   vertical-align: top;
   cursor: pointer;
+  min-width: 120px;
 }
 
 .details-img-modals {
@@ -74,6 +75,10 @@ body {
   height: auto;
   z-index: 100;
   cursor: default;
+}
+
+.business-details-text {
+  width: 65%;
 }
 
 .bar {
@@ -104,14 +109,10 @@ body {
   height: 32px;
 }
 
-.business-details-buttons > a {
-  flex-grow: 2;
-}
-
 .business-details-buttons a {
   display: flex;
   flex-direction: row;
-  margin-right: 0.8em !important;
+  margin-right: 16px;
   border-radius: 10px !important;
   padding: 1em 1.6em;
   background-color: #ebebeb;
@@ -120,6 +121,11 @@ body {
   transform: scale(1);
   color: #000;
   max-height: 54px;
+  flex-grow: 1;
+}
+
+.business-details-buttons > a {
+  flex-grow: 2 !important;
 }
 
 .business-details-buttons a:hover {
@@ -135,12 +141,17 @@ body {
 
 .business-details-social-buttons {
   display: flex;
-  flex-grow: 1.2;
+  width: 38%;
+}
+
+.business-details-social-buttons a:nth-child(2n) {
+  margin-right: 0 !important;
 }
 
 .specific-card {
   border-radius: 0.5em !important;
-  width: 15rem;
+  position: relative;
+  width: 17rem;
   box-shadow: 0 5px 8px #6a65652a;
   margin-top: 5em;
   margin-left: 2%;
@@ -152,6 +163,7 @@ body {
   font-size: 0.75em;
   line-height: 1.6em;
   padding: 1.6em;
+  margin-bottom: 48px;
 }
 
 .specific-card-header {
@@ -181,8 +193,10 @@ body {
   color: #6a6565;
   font-size: 0.65em;
   text-decoration: underline;
-  margin-top: 4.5em;
-  margin-bottom: 2em;
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
 }
 
 .specific-card a:hover {
@@ -214,16 +228,36 @@ body {
   }
 
   .business-details-buttons > * {
+    width: 100%;
     margin-bottom: 20px;
   }
 
-  .business-details-social-buttons > * {
+  .business-details-social-buttons a {
     flex-grow: 1;
+  }
+
+  .main-img {
+    width: 100%;
+    min-width: 250px;
+  }
+
+  .business-details-text {
+    width: 48%;
   }
 }
 
 @media (max-width: 768px) {
+  .business-details-images {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 38px;
+  }
+
   .main-details {
     flex-direction: column;
+  }
+
+  .business-details-text {
+    width: 100%;
   }
 }

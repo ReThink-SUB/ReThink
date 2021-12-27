@@ -80,15 +80,17 @@ export default function Details(props) {
 
     async function getImgURL() {
       for (let i = 1; i < 4; i++) {
-        const imgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".png")
-        imgRef.getDownloadURL()
-        .then(function (url) {
+        const imgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".png"
+        );
+        imgRef.getDownloadURL().then(function (url) {
           setURL((prev) => [...prev, url]);
         });
 
-        const jpgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".jpg")
-        jpgRef.getDownloadURL()
-        .then(function (url) {
+        const jpgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".jpg"
+        );
+        jpgRef.getDownloadURL().then(function (url) {
           setURL((prev) => [...prev, url]);
         });
       }
@@ -118,30 +120,45 @@ export default function Details(props) {
     if (businessDetails.maps) {
       return (
         <a href={businessDetails.maps} target="_blank" rel="noreferrer">
-            <strong>View on Google Maps</strong>{" "}
-            <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
+          <strong>View on Google Maps</strong>{" "}
+          <img
+            className="ml-2"
+            src="/images/gmaps.png"
+            alt="google maps logo"
+          ></img>
         </a>
-      )
+      );
     }
   }
 
   function instagram() {
     if (businessDetails.instagram) {
       return (
-        <a href={"https://www.instagram.com/" + businessDetails.instagram.substring(1)} target="_blank" rel="noreferrer">
-            <img src="/images/insta.png" alt="instagram logo"></img>
+        <a
+          href={
+            "https://www.instagram.com/" +
+            businessDetails.instagram.substring(1)
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/insta.png" alt="instagram logo"></img>
         </a>
-      )
+      );
     }
   }
 
   function facebook() {
     if (businessDetails.facebook) {
       return (
-        <a href={"https://www.facebook.com/" + businessDetails.facebook} target="_blank" rel="noreferrer">
-            <img src="/images/fb.png" alt="facebook logo"></img>
+        <a
+          href={"https://www.facebook.com/" + businessDetails.facebook}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/fb.png" alt="facebook logo"></img>
         </a>
-      )
+      );
     }
   }
   const ref = useRef([]);
@@ -157,7 +174,13 @@ export default function Details(props) {
     }
 
     const checkIfClickedOutside = (e) => {
-      if (open && ref.current && !ref.current[0].contains(e.target) && !ref.current[1].contains(e.target) && !ref.current[2].contains(e.target)) {
+      if (
+        open &&
+        ref.current &&
+        !ref.current[0].contains(e.target) &&
+        !ref.current[1].contains(e.target) &&
+        !ref.current[2].contains(e.target)
+      ) {
         setOpen(false);
 
         if (!first.includes("hidden")) {
@@ -173,7 +196,7 @@ export default function Details(props) {
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside);
-  }, [first, second, third, open, bg])
+  }, [first, second, third, open, bg]);
 
   return (
     <div className="business-details-content">
@@ -185,27 +208,63 @@ export default function Details(props) {
         </Breadcrumb> */}
       <div className="main-details">
         <div className="business-details-images">
-          <img className="main-img" onClick={() => {
-            setFirst("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[0]} alt="business 1" />
-          <img className="temp-img" onClick={() => {
-            setSecond("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[1]} alt="business 2" />
-          <img className="temp-img" onClick={() => {
-            setThird("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[2]} alt="business 3" />
+          <img
+            className="main-img"
+            onClick={() => {
+              setFirst("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[0]}
+            alt={`${businessDetails.name} 1`}
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setSecond("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[1]}
+            alt={`${businessDetails.name} 2`}
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setThird("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[2]}
+            alt={`${businessDetails.name} 3`}
+          />
         </div>
 
         <div className={bg}>
-          <img className={first} ref={(i) => {ref.current.push(i)}} src={imgArr[0]} alt="business 1" />
-          <img className={second} ref={(i) => {ref.current.push(i)}} src={imgArr[1]} alt="business 2" />
-          <img className={third} ref={(i) => {ref.current.push(i)}} src={imgArr[2]} alt="business 3" />
+          <img
+            className={first}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[0]}
+            alt="business 1"
+          />
+          <img
+            className={second}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[1]}
+            alt="business 2"
+          />
+          <img
+            className={third}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[2]}
+            alt="business 3"
+          />
         </div>
 
-        <div>
+        <div className="business-details-text">
           <p>
             <strong>Today's Hours: </strong>
             {hours[currentDay]}
