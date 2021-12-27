@@ -347,7 +347,7 @@ export const Description = styled.p`
   width: 40%;
   margin: 0em 0rem 0rem 5rem;
 
-  @media (max-width: 1650px) {
+  @media (max-width: 1200px) {
     font-size: 18px;
     margin: 0em;
   }
