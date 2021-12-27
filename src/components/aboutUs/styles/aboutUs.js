@@ -4,8 +4,18 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   background: #ffffff;
-  padding: 0 1.5rem;
-  margin-bottom: 5rem;
+  padding: 0 0.3rem;
+  margin: 0;
+  overflow-x: hidden;
+  margin-bottom: 3rem;
+
+  @media (min-width: 800px) {
+    padding: 0 1.5rem;
+    margin-bottom: 5rem;
+    
+    padding: 0;
+    overflow-x: unset;
+  }
 `;
 
 export const Side = styled.div`
@@ -19,7 +29,6 @@ export const Side = styled.div`
   position: sticky;
   top: 16%;
   padding: 10rem 0;
-
   @media (max-width: 1050px) {
     display: none;
     width: 0%;
@@ -53,15 +62,12 @@ export const LinkS = styled.p`
   display: list-item; /* This has to be "list-item"                                               */
   list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
   list-style-position: inside;
-
   &:hover {
     font-size: 17px;
     color: #67923d;
   }
-
   @media (max-width: 1200px) {
     font-size: 14px;
-
     &:hover {
       font-size: 15px;
       color: #67923d;
@@ -70,36 +76,100 @@ export const LinkS = styled.p`
 `;
 
 export const Main = styled.div`
-  width: 86%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
-
-  @media (max-width: 1550px) {
+  padding-top: 3rem;
+  
+  margin: 0;
+  overflow-x: hidden;
+  
+  @media (min-width: 800px) {
     padding: 0 3rem;
   }
 
-  @media (max-width: 1050px) {
-    width: 100%;
+  @media (min-width: 1050px) {
+    width: 86%;
+    padding: 0 2rem;
   }
 `;
 
 export const AboutSec = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: left;
   width: 100%;
-  padding-top: 5rem;
-  padding-bottom: 10rem;
+  // margin: 0 auto;
+  position: relative;
+  padding-left: 1.6rem;
+
+  @media(max-width: 799px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 800px) {
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+
+    flex-direction: unset;
+  }
+
+  @media (min-width: 1300px) {
+    // height: 100%;
+    margin-bottom: 3rem;
+  }
+
+  
+  flex-direction: column;
+  // padding-bottom: 3.5rem;
+  // align-content: left;
+  
+  // @media (min-width: 800px) {
+  //   text-align: center;
+  //   align-items: center;
+  //   padding-left: unset;
+  //   padding-bottom: 3rem;
+
+  //   margin: 0 2rem;
+  // }
+
+  // @media (min-width: 1050px) {
+  //   left: 2rem;
+  //   margin: 0 2rem;
+  // }
+
+  
 `;
 
 export const Images = styled.div`
+  height: 387px;
+  top: 7%;
+  left: 50%;
+  position: absolute;
   width: 50%;
-  height: 100%;
-  position: relative;
-
-  @media (max-width: 800px) {
+  
+  @media (max-width: 338px) {
     display: none;
+  }
+
+  @media (min-width: 450px) {
+    left: 60%;
+  }
+
+  @media (min-width: 550px) {
+    left: 80%;
+  }
+  
+  @media (min-width: 800px) {
+    width: 50%;
+    height: 100%;
+    position: relative;
+
+    top: unset;
+    left: unset;
   }
 `;
 
@@ -107,7 +177,6 @@ export const Image = styled.div`
   position: absolute;
   top: ${({ top }) => top};
   left: ${({ left }) => left};
-
   img {
     height: auto;
     width: ${({ width }) => width};
@@ -116,321 +185,451 @@ export const Image = styled.div`
 
 export const IceCream = styled.div`
   position: absolute;
-  top: 2%;
-  left: 10%;
+  height: 220px;
+  width: 113px;
+  z-index: 1;
+  padding-left: 1rem;
 
-  @media (max-width: 1200px) {
-    top: 8%;
+  @media (min-width: 800px) {
+    z-index: unset;
   }
-
+  
   img {
-    height: auto;
-    width: 200px;
-
-    @media (max-width: 1400px) {
-      width: 180px;
+    height: 220px;
+    width: 113px;
+    position: absolute;
+    top: 1rem;
+    border-radius: 30px;
+    
+    @media (min-width: 800px) {
+      height: auto;
+      width: 140px;
+      top: 2%;
+      left: 10%;
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 930px) {
       width: 160px;
     }
 
-    @media (max-width: 930px) {
-      width: 140px;
+    @media (min-width: 1200px) {
+      width: 180px;
+    }
+    
+    @media (min-width: 1440px) {
+      width: 201px;
+      height: 391px;
+      top: unset;
     }
   }
 `;
 
 export const Water = styled.div`
   position: absolute;
-  top: 23%;
-  left: 51%;
+  top: 88%;
+  left: 48%;
+  z-index: 0;
 
-  @media (max-width: 1670px) {
-    left: 50%;
+  @media (min-width: 800px) {
+    top: 30%;
+    left: 61%;
+    z-index: unset;
   }
 
-  @media (max-width: 1200px) {
-    top: 32%;
+  @media (min-width: 1200px) {
+    top: 35%;
+  }
+
+  @media (min-width: 1440px) {
+    top: 30%;
+    left: 52%;
   }
 
   img {
-    height: auto;
-    width: 120px;
+    position: absolute;
+    height: 167px;
+    width: 88px;
+    bottom: 90%;
+    border-radius: 30px;
+    
+    @media (min-width: 800px) {
+      height: auto;
+      width: 80px;
 
-    @media (max-width: 1400px) {
+      bottom: unset;
+      border-radius: unset;
+    }
+
+    @media (min-width: 930px) {
       width: 100px;
     }
 
-    @media (max-width: 1200px) {
-      width: 80px;
+    @media (min-width: 1400px) {
+      width: 120px;
     }
   }
 `;
 
 export const ToothBrush = styled.div`
   position: absolute;
-  top: 70%;
-  left: 18%;
+  display: none;
 
-  @media (max-width: 1670px) {
-    left: 23%;
+  @media (min-width: 800px) {
+    top: 63%;
+    left: 1%;
+
+    display: unset;
   }
 
-  @media (max-width: 1200px) {
-    top: 58%;
+  @media (min-width: 1150px) {
+    top: 67%;
+    left: 15%;
   }
 
+  @media (min-width: 1440px) {
+    top: 65%;
+  }
+  
   img {
+    position: absolute;
     height: auto;
-    width: 200px;
-
-    @media (max-width: 1400px) {
-      width: 180px;
-    }
-
-    @media (max-width: 1200px) {
+    width: 140px;
+    
+    @media (min-width: 800px) {
       width: 160px;
     }
-
-    @media (max-width: 930px) {
-      width: 140px;
+    
+    @media (min-width: 1200px) {
+      width: 180px;
+    }
+    
+    @media (min-width: 1440px) {
+      width: 200px;
     }
   }
 `;
 
 export const Circles = styled.div`
   position: absolute;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
+  z-index: 3;
+  top: 39%;
+  left: 49%;
+  padding-left: 1.5rem;
+
+  @media (min-width: 800px) {
+    padding-left: unset;
+    ${({ top }) => `top: calc(${top} - 60px)`};
+    ${({ left }) => `left: calc(${left} + 50px)`};
+  }
+
+  @media (min-width: 900px) {
+    padding-left: unset;
+    ${({ top }) => `top: calc(${top} - 70px)`};
+    ${({ left }) => `left: calc(${left} + 50px)`};
+  }
+
+  @media (min-width: 1150px) {
+    ${({ top }) => `top: calc(${top} - 30px)`};
+    ${({ left }) => `left: calc(${left} + 20px)`};
+  }
+
+  @media (min-width: 1440px) {
+    top: ${({ top }) => top};
+    left: ${({ left }) => left};
+  }
 
   img {
-    width: 51px;
+    width: 40px;
     height: auto;
-  }
 
-  @media (max-width: 1670px) {
-    ${({ left }) => `left: calc(${left} + 70px)`};
-  }
-
-  @media (max-width: 1150px) {
-    ${({ left }) => `left: calc(${left} + 90px)`};
+    @media (min-width: 800px) {
+      width: 51px;
+    }
   }
 `;
 
 export const SecCircles = styled.div`
   position: absolute;
   top: 40%;
-  left: 26.1%;
+  left: 2%;
+  display: none;
 
   img {
-    width: 51px;
+    width: 39px;
     height: auto;
 
-    @media (max-width: 1400px) {
+    @media (min-width: 1400px) {
       width: 45px;
     }
   }
-
-  @media (max-width: 1700px) {
-    left: 29%;
-  }
-
-  @media (max-width: 1650px) {
-    left: 33%;
-  }
-
-  @media (max-width: 1450px) {
+  
+  @media (min-width: 1300px) {
     left: 37%;
+    display: block;
   }
 
-  @media (max-width: 1300px) {
-    left: 65%;
-  }
-
-  @media (max-width: 800px) {
-    left: 75%;
+  @media (min-width: 1440px) {
+    left: 177px;
   }
 `;
 
 export const Text = styled.div`
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-right: 10rem;
+  padding-bottom: 1rem;
+  align-content: left;
+  position: relative;
 
-  @media (max-width: 1550px) {
-    padding-right: 8rem;
+  // padding-left: 2.5rem;
+  @media (min-width: 800px) {
+    padding-bottom: unset;
+    padding-left: unset;
+    align-content: unset;
+    position: unset;
+    left: unset;
+    
+    width: 90%;
+    text-align: unset;
+    // justify-content: center;
   }
 
-  @media (max-width: 1150px) {
-    padding-right: 5rem;
+  @media (min-width: 950px) {
+    width: 85%;
   }
-
-  @media (max-width: 800px) {
-    width: 100%;
-    padding: 0 5rem;
-    text-align: center;
-  }
-
-  @media (max-width: 550px) {
-    padding: 0 2.5rem;
+  
+  @media (min-width: 1550px) {
+    // padding-right: 10rem;
   }
 `;
 
 export const Title = styled.h1`
   font-style: normal;
-  font-weight: 800;
-  font-size: 52px;
+  font-weight: 900;
+  font-size: 32px;
   letter-spacing: 0.035em;
   color: #67923d;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+  
+  text-align: left;
+  width: 80vw;
 
-  @media (max-width: 1299px) {
-    font-size: 44px;
+  @media (min-width: 800px) {
+    front-size: 36px;
+    margin-bottom: 1.75rem;
+    width: unset;
   }
-
-  @media (max-width: 930px) {
-    font-size: 36px;
+  
+  @media (min-width: 930px) {
+    font-size: 48px;
+    line-height: 54px;
+    align-content: left;
+  }
+  
+  @media (min-width: 1299px) {
+    font-size: 52px;
   }
 `;
 
 export const Heading = styled.h2`
   font-style: italic;
-  font-weight: 800;
-  font-size: 30px;
+  font-weight: 900;
+  font-size: 24px;
   letter-spacing: 0.035em;
   color: #585858;
-  margin-bottom: 2rem;
-  line-height: 40px;
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+  
+  text-align: left;
+  width: 80vw;
+  // padding: 0.25rem 0.5rem;
 
-  @media (max-width: 1299px) {
-    font-size: 29px;
+  @media(min-width: 800px) {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    line-height: 40px;
+    padding: 0;
+    width: unset;
   }
-
-  @media (max-width: 930px) {
-    font-size: 26px;
-  }
+  
 `;
 
 export const Description = styled.p`
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 17px;
   color: #828282;
   line-height: 25px;
+  margin-right: 1rem;
   margin-bottom: 2rem;
-  width: 70%;
+  z-index: 3;
+  width: 100%;
+  // padding-left: 0.5rem;
+  
+  text-align: left;
 
-  @media (max-width: 1550px) {
-    width: 80%;
+  @media (min-width: 600px) {
+    width: 85vw;
   }
 
-  @media (max-width: 1299px) {
-    font-size: 16px;
+  @media (min-width: 800px) {
+    width: 100%;
+    padding: 0;
+    
+    margin-right: unset;
+    z-index: unset;
+    padding-left: unset;
+  }
+  
+  @media (min-width: 1150px) {
     width: 90%;
   }
-
-  @media (max-width: 1150px) {
-    width: 100%;
+  
+  @media (min-width: 1299px) {
+    font-size: 16px;
+    width: 80%;
+  }
+  
+  @media (min-width: 1550px) {
+    width: 70%;
   }
 `;
 
 export const SecDescription = styled.p`
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
-  letter-spacing: 0.025em;
+  font-weight: 400;
+  font-size: 17px;
   color: #6a6565;
+  line-height: 26px;
   margin-bottom: 2.5rem;
-  width: 40%;
-
+  letter-spacing: 0.025em;
+  width: 70%;
+  text-align: left;
   @media (max-width: 800px) {
-    width: 70%;
+    width: 80%;
   }
+  // @media (max-width: 1550px) {
+  //   width: 80%;
+  // }
+  // @media (max-width: 1299px) {
+  //   font-size: 16px;
+  //   width: 90%;
+  // }
+  // @media (max-width: 1150px) {
+  //   width: 100%;
+  // }
 `;
 
 export const SubSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 800px) {
+  position: relative;
+  left: calc(-50vw + 50%);
+  padding-left: 1.6rem;
+  padding-bottom: 3.5rem;
+  align-content: left;
+  
+  @media (min-width: 800px) {
     text-align: center;
     align-items: center;
+    padding-left: unset;
+    padding-bottom: 3rem;
+
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1050px) {
+    left: 2rem;
+    margin: 0 2rem;
   }
 `;
 
 export const Cards = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+
+  flex-direction: row;
+  padding: 0 1rem;
+  padding-left: 2rem;
+
+  @media (min-width: 1050px) {
+    padding-left: unset;
+  }
 `;
 
 export const Card = styled.div`
-  width: 45%;
-  display: flex;
-  align-items: center;
-  margin: 2rem 1rem;
+  width: 50%;
+  align-items: left;
   position: relative;
-  padding: 1.5rem 0;
+  padding-bottom: 3rem;
+  margin-right: 0;
+  align-content: left;
+  text-align: left;
+  flex-wrap: wrap;
 
-  @media (max-width: 1300px) {
+  @media (min-width: 1150px) {
     justify-content: center;
+    width: 45%
   }
 
-  @media (max-width: 650px) {
-    width: 100%;
+  @media (min-width: 1250px) {
+    justify-content: center;
+    width: 45%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 50%;
+    max-width: 600px;
   }
 `;
 
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
   background: ${({ background }) => background};
-  width: 207px;
-  padding: 1.9rem 0;
+  width: 160px;
+  height: 172px;
+  padding-top: 1rem;
   box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 30px;
-  margin-right: 2.5rem;
+  margin: 0 0;
 
-  @media (max-width: 1400px) {
-    width: 197px;
+  @media (min-width: 800px) {
+    width: 160px;
+    height: 172px;
   }
 
-  @media (max-width: 1300px) {
-    width: 230px;
-    padding: 2.3rem;
+  @media (min-width: 1000px) {
+    width: 200px;
+    height: 212px
   }
 
-  @media (max-width: 750px) {
-    width: 207px;
-    padding: 1.9rem 0;
+  @media (min-width: 1290px) {
+    width: 201px;
+    // padding: 2.3rem;
   }
 
   img {
-    width: 130px;
-    height: 130px;
+    width: 89px;
+    height: 89px;
     border-radius: 50%;
     object-fit: cover;
     filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
-    @media (max-width: 1400px) {
-      width: 120px;
-      height: 120px;
-    }
-
-    @media (max-width: 1300px) {
+    @media (min-width: 1000px) {
       width: 130px;
       height: 130px;
+    }
+
+    @media (min-width: 1290px) {
+      top: 50%;
     }
   }
 
@@ -438,31 +637,44 @@ export const Frame = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
     text-align: center;
     color: #6a6565;
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   p {
     font-style: normal;
     font-weight: bold;
     font-size: 13px;
-    line-height: 16px;
+    line-height: 15px;
     text-align: center;
     color: ${({ color }) => color};
   }
 `;
 
 export const TextArea = styled.div`
-  position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: center;
+
+  height: 212px;
+  top: 0;
+  left: 50%;
+  position: absolute;
   width: 50%;
 
-  @media (max-width: 1300px) {
-    display: none;
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  padding-left: 0;
+
+
+  @media (min-width: 1290px) {
+    left: 46%;
+  }
+
+  @media(min-width: 1400px) {
+    left: 46%;
+    width: 229px;
   }
 
   p {
@@ -472,8 +684,16 @@ export const TextArea = styled.div`
     line-height: 17px;
     letter-spacing: 0.025em;
     color: #6a6565;
+    width: 90%;
+    height: 80%;
+    padding: 1rem 0;
+    text-align: left;
+    vertical-align: center;
 
-    @media (max-width: 1400px) {
+    overflow-y: auto;
+    resize: none;
+
+    @media (min-width: 1400px) {
       font-size: 12px;
     }
   }
@@ -482,12 +702,13 @@ export const TextArea = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: 1rem 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
 
     img {
       width: 15px;
-      height: auto;
-      margin: 0 1rem;
+      height: 10%;
+      margin-right: 0.5rem;
       cursor: pointer;
     }
   }
@@ -497,21 +718,54 @@ export const InvolvedSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 8rem 0;
+  margin: 0;
+  top-margin: 1rem;
+  margin-bottom: 2.5rem;
+  align-content: left;
+  position: relative;
+  left: calc(-50vw + 50%);
+  text-align: center;
+  align-items: center;
+
+  padding-left: 1.6rem;
+  padding-bottom: 3.5rem;
+
+  @media (min-width: 800px) {
+    text-align: center;
+    align-items: center;
+    padding-left: unset;
+    padding-bottom: 3rem;
+
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1050px) {
+    left: 2rem;
+    margin: 0 2rem;
+  }
 `;
 
 export const SecTitle = styled.h3`
   font-style: normal;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 16px;
   letter-spacing: 0.035em;
   color: #67923d;
   margin-bottom: 2rem;
+  
+  text-align: left;
+  width: 80vw;
+  @media (max-width: 1299px) {
+    font-size: 44px;
+  }
+  @media (max-width: 930px) {
+    font-size: 36px;
+  }
 `;
 
 export const Btn = styled.button`
   background: #67923d;
-  padding: 0.8rem 2.2rem;
+  padding: 0.8rem 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -524,10 +778,14 @@ export const Btn = styled.button`
   color: #ffffff;
   cursor: pointer;
   transition: 0.5s ease all;
-  margin: 0.7rem 0;
-
+  height: 41px;
   &:hover {
     background: #8cce4b;
+  }
+
+  @media (min-width: 800px) {
+    margin-right: 65%;
+    padding: 0.8rem 42.5px;
   }
 `;
 
@@ -547,7 +805,6 @@ export const DownloadBtn = styled.button`
   cursor: pointer;
   transition: 0.5s ease all;
   margin: 0.7rem 0;
-
   &:hover {
     background: #8cce4b;
   }
@@ -557,8 +814,32 @@ export const OtherClubsSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 5rem 0 7rem 0;
+  align-content: left;
+  position: relative;
+  left: calc(-50vw + 50%);
+  text-align: center;
+  align-items: center;
+
+  margin: 0;
+  top-margin: 1rem;
+  margin-bottom: 2.5rem;
+
+  padding-left: 1.6rem;
+  padding-bottom: 3.5rem;
+
+  @media (min-width: 800px) {
+    text-align: center;
+    align-items: center;
+    padding-left: unset;
+    padding-bottom: 3rem;
+
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1050px) {
+    left: 2rem;
+    margin: 0 2rem;
+  }
 `;
 
 export const ClubCards = styled.div`
@@ -579,7 +860,6 @@ export const ClubCard = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 3rem;
-
   @media (max-width: 400px) {
     width: 226px;
     height: 293px;
@@ -591,7 +871,6 @@ export const ClubImage = styled.div`
   height: 55%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-
   img {
     width: 100%;
     height: 100%;
@@ -639,11 +918,36 @@ export const LocalOrgsSec = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 7rem 0;
+  align-content: left;
+  position: relative;
+  left: calc(-50vw + 50%);
+  text-align: center;
+  align-items: center;
+
+  margin: 0;
+  top-margin: 1rem;
+  margin-bottom: 2.5rem;
+
+  padding-left: 1.6rem;
+  padding-bottom: 3.5rem;
+
+  @media (min-width: 800px) {
+    text-align: center;
+    align-items: center;
+    padding-left: unset;
+    padding-bottom: 3rem;
+
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1050px) {
+    left: 2rem;
+    margin: 0 2rem;
+  }
 `;
 
 export const Organizations = styled.div`
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -656,17 +960,15 @@ export const Organization = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   img {
-    width: 210px;
-    height: 210px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
   }
-
   h3 {
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     color: #1f2421;
   }
 `;
@@ -708,26 +1010,22 @@ export const TextSec = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   h3 {
     font-style: italic;
     font-weight: bold;
     font-size: 17px;
     line-height: 20px;
     color: #585858;
-
     span {
       text-decoration-line: underline;
       color: #a9d0a9;
     }
   }
-
   h2 {
     font-weight: bold;
     font-size: 17px;
     color: #585858;
   }
-
   p {
     font-weight: 500;
     font-size: 17px;
@@ -750,6 +1048,5 @@ export const Donate = styled.p`
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-
   color: #67923d;
 `;
