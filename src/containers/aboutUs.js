@@ -166,7 +166,6 @@ let desktop = <AboutUs.AboutSec className="about-section">
           </AboutUs.Text>
           {width < 800 ? 
             <div className="team-cards">
-              {console.log(width, 'state')}
               {profiles[0]}
             </div> :
             <AboutUs.Cards className="team-frames">

@@ -46,7 +46,7 @@ p {
 
 .criteria-txt {
   width: 89%;
-  margin: 4em 0;
+  margin: 2em 0;
 }
 
 em, i {
@@ -61,4 +61,45 @@ em, i {
 
 .MuiPaper-elevation1 {
   box-shadow: none !important;
+}
+
+.filter-selections {
+  display: flex;
+  align-items: left;
+  width: 100%;
+  
+  overflow-x: auto;
+  scroll-padding: 0 50%;
+  scroll-snap-type: x mandatory;
+  max-width: 1040px;
+  padding: 1rem 0;
+
+  @media (min-width: 800px) {
+      width: 90%;
+  }
+
+  @media (min-width: 1500px) {
+      margin-left: 0;
+  }
+
+
+  .filter-select {
+      width: 60%;
+      height: auto;
+      background: #C4C4C4;
+      color: #FFFFFF;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 19.4315px;
+      line-height: 23px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      margin: 0 2rem;
+      padding: 0.25rem 0.5rem;
+
+      &.selected {
+        background: #67923D;
+      }
+  }
 }

@@ -1,11 +1,58 @@
-import React from "react";
+import React, {useEffect, useState, useRef } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./styles/criteria.css";
+import "./styles/criteria.scss";
+import {
+  Containerz,
+  Side,
+  Main,
+  CriteriaSec,
+  Images,
+  Text,
+  Title,
+  Heading,
+  SecDescription,
+  Description,
+  SubDescription,
+  SubSec,
+  Card,
+  Cards,
+  Circles,
+  Frame,
+  TextArea,
+  InvolvedSec,
+  SecTitle,
+  Btn,
+  OtherClubsSec,
+  ClubCards,
+  ClubCard,
+  LocalOrgsSec,
+  Organizations,
+  Organization,
+  WeeklySec,
+  Arrow,
+  FeatureArea,
+  Feature,
+  ImageSec,
+  TextSec,
+  Donate,
+  LinkS,
+  Image,
+  ClubImage,
+  ClubName,
+  ClubDescription,
+  LearnMore,
+  Links,
+  IceCream,
+  Water,
+  ToothBrush,
+  SecCircles,
+  DownloadBtn,
+} from "./styles/criteria";
 
 export default function Container() {
   let one = [
@@ -69,12 +116,49 @@ export default function Container() {
     "Disabled-owned",
   ];
 
+  let categories = [
+    "Certifications",
+    "Sustainable Ingredients and Foods",
+    "Resource Management",
+    "Waste Management",
+    "Beyond the Business",
+    "Other Badges"];
+
+  const [industries, setIndustries] = useState([]);
+
+  let filters = categories.map((category) => {
+    return <Selection category={category} list={industries} setList={setIndustries}/>;
+  });
+
   return (
+    <>
+    <Containerz className="about-container">
+      <Main className="about-main">
+        <CriteriaSec>
+          <Text>
+            <Heading>
+              How do we know businesses are sustainable?<br/>
+              <span style={{color: "#67923D"}}> Glad you asked.</span>
+            </Heading>
+            <Description>
+              First, choose an industry. Then we'll show you the criteria.
+            </Description>
+            <SubDescription>
+            We have conducted <em>research</em> on characteristics of businesses
+            that maximize sustainbility. We have implemented a certification{" "}
+            <em>system</em> to reward businesses for specific eco-friendly
+            categories.
+            </SubDescription>
+          </Text>
+          
+        </CriteriaSec>
+        <div className="filter-selections">
+          {filters}
+        </div>
+      </Main>
+    </Containerz>
     <div className="criteria-container">
       <div className="criteria-text-content">
-        <h1>
-          So how do we know businesses are <em>actually</em> being sustainable?
-        </h1>
         <div className="criteria-txt">
           <h1>
             Criteria <div className="criteria-bar"></div>
@@ -97,7 +181,38 @@ export default function Container() {
         <img src="/images/criteria_img.png" />
       </div>
     </div>
+    </>
   );
+}
+
+function Selection ({category, list, setList}) {
+  const [selected, setSelected] = useState(false);
+  const [inList, setInList] = useState(false);
+
+  const changeList = () => {
+    setSelected(prevSelect => !prevSelect);
+    console.log(selected, 'not changed?');
+    console.log(list, 'origin list');
+    let newList = [...list];
+    let i = 0;
+    let itemInList = false;
+    while (!itemInList && i < list.length) {
+      itemInList = list[i] === category;
+      i++;
+    }
+    if (!itemInList) {
+      newList.push(category);
+      console.log(newList, ' added newList');
+    }
+    
+    if (itemInList && selected) {
+      newList = newList.filter((item) => item !== category);
+      console.log(newList, ' removed newList');
+    }
+    setList(newList);
+  }
+  
+  return <button className={"filter-select" + (selected ? " selected" : "")} onClick={changeList}>{category +' '+ selected}</button>;
 }
 
 const useStyles = makeStyles((theme) => ({
