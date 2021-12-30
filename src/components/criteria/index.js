@@ -11,11 +11,8 @@ import {
   CritContainer,
   Main,
   CriteriaSec,
-  Images,
   Text,
-  Title,
   Heading,
-  SecDescription,
   Description,
   SubDescription,
 } from "./styles/criteria";
@@ -165,8 +162,6 @@ function Selection ({category, list, setList}) {
   return <button className={"filter-select" + (selected ? " selected" : "")} onClick={changeList}>{category}</button>;
 }
 
-
-
 function CriteriaCard ({industry, desc}) {
   return (
     <div className="industry-card">
@@ -181,8 +176,18 @@ function CriteriaCard ({industry, desc}) {
   );
 }
 
+function Bullet(props) {
+  return (
+    <p>
+      <i className="fa fa-check-circle-o" aria-hidden="true" />
+      &nbsp;{props.text}
+    </p>
+  );
+}
 
 
+
+// Old criteria selection
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: ".4em",
@@ -223,14 +228,5 @@ export function CriteriaCat(props) {
         </AccordionDetails>
       </Accordion>
     </div>
-  );
-}
-
-function Bullet(props) {
-  return (
-    <p>
-      <i className="fa fa-check-circle-o" aria-hidden="true" />
-      &nbsp;{props.text}
-    </p>
   );
 }

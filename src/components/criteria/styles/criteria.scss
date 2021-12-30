@@ -85,10 +85,6 @@ em, i {
   padding: 1rem 0;
   padding-left: 2rem;
 
-  @media (min-width: 800px) {
-      // width: 90%;
-  }
-
   @media (min-width: 1440px) {
       margin-left: auto;
       margin-right: auto;
@@ -118,7 +114,6 @@ em, i {
 
 .criteria-section {
   position: relative;
-  // display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -132,10 +127,6 @@ em, i {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  @media (min-width: 1800px) {
-    // width: 80%;
   }
   
   .industry-card {
@@ -158,28 +149,15 @@ em, i {
     }
 
     @media (min-width: 800px) {
-      // margin: unset;
       text-align: left;
       flex-wrap: wrap;
       max-width: 355.42px;
       padding-right: 2rem;
-      // margin: 2rem 0;
     }
 
     @media (min-width: 1150px) {
       justify-content: center;
-      // width: 45%;
     }
-
-    // @media (min-width: 1250px) {
-    //   justify-content: center;
-    //   width: 45%;
-    // }
-
-    // @media (min-width: 1440px) {
-    //   width: 50%;
-    //   max-width: 600px;
-    // }
 
     .industry-title {
       font-style: normal;
@@ -187,7 +165,6 @@ em, i {
       font-size: 28.912px;
       line-height: 35px;
       /* identical to box height */
-      // font-style: italic;
       font-weight: 900;
       font-size: 24px;
       letter-spacing: 0.035em;
