@@ -2,6 +2,7 @@
   "name": "rethink_frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@firebase/storage": "^0.8.3",
     "@material-ui/core": "^4.11.3",
