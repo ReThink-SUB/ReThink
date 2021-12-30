@@ -1,77 +1,20 @@
 import styled from "styled-components";
 
-export const Containerz = styled.div`
+export const CritContainer = styled.div`
   width: 100%;
   display: flex;
   background: #ffffff;
-  padding: 0 0.3rem;
-  margin: 0;
-  overflow-x: hidden;
+  padding: 0 auto;
   margin-bottom: 3rem;
 
   @media (min-width: 800px) {
     padding: 0 1.5rem;
     margin-bottom: 5rem;
+    margin-right: auto;
+    margin-left: auto;
     
     padding: 0;
     overflow-x: unset;
-  }
-`;
-
-export const Side = styled.div`
-  width: 14%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.02);
-  ${"" /* background: red; */}
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: sticky;
-  top: 16%;
-  padding: 10rem 0;
-  @media (max-width: 1050px) {
-    display: none;
-    width: 0%;
-  }
-`;
-
-export const Links = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  a {
-    justify-content: left;
-  }
-  ${
-    "" /* @media (max-width: 1050px) {
-    display: none;
-  } */
-  }
-`;
-
-export const LinkS = styled.p`
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #c4c4c4;
-  cursor: pointer;
-  transition: 0.5s ease all;
-  margin: 2.2rem 0;
-  display: list-item; /* This has to be "list-item"                                               */
-  list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
-  list-style-position: inside;
-  &:hover {
-    font-size: 17px;
-    color: #67923d;
-  }
-  @media (max-width: 1200px) {
-    font-size: 14px;
-    &:hover {
-      font-size: 15px;
-      color: #67923d;
-    }
   }
 `;
 
@@ -86,6 +29,8 @@ export const Main = styled.div`
   
   @media (min-width: 800px) {
     padding: 0 3rem;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 1050px) {
@@ -96,11 +41,10 @@ export const Main = styled.div`
 
 export const CriteriaSec = styled.div`
   display: flex;
-  align-items: left;
   width: 100%;
-  // margin: 0 auto;
   position: relative;
   padding-left: 1.6rem;
+  flex-direction: column;
 
   @media(max-width: 799px) {
     max-width: 400px;
@@ -115,261 +59,20 @@ export const CriteriaSec = styled.div`
     padding-bottom: 2.5rem;
 
     flex-direction: unset;
+
+    max-width: 1400px;
   }
 
   @media (min-width: 1300px) {
     // height: 100%;
-    margin-bottom: 3rem;
+    // margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  
-  flex-direction: column;
-  // padding-bottom: 3.5rem;
-  // align-content: left;
-  
-  // @media (min-width: 800px) {
-  //   text-align: center;
-  //   align-items: center;
-  //   padding-left: unset;
-  //   padding-bottom: 3rem;
-
-  //   margin: 0 2rem;
-  // }
-
-  // @media (min-width: 1050px) {
-  //   left: 2rem;
-  //   margin: 0 2rem;
-  // }
-
-  
-`;
-
-export const Images = styled.div`
-  height: 387px;
-  top: 7%;
-  left: 50%;
-  position: absolute;
-  width: 50%;
-  
-  @media (max-width: 338px) {
-    display: none;
-  }
-
-  @media (min-width: 450px) {
-    left: 60%;
-  }
-
-  @media (min-width: 550px) {
-    left: 80%;
-  }
-  
-  @media (min-width: 800px) {
-    width: 50%;
-    height: 100%;
-    position: relative;
-
-    top: unset;
-    left: unset;
-  }
-`;
-
-export const Image = styled.div`
-  position: absolute;
-  top: ${({ top }) => top};
-  left: ${({ left }) => left};
-  img {
-    height: auto;
-    width: ${({ width }) => width};
-  }
-`;
-
-export const IceCream = styled.div`
-  position: absolute;
-  height: 220px;
-  width: 113px;
-  z-index: 1;
-  padding-left: 1rem;
-
-  @media (min-width: 800px) {
-    z-index: unset;
-  }
-  
-  img {
-    height: 220px;
-    width: 113px;
-    position: absolute;
-    top: 1rem;
-    border-radius: 30px;
+  @media (min-width: 1400px) {
+    // padding: unset;
     
-    @media (min-width: 800px) {
-      height: auto;
-      width: 140px;
-      top: 2%;
-      left: 10%;
-    }
-
-    @media (min-width: 930px) {
-      width: 160px;
-    }
-
-    @media (min-width: 1200px) {
-      width: 180px;
-    }
-    
-    @media (min-width: 1440px) {
-      width: 201px;
-      height: 391px;
-      top: unset;
-    }
-  }
-`;
-
-export const Water = styled.div`
-  position: absolute;
-  top: 88%;
-  left: 48%;
-  z-index: 0;
-
-  @media (min-width: 800px) {
-    top: 30%;
-    left: 61%;
-    z-index: unset;
-  }
-
-  @media (min-width: 1200px) {
-    top: 35%;
-  }
-
-  @media (min-width: 1440px) {
-    top: 30%;
-    left: 52%;
-  }
-
-  img {
-    position: absolute;
-    height: 167px;
-    width: 88px;
-    bottom: 90%;
-    border-radius: 30px;
-    
-    @media (min-width: 800px) {
-      height: auto;
-      width: 80px;
-
-      bottom: unset;
-      border-radius: unset;
-    }
-
-    @media (min-width: 930px) {
-      width: 100px;
-    }
-
-    @media (min-width: 1400px) {
-      width: 120px;
-    }
-  }
-`;
-
-export const ToothBrush = styled.div`
-  position: absolute;
-  display: none;
-
-  @media (min-width: 800px) {
-    top: 63%;
-    left: 1%;
-
-    display: unset;
-  }
-
-  @media (min-width: 1150px) {
-    top: 67%;
-    left: 15%;
-  }
-
-  @media (min-width: 1440px) {
-    top: 65%;
-  }
-  
-  img {
-    position: absolute;
-    height: auto;
-    width: 140px;
-    
-    @media (min-width: 800px) {
-      width: 160px;
-    }
-    
-    @media (min-width: 1200px) {
-      width: 180px;
-    }
-    
-    @media (min-width: 1440px) {
-      width: 200px;
-    }
-  }
-`;
-
-export const Circles = styled.div`
-  position: absolute;
-  z-index: 3;
-  top: 39%;
-  left: 49%;
-  padding-left: 1.5rem;
-
-  @media (min-width: 800px) {
-    padding-left: unset;
-    ${({ top }) => `top: calc(${top} - 60px)`};
-    ${({ left }) => `left: calc(${left} + 50px)`};
-  }
-
-  @media (min-width: 900px) {
-    padding-left: unset;
-    ${({ top }) => `top: calc(${top} - 70px)`};
-    ${({ left }) => `left: calc(${left} + 50px)`};
-  }
-
-  @media (min-width: 1150px) {
-    ${({ top }) => `top: calc(${top} - 30px)`};
-    ${({ left }) => `left: calc(${left} + 20px)`};
-  }
-
-  @media (min-width: 1440px) {
-    top: ${({ top }) => top};
-    left: ${({ left }) => left};
-  }
-
-  img {
-    width: 40px;
-    height: auto;
-
-    @media (min-width: 800px) {
-      width: 51px;
-    }
-  }
-`;
-
-export const SecCircles = styled.div`
-  position: absolute;
-  top: 40%;
-  left: 2%;
-  display: none;
-
-  img {
-    width: 39px;
-    height: auto;
-
-    @media (min-width: 1400px) {
-      width: 45px;
-    }
-  }
-  
-  @media (min-width: 1300px) {
-    left: 37%;
-    display: block;
-  }
-
-  @media (min-width: 1440px) {
-    left: 177px;
   }
 `;
 
@@ -381,7 +84,7 @@ export const Text = styled.div`
   align-content: left;
   position: relative;
 
-  // padding-left: 2.5rem;
+  padding: 0 1rem;
   @media (min-width: 800px) {
     padding-bottom: unset;
     padding-left: unset;
@@ -389,13 +92,13 @@ export const Text = styled.div`
     position: unset;
     left: unset;
     
-    width: 90%;
+    // width: 90%;
     text-align: unset;
     // justify-content: center;
   }
 
-  @media (min-width: 950px) {
-    width: 85%;
+  @media (min-width: 1400px) {
+    // width: 85%;
   }
   
   @media (min-width: 1550px) {
@@ -436,29 +139,31 @@ export const Heading = styled.h2`
   font-weight: 900;
   font-size: 24px;
   letter-spacing: 0.035em;
-  color: #585858;
+  color: #535461;
   margin-bottom: 1rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   
   text-align: left;
   width: 80vw;
-  // padding: 0.25rem 0.5rem;
+  max-width: 400px;
 
   @media(min-width: 800px) {
-    font-size: 24px;
+    font-size: 48px;
     margin-bottom: 1rem;
     line-height: 40px;
     padding: 0;
     width: unset;
+    max-width: 800px;
+    line-height: 136.84%;
   }
   
 `;
 
 export const Description = styled.p`
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 17px;
-  color: #828282;
+  color: #535461;
   line-height: 25px;
   margin-right: 1rem;
   margin-bottom: 2rem;
@@ -472,17 +177,20 @@ export const Description = styled.p`
     width: 85vw;
   }
 
-  @media (min-width: 800px) {
-    width: 100%;
-    padding: 0;
-    
+  @media (min-width: 800px) {    
     margin-right: unset;
     z-index: unset;
     padding-left: unset;
+
+    width: 100%;
+    padding: 0;
+    font-size: 24px;
+    line-height: 43px;
   }
   
   @media (min-width: 1150px) {
     width: 90%;
+    font-size: 36px;
   }
   
   @media (min-width: 1299px) {
@@ -499,7 +207,7 @@ export const SubDescription = styled.p`
   font-style: normal;
   font-weight: 100;
   font-size: 12.8px;
-  color: #828282;
+  color: #000000;
   line-height: 18.1px;
   margin-right: 1rem;
   margin-bottom: 2rem;
@@ -507,22 +215,27 @@ export const SubDescription = styled.p`
   width: 70%;
   
   text-align: left;
+  max-width: 260px;
 
   @media (min-width: 600px) {
     width: 85vw;
   }
 
   @media (min-width: 800px) {
-    width: 100%;
-    padding: 0;
-    
     margin-right: unset;
     z-index: unset;
     padding-left: unset;
+    width: 100%;
+    max-width: 486px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 35.36px;
+    font-weight: 200;
   }
   
   @media (min-width: 1150px) {
     width: 90%;
+    font-size: 24px;
   }
   
   @media (min-width: 1299px) {
@@ -587,15 +300,14 @@ export const SubSec = styled.div`
 
 export const Cards = styled.div`
   position: relative;
-  display: flex;
+  // display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
 
   flex-direction: row;
-  padding: 0 1rem;
-  padding-left: 2rem;
+  padding: 0 2rem;
 
   @media (min-width: 1050px) {
     padding-left: unset;
@@ -603,14 +315,14 @@ export const Cards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 50%;
-  align-items: left;
+  width: 90%;
+  align-items: center;
   position: relative;
-  padding-bottom: 3rem;
-  margin-right: 0;
-  align-content: left;
-  text-align: left;
-  flex-wrap: wrap;
+  padding: 2rem 0;
+  margin: 0 1rem;
+  align-content: center;
+  // text-align: left;
+  // flex-wrap: wrap;
 
   @media (min-width: 1150px) {
     justify-content: center;

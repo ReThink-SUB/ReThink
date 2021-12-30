@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef } from 'react';
+import { Dimensions } from 'react-native';
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -7,8 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./styles/criteria.scss";
 import {
-  Containerz,
-  Side,
+  CritContainer,
   Main,
   CriteriaSec,
   Images,
@@ -18,41 +18,9 @@ import {
   SecDescription,
   Description,
   SubDescription,
-  SubSec,
-  Card,
-  Cards,
-  Circles,
-  Frame,
-  TextArea,
-  InvolvedSec,
-  SecTitle,
-  Btn,
-  OtherClubsSec,
-  ClubCards,
-  ClubCard,
-  LocalOrgsSec,
-  Organizations,
-  Organization,
-  WeeklySec,
-  Arrow,
-  FeatureArea,
-  Feature,
-  ImageSec,
-  TextSec,
-  Donate,
-  LinkS,
-  Image,
-  ClubImage,
-  ClubName,
-  ClubDescription,
-  LearnMore,
-  Links,
-  IceCream,
-  Water,
-  ToothBrush,
-  SecCircles,
-  DownloadBtn,
 } from "./styles/criteria";
+
+const windowWidth = Dimensions.get('window').width;
 
 export default function Container() {
   let one = [
@@ -115,29 +83,38 @@ export default function Container() {
     "Woman-owned",
     "Disabled-owned",
   ];
-
-  let categories = [
-    "Certifications",
-    "Sustainable Ingredients and Foods",
-    "Resource Management",
-    "Waste Management",
-    "Beyond the Business",
-    "Other Badges"];
-
+  let categories = {
+    "Certifications": one,
+    "Sustainable Ingredients and Foods": two,
+    "Resource Management": three,
+    "Waste Management": four,
+    "Beyond the Business": five,
+    "Other Badges": six
+  };
   const [industries, setIndustries] = useState([]);
+  const [width, setWidth] = useState(windowWidth);
 
-  let filters = categories.map((category) => {
-    return <Selection category={category} list={industries} setList={setIndustries}/>;
+  useEffect(() => {
+    Dimensions.addEventListener(
+      "change", (window => {
+      setWidth(window['window']['width']);
+    }));
+  }, []);
+
+  let filters = Object.entries(categories).map(([key, value]) => {
+    return <Selection category={key} list={industries} setList={setIndustries}/>;
   });
 
-  return (
-    <>
-    <Containerz className="about-container">
+  let criteriaList = industries.map((industry) => {
+    return <CriteriaCard industry={industry} desc={categories[industry]}/>
+  });
+
+  return <CritContainer className="about-container">
       <Main className="about-main">
-        <CriteriaSec>
+        <CriteriaSec className="criteriaSec">
           <Text>
             <Heading>
-              How do we know businesses are sustainable?<br/>
+              How are businesses sustainable?{width < 800 ? <br/> : null }
               <span style={{color: "#67923D"}}> Glad you asked.</span>
             </Heading>
             <Description>
@@ -150,49 +127,24 @@ export default function Container() {
             categories.
             </SubDescription>
           </Text>
-          
         </CriteriaSec>
+        <div className='line-border'/>
         <div className="filter-selections">
           {filters}
         </div>
-      </Main>
-    </Containerz>
-    <div className="criteria-container">
-      <div className="criteria-text-content">
-        <div className="criteria-txt">
-          <h1>
-            Criteria <div className="criteria-bar"></div>
-          </h1>
-          <p>
-            We have conducted <em>research</em> on characteristics of businesses
-            that maximize sustainbility. We have implemented a certification{" "}
-            <em>system</em> to reward businesses for specific eco-friendly
-            categories.
-          </p>
+        <div className="criteria-section">
+          {criteriaList}
         </div>
-        <CriteriaCat title="Certifications" content={one} />
-        <CriteriaCat title="Sustainable Ingredients and Foods" content={two} />
-        <CriteriaCat title="Resource Management" content={three} />
-        <CriteriaCat title="Waste Management" content={four} />
-        <CriteriaCat title="Beyond the Business" content={five} />
-        <CriteriaCat title="Other Badges" content={six} />
-      </div>
-      <div className="criteria-image">
-        <img src="/images/criteria_img.png" />
-      </div>
-    </div>
-    </>
-  );
+      </Main>
+    </CritContainer>
+  ;
 }
 
 function Selection ({category, list, setList}) {
   const [selected, setSelected] = useState(false);
-  const [inList, setInList] = useState(false);
 
   const changeList = () => {
     setSelected(prevSelect => !prevSelect);
-    console.log(selected, 'not changed?');
-    console.log(list, 'origin list');
     let newList = [...list];
     let i = 0;
     let itemInList = false;
@@ -201,19 +153,35 @@ function Selection ({category, list, setList}) {
       i++;
     }
     if (!itemInList) {
-      newList.push(category);
-      console.log(newList, ' added newList');
+      newList.unshift(category);
     }
     
     if (itemInList && selected) {
       newList = newList.filter((item) => item !== category);
-      console.log(newList, ' removed newList');
     }
     setList(newList);
   }
   
-  return <button className={"filter-select" + (selected ? " selected" : "")} onClick={changeList}>{category +' '+ selected}</button>;
+  return <button className={"filter-select" + (selected ? " selected" : "")} onClick={changeList}>{category}</button>;
 }
+
+
+
+function CriteriaCard ({industry, desc}) {
+  return (
+    <div className="industry-card">
+      <h2 className="industry-title">{industry}</h2><br/>
+      <p>Criteria:</p>
+      <div className='industry-criteria'>
+        {desc.map((point) => {
+          return <Bullet text={point} />;
+        })}
+      </div>
+    </div>
+  );
+}
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
