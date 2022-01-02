@@ -49,7 +49,7 @@ import {
   SecCircles,
   DownloadBtn,
 } from "./styles/aboutUs";
-import { securityRules } from "firebase-admin";
+// import { securityRules } from "firebase-admin";
 
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -198,7 +198,7 @@ AboutUs.Frame = function AboutUsFrame({
     var ref = storage.ref(`img/profiles/${src}.jpg`);
     ref.getDownloadURL().then(function (url) {
       setURL(url);
-    })
+    });
   });
   return (
     <Frame color={color} background={background} {...restProps}>
@@ -286,12 +286,11 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 
 AboutUs.Btn = function AboutUsBtn({ href, children, ...restProps }) {
   return (
-    
-      <Btn>
-        <a href={href} target="_new" {...restProps}>
-          {children}
-        </a>
-      </Btn>
+    <Btn>
+      <a href={href} target="_new" {...restProps}>
+        {children}
+      </a>
+    </Btn>
   );
 };
 
