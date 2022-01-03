@@ -81,15 +81,17 @@ export default function Details(props) {
 
     async function getImgURL() {
       for (let i = 1; i < 4; i++) {
-        const imgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".png")
-        imgRef.getDownloadURL()
-        .then(function (url) {
+        const imgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".png"
+        );
+        imgRef.getDownloadURL().then(function (url) {
           setURL((prev) => [...prev, url]);
         });
 
-        const jpgRef = await storage.ref("img/businesses/" + urlParams.business + "/" + i + ".jpg")
-        jpgRef.getDownloadURL()
-        .then(function (url) {
+        const jpgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".png"
+        );
+        jpgRef.getDownloadURL().then(function (url) {
           setURL((prev) => [...prev, url]);
         });
       }
@@ -112,7 +114,7 @@ export default function Details(props) {
 
   // map days to hours
   let hourReturn = Object.keys(hours).map((day) => {
-    return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
+    return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
   const ref = useRef([]);
@@ -128,7 +130,13 @@ export default function Details(props) {
     }
 
     const checkIfClickedOutside = (e) => {
-      if (open && ref.current && !ref.current[0].contains(e.target) && !ref.current[1].contains(e.target) && !ref.current[2].contains(e.target)) {
+      if (
+        open &&
+        ref.current &&
+        !ref.current[0].contains(e.target) &&
+        !ref.current[1].contains(e.target) &&
+        !ref.current[2].contains(e.target)
+      ) {
         setOpen(false);
         console.log("hi");
 
@@ -149,7 +157,7 @@ export default function Details(props) {
     console.log(first);
     console.log(second);
     console.log(third);
-  }, [first, second, third, open, bg])
+  }, [first, second, third, open, bg]);
 
   return (
     <div className="content">
@@ -161,24 +169,60 @@ export default function Details(props) {
         </Breadcrumb> */}
       <div className="main-details">
         <span className="images">
-          <img className="main-img" onClick={() => {
-            setFirst("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[0]} alt="business 1" />
-          <img className="temp-img" onClick={() => {
-            setSecond("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[1]} alt="business 2" />
-          <img className="temp-img" onClick={() => {
-            setThird("details-img-modal");
-            setOpen(true);
-          }} src={imgArr[2]} alt="business 3" />
+          <img
+            className="main-img"
+            onClick={() => {
+              setFirst("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[0]}
+            alt="business 1"
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setSecond("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[1]}
+            alt="business 2"
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setThird("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[2]}
+            alt="business 3"
+          />
         </span>
 
         <div className={bg}>
-          <img className={first} ref={(i) => {ref.current.push(i)}} src={imgArr[0]} alt="business 1" />
-          <img className={second} ref={(i) => {ref.current.push(i)}} src={imgArr[1]} alt="business 2" />
-          <img className={third} ref={(i) => {ref.current.push(i)}} src={imgArr[2]} alt="business 3" />
+          <img
+            className={first}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[0]}
+            alt="business 1"
+          />
+          <img
+            className={second}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[1]}
+            alt="business 2"
+          />
+          <img
+            className={third}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[2]}
+            alt="business 3"
+          />
         </div>
 
         <div>
@@ -199,7 +243,11 @@ export default function Details(props) {
           <div className="social-buttons">
             <button className="mr-5">
               <strong>View on Google Maps</strong>{" "}
-              <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
+              <img
+                className="ml-2"
+                src="/images/gmaps.png"
+                alt="google maps logo"
+              ></img>
             </button>
             <button>
               <img src="/images/insta.png" alt="instagram logo"></img>
