@@ -113,9 +113,9 @@ export default function Details(props) {
   });
 
   // map days to hours
-  // let hourReturn = Object.keys(hours).map((day) => {
-  //   return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
-  // });
+  let hourReturn = Object.keys(hours).map((day) => {
+    return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
+  });
 
   const ref = useRef([]);
   const [first, setFirst] = useState("details-img-modal hidden");
@@ -259,7 +259,7 @@ export default function Details(props) {
           <p>
             <strong>Hours:</strong>
           </p>
-          {/* {hourReturn} */}
+          {hourReturn}
         </div>
       </div>
       <h2>
