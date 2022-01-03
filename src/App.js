@@ -41,16 +41,16 @@ export default function App() {
   const [image, setImage] = useState(null);
 
   // fetch profiles json
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("./profiles.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   fetch("./profiles.json")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setData(data);
+  //     });
+  // }, []);
 
   useEffect(() => {
     db.collection("businesses")
@@ -146,22 +146,27 @@ export default function App() {
                 <Criteria />
               </Route>
               {/* FOR DEBUGGING ONLY */}
-              <Route exact path={ROUTES.DETAILS + "/:business"} key="" component={Details}/>
-                {/* <Details /> */}
               <Route
+                exact
+                path={ROUTES.DETAILS + "/:business"}
+                key=""
+                component={Details}
+              />
+              {/* <Details /> */}
+              {/* <Route
                 path={ROUTES.TEAM}
                 render={(...routerProps) => (
                   <Team {...routerProps} profiles={data} />
                 )}
-              />
+              /> */}
               <Route path={ROUTES.BUSINESSES} component={Businesses} />
               <Route path={ROUTES.ABOUT} component={About} />
             </Suspense>
           </Switch>
         </Router>
-        <ScrollToTop/>
+        <ScrollToTop />
       </BusinessContext.Provider>
-      <ScrollToTop/>
+      <ScrollToTop />
     </>
   );
 }
