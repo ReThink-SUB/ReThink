@@ -134,7 +134,7 @@ export function CriteriaCat(props) {
         <AccordionDetails>
           <div>
             {arr.map((point) => {
-              return <Bullet text={point} />;
+              return <Bullet text={point} key={point} />;
             })}
           </div>
         </AccordionDetails>
