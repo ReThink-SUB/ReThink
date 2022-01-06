@@ -7,6 +7,7 @@ export const Container = styled.div`
   padding: 0 1rem;
   z-index: 5;
   position: relative;
+  overflow-x: clip;
 
   @media (min-width: 800px) {
     justify-content: space-between;
@@ -19,7 +20,7 @@ export const Title = styled.div`
   display: flex;
   img {
     margin-top: 1em;
-    width: 40%;
+    width: 80%;
     height: auto;
     @media (max-width: 800px) {
       width: 70px;

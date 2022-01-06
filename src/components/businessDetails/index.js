@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 // import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
@@ -31,8 +31,7 @@ export default function Details(props) {
   const [businessDetails, setBusinessDetails] = useState([]);
   const [hours, setHours] = useState({});
   const urlParams = useParams();
-
-  const [imgURL, setURL] = useState("");
+  const [imgArr, setURL] = useState([]);
 
   useEffect(() => {
     // sorter for hours
@@ -45,7 +44,7 @@ export default function Details(props) {
       fri: 5,
       sat: 6,
     };
-    let arr = [1, 2, 3];
+
     // pull business data from firestore
     const getBusinessDetails = async () => {
       const details = (
@@ -54,7 +53,6 @@ export default function Details(props) {
       if (!details) {
         console.log("No such business document!");
       } else {
-        console.log("Business data:", details);
         setBusinessDetails(details);
 
         // order the hours properly
@@ -75,20 +73,30 @@ export default function Details(props) {
         });
         setHours(orderedData);
       }
+      return details;
     };
 
     getBusinessDetails();
-    let images = [];
-    arr.map((key) => {
-      console.log(urlParams.business);
-      storage
-        .ref("img/businesses/" + urlParams.business + "/" + key + ".png")
-        .getDownloadURL()
-        .then(function (url) {
-          images.push(url);
+
+    async function getImgURL() {
+      for (let i = 1; i < 4; i++) {
+        const imgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".png"
+        );
+        imgRef.getDownloadURL().then(function (url) {
+          setURL((prev) => [...prev, url]);
         });
-    });
-    setURL(images);
+
+        const jpgRef = await storage.ref(
+          "img/businesses/" + urlParams.business + "/" + i + ".jpg"
+        );
+        jpgRef.getDownloadURL().then(function (url) {
+          setURL((prev) => [...prev, url]);
+        });
+      }
+    }
+
+    getImgURL();
   }, [urlParams.business]);
 
   let num = [1, 2, 3];
@@ -105,11 +113,93 @@ export default function Details(props) {
 
   // map days to hours
   let hourReturn = Object.keys(hours).map((day) => {
-    return <p>{weekdayMap.get(day) + ": " + hours[day]}</p>;
+    return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
+  function mapButton() {
+    if (businessDetails.maps) {
+      return (
+        <a href={businessDetails.maps} target="_blank" rel="noreferrer">
+          <strong>View on Google Maps</strong>{" "}
+          <img
+            className="ml-2"
+            src="/images/gmaps.png"
+            alt="google maps logo"
+          ></img>
+        </a>
+      );
+    }
+  }
+
+  function instagram() {
+    if (businessDetails.instagram) {
+      return (
+        <a
+          href={
+            "https://www.instagram.com/" +
+            businessDetails.instagram.substring(1)
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/insta.png" alt="instagram logo"></img>
+        </a>
+      );
+    }
+  }
+
+  function facebook() {
+    if (businessDetails.facebook) {
+      return (
+        <a
+          href={"https://www.facebook.com/" + businessDetails.facebook}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/fb.png" alt="facebook logo"></img>
+        </a>
+      );
+    }
+  }
+  const ref = useRef([]);
+  const [first, setFirst] = useState("details-img-modal hidden");
+  const [second, setSecond] = useState("details-img-modal hidden");
+  const [third, setThird] = useState("details-img-modal hidden");
+  const [bg, setBg] = useState("details-img-modals hidden");
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setBg("details-img-modals");
+    }
+
+    const checkIfClickedOutside = (e) => {
+      if (
+        open &&
+        ref.current &&
+        !ref.current[0].contains(e.target) &&
+        !ref.current[1].contains(e.target) &&
+        !ref.current[2].contains(e.target)
+      ) {
+        setOpen(false);
+
+        if (!first.includes("hidden")) {
+          setFirst(first + " hidden");
+        } else if (!second.includes("hidden")) {
+          setSecond(second + " hidden");
+        } else if (!third.includes("hidden")) {
+          setThird(third + " hidden");
+        }
+
+        setBg(bg + " hidden");
+      }
+    };
+
+    document.addEventListener("mousedown", checkIfClickedOutside);
+  }, [first, second, third, open, bg]);
+
   return (
-    <div className="content">
+    <div className="business-details-content">
       <h1>{businessDetails.name}</h1>
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
@@ -117,12 +207,64 @@ export default function Details(props) {
           <BreadcrumbItem active>Ice Cream</BreadcrumbItem>
         </Breadcrumb> */}
       <div className="main-details">
-        <span className="images">
-          <img className="main-img" src={imgURL[0]} alt="business 1" />
-          <img className="temp-img" src={imgURL[1]} alt="business 2" />
-          <img className="temp-img" src={imgURL[2]} alt="business 3" />
-        </span>
-        <div>
+        <div className="business-details-images">
+          <img
+            className="main-img"
+            onClick={() => {
+              setFirst("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[0]}
+            alt={`${businessDetails.name} 1`}
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setSecond("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[1]}
+            alt={`${businessDetails.name} 2`}
+          />
+          <img
+            className="temp-img"
+            onClick={() => {
+              setThird("details-img-modal");
+              setOpen(true);
+            }}
+            src={imgArr[2]}
+            alt={`${businessDetails.name} 3`}
+          />
+        </div>
+
+        <div className={bg}>
+          <img
+            className={first}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[0]}
+            alt="business 1"
+          />
+          <img
+            className={second}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[1]}
+            alt="business 2"
+          />
+          <img
+            className={third}
+            ref={(i) => {
+              ref.current.push(i);
+            }}
+            src={imgArr[2]}
+            alt="business 3"
+          />
+        </div>
+
+        <div className="business-details-text">
           <p>
             <strong>Today's Hours: </strong>
             {hours[currentDay]}
@@ -137,17 +279,12 @@ export default function Details(props) {
           </p>
           <br></br>
           {businessDetails.profile}
-          <div className="social-buttons">
-            <button className="mr-5">
-              <strong>View on Google Maps</strong>{" "}
-              <img className="ml-2" src="/images/gmaps.png" alt="google maps logo"></img>
-            </button>
-            <button>
-              <img src="/images/insta.png" alt="instagram logo"></img>
-            </button>
-            <button>
-              <img src="/images/fb.png" alt="facebook logo"></img>
-            </button>
+          <div className="business-details-buttons">
+            {mapButton()}
+            <div className="business-details-social-buttons">
+              {instagram()}
+              {facebook()}
+            </div>
           </div>
           <p>
             <strong>Hours:</strong>

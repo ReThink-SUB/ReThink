@@ -1,19 +1,23 @@
-.content {
+body {
+  position: relative;
+}
+
+.business-details-content {
   margin: 2rem 10% !important;
 }
 
-.content > h1 {
+.business-details-content > h1 {
   color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 2em !important;
 }
 
-.content > h2 {
+.business-details-content > h2 {
   color: #3e3b3b;
   font-weight: 900 !important;
   margin-top: 3em !important;
 }
-/* 
+/*
 .breadcrumb {
   background-color: white !important;
   margin: 0 !important;
@@ -28,18 +32,53 @@
   color: #466824 !important;
 } */
 
-.images {
-  width: 34%;
+.business-details-images {
+  width: 50%;
   object-fit: contain;
-  margin-right: 3.5em;
+  margin-right: 34px;
 }
 
 .main-img {
   width: 100%;
+  min-width: 340px;
+  cursor: pointer;
 }
+
 .temp-img {
   width: 50%;
-  padding: 1em;
+  padding: 0.4em 0.2em;
+  vertical-align: top;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.details-img-modals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000070;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.details-img-modal {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 96%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  cursor: default;
+}
+
+.business-details-text {
+  width: 65%;
 }
 
 .bar {
@@ -55,40 +94,64 @@
   margin-top: 3em;
   line-height: 2em;
   align-items: flex-start;
-  display: inline-flex;
+  display: flex;
 }
 
-.social-buttons {
+.business-details-buttons {
+  display: flex;
+  align-items: center;
   margin: 3em 0;
 }
 
-.social-buttons img {
-  width: 2em;
+.business-details-buttons img {
+  display: block;
+  width: auto;
+  height: 32px;
 }
 
-.social-buttons > button {
-  margin-right: 0.8em !important;
+.business-details-buttons a {
+  display: flex;
+  flex-direction: row;
+  margin-right: 16px;
   border-radius: 10px !important;
-  padding: 0.6em 1.6em !important;
+  padding: 1em 1.6em;
+  background-color: #ebebeb;
   box-shadow: 0 5px 8px #6a65653f;
   transition: transform 0.4s ease;
   transform: scale(1);
+  color: #000;
+  max-height: 54px;
+  flex-grow: 1;
 }
 
-.social-buttons > button:hover {
+.business-details-buttons > a {
+  flex-grow: 2 !important;
+}
+
+.business-details-buttons a:hover {
   box-shadow: 0 5px 8px #6a656556;
   transition: all 0.4s ease;
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
-.social-buttons > button:active {
+.business-details-buttons a:active {
   transform: scale(0.98);
   transition: transform 0.2s ease;
 }
 
+.business-details-social-buttons {
+  display: flex;
+  width: 38%;
+}
+
+.business-details-social-buttons a:nth-child(2n) {
+  margin-right: 0 !important;
+}
+
 .specific-card {
   border-radius: 0.5em !important;
-  width: 15rem;
+  position: relative;
+  width: 17rem;
   box-shadow: 0 5px 8px #6a65652a;
   margin-top: 5em;
   margin-left: 2%;
@@ -100,6 +163,7 @@
   font-size: 0.75em;
   line-height: 1.6em;
   padding: 1.6em;
+  margin-bottom: 48px;
 }
 
 .specific-card-header {
@@ -129,11 +193,13 @@
   color: #6a6565;
   font-size: 0.65em;
   text-decoration: underline;
-  margin-top: 4.5em;
-  margin-bottom: 2em;
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
 }
 
-.speciifc-card a:hover {
+.specific-card a:hover {
   color: #3b3b3b;
   font-weight: 500;
   text-decoration: underline;
@@ -149,4 +215,49 @@
 
 .specific-card-header > p:first-child {
   margin-right: 1em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 1058px) {
+  .business-details-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .business-details-buttons > * {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .business-details-social-buttons a {
+    flex-grow: 1;
+  }
+
+  .main-img {
+    width: 100%;
+    min-width: 250px;
+  }
+
+  .business-details-text {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .business-details-images {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 38px;
+  }
+
+  .main-details {
+    flex-direction: column;
+  }
+
+  .business-details-text {
+    width: 100%;
+  }
 }

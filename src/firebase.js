@@ -1,13 +1,15 @@
 import firebase from "firebase";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyDUohN1vM_7p_UcaGR36lOzPMvRXKfCOLA",
-  authDomain: "rethink-6251f.firebaseapp.com",
-  projectId: "rethink-6251f",
-  storageBucket: "rethink-6251f.appspot.com",
-  messagingSenderId: "613605092192",
-  appId: "1:613605092192:web:c7cebf580b7ca760b30c05",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
+
+
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();

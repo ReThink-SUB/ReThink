@@ -63,7 +63,7 @@ export const Menu = styled.nav`
   height: 100vh;
   align-items: center;
   padding: 1.5rem 3rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transform: ${({ open }) => (open ? "translateX(235%)" : "translateX(335%)")};

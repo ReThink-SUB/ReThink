@@ -37,9 +37,9 @@ export function HeaderContainer() {
           </Burger.Links>
           <Burger.Squiggle />
           <Burger.Socials>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fas fa-envelope"></i>
+            <i className="fab fa-facebook"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fas fa-envelope"></i>
           </Burger.Socials>
         </Burger.Menu>
         <Header.Links>

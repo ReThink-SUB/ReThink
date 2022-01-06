@@ -34,7 +34,9 @@ export default function ScrollToTop() {
     <div className="scroll-to-top">
       {isVisible && 
         <div onClick={scrollToTop}>
-          <Button><button>Go up!</button></Button>
+          <Button><button>
+          <img src={`/images/up-arrow.png`} alt="go to top" />  
+          </button></Button>
         </div>}
     </div>
   );

@@ -38,7 +38,6 @@ function Businesses() {
     ],
     ["Greater Seattle Area", "Portland", "Remote"],
   ];
-  
 
   // TODO: figure out how to get images using id of business
   // rn, im trying to get the ids of each business and get the logos using those ids in the ref
@@ -62,16 +61,16 @@ function Businesses() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           idHolder.push(doc.id);
-          
+
           let data = doc.data();
           if (!catHolder.includes(data.category)) {
-            catHolder.push(data.category);  
+            catHolder.push(data.category);
           }
           if (!priceHolder.includes(data.price)) {
-            priceHolder.push(data.price);  
+            priceHolder.push(data.price);
           }
           if (!areaHolder.includes(data.area)) {
-            areaHolder.push(data.area);  
+            areaHolder.push(data.area);
           }
           if (data.badges != null) {
             data.badges.forEach(badge => {
@@ -80,17 +79,18 @@ function Businesses() {
               }
             });
           }
-          
         });
         setIDs(idHolder);
         setFilterOps([catHolder, priceHolder, badgeHolder, areaHolder]);
       });
-      
-      fetchLogos(ids);
+
+    fetchLogos(ids);
   }, []);
 
-  filterHeaders.forEach( (filt) => {
-    filters.push(<FilterButton filter={filt} options={filterOps[iterator]}/>);
+  filterHeaders.forEach((filt) => {
+    filters.push(
+      <FilterButton key={filt} filter={filt} options={filterOps[iterator]} />
+    );
     iterator++;
   });
 
@@ -176,9 +176,9 @@ function BusinessCard(props) {
                 "$$" +
                 " " /*TODO: replace "$$" with business["price"]*/
             }
-            <img src="/images/lightning.png" alt="fish icon"/>{" "}
+            <img src="/images/lightning.png" alt="fish icon" />{" "}
             {/*TODO: should come from json */}
-            <img src="/images/fish.png" alt="lightning icon"/>
+            <img src="/images/fish.png" alt="lightning icon" />
           </CardSubtitle>
         </CardBody>
       </Card>
@@ -205,7 +205,7 @@ function BusinessCardSearchList(props) {
           let data = doc.data();
           businessesHolder.push(
             <BusinessCard
-              key={data}
+              key={data.name}
               business={data}
               logosrc={props.logos[counter]}
               id={doc.id}
@@ -222,15 +222,16 @@ function BusinessCardSearchList(props) {
   let filteredBusinesses = [];
   for (let business of businesses) {
     let data = business.props.business;
-    if (data.name.toLowerCase().includes(props.query.toLowerCase()) && data.published === "true") {
+    if (
+      data.name.toLowerCase().includes(props.query.toLowerCase()) &&
+      data.published === "true"
+    ) {
       filteredBusinesses.push(business);
     }
   }
 
   return (
-    <Container className="businesses-container">
-      {filteredBusinesses}
-    </Container>
+    <Container className="businesses-container">{filteredBusinesses}</Container>
   );
 }
 
@@ -289,8 +290,8 @@ function FilterButton(props) {
   Object.assign(propOp, props.options);
   options = Object.values(propOp);
 
-  options.forEach( (option) => {
-    filterOptions.push(<DropdownItem>{option}</DropdownItem>);
+  options.forEach((option) => {
+    filterOptions.push(<DropdownItem key={option}>{option}</DropdownItem>);
   });
 
   return (
