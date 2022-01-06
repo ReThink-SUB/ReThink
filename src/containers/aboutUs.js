@@ -87,8 +87,7 @@ export function AboutUsContainer() {
   };
 
   const setAboutSec = (dimm) => {
-    let mobile = (
-      <AboutUs.AboutSec className="about-section">
+    let mobile = <AboutUs.AboutSec className="about-section">
         <AboutUs.Text className="about-text">
           <AboutUs.Title id="about" className="about-us">
             About Us
@@ -117,51 +116,48 @@ export function AboutUsContainer() {
           <AboutUs.Water className="water" src="Water" />
           <AboutUs.Circles className="circle-1" />
         </AboutUs.Images>
-      </AboutUs.AboutSec>
-    );
-
-    let desktop = (
-      <AboutUs.AboutSec className="about-section">
-        <AboutUs.Images className="about-images">
-          <AboutUs.IceCream className="ice-cream" src="IceCream" />
-          <AboutUs.Water className="water" src="Water" />
-          <AboutUs.ToothBrush className="toothbrush" src="ToothBrush" />
-          <AboutUs.Circles className="circle-1" top="15%" left="50%" />
-          <AboutUs.Circles className="circle-2" top="60%" left="1%" />
-          <AboutUs.Circles className="circle-3" top="70%" left="55%" />
-        </AboutUs.Images>
-        <AboutUs.Text className="about-text first">
-          <AboutUs.Title id="about" className="about-us">
-            About Us
-          </AboutUs.Title>
-          <AboutUs.Heading>Who we are</AboutUs.Heading>
-          <AboutUs.Description className="about-desc">
-            A community of passionate University of Washington Seattle students
-            whose purpose is to transform the community by advocating for
-            sustainable living at the local level.
-          </AboutUs.Description>
-          <AboutUs.Heading>What businesses should be</AboutUs.Heading>
-          <AboutUs.Description>
-            These businesses are industry leaders in incorporating
-            sustainability in their products, services, or supply chain
-            logistics. They are the gold standard of sustainability practices
-            that people should shop at.
-          </AboutUs.Description>
-          <AboutUs.Description>
-            From their menus, ingredients, establishment, materials, and whole
-            host of others, they represent what it means to ReThink local
-            economy, and have sustainability upheld in business.
-          </AboutUs.Description>
-        </AboutUs.Text>
-      </AboutUs.AboutSec>
-    );
-
+      </AboutUs.AboutSec>;
+    let desktop = <AboutUs.AboutSec className="about-section">
+                    <AboutUs.Images className="about-images">
+                      <AboutUs.IceCream className="ice-cream" src="IceCream" />
+                      <AboutUs.Water className="water" src="Water" />
+                      <AboutUs.ToothBrush
+                        className="toothbrush"
+                        src="ToothBrush"
+                      />
+                      <AboutUs.Circles className="circle-1" top="15%" left="50%"/>
+                      <AboutUs.Circles className="circle-2" top="60%" left="1%"/>
+                      <AboutUs.Circles className="circle-3" top="70%" left="55%"/>
+                    </AboutUs.Images>
+                    <AboutUs.Text className="about-text first">
+                      <AboutUs.Title id="about" className="about-us">About Us</AboutUs.Title>
+                      <AboutUs.Heading>Who we are</AboutUs.Heading>
+                      <AboutUs.Description className="about-desc">
+                        A community of passionate University of Washington Seattle
+                        students whose purpose is to transform the community by advocating
+                        for sustainable living at the local level.
+                      </AboutUs.Description>
+                      <AboutUs.Heading>What businesses should be</AboutUs.Heading>
+                      <AboutUs.Description>
+                        These businesses are industry leaders in incorporating
+                        sustainability in their products, services, or supply chain
+                        logistics. They are the gold standard of sustainability practices
+                        that people should shop at.
+                      </AboutUs.Description>
+                      <AboutUs.Description>
+                        From their menus, ingredients, establishment, materials, and whole
+                        host of others, they represent what it means to ReThink local
+                        economy, and have sustainability upheld in business.
+                      </AboutUs.Description>
+                    </AboutUs.Text>
+                  </AboutUs.AboutSec>;
+        
     if (dimm < 800) {
       return mobile;
     } else {
       return desktop;
     }
-  };
+  }
 
   return (
     <AboutUs className="about-container">
@@ -186,7 +182,6 @@ export function AboutUsContainer() {
           </AboutUs.Text>
           {width < 800 ? (
             <div className="team-cards">
-              {console.log(width, "state")}
               {profiles[0]}
             </div>
           ) : (

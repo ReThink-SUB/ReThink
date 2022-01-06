@@ -1,153 +1,112 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./styles/criteria.css";
+import React, {useEffect, useState} from 'react';
+import { Dimensions } from 'react-native';
+import { db } from "../../firebase";
+import "./styles/criteria.scss";
+import {
+  CritContainer,
+  Main,
+  CriteriaSec,
+  Text,
+  Heading,
+  Description,
+  SubDescription,
+} from "./styles/criteria";
+
+const windowWidth = Dimensions.get('window').width;
 
 export default function Container() {
-  let one = [
-    "Natural",
-    "USDA Organic",
-    "Fair Trade",
-    "Certified Humane",
-    "Food Alliance Certification",
-    "Non-GMO",
-    "Local",
-    "Rainforest Alliance Certified",
-    "Certified Animal Welfare Approved",
-  ];
-  let two = [
-    "No GMO",
-    "Provides vegetarian and vegan options",
-    "No animal testing",
-    "Implements ethical farming practices",
-    "Sources ingredients from Pacific Northwest farms (Washington, Oregon, Idaho)",
-    "Buy from regional farms",
-    "Little to no perservatives on farm",
-    "No pesticides",
-    "Uses certified organic products",
-    "Farm certifications: Certified Humane, Animal Welfare Approved, American Grass-fed, American Humane Certified, Global Animal Partnership 4, 5, and 5+",
-  ];
-  let three = [
-    "50% of applicances are certified by Energy Star (refrigerators, microwaves, dishwasher, HVAC, etc)",
-    "Uses LED lights",
-    "Automatic lights",
-    "Uses environmentally-friendly cleaning products",
-    "Touchless sensor faucets",
-    "Dual flush toilet system",
-    "Building is RainWater certified",
-    "Building reuses greywater for irrigation/plumbing",
-    "Check box for using rented spaces --> we understand small businesses aren't able to do all of these",
-  ];
-  let four = [
-    "Integrates compost and recycling bins",
-    "Uses compostable and/or reusable supplies (ex. utensils, cups, napkins, trays, glasses, seat covers, etc.)",
-    "Uses compostable and/or recyclable packaging",
-    "Practices waste reduction in the office (supplies, paperless)",
-    "Donates extra and leftover food and/or products",
-    "Has pictures of what goes where for trash sorting",
-    "Provides reusable dishes for inperson dining",
-    "Donates or sells imperfect ingredients",
-  ];
-  let five = [
-    "Posts accurate info on social media accounts and websites",
-    "Educates staff about sustainability and sustainable business practices",
-    "Charitable goods for community",
-    "Transparency in practices",
-    "Actively attempts to increase and support environmental justices and campaigns",
-    "Overall supports community and is transparent with them",
-  ];
-  let six = [
-    "Good working conditions",
-    "Family-owned",
-    "Minority-owned",
-    "BIPOC-owned",
-    "Woman-owned",
-    "Disabled-owned",
-  ];
+  const [width, setWidth] = useState(windowWidth);
+  const [industries, setIndustries] = useState([]);
+  const [active, setActive] = useState(null);
+  const [criteria, setCriteria] = useState({});
 
-  return (
-    <div className="criteria-container">
-      <div className="criteria-text-content">
-        <h1>
-          So how do we know businesses are <em>actually</em> being sustainable?
-        </h1>
-        <div className="criteria-txt">
-          <h1>
-            Criteria <div className="criteria-bar"></div>
-          </h1>
-          <p>
+  useEffect(() => {
+    let industryHolder = [];
+    db.collection('criteria').get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        industryHolder.push(<Industry data={doc.data()} value={doc.id} setActive={setActive} setCriteria={setCriteria}/>);
+      });
+      setIndustries(industryHolder);
+    });
+    Dimensions.addEventListener(
+      "change", (window => {
+      setWidth(window['window']['width']);
+    }));
+  }, []);
+
+  return <CritContainer className="about-container">
+      <Main className="about-main">
+        <CriteriaSec className="criteriaSec">
+          <Text>
+            <Heading>
+              How are businesses sustainable?{width < 800 ? <br/> : null }
+              <span style={{color: "#67923D"}}> Glad you asked.</span>
+            </Heading>
+            <Description>
+              First, choose an industry. Then we'll show you the criteria.
+            </Description>
+            <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses
             that maximize sustainbility. We have implemented a certification{" "}
             <em>system</em> to reward businesses for specific eco-friendly
             categories.
-          </p>
+            </SubDescription>
+          </Text>
+        </CriteriaSec>
+        <div className='line-border'/>
+        <div className="description">
+          <h1>{criteria.title}</h1>
+          <p>{criteria.desc}</p>
         </div>
-        <CriteriaCat title="Certifications" content={one} />
-        <CriteriaCat title="Sustainable Ingredients and Foods" content={two} />
-        <CriteriaCat title="Resource Management" content={three} />
-        <CriteriaCat title="Waste Management" content={four} />
-        <CriteriaCat title="Beyond the Business" content={five} />
-        <CriteriaCat title="Other Badges" content={six} />
-      </div>
-      <div className="criteria-image">
-        <img src="/images/criteria_img.png" />
-      </div>
-    </div>
-  );
+        <div className="filter-selections">
+          {industries}
+        </div>
+        <div className="criteria-section">
+          {active}
+        </div>
+      </Main>
+    </CritContainer>
+  ;
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginBottom: ".4em",
-    width: "40em",
-  },
-  summary: {
-    backgroundColor: "#A9D0A9",
-    borderRadius: "10px",
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(20),
-    fontWeight: theme.typography.fontWeightMedium,
-    marginLeft: ".2em",
-    color: "#535461",
-  },
-}));
+function Industry ({data, value, setActive, setCriteria}) {
+  const [open, setOpen] = useState(false);
+  let desc = data.industry_description;
+  let criterias = data.criteria_boxes;
 
-export function CriteriaCat(props) {
-  const classes = useStyles();
-  let arr = props.content;
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      const container = document.getElementById(`${value}`);
+      if ((container != null) && container.contains(target)) return;
+      setOpen(false);
+    }
+    document.addEventListener("click", clickHandler);
+    
+    return () => document.removeEventListener("click", clickHandler);
+  })
 
-  return (
-    <div className={classes.root}>
-      <Accordion>
-        <AccordionSummary
-          className={classes.summary}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel-content"
-        >
-          <Typography className={classes.heading}>{props.title}</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <div>
-            {arr.map((point) => {
-              return <Bullet text={point} key={point} />;
-            })}
-          </div>
-        </AccordionDetails>
-      </Accordion>
-    </div>
-  );
+  const handleClick = () => {
+    let newList = Object.entries(criterias).map(([key, value]) => {
+      return <CriteriaCard title={value.title} desc={value.desc}/>;
+    });
+    setOpen(!open);
+    if (!open == true) {
+      setActive(newList);
+      setCriteria({'title': value, 'desc': desc});
+    } else {
+      setActive(null);
+      setCriteria({});
+    }
+  }
+
+  return <button id={value} className={"filter-select" + (open === true ? " selected" : "")} onClick={handleClick}>{value}</button>;
 }
 
-function Bullet(props) {
+function CriteriaCard ({title, desc}) {
   return (
-    <p>
-      <i className="fa fa-check-circle-o" aria-hidden="true" />
-      &nbsp;{props.text}
-    </p>
+    <div className="industry-card">
+      <h2 className="industry-title">{title}</h2><br/>
+      <p className='industry-criteria'>{desc}</p>
+    </div>
   );
 }
