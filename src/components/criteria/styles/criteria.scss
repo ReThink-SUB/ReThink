@@ -70,6 +70,11 @@ em, i {
   border: 1px solid #A49999;
   margin: 0 auto;
   margin-bottom: 3rem;
+  display: none;
+
+  @media (min-width: 800px) {
+    display: unset;
+  }
 }
 
 .filter-selections {
@@ -92,7 +97,6 @@ em, i {
 
 
   .filter-select {
-      width: 60%;
       height: auto;
       background: #C4C4C4;
       color: #FFFFFF;
@@ -112,10 +116,13 @@ em, i {
   }
 }
 
-.criteria-section {
+.desc-section {
+  display: flex;
+}
+
+.description {
   position: relative;
-  justify-content: center;
-  align-items: center;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1400px;
@@ -124,24 +131,98 @@ em, i {
   padding: 0 2rem;
 
   @media (min-width: 800px) {
-    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    float: left;
+    width: 50%;
+    max-width: 213px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30.8732px;
+    line-height: 37px;
+    color: #535461;
+
+    @media (max-width: 300px) {
+      font-size: 18px;
+    }
+    
+    @media (min-width: 800px) {
+      // font-size: 48px;
+      line-height: 57px;
+
+      color: #67923D;
+    }
+  }
+
+  p {
+    // width: 90%;
+    // max-width: 200px;
+    font-style: normal;
+    // font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #000000;
+
+    // @media (min-width: 600px) {
+    //   max-width: 200px;
+    // }
+
+    @media (max-width: 300px) {
+      font-size: 12px;
+    }
+
+    @media (min-width: 800px) {
+      max-width: 300px;
+    }
+    
+    @media (min-width: 1200px) {
+      max-width: 400px;
+      font-weight: bold;
+    }
+
+    @media (min-width: 1400px) {
+      max-width: 500px;
+    }
+  }
+}
+
+.criteria-section {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+
+  flex-direction: row;
+  padding: 0 2rem;
+
+  @media (min-width: 800px) {
     margin-left: auto;
     margin-right: auto;
   }
   
   .industry-card {
     width: 90%;
-    max-width: 420px;
+    max-width: 300px;
     align-items: center;
     position: relative;
     margin: 1rem;
     margin-bottom: 2rem;
-    padding: 2rem 2rem;
-    padding-right: 1rem;
+    padding: 3rem 3rem;
     align-content: center;
 
     background: #F2F2F2;
     border-radius: 16.0622px;
+
+    @media (max-width: 350px) {
+      padding: 1rem 1rem;
+    }
 
     @media (min-width: 550px) {
       margin-left: auto;
@@ -151,8 +232,8 @@ em, i {
     @media (min-width: 800px) {
       text-align: left;
       flex-wrap: wrap;
-      max-width: 355.42px;
-      padding-right: 2rem;
+      // max-width: 355.42px;
+      // padding-right: 2rem;
     }
 
     @media (min-width: 1150px) {

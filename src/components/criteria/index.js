@@ -6,6 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { db, storage } from "../../firebase";
 import "./styles/criteria.scss";
 import {
   CritContainer,
@@ -90,13 +91,30 @@ export default function Container() {
   };
   const [industries, setIndustries] = useState([]);
   const [width, setWidth] = useState(windowWidth);
+  const [industris, setIndustris] = useState([]);
+  const [active, setActive] = useState(null);
+  const [criteria, setCriteria] = useState({});
 
   useEffect(() => {
+    let industryHolder = [];
+    db.collection('criteria').get().then((querySnapshot) => {
+      let i = 0;
+      querySnapshot.forEach((doc) => {
+        console.log(i);
+        industryHolder.push(<Industri data={doc.data()} value={doc.id} setActive={setActive} setCriteria={setCriteria}/>);
+        i++;
+      });
+      generateIndustris(industryHolder);
+    });
     Dimensions.addEventListener(
       "change", (window => {
       setWidth(window['window']['width']);
     }));
   }, []);
+
+  const generateIndustris = (industrys) => {
+    setIndustris(industrys);
+  }
 
   let filters = Object.entries(categories).map(([key, value]) => {
     return <Selection category={key} list={industries} setList={setIndustries}/>;
@@ -126,15 +144,83 @@ export default function Container() {
           </Text>
         </CriteriaSec>
         <div className='line-border'/>
+        {/* <CriteriaSec className="desc-sec">
+          <Text>
+            <Heading>
+              <span style={{color: "#67923D"}}>{criteria.title}</span>
+            </Heading>
+            <SubDescription>
+            {criteria.desc}
+            </SubDescription>
+            <h1>{criteria.title}</h1>
+            <p>{criteria.desc}</p>
+          </Text>
+        </CriteriaSec> */}
+        <div className="description">
+          <h1>{criteria.title}</h1>
+          <p>{criteria.desc}</p>
+        </div>
         <div className="filter-selections">
+          {industris}
+        </div>
+        <div className="criteria-section">
+          {active}
+        </div>
+        {/* <div className="filter-selections">
           {filters}
         </div>
         <div className="criteria-section">
           {criteriaList}
-        </div>
+        </div> */}
       </Main>
     </CritContainer>
   ;
+}
+
+function Industri ({data, value, setActive, setCriteria}) {
+  // let data = props.data;
+  const [open, setOpen] = useState(false);
+  let desc = data.industry_description;
+  let criterias = data.criteria_boxes;
+  // console.log(criterias, 'crit');
+
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      const container = document.getElementById(`${value}`);
+      if (container.contains(target)) return;
+      setOpen(false);
+    }
+    document.addEventListener("click", clickHandler);
+
+    return () => document.removeEventListener("click", clickHandler);
+  })
+
+  const handleClick = () => {
+    setOpen(!open);
+    console.log(value, desc, 'desc');
+    
+    // let newList = criterias.map((crit) => {
+    //   return <CritCard title={crit.title} desc={crit.desc}/>
+    // });
+
+    let newList = Object.entries(criterias).map(([key, value]) => {
+      return <CritCard title={value.title} desc={value.desc}/>;
+    });
+    console.log(newList);
+    setActive(newList);
+    setCriteria({'title': value, 'desc': desc});
+  }
+
+  return <button id={value} className={"filter-select" + (open === true ? " selected" : "")} onClick={handleClick}>{value}</button>;
+}
+
+function CritCard ({title, desc}) {
+  return (
+    <div className="industry-card">
+      <h2 className="industry-title">{title}</h2><br/>
+      <p className='industry-criteria'>{desc}</p>
+    </div>
+  );
 }
 
 function Selection ({category, list, setList}) {

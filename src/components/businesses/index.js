@@ -74,7 +74,7 @@ function Businesses() {
             areaHolder.push(data.area);  
           }
           data.badges.forEach(badge => {
-            if(!badgeHolder.includes(badge)) {
+            if (!badgeHolder.includes(badge)) {
               badgeHolder.push(badge);
             }
           });
