@@ -73,11 +73,14 @@ function Businesses() {
           if (!areaHolder.includes(data.area)) {
             areaHolder.push(data.area);  
           }
-          data.badges.forEach(badge => {
-            if (!badgeHolder.includes(badge)) {
-              badgeHolder.push(badge);
-            }
-          });
+          if (data.badges != null) {
+            data.badges.forEach(badge => {
+              if (!badgeHolder.includes(badge)) {
+                badgeHolder.push(badge);
+              }
+            });
+          }
+          
         });
         setIDs(idHolder);
         setFilterOps([catHolder, priceHolder, badgeHolder, areaHolder]);

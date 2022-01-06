@@ -187,7 +187,7 @@ function Industri ({data, value, setActive, setCriteria}) {
   useEffect(() => {
     const clickHandler = ({ target }) => {
       const container = document.getElementById(`${value}`);
-      if (container.contains(target)) return;
+      if ((container != null) && container.contains(target)) return;
       setOpen(false);
     }
     document.addEventListener("click", clickHandler);
