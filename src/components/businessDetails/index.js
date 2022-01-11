@@ -80,19 +80,19 @@ export default function Details(props) {
 
     async function getImgURL() {
       for (let i = 1; i < 4; i++) {
-        const imgRef = await storage.ref(
+        const imgRef = storage.ref(
           "img/businesses/" + urlParams.business + "/" + i + ".png"
         );
         imgRef.getDownloadURL().then(function (url) {
           setURL((prev) => [...prev, url]);
         });
 
-        const jpgRef = await storage.ref(
-          "img/businesses/" + urlParams.business + "/" + i + ".jpg"
-        );
-        jpgRef.getDownloadURL().then(function (url) {
-          setURL((prev) => [...prev, url]);
-        });
+        // const jpgRef = await storage.ref(
+        //   "img/businesses/" + urlParams.business + "/" + i + ".jpg"
+        // );
+        // jpgRef.getDownloadURL().then(function (url) {
+        //   setURL((prev) => [...prev, url]);
+        // });
       }
     }
 
@@ -196,6 +196,10 @@ export default function Details(props) {
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside);
+
+    console.log(first);
+    console.log(second);
+    console.log(third);
   }, [first, second, third, open, bg]);
 
   return (
