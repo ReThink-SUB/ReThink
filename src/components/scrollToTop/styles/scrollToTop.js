@@ -8,6 +8,7 @@ export const Button = styled.div`
     border-radius: 100px;
     border: none;
     opacity: 0.5;
+    z-index: 300;
   button {
     width: 3rem;
     height: 3rem;
