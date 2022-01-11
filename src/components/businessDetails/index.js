@@ -53,7 +53,6 @@ export default function Details(props) {
       if (!details) {
         console.log("No such business document!");
       } else {
-        console.log("Business data:", details);
         setBusinessDetails(details);
 
         // order the hours properly
@@ -117,6 +116,51 @@ export default function Details(props) {
     return <p key={day}>{weekdayMap.get(day) + ": " + hours[day]}</p>;
   });
 
+  function mapButton() {
+    if (businessDetails.maps) {
+      return (
+        <a href={businessDetails.maps} target="_blank" rel="noreferrer">
+          <strong>View on Google Maps</strong>{" "}
+          <img
+            className="ml-2"
+            src="/images/gmaps.png"
+            alt="google maps logo"
+          ></img>
+        </a>
+      );
+    }
+  }
+
+  function instagram() {
+    if (businessDetails.instagram) {
+      return (
+        <a
+          href={
+            "https://www.instagram.com/" +
+            businessDetails.instagram.substring(1)
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/insta.png" alt="instagram logo"></img>
+        </a>
+      );
+    }
+  }
+
+  function facebook() {
+    if (businessDetails.facebook) {
+      return (
+        <a
+          href={"https://www.facebook.com/" + businessDetails.facebook}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/images/fb.png" alt="facebook logo"></img>
+        </a>
+      );
+    }
+  }
   const ref = useRef([]);
   const [first, setFirst] = useState("details-img-modal hidden");
   const [second, setSecond] = useState("details-img-modal hidden");
@@ -138,7 +182,6 @@ export default function Details(props) {
         !ref.current[2].contains(e.target)
       ) {
         setOpen(false);
-        console.log("hi");
 
         if (!first.includes("hidden")) {
           setFirst(first + " hidden");
@@ -160,7 +203,7 @@ export default function Details(props) {
   }, [first, second, third, open, bg]);
 
   return (
-    <div className="content">
+    <div className="business-details-content">
       <h1>{businessDetails.name}</h1>
       {/* <Breadcrumb>
           <BreadcrumbItem><a href="#">Food</a></BreadcrumbItem>
@@ -168,7 +211,7 @@ export default function Details(props) {
           <BreadcrumbItem active>Ice Cream</BreadcrumbItem>
         </Breadcrumb> */}
       <div className="main-details">
-        <span className="images">
+        <div className="business-details-images">
           <img
             className="main-img"
             onClick={() => {
@@ -176,7 +219,7 @@ export default function Details(props) {
               setOpen(true);
             }}
             src={imgArr[0]}
-            alt="business 1"
+            alt={`${businessDetails.name} 1`}
           />
           <img
             className="temp-img"
@@ -185,7 +228,7 @@ export default function Details(props) {
               setOpen(true);
             }}
             src={imgArr[1]}
-            alt="business 2"
+            alt={`${businessDetails.name} 2`}
           />
           <img
             className="temp-img"
@@ -194,9 +237,9 @@ export default function Details(props) {
               setOpen(true);
             }}
             src={imgArr[2]}
-            alt="business 3"
+            alt={`${businessDetails.name} 3`}
           />
-        </span>
+        </div>
 
         <div className={bg}>
           <img
@@ -225,7 +268,7 @@ export default function Details(props) {
           />
         </div>
 
-        <div>
+        <div className="business-details-text">
           <p>
             <strong>Today's Hours: </strong>
             {hours[currentDay]}
@@ -240,21 +283,12 @@ export default function Details(props) {
           </p>
           <br></br>
           {businessDetails.profile}
-          <div className="social-buttons">
-            <button className="mr-5">
-              <strong>View on Google Maps</strong>{" "}
-              <img
-                className="ml-2"
-                src="/images/gmaps.png"
-                alt="google maps logo"
-              ></img>
-            </button>
-            <button>
-              <img src="/images/insta.png" alt="instagram logo"></img>
-            </button>
-            <button>
-              <img src="/images/fb.png" alt="facebook logo"></img>
-            </button>
+          <div className="business-details-buttons">
+            {mapButton()}
+            <div className="business-details-social-buttons">
+              {instagram()}
+              {facebook()}
+            </div>
           </div>
           <p>
             <strong>Hours:</strong>
