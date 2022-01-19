@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+// merge pls
 export const CritContainer = styled.div`
   width: 100%;
   display: flex;

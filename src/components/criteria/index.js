@@ -13,7 +13,7 @@ import {
 } from "./styles/criteria";
 
 const windowWidth = Dimensions.get('window').width;
-
+// merge pls
 export default function Container() {
   const [width, setWidth] = useState(windowWidth);
   const [industries, setIndustries] = useState([]);
