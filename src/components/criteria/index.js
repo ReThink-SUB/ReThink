@@ -81,7 +81,7 @@ function Industry ({data, value, setActive, setCriteria}) {
       setOpen(false);
     }
     document.addEventListener("click", clickHandler);
-    
+
     return () => document.removeEventListener("click", clickHandler);
   })
 

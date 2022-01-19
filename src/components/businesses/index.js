@@ -73,7 +73,6 @@ function Businesses() {
             areaHolder.push(data.area);
           }
           if (data.badges != null) {
-            // test commit
             data.badges.forEach(badge => {
               if (!badgeHolder.includes(badge)) {
                 badgeHolder.push(badge);
