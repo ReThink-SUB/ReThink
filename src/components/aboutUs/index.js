@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import "./styles/style.scss";
-import { db, storage } from "../../firebase";
+import { storage } from "../../firebase";
 import {
   Container,
   Side,
