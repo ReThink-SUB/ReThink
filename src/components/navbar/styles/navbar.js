@@ -57,7 +57,7 @@ export const Link = styled.h2`
   transition: 0.5s ease all;
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
     text-decoration: none;
   }
 `;
@@ -79,6 +79,6 @@ export const Button = styled.button`
   background: #67923d;
 
   &:hover {
-    background: #00cc92;
+    background: #67923d;
   }
 `;

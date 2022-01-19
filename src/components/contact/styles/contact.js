@@ -41,7 +41,7 @@ export const Slogan = styled.h2`
   margin-bottom: 4rem;
 
   span {
-    color: #00cc92;
+    color: #67923d;
   }
 
   @media (min-width: 400px) {
@@ -117,17 +117,17 @@ export const Input = styled.div`
     width: 100%;
     height: 55px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
     z-index: 2;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
   }
 
@@ -153,18 +153,18 @@ export const MessageInput = styled.div`
     width: 100%;
     height: 229px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
     padding-top: 5%;
     display: flex;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
   }
 
@@ -211,7 +211,7 @@ export const Button = styled.div`
     margin: 0 auto;
 
     &:hover {
-      background: #00cc92;
+      background: #67923d;
     }
   }
 

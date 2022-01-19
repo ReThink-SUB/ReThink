@@ -1,141 +1,139 @@
 /* TODO: add screen scalabilty */
 .footer-main {
-    background: #E5E5E5;
-    bottom: 0;
-    width: 100%;
+  background: #e5e5e5;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .footer-content > div {
-    width: 33%
+  width: 33%;
 }
 
 .footer-content > div > div {
-    margin-right: auto;
-    margin-left: auto;
-    width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
 }
 
 .footer-desc {
-    margin-top: 3em;
-    width: inherit;
+  margin-top: 3em;
+  width: inherit;
 }
 
 .footer-desc h6 {
-    font-weight: bold;
-    width: 5em;
+  font-weight: bold;
+  width: 5em;
 }
 
 .footer-desc p {
-    font-weight: 600;
-    font-size: 10px;
-    color: rgba(31, 36, 33, 0.57);
-    max-width: 14em;
+  font-weight: 600;
+  font-size: 10px;
+  color: rgba(31, 36, 33, 0.57);
+  max-width: 14em;
 }
 
 .footer-desc .footer-green {
-    color: #00CC92;
-    font-weight: 900;
-    font-size: 12px;
-    letter-spacing: 0.005em;
-    margin-top: 3em;
-    padding-bottom: 1em;
+  color: #67923d;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.005em;
+  margin-top: 3em;
+  padding-bottom: 1em;
 }
 
 .footer-socials h5 {
-    font-weight: bold;
-    margin-bottom: 1em;
+  font-weight: bold;
+  margin-bottom: 1em;
 }
 
 .footer-socials {
-    justify-content: center;
-    text-align: -webkit-center;
+  justify-content: center;
+  text-align: -webkit-center;
 }
 
 .footer-logos-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    max-width: 13em;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 13em;
 }
 
-
 .footer-menu h6 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .footer-menu .footer-links a {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
-    line-height: 14px;
-    color: rgba(31, 36, 33, 0.57);
-    margin-bottom: 0.5em;
-    justify-content: left;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  color: rgba(31, 36, 33, 0.57);
+  margin-bottom: 0.5em;
+  justify-content: left;
 }
 
 .footer-menu {
-    width: max-content;
+  width: max-content;
 }
 
 @media screen and (max-width: 1200px) {
-    .footer-main {
-        border-radius: 30px 30px 0px 0px; 
-    }
-    
-    .footer-menu {
-        display: none;
-    }
+  .footer-main {
+    border-radius: 30px 30px 0px 0px;
+  }
 
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    .footer-content > div {
-        width: 100%
-    }
-    
-    .footer-content > div > div {
-        margin-right: auto;
-        margin-left: auto;
-        width: fit-content;
-    }
+  .footer-menu {
+    display: none;
+  }
 
-    .footer-desc {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .footer-desc h6 {
-        font-weight: bold;
-        width: 70%;
-        text-align: center;
-        margin-bottom: 1.5em;
-    }
+  .footer-content > div {
+    width: 100%;
+  }
 
-    .footer-desc p {
-        max-width: 70%;
-        text-align: center;
-    }
-    
-    .footer-desc .footer-green {
-        margin-top: 1.5em;
-        margin-bottom: 1em;
-    }
+  .footer-content > div > div {
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+  }
 
-    .footer-socials {
-        margin-bottom: 3em;
-    }
+  .footer-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-desc h6 {
+    font-weight: bold;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .footer-desc p {
+    max-width: 70%;
+    text-align: center;
+  }
+
+  .footer-desc .footer-green {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .footer-socials {
+    margin-bottom: 3em;
+  }
 }

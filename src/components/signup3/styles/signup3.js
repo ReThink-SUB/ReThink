@@ -35,7 +35,7 @@ export const Slogan = styled.div`
   }
 
   span {
-    color: #00cc92;
+    color: #67923d;
   }
 
   @media (min-width: 1300px) {
@@ -62,7 +62,7 @@ export const Slogan = styled.div`
 export const Label = styled.h3`
   font-weight: 700;
   font-size: 30px;
-  color: #00cc92;
+  color: #67923d;
   margin-bottom: 1%;
   line-height: 28px;
   text-align: center;
@@ -123,7 +123,7 @@ export const InfoDescr = styled.h3`
 export const InfoSecDescr = styled.h3`
   font-weight: 500;
   font-size: 20px;
-  color: #00cc92;
+  color: #67923d;
   margin-bottom: 2%;
 
   @media (max-width: 750px) {
@@ -157,7 +157,7 @@ export const Button = styled.div`
     margin: 0 auto;
 
     &:hover {
-      background: #00cc92;
+      background: #67923d;
     }
   }
 

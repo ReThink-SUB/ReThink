@@ -71,7 +71,7 @@ export const Link = styled.h2`
   align-items: center;
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
   }
 `;
 
@@ -119,13 +119,13 @@ export const CardOne = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
     }
   }
@@ -174,13 +174,13 @@ export const CardTwo = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
     }
   }
@@ -230,13 +230,13 @@ export const CardThree = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
     }
   }
@@ -244,7 +244,7 @@ export const CardThree = styled.div`
 
 export const CardSmall = styled.div`
   display: none;
-  
+
   @media (max-width: 1200px) {
     width: 180px;
     height: 240px;
@@ -281,13 +281,13 @@ export const CardSmall = styled.div`
     p {
       font-weight: normal;
       font-size: 10px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 11px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.2rem;
     }
   }
@@ -329,14 +329,13 @@ export const Title = styled.h2`
 export const SubTitle = styled.h3`
   font-weight: 1000;
   font-size: 40px;
-  color: #67923D;
+  color: #67923d;
   margin: 2em 0rem 2.5rem 5rem;
 
   @media (max-width: 1200px) {
     font-size: 24px;
     margin: 1.2em 0em 0.5em 0em;
   }
-
 `;
 
 export const Description = styled.p`
@@ -369,7 +368,7 @@ export const Button = styled.button`
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
 
   &:hover {
-    background: #00cc92;
+    background: #67923d;
   }
 `;
 
