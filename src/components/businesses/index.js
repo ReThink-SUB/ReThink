@@ -173,12 +173,12 @@ function BusinessCard(props) {
             {
               business.category +
                 " " +
-                "$$" +
+                // "$$" +
                 " " /*TODO: replace "$$" with business["price"]*/
             }
-            <img src="/images/lightning.png" alt="fish icon" />{" "}
+            {/* <img src="/images/lightning.png" alt="fish icon" />{" "} */}
             {/*TODO: should come from json */}
-            <img src="/images/fish.png" alt="lightning icon" />
+            {/* <img src="/images/fish.png" alt="lightning icon" /> */}
           </CardSubtitle>
         </CardBody>
       </Card>

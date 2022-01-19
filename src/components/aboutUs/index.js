@@ -251,7 +251,7 @@ AboutUs.TextArea = function AboutUsTextArea({
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
           <img src="/images/Linkedin.png" alt="Linkedin" />
         </a>
-        <img src="/images/Mail.png" alt="Email" />
+        {/* <img src="/images/Mail.png" alt="Email" /> */}
       </div>
     </TextArea>
   );

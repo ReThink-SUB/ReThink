@@ -7,16 +7,17 @@ export function LandingPageContainer() {
       <LandingPage>
         <LandingPage.LeftSect>
           <LandingPage.SubTitle>
-            Sustainable consumerism made <em style={{color: "black"}}>easy.</em>
+            Sustainable consumerism made{" "}
+            <em style={{ color: "black" }}>easy.</em>
           </LandingPage.SubTitle>
           <LandingPage.InnerSect>
             <LandingPage.Description>
-              Shop, eat, and dine at climate concious businesses in your area {" "}
+              Shop, eat, and dine at climate concious businesses in your area{" "}
             </LandingPage.Description>
             <LandingPage.MobileCard
               src="BallardMarket.jpg"
               label="Ballard Market"
-              type="Clothing Store $$$" 
+              type="Grocery Store"
             />
           </LandingPage.InnerSect>
         </LandingPage.LeftSect>
@@ -24,12 +25,12 @@ export function LandingPageContainer() {
           <LandingPage.RightCard
             src="BallardMarket.jpg"
             label="Ballard Market"
-            type="Clothing Store $$$"
+            type="Grocery Store"
           />
           <LandingPage.LeftCard
             src="IndianMarket.png"
             label="Indian Market"
-            type="Grocery Store $$"
+            type="Grocery Store"
           />
         </LandingPage.RightSect>
       </LandingPage>
