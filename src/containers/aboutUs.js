@@ -26,9 +26,7 @@ export function AboutUsContainer() {
   useEffect(() => {
     // read data in from firestore
     // https://firebase.google.com/docs/firestore/query-data/get-data
-
-    let profilesMobile = [];
-    let profilesDesktop = [];
+    let profilesHolder = [];
     let backColor = "#D4E9D6";
     let color = "#ffffff";
     let counter = 3;
@@ -37,15 +35,7 @@ export function AboutUsContainer() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          profilesMobile.push(
-            <Profile
-              key={doc.data().profile_img}
-              data={doc.data()}
-              back_color="#D4E9D6"
-              color="#ffffff"
-            />
-          );
-          profilesDesktop.push(
+          profilesHolder.push(
             <ProfileCard
               key={doc.data().profile_img}
               data={doc.data()}
@@ -73,18 +63,18 @@ export function AboutUsContainer() {
           }
           counter++;
         });
-        generateProfiles(profilesMobile, profilesDesktop);
+        setProfiles(profilesHolder);
       });
 
-    Dimensions.addEventListener("change", (window) => {
-      setWidth(window["window"]["width"]);
-      generateProfiles(profilesMobile, profilesDesktop);
-    });
+    // Dimensions.addEventListener("change", (window) => {
+    //   setWidth(window["window"]["width"]);
+    //   generateProfiles(profilesMobile, profilesDesktop);
+    // });
   }, []);
 
-  const generateProfiles = (mobile, desktop) => {
-    setProfiles([mobile, desktop]);
-  };
+  // const generateProfiles = (pro) => {
+  //   setProfiles([mobile, desktop]);
+  // };
 
   const setAboutSec = (dimm) => {
     let mobile = (
@@ -155,7 +145,6 @@ export function AboutUsContainer() {
         </AboutUs.Text>
       </AboutUs.AboutSec>
     );
-
     if (dimm < 800) {
       return mobile;
     } else {
@@ -184,14 +173,9 @@ export function AboutUsContainer() {
               environment, in the most enjoyable way possible.
             </AboutUs.SecDescription>
           </AboutUs.Text>
-          {width < 800 ? (
-            <div className="team-cards">
-              {console.log(width, "state")}
-              {profiles[0]}
-            </div>
-          ) : (
-            <AboutUs.Cards className="team-frames">{profiles[1]}</AboutUs.Cards>
-          )}
+          <AboutUs.Cards className="team-cards">
+            {profiles}
+          </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec id="involved" className="about-involved">
           <AboutUs.Text>
@@ -305,86 +289,11 @@ export function AboutUsContainer() {
   );
 }
 
-function Profile(props) {
-  let data = props.data;
-  const [flipped, setFlipped] = useState(false);
-
-  const flip = () => {
-    setFlipped(!flipped);
-  };
-
-  return (
-    <div
-      onMouseEnter={flip}
-      onMouseLeave={flip}
-      className={"flip-card-container" + (flipped ? " flipped" : "")}
-    >
-      <Front
-        background={[props.back_color]}
-        src={data.profile_img}
-        person={data.name}
-        position={data.position}
-        color={props.color}
-      />
-      <div className="sec-circles">
-        <img src="/images/CirclePattern.png" alt="SecCircles" />
-      </div>
-      <Back
-        background={[props.back_color]}
-        linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
-        bio={data.bio}
-      />
-    </div>
-  );
-}
-
-function Front({
-  color,
-  background,
-  src,
-  person,
-  position,
-  children,
-  ...restProps
-}) {
-  let data = restProps.datas;
-
-  const [imgURL, setURL] = useState([]);
-
-  useEffect(() => {
-    var ref = storage.ref(`img/profiles/${src}.jpg`);
-    ref.getDownloadURL().then(function (url) {
-      setURL(url);
-    });
-  });
-
-  return (
-    <div className="front" style={{ backgroundColor: background }}>
-      <div className="image-container">
-        <img className="card-image" src={imgURL}></img>
-      </div>
-      <h2 className="name">{person}</h2>
-      <p className="position" style={{ color: color }}>
-        {position}
-      </p>
-    </div>
-  );
-}
-
-function Back(props) {
-  let data = props.data;
-  return (
-    <div className="back" style={{ backgroundColor: props.background }}>
-      <p className="bio">{props.bio}</p>
-    </div>
-  );
-}
-
 function ProfileCard(props) {
   let data = props.data;
   return (
-    <AboutUs.Card className="flip-card">
-      <AboutUs.Frame
+    <AboutUs.Card className="prof-card">
+      <AboutUs.Frame className="frame"
         background={[props.back_color]}
         src={data.profile_img}
         person={data.name}
@@ -392,7 +301,7 @@ function ProfileCard(props) {
         color={props.color}
       ></AboutUs.Frame>
       <AboutUs.SecCircles />
-      <AboutUs.TextArea
+      <AboutUs.TextArea className="textArea"
         linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
       >
         {data.bio}
