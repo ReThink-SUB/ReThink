@@ -146,7 +146,6 @@ export const AboutSec = styled.div`
 
 export const Images = styled.div`
   height: 387px;
-  top: 7%;
   left: 50%;
   position: absolute;
   width: 50%;
@@ -370,10 +369,6 @@ export const SecCircles = styled.div`
 
   @media (min-width: 1400px) {
     left: 40%;
-  }
-
-  @media (min-width: 2000px) {
-    left: 39%;
   }
 `;
 

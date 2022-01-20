@@ -184,9 +184,9 @@ a {
             padding-bottom: 1.5rem;
         }
         .about-desc {
-            margin-bottom: 2rem;
+            // margin-bottom: 2rem;
             width: 50%;
-            padding-bottom: 2rem;
+            margin-bottom: 1rem;
             @media (max-width: 338px) {
                 width: 100%;
             }
@@ -214,19 +214,6 @@ a {
 
         // left: calc(-50vw + 50%);
         // padding-left: 2.5rem;
-    }
-}
-
-.small-heading {
-    font-size: 16px;
-    @media (min-width: 800px) {
-        font-size: 24px;
-    }
-}
-.small-title {
-    font-size: 16px;
-    @media (min-width: 900px) {
-        font-size: 25px;
     }
 }
 
