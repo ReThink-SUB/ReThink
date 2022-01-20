@@ -9,8 +9,8 @@ export function NavbarContainer() {
     <Navbar>
       <Navbar.Title to={ROUTES.LANDING} />
       <Burger open={open} setOpen={setOpen} />
-      <Burger.Menu open={open} setOpen={setOpen}>
-        <Burger.Links>
+      <Burger.Menu open={open} setOpen={setOpen} className="menu">
+        <Burger.Links className="links">
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.LANDING}>
             Home
           </Burger.Link>
