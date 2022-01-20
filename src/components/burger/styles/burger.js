@@ -121,7 +121,7 @@ export const Link = styled.a`
   }
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
   }
 `;
 

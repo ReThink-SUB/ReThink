@@ -36,7 +36,7 @@ export const Image = styled.div``;
 export const Label = styled.div``;
 
 export const Actions = styled.div`
-  color: #00cc92;
+  color: #67923d;
 `;
 
 export const Action = styled.div``;
