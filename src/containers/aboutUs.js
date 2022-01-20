@@ -26,9 +26,7 @@ export function AboutUsContainer() {
   useEffect(() => {
     // read data in from firestore
     // https://firebase.google.com/docs/firestore/query-data/get-data
-
-    let profilesMobile = [];
-    let profilesDesktop = [];
+    let profilesHolder = [];
     let backColor = "#D4E9D6";
     let color = "#ffffff";
     let counter = 3;
@@ -37,15 +35,7 @@ export function AboutUsContainer() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          profilesMobile.push(
-            <Profile
-              key={doc.data().profile_img}
-              data={doc.data()}
-              back_color="#D4E9D6"
-              color="#ffffff"
-            />
-          );
-          profilesDesktop.push(
+          profilesHolder.push(
             <ProfileCard
               key={doc.data().profile_img}
               data={doc.data()}
@@ -73,20 +63,19 @@ export function AboutUsContainer() {
           }
           counter++;
         });
-        generateProfiles(profilesMobile, profilesDesktop);
+        setProfiles(profilesHolder);
       });
 
     Dimensions.addEventListener("change", (window) => {
       setWidth(window["window"]["width"]);
-      generateProfiles(profilesMobile, profilesDesktop);
     });
   }, []);
 
-  const generateProfiles = (mobile, desktop) => {
-    setProfiles([mobile, desktop]);
-  };
+  // const generateProfiles = (pro) => {
+  //   setProfiles([mobile, desktop]);
+  // };
 
-  const setAboutSec = (dimm) => {
+  const setAboutSection = (dimm) => {
     let mobile = (
       <AboutUs.AboutSec className="about-section">
         <AboutUs.Text className="about-text">
@@ -95,21 +84,26 @@ export function AboutUsContainer() {
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
-            A community of passionate University of Washington Seattle students
-            whose purpose is to transform the community by advocating for
-            sustainable living at the local level.
-          </AboutUs.Description>
-          <AboutUs.Heading>What businesses should be</AboutUs.Heading>
-          <AboutUs.Description>
-            These businesses are industry leaders in incorporating
-            sustainability in their products, services, or supply chain
-            logistics. They are the gold standard of sustainability practices
-            that people should shop at.
+            ReThink is a University of Washington Michael G. Foster School of Business 
+            Registered Student Organization. We are a team of students advocating for 
+            sustainable consumer behavior.            
           </AboutUs.Description>
           <AboutUs.Description>
-            From their menus, ingredients, establishment, materials, and whole
-            host of others, they represent what it means to ReThink local
-            economy, and have sustainability upheld in business.
+            Through business outreach and thorough research, 
+            we determine what local companies follow guidelines that certify them as “sustainable”. 
+            Following an eco-friendly lifestyle can be challenging, which is why our organization aims
+            to connect consumers to sustainable businesses in the Seattle area.
+            <br/><br/>
+            Interested in joining our team? We are looking for UW students to help in either 
+            marketing, research, development, or design. Minimum commitment of two quarters with 
+            about 6 hours of work per week including a weekly ReThink meeting and a weekly team meeting.
+          </AboutUs.Description>
+          <AboutUs.Heading>Who we support</AboutUs.Heading>
+          <AboutUs.Description>
+            We feature businesses that incorporate sustainability in their everyday operations. From the 
+            ingredients on their menus, to the materials in their products, these businesses have a 
+            multitude of avenues to introduce sustainability within their company. If you know of a business
+            that is sustainable and is not currently featured, [let us know].
           </AboutUs.Description>
         </AboutUs.Text>
         <AboutUs.Images className="about-images">
@@ -136,26 +130,30 @@ export function AboutUsContainer() {
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
-            A community of passionate University of Washington Seattle students
-            whose purpose is to transform the community by advocating for
-            sustainable living at the local level.
-          </AboutUs.Description>
-          <AboutUs.Heading>What businesses should be</AboutUs.Heading>
-          <AboutUs.Description>
-            These businesses are industry leaders in incorporating
-            sustainability in their products, services, or supply chain
-            logistics. They are the gold standard of sustainability practices
-            that people should shop at.
+            ReThink is a University of Washington Michael G. Foster School of Business 
+            Registered Student Organization. We are a team of students advocating for 
+            sustainable consumer behavior.            
           </AboutUs.Description>
           <AboutUs.Description>
-            From their menus, ingredients, establishment, materials, and whole
-            host of others, they represent what it means to ReThink local
-            economy, and have sustainability upheld in business.
+            Through business outreach and thorough research, 
+            we determine what local companies follow guidelines that certify them as “sustainable”. 
+            Following an eco-friendly lifestyle can be challenging, which is why our organization aims
+            to connect consumers to sustainable businesses in the Seattle area.
+            <br/><br/>
+            Interested in joining our team? We are looking for UW students to help in either 
+            marketing, research, development, or design. Minimum commitment of two quarters with 
+            about 6 hours of work per week including a weekly ReThink meeting and a weekly team meeting.
+          </AboutUs.Description>
+          <AboutUs.Heading>Who we support</AboutUs.Heading>
+          <AboutUs.Description>
+            We feature businesses that incorporate sustainability in their everyday operations. From the 
+            ingredients on their menus, to the materials in their products, these businesses have a 
+            multitude of avenues to introduce sustainability within their company. If you know of a business
+            that is sustainable and is not currently featured, [let us know].
           </AboutUs.Description>
         </AboutUs.Text>
       </AboutUs.AboutSec>
     );
-
     if (dimm < 800) {
       return mobile;
     } else {
@@ -168,40 +166,34 @@ export function AboutUsContainer() {
       <AboutUs.Side className="about-sidebar">
         <AboutUs.Links className="about-links">
           <AboutUs.Link myID="/about/#about">About Us</AboutUs.Link>
-          <AboutUs.Link myID="/about/#team">Sub Team</AboutUs.Link>
+          <AboutUs.Link myID="/about/#team">Meet the Team</AboutUs.Link>
           <AboutUs.Link myID="/about/#involved">Get Involved</AboutUs.Link>
         </AboutUs.Links>
       </AboutUs.Side>
       <AboutUs.Main className="about-main">
-        {setAboutSec(width)}
+        {setAboutSection(width)}
         <AboutUs.SubSec className="about-subSec">
           <AboutUs.Text>
             <AboutUs.Title>
-              <span id="team">SUB Team</span>
+              <span id="team">Meet the team</span>
             </AboutUs.Title>
             <AboutUs.SecDescription>
-              A ragtag team of UW students deciding to give a damn about the
-              environment, in the most enjoyable way possible.
+              We have rolling applications to join our team. Keep an eye out on our social media if you're interested.
             </AboutUs.SecDescription>
           </AboutUs.Text>
-          {width < 800 ? (
-            <div className="team-cards">
-              {console.log(width, "state")}
-              {profiles[0]}
-            </div>
-          ) : (
-            <AboutUs.Cards className="team-frames">{profiles[1]}</AboutUs.Cards>
-          )}
+          <AboutUs.Cards className="team-cards">
+            {profiles}
+          </AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec id="involved" className="about-involved">
           <AboutUs.Text>
             <AboutUs.Title>Get Involved</AboutUs.Title>
-            <AboutUs.Heading className="small-heading">
+            {/* <AboutUs.Heading className="small-heading" >
               How to get involved
-            </AboutUs.Heading>
-            <AboutUs.Title className="small-title">Sub Team</AboutUs.Title>
+            </AboutUs.Heading> */}
+            <AboutUs.Title className="small-title" style={{'font-size': '16px'}}>ReThink Team</AboutUs.Title>
             <AboutUs.Description>
-              Apply now to be part of the SUB team!
+              University of Washington students, <i>APPLY NOW</i> to join the ReThink Team.
             </AboutUs.Description>
             <AboutUs.Description>
               {width < 800 ? (
@@ -230,10 +222,7 @@ export function AboutUsContainer() {
         </AboutUs.InvolvedSec>
         <AboutUs.OtherClubsSec className="other-sec">
           <AboutUs.Text>
-            <AboutUs.Title>Other Clubs</AboutUs.Title>
-            <AboutUs.Description>
-              Clubs at UW focused on environmental sustainability:
-            </AboutUs.Description>
+            <AboutUs.Title className="small-title" style={{'font-size': '16px'}}>Other Sustainability Clubs at the University of Washington</AboutUs.Title>
           </AboutUs.Text>
           <div className="about-cards">
             <div className="about-card">
@@ -244,7 +233,7 @@ export function AboutUsContainer() {
               <p className="club-desc">
                 Sustainability club for students living in residence halls.
               </p>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
             </div>
             <div className="about-card">
               <div className="club-image">
@@ -254,7 +243,7 @@ export function AboutUsContainer() {
               <p className="club-desc">
                 Opportunities for hands-on agricultural learning at UW.
               </p>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
             </div>
             <div className="about-card">
               <div className="club-image">
@@ -264,7 +253,7 @@ export function AboutUsContainer() {
               <p className="club-desc">
                 Sustainability club for students living in residence halls.
               </p>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
             </div>
             <div className="about-card">
               <div className="club-image">
@@ -274,18 +263,17 @@ export function AboutUsContainer() {
               <p className="club-desc">
                 Students working to increase and promote solar power at UW.
               </p>
-              <AboutUs.LearnMore>Learn More</AboutUs.LearnMore>
+              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
             </div>
           </div>
         </AboutUs.OtherClubsSec>
         <AboutUs.LocalOrgsSec className="local-sec">
           <AboutUs.Text>
             <AboutUs.Heading>
-              Some local organizations that we support
+              Other local organizations
             </AboutUs.Heading>
             <AboutUs.Description>
-              These organizations use their platform to educate the public on
-              ways to protect the environment in order to live more sustainably.
+              These organizations are working hard to help the environment.
             </AboutUs.Description>
           </AboutUs.Text>
           <AboutUs.Organizations className="organizations">
@@ -305,86 +293,11 @@ export function AboutUsContainer() {
   );
 }
 
-function Profile(props) {
-  let data = props.data;
-  const [flipped, setFlipped] = useState(false);
-
-  const flip = () => {
-    setFlipped(!flipped);
-  };
-
-  return (
-    <div
-      onMouseEnter={flip}
-      onMouseLeave={flip}
-      className={"flip-card-container" + (flipped ? " flipped" : "")}
-    >
-      <Front
-        background={[props.back_color]}
-        src={data.profile_img}
-        person={data.name}
-        position={data.position}
-        color={props.color}
-      />
-      <div className="sec-circles">
-        <img src="/images/CirclePattern.png" alt="SecCircles" />
-      </div>
-      <Back
-        background={[props.back_color]}
-        linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
-        bio={data.bio}
-      />
-    </div>
-  );
-}
-
-function Front({
-  color,
-  background,
-  src,
-  person,
-  position,
-  children,
-  ...restProps
-}) {
-  let data = restProps.datas;
-
-  const [imgURL, setURL] = useState([]);
-
-  useEffect(() => {
-    var ref = storage.ref(`img/profiles/${src}.jpg`);
-    ref.getDownloadURL().then(function (url) {
-      setURL(url);
-    });
-  });
-
-  return (
-    <div className="front" style={{ backgroundColor: background }}>
-      <div className="image-container">
-        <img className="card-image" src={imgURL}></img>
-      </div>
-      <h2 className="name">{person}</h2>
-      <p className="position" style={{ color: color }}>
-        {position}
-      </p>
-    </div>
-  );
-}
-
-function Back(props) {
-  let data = props.data;
-  return (
-    <div className="back" style={{ backgroundColor: props.background }}>
-      <p className="bio">{props.bio}</p>
-    </div>
-  );
-}
-
 function ProfileCard(props) {
   let data = props.data;
   return (
-    <AboutUs.Card className="flip-card">
-      <AboutUs.Frame
+    <AboutUs.Card className="prof-card">
+      <AboutUs.Frame className="frame"
         background={[props.back_color]}
         src={data.profile_img}
         person={data.name}
@@ -392,7 +305,7 @@ function ProfileCard(props) {
         color={props.color}
       ></AboutUs.Frame>
       <AboutUs.SecCircles />
-      <AboutUs.TextArea
+      <AboutUs.TextArea className="textArea"
         linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
       >
         {data.bio}
