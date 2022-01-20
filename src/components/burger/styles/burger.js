@@ -74,7 +74,7 @@ export const Menu = styled.nav`
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   }
 
-  @media (min-width: 1500px) {
+  @media (min-width: 1000px) {
     display: none;
   }
 `;
