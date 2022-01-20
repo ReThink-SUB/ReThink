@@ -10,7 +10,6 @@ export function NavbarContainer() {
       <Navbar.Title to={ROUTES.LANDING} />
       <Burger open={open} setOpen={setOpen} />
       <Burger.Menu open={open} setOpen={setOpen}>
-        <Burger.Heading>Hi there!</Burger.Heading>
         <Burger.Links>
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.LANDING}>
             Home
@@ -34,7 +33,6 @@ export function NavbarContainer() {
             Sign Up
           </Burger.Link> */}
         </Burger.Links>
-        <Burger.Squiggle />
         <Burger.Socials>
           <a href="https://www.facebook.com/SUBInitiative/" target="_blank">
             <i className="fab fa-facebook"></i>

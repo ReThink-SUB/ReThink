@@ -45,12 +45,13 @@ Burger.Link = function BurgerLink({
   ...restProps
 }) {
   return (
+    <Link {...restProps}>
     <ReactRouterLink {...restProps} onClick={() => setOpen(!open)} to={to}>
-      {/* <Link {...restProps}> */}
-      <img src="/images/Arrow.png" alt="Arrow" />
+      
       <h2>{children}</h2>
-      {/* </Link> */}
+      
     </ReactRouterLink>
+    </Link>
   );
 };
 

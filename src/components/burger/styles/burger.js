@@ -57,11 +57,9 @@ export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  background: #dcfff5;
-  width: 30%;
+  align-items: start;
+  background: #F8F8F8;
   height: 100vh;
-  align-items: center;
   padding: 1.5rem 3rem;
   position: fixed;
   top: 0;
@@ -82,10 +80,10 @@ export const Menu = styled.nav`
 `;
 
 export const Links = styled.div`
+  width: 100%;
   height: 65%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   text-align: left;
   align-items: start;
   @media (min-width: 1500px) {
@@ -94,18 +92,21 @@ export const Links = styled.div`
 `;
 
 export const Link = styled.a`
-  ${"" /* padding: 2rem 0; */}
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  color: black;
   text-decoration: none;
+  text-transform: uppercase;
   transition: all 0.3s ease;
   z-index: 10;
   display: flex;
   align-items: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 
   h2 {
+    font-weight: 800;
     font-size: 1rem;
+    color: #3E3B3B;
+    letter-spacing: 0.6px;
   }
 
   img {
@@ -128,6 +129,7 @@ export const Heading = styled.h2`
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 25px;
+  color: black;
 `;
 
 export const Squiggle = styled.div`
