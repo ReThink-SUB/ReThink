@@ -20,10 +20,10 @@ export const Title = styled.div`
   display: flex;
   img {
     margin-top: 1em;
-    width: 80%;
+    width: 10%;
     height: auto;
     @media (max-width: 800px) {
-      width: 70px;
+      width: 80px;
     }
   }
 `;

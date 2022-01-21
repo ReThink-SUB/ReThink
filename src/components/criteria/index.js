@@ -25,7 +25,7 @@ export default function Container() {
     let industryHolder = [];
     db.collection('criteria').get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        industryHolder.push(<Industry data={doc.data()} value={doc.id} setActive={setActive} setCriteria={setCriteria} activeTab={activeTab} setActiveTab={setActiveTab}/>);
+        industryHolder.push(<Industry data={doc.data()} value={doc.data()["name"]} setActive={setActive} setCriteria={setCriteria} activeTab={activeTab} setActiveTab={setActiveTab}/>);
       });
       setIndustries(industryHolder);
     });
@@ -40,18 +40,17 @@ export default function Container() {
         <CriteriaSec className="criteriaSec">
           <Text>
             <Heading>
-              How are businesses sustainable?{width < 800 ? <br/> : null }
-              <span style={{color: "#67923D"}}> Glad you asked.</span>
+            Wondering how we evaluate businesses?{width < 800 ? <br/> : null }
             </Heading>
             <Description>
-              First, choose an industry. Then we'll show you the criteria.
+              Choose an industry below, then the selected criteria will be available to view.
             </Description>
-            <SubDescription>
+            {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses
             that maximize sustainbility. We have implemented a certification{" "}
             <em>system</em> to reward businesses for specific eco-friendly
             categories.
-            </SubDescription>
+            </SubDescription> */}
           </Text>
         </CriteriaSec>
         <div className='line-border'/>
@@ -100,7 +99,7 @@ function CriteriaCard ({title, desc}) {
   return (
     <div className="industry-card">
       <h2 className="industry-title">{title}</h2><br/>
-      <p className='industry-criteria'>{desc}</p>
+      <p dangerouslySetInnerHTML={{ __html: desc }} className='industry-criteria'/>
     </div>
   );
 }
