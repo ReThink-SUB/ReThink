@@ -116,10 +116,8 @@ export const Title = styled.h1`
 `;
 
 export const Heading = styled.h2`
-  font-style: italic;
-  font-weight: 900;
-  font-size: 24px;
-  letter-spacing: 0.035em;
+  font-weight: 800;
+  font-size: 22px;
   color: #535461;
   margin-bottom: 1rem;
   line-height: 2rem;
@@ -141,10 +139,10 @@ export const Heading = styled.h2`
 
 export const Description = styled.p`
   font-style: normal;
-  font-weight: 300;
-  font-size: 17px;
+  font-weight: 400;
+  font-size: 1em;
   color: #535461;
-  line-height: 25px;
+  line-height: 1.5em;
   margin-right: 1rem;
   margin-bottom: 2rem;
   z-index: 3;
@@ -168,11 +166,11 @@ export const Description = styled.p`
   
   @media (min-width: 1150px) {
     width: 90%;
-    font-size: 36px;
+    font-size: 1.8em;
   }
   
   @media (min-width: 1299px) {
-    font-size: 16px;
+    font-size: 1.8em;
     width: 80%;
   }
   
@@ -183,10 +181,10 @@ export const Description = styled.p`
 
 export const SubDescription = styled.p`
   font-style: normal;
-  font-weight: 100;
-  font-size: 12.8px;
+  font-weight: 400;
+  font-size: 1em;
   color: #000000;
-  line-height: 18.1px;
+  line-height: 1.5em;
   margin-right: 1rem;
   margin-bottom: 2rem;
   width: 70%;

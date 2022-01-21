@@ -19,12 +19,13 @@ export default function Container() {
   const [industries, setIndustries] = useState([]);
   const [active, setActive] = useState(null);
   const [criteria, setCriteria] = useState({});
+  const [activeTab, setActiveTab] = useState(null);
 
   useEffect(() => {
     let industryHolder = [];
     db.collection('criteria').get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        industryHolder.push(<Industry data={doc.data()} value={doc.id} setActive={setActive} setCriteria={setCriteria}/>);
+        industryHolder.push(<Industry data={doc.data()} value={doc.id} setActive={setActive} setCriteria={setCriteria} activeTab={activeTab} setActiveTab={setActiveTab}/>);
       });
       setIndustries(industryHolder);
     });
@@ -32,7 +33,7 @@ export default function Container() {
       "change", (window => {
       setWidth(window['window']['width']);
     }));
-  }, []);
+  }, [activeTab]);
 
   return <CritContainer className="about-container">
       <Main className="about-main">
@@ -69,8 +70,7 @@ export default function Container() {
   ;
 }
 
-function Industry ({data, value, setActive, setCriteria}) {
-  const [open, setOpen] = useState(false);
+function Industry ({data, value, setActive, setCriteria, activeTab, setActiveTab}) {
   let desc = data.industry_description;
   let criterias = data.criteria_boxes;
 
@@ -78,7 +78,6 @@ function Industry ({data, value, setActive, setCriteria}) {
     const clickHandler = ({ target }) => {
       const container = document.getElementById(`${value}`);
       if ((container != null) && container.contains(target)) return;
-      setOpen(false);
     }
     document.addEventListener("click", clickHandler);
 
@@ -89,17 +88,12 @@ function Industry ({data, value, setActive, setCriteria}) {
     let newList = Object.entries(criterias).map(([key, value]) => {
       return <CriteriaCard title={value.title} desc={value.desc}/>;
     });
-    setOpen(!open);
-    if (!open == true) {
-      setActive(newList);
-      setCriteria({'title': value, 'desc': desc});
-    } else {
-      setActive(null);
-      setCriteria({});
-    }
+    setActive(newList);
+    setActiveTab(value);
+    setCriteria({'title': value, 'desc': desc});
   }
 
-  return <button id={value} className={"filter-select" + (open === true ? " selected" : "")} onClick={handleClick}>{value}</button>;
+  return <button id={value} className={"filter-select" + (activeTab === value ? " selected" : "")} onClick={handleClick}>{value}</button>;
 }
 
 function CriteriaCard ({title, desc}) {
