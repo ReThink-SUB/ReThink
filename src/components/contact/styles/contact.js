@@ -19,14 +19,14 @@ export const Plant = styled.div`
   position: absolute;
   height: 100%;
   width: 190px;
-  height: auto
+
   z-index: -1;
   img {
     bottom: 0;
     height: 80%;
     position: absolute;
-    margin-left: 80%
-    width: auto
+    margin-left: 80%;
+    width: auto;
   }
 `;
 
