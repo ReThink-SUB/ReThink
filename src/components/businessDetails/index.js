@@ -140,7 +140,7 @@ export default function Details(props) {
           target="_blank"
           rel="noreferrer"
         >
-          <strong>Visit Website</strong>{" "}
+          <strong>Website</strong>{" "}
         </a>
       );
     }
@@ -213,10 +213,6 @@ export default function Details(props) {
     };
 
     document.addEventListener("mousedown", checkIfClickedOutside);
-
-    console.log(first);
-    console.log(second);
-    console.log(third);
   }, [first, second, third, open, bg]);
 
   return (
@@ -238,24 +234,26 @@ export default function Details(props) {
             src={imgArr[0]}
             alt={`${businessDetails.name} 1`}
           />
-          <img
-            className="temp-img"
-            onClick={() => {
-              setSecond("details-img-modal");
-              setOpen(true);
-            }}
-            src={imgArr[1]}
-            alt={`${businessDetails.name} 2`}
-          />
-          <img
-            className="temp-img"
-            onClick={() => {
-              setThird("details-img-modal");
-              setOpen(true);
-            }}
-            src={imgArr[2]}
-            alt={`${businessDetails.name} 3`}
-          />
+          <div className="business-details-images-smaller">
+            <img
+              className="temp-img temp-img-1"
+              onClick={() => {
+                setSecond("details-img-modal");
+                setOpen(true);
+              }}
+              src={imgArr[1]}
+              alt={`${businessDetails.name} 2`}
+            />
+            <img
+              className="temp-img temp-img-2"
+              onClick={() => {
+                setThird("details-img-modal");
+                setOpen(true);
+              }}
+              src={imgArr[2]}
+              alt={`${businessDetails.name} 3`}
+            />
+          </div>
         </div>
 
         <div className={bg}>
@@ -286,17 +284,20 @@ export default function Details(props) {
         </div>
 
         <div className="business-details-text">
+          <h1>{businessDetails.name}</h1>
+
+          <p className="business-details-sub">
+            {/* <strong>Address: </strong> */}
+            {businessDetails.address}
+          </p>
+          <p className="business-details-sub">
+            {/* <strong>Phone: </strong> */}
+            {businessDetails.phone}
+          </p>
+
           <p>
             <strong>Today's Hours: </strong>
             {hours[currentDay]}
-          </p>
-          <p>
-            <strong>Phone: </strong>
-            {businessDetails.phone}
-          </p>
-          <p>
-            <strong>Address: </strong>
-            {businessDetails.address}
           </p>
           <br></br>
           {businessDetails.profile}

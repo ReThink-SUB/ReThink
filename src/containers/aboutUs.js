@@ -325,6 +325,7 @@ function ProfileCard(props) {
         person={data.name}
         position={data.position}
         color={props.color}
+        pronouns={data.pronouns}
       ></AboutUs.Frame>
       <AboutUs.SecCircles />
       <AboutUs.TextArea
