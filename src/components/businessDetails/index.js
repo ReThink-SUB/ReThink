@@ -120,7 +120,6 @@ export default function Details(props) {
     if (businessDetails.maps) {
       return (
         <a href={businessDetails.maps} target="_blank" rel="noreferrer">
-          <strong>View on Google Maps</strong>{" "}
           <img
             className="ml-2"
             src="/images/gmaps.png"
@@ -131,7 +130,24 @@ export default function Details(props) {
     }
   }
 
+  function websiteButton() {
+    console.log(businessDetails.website);
+    if (businessDetails.website) {
+      return (
+        <a
+          className="visit-website"
+          href={businessDetails.website}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <strong>Visit Website</strong>{" "}
+        </a>
+      );
+    }
+  }
+
   function instagram() {
+    console.log("hey im a wbuton");
     if (businessDetails.instagram) {
       return (
         <a
@@ -149,6 +165,7 @@ export default function Details(props) {
   }
 
   function facebook() {
+    console.log("hey im a webbsite buton");
     if (businessDetails.facebook) {
       return (
         <a
@@ -284,8 +301,9 @@ export default function Details(props) {
           <br></br>
           {businessDetails.profile}
           <div className="business-details-buttons">
-            {mapButton()}
+            {websiteButton()}
             <div className="business-details-social-buttons">
+              {mapButton()}
               {instagram()}
               {facebook()}
             </div>
