@@ -1,21 +1,30 @@
+.component-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .businesses-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 5em;
+  margin-top: 1em;
   margin-bottom: 3em;
   justify-content: center;
+  max-width: 1300px;
 }
 
 .business-background {
   /* align-self: center;
     width: 75em; */
-  width: 100%;
+  width: 150%;
   height: 6em;
-  background: rgba(71, 168, 78, 0.21);
+  background: #D8EDDA;
+  border-radius: 100px;
 
   z-index: -2;
   position: absolute;
+  transform: translateX(-16%);
   margin-top: -4em;
 }
 
@@ -30,6 +39,8 @@
   position: relative;
   margin-top: 5em;
   margin-bottom: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   min-width: 10em;
   width: 20%;
   display: flex;
@@ -161,7 +172,7 @@
   border-radius: 10px;
   border: #ffffff;
   height: 2.5rem;
-  width: 85%;
+  width: 100%;
   padding-left: 1em;
   margin-right: -20px;
 }
@@ -181,9 +192,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 1em 2em;
-  width: auto;
-  margin-top: 3rem;
+  padding: 1em 6em;
+  width: 100%;
+  margin-top: 5rem;
 }
 
 .search-bar-header h6 {
@@ -199,9 +210,10 @@
 .search-bar-and-btn {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 2em;
-  width: 75%;
+  width: 100%;
+  padding-left: 10%;
   margin-top: auto;
 }
 
@@ -217,6 +229,7 @@
 
   .businesses-container {
     margin-top: 0em;
+    max-width: 100%;
   }
 
   .business-background {
@@ -233,10 +246,12 @@
 
   .search-bar-container {
     flex-direction: column;
+    padding: 1em 2em;
   }
 
   .search-bar-and-btn {
     margin: 1em 0em;
     width: auto;
+    padding-left: 0%;
   }
 }

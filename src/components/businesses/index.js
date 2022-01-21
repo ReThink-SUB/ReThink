@@ -116,7 +116,7 @@ function Businesses() {
   };
 
   return (
-    <div>
+    <div className="component-container">
       <SearchBar parentCallback={handleCallback} />
       <div className="filters-container">{filters}</div>
       <BusinessCardSearchList logos={logos} query={query} />
