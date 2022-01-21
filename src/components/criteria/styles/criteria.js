@@ -41,8 +41,8 @@ export const Main = styled.div`
 export const CriteriaSec = styled.div`
   display: flex;
   width: 100%;
+  max-width: 1160px;
   position: relative;
-  padding-left: 1.6rem;
   flex-direction: column;
 
   @media(max-width: 799px) {
@@ -61,10 +61,7 @@ export const CriteriaSec = styled.div`
     max-width: 1400px;
   }
 
-  @media (min-width: 1300px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+
 `;
 
 export const Text = styled.div`
@@ -119,7 +116,7 @@ export const Heading = styled.h2`
   font-weight: 800;
   font-size: 22px;
   color: #535461;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 2rem;
   text-align: left;
   width: 80vw;
@@ -128,12 +125,11 @@ export const Heading = styled.h2`
   @media(min-width: 800px) {
     width: unset;
     
-    font-size: 48px;
-    margin-bottom: 1rem;
+    font-size: 30px;
+    margin-bottom: 0.5rem;
     line-height: 40px;
     padding: 0;
     max-width: 800px;
-    line-height: 136.84%;
   }
 `;
 
@@ -144,7 +140,7 @@ export const Description = styled.p`
   color: #535461;
   line-height: 1.5em;
   margin-right: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   z-index: 3;
   width: 80%;
   text-align: left;
@@ -160,22 +156,13 @@ export const Description = styled.p`
 
     width: 100%;
     padding: 0;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 43px;
   }
   
   @media (min-width: 1150px) {
     width: 90%;
-    font-size: 1.8em;
-  }
-  
-  @media (min-width: 1299px) {
-    font-size: 1.8em;
-    width: 80%;
-  }
-  
-  @media (min-width: 1550px) {
-    width: 70%;
+    font-size: 18px;
   }
 `;
 

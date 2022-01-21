@@ -38,10 +38,10 @@ em, i {
 }
 
 .line-border {
-  width: 90%;
+  width: 100%;
   max-width: 1160px;
-  height: 0px;
-  border: 1px solid #A49999;
+  height: 2px;
+  background-color: #e4e4e4;
   margin: 0 auto;
   margin-bottom: 3rem;
   display: none;
@@ -62,6 +62,7 @@ em, i {
   max-width: 1040px;
   padding: 1rem 0;
   padding-left: 2rem;
+  margin-bottom: 3rem;
 
   @media (min-width: 1440px) {
       margin-left: auto;
