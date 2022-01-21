@@ -12,7 +12,7 @@ export const Container = styled.div`
   @media (min-width: 800px) {
     padding: 0 1.5rem;
     margin-bottom: 5rem;
-    
+
     padding: 0;
     overflow-x: unset;
   }
@@ -21,14 +21,14 @@ export const Container = styled.div`
 export const Side = styled.div`
   width: 14%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.02);
-  ${"" /* background: red; */}
+  background: rgba(0, 00, 00, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: sticky;
-  top: 16%;
-  padding: 10rem 0;
+  border-radius: 30px;
+  top: 35%;
+  left: 1em;
   @media (max-width: 1050px) {
     display: none;
     width: 0%;
@@ -80,10 +80,10 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
-  
+
   margin: 0;
   overflow-x: hidden;
-  
+
   @media (min-width: 800px) {
     padding: 0 3rem;
   }
@@ -102,7 +102,7 @@ export const AboutSec = styled.div`
   position: relative;
   padding-left: 1.6rem;
 
-  @media(max-width: 799px) {
+  @media (max-width: 799px) {
     max-width: 400px;
   }
 
@@ -122,11 +122,10 @@ export const AboutSec = styled.div`
     margin-bottom: 3rem;
   }
 
-  
   flex-direction: column;
   // padding-bottom: 3.5rem;
   // align-content: left;
-  
+
   // @media (min-width: 800px) {
   //   text-align: center;
   //   align-items: center;
@@ -140,8 +139,6 @@ export const AboutSec = styled.div`
   //   left: 2rem;
   //   margin: 0 2rem;
   // }
-
-  
 `;
 
 export const Images = styled.div`
@@ -149,7 +146,7 @@ export const Images = styled.div`
   left: 50%;
   position: absolute;
   width: 50%;
-  
+
   @media (max-width: 338px) {
     display: none;
   }
@@ -161,7 +158,7 @@ export const Images = styled.div`
   @media (min-width: 550px) {
     left: 80%;
   }
-  
+
   @media (min-width: 800px) {
     width: 50%;
     height: 100%;
@@ -192,14 +189,14 @@ export const IceCream = styled.div`
   @media (min-width: 800px) {
     z-index: unset;
   }
-  
+
   img {
     height: 220px;
     width: 113px;
     position: absolute;
     top: 1rem;
     border-radius: 30px;
-    
+
     @media (min-width: 800px) {
       height: auto;
       width: 140px;
@@ -214,7 +211,7 @@ export const IceCream = styled.div`
     @media (min-width: 1200px) {
       width: 180px;
     }
-    
+
     @media (min-width: 1440px) {
       width: 201px;
       height: 391px;
@@ -250,7 +247,7 @@ export const Water = styled.div`
     width: 88px;
     bottom: 90%;
     border-radius: 30px;
-    
+
     @media (min-width: 800px) {
       height: auto;
       width: 80px;
@@ -288,20 +285,20 @@ export const ToothBrush = styled.div`
   @media (min-width: 1440px) {
     top: 65%;
   }
-  
+
   img {
     position: absolute;
     height: auto;
     width: 140px;
-    
+
     @media (min-width: 800px) {
       width: 160px;
     }
-    
+
     @media (min-width: 1200px) {
       width: 180px;
     }
-    
+
     @media (min-width: 1440px) {
       width: 200px;
     }
@@ -361,7 +358,7 @@ export const SecCircles = styled.div`
       width: 45px;
     }
   }
-  
+
   @media (min-width: 1300px) {
     left: 43%;
     display: block;
@@ -387,7 +384,7 @@ export const Text = styled.div`
     align-content: unset;
     position: unset;
     left: unset;
-    
+
     width: 90%;
     text-align: unset;
     // justify-content: center;
@@ -396,7 +393,7 @@ export const Text = styled.div`
   @media (min-width: 950px) {
     width: 85%;
   }
-  
+
   @media (min-width: 1550px) {
     // padding-right: 10rem;
   }
@@ -409,7 +406,7 @@ export const Title = styled.h1`
   letter-spacing: 0.035em;
   color: #67923d;
   margin-bottom: 1.5rem;
-  
+
   text-align: left;
   width: 80vw;
 
@@ -418,13 +415,13 @@ export const Title = styled.h1`
     margin-bottom: 1.75rem;
     width: unset;
   }
-  
+
   @media (min-width: 930px) {
     font-size: 48px;
     line-height: 54px;
     align-content: left;
   }
-  
+
   @media (min-width: 1299px) {
     font-size: 52px;
   }
@@ -438,19 +435,18 @@ export const Heading = styled.h2`
   color: #585858;
   margin-bottom: 1rem;
   line-height: 1.5rem;
-  
+
   text-align: left;
   width: 80vw;
   // padding: 0.25rem 0.5rem;
 
-  @media(min-width: 800px) {
+  @media (min-width: 800px) {
     font-size: 24px;
     margin-bottom: 1rem;
     line-height: 40px;
     padding: 0;
     width: unset;
   }
-  
 `;
 
 export const Description = styled.p`
@@ -464,7 +460,7 @@ export const Description = styled.p`
   z-index: 3;
   width: 100%;
   // padding-left: 0.5rem;
-  
+
   text-align: left;
 
   @media (min-width: 600px) {
@@ -474,21 +470,21 @@ export const Description = styled.p`
   @media (min-width: 800px) {
     width: 100%;
     padding: 0;
-    
+
     margin-right: unset;
     z-index: unset;
     padding-left: unset;
   }
-  
+
   @media (min-width: 1150px) {
     width: 90%;
   }
-  
+
   @media (min-width: 1299px) {
     font-size: 16px;
     width: 80%;
   }
-  
+
   @media (min-width: 1550px) {
     width: 70%;
   }
@@ -528,7 +524,7 @@ export const SubSec = styled.div`
   padding-left: 1.6rem;
   padding-bottom: 3.5rem;
   align-content: left;
-  
+
   @media (min-width: 800px) {
     text-align: center;
     align-items: center;
@@ -577,12 +573,12 @@ export const Card = styled.div`
   box-sizing: border-box;
   flex-basis: 150px;
   margin-bottom: 5%;
-  
+
   display: flex;
   align-items: center;
   position: relative;
   border-radius: 30px;
-  
+
   @media (min-width: 800px) {
     width: 45%;
     height: unset;
@@ -613,7 +609,7 @@ export const Card = styled.div`
 
   @media (min-width: 1150px) {
     justify-content: center;
-    width: 45%
+    width: 45%;
   }
   @media (min-width: 1250px) {
     justify-content: center;
@@ -630,8 +626,9 @@ export const Frame = styled.div`
   width: 138px;
   padding: 0.6rem;
   position: absolute;
-  background: #D4E9D6;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 45px rgba(57, 57, 57, 0.06);
+  background: #d4e9d6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 30px;
 
   @media (min-width: 800px) {
@@ -652,7 +649,7 @@ export const Frame = styled.div`
 
   @media (min-width: 1000px) {
     width: 200px;
-    height: 212px
+    height: 212px;
   }
   @media (min-width: 1290px) {
     width: 201px;
@@ -706,7 +703,7 @@ export const Frame = styled.div`
     }
   }
   p {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 8px;
     line-height: 10px;
     text-align: center;
@@ -731,7 +728,7 @@ export const Frame = styled.div`
 export const TextArea = styled.div`
   @media (max-width: 799px) {
     display: none;
-  }  
+  }
 
   flex-direction: column;
   justify-content: center;
@@ -747,7 +744,7 @@ export const TextArea = styled.div`
     left: 53%;
   }
 
-  @media(min-width: 1400px) {
+  @media (min-width: 1400px) {
     left: 50%;
     width: 229px;
   }
@@ -775,7 +772,7 @@ export const TextArea = styled.div`
     justify-content: flex-end;
     align-items: center;
     margin: 1rem 0;
-    
+
     @media (min-width: 800px) {
       margin: unset;
 
@@ -791,8 +788,8 @@ export const TextArea = styled.div`
 
       @media (min-width: 800px) {
         height: 10%;
-        margin: unset; 
-        
+        margin: unset;
+
         margin-right: 0.5rem;
       }
     }
@@ -837,7 +834,7 @@ export const SecTitle = styled.h3`
   letter-spacing: 0.035em;
   color: #67923d;
   margin-bottom: 2rem;
-  
+
   text-align: left;
   width: 80vw;
   @media (max-width: 1299px) {

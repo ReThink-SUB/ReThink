@@ -188,6 +188,7 @@ AboutUs.Frame = function AboutUsFrame({
   src,
   person,
   position,
+  pronouns,
   children,
   ...restProps
 }) {
@@ -205,6 +206,7 @@ AboutUs.Frame = function AboutUsFrame({
       <img src={imgURL} alt="Card" />
       <h2>{person}</h2>
       <p color={color}>{position}</p>
+      <p>{pronouns}</p>
       {children}
     </Frame>
   );
