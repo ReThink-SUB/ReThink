@@ -34,13 +34,13 @@ export function NavbarContainer() {
           </Burger.Link> */}
         </Burger.Links>
         <Burger.Socials>
-          <a href="https://www.facebook.com/SUBInitiative/" target="_blank">
+          <a href="https://www.facebook.com/ReThinkUW/" target="_blank">
             <i className="fab fa-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/subinitiative/" target="_blank">
+          <a href="https://www.instagram.com/rethinkuw/" target="_blank">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="mailto:  info@subinitiative.com">
+          <a href="mailto:  info@rethinkuw.org">
             <i className="fas fa-envelope"></i>
           </a>
         </Burger.Socials>
