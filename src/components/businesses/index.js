@@ -3,12 +3,8 @@ import {
   CardBody,
   CardTitle,
   Container,
-  Col,
   Card,
-  Row,
-  CardImg,
   CardSubtitle,
-  CardText,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -42,12 +38,6 @@ function Businesses() {
     ],
     ["Greater Seattle Area", "Portland", "Remote"],
   ];
-  let filters = [];
-  let iterator = 0;
-  for (let i of filterHeaders) {
-    filters.push(<FilterButton filter={i} options={filterOptions[iterator]} />);
-    iterator++;
-  }
 
   // TODO: figure out how to get images using id of business
   // rn, im trying to get the ids of each business and get the logos using those ids in the ref
@@ -57,22 +47,52 @@ function Businesses() {
   // https://stackoverflow.com/questions/64708353/how-to-display-all-the-images-from-firebase-storage-in-react
   const [logos, setLogos] = useState([]);
   const [ids, setIDs] = useState([]);
+  const [filterOps, setFilterOps] = useState([]);
+  let filters = [];
+  let iterator = 0;
   useEffect(() => {
     let idHolder = [];
+    let catHolder = [];
+    let priceHolder = [];
+    let areaHolder = [];
+    let badgeHolder = [];
     db.collection("businesses")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           idHolder.push(doc.id);
+
+          let data = doc.data();
+          if (!catHolder.includes(data.category)) {
+            catHolder.push(data.category);
+          }
+          if (!priceHolder.includes(data.price)) {
+            priceHolder.push(data.price);
+          }
+          if (!areaHolder.includes(data.area)) {
+            areaHolder.push(data.area);
+          }
+          if (data.badges != null) {
+            data.badges.forEach((badge) => {
+              if (!badgeHolder.includes(badge)) {
+                badgeHolder.push(badge);
+              }
+            });
+          }
         });
         setIDs(idHolder);
+        setFilterOps([catHolder, priceHolder, badgeHolder, areaHolder]);
       });
 
     fetchLogos(ids);
-
-    console.log(ids);
-    console.log(logos); // BUG: rn it's not loading bc it needs to fulfill promise
   }, []);
+
+  filterHeaders.forEach((filt) => {
+    filters.push(
+      <FilterButton key={filt} filter={filt} options={filterOps[iterator]} />
+    );
+    iterator++;
+  });
 
   const fetchLogos = async (ids) => {
     let urls = [];
@@ -85,7 +105,7 @@ function Businesses() {
           urls.push(url);
         });
     }
-    console.log(urls);
+
     setLogos(urls);
   };
 
@@ -96,7 +116,7 @@ function Businesses() {
   };
 
   return (
-    <div>
+    <div className="component-container">
       <SearchBar parentCallback={handleCallback} />
       <div className="filters-container">{filters}</div>
       <BusinessCardSearchList logos={logos} query={query} />
@@ -116,9 +136,8 @@ function BusinessCard(props) {
     var xxx = storage.ref("img/businesses/" + props.id + "/logo.png");
     xxx.getDownloadURL().then(function (url) {
       setURL(url);
-      console.log(url);
     });
-  }, []);
+  }, [props.id]);
 
   const handleClick = () => {
     setRedirectTo(props.id);
@@ -129,7 +148,7 @@ function BusinessCard(props) {
   }
 
   // BUG: rn it's undefined
-  console.log(props.logosrc);
+  // console.log(props.logosrc);
 
   return (
     <div className="card-container">
@@ -140,7 +159,7 @@ function BusinessCard(props) {
         className="circle-pattern-img"
       />
       <Card className="business-card" onClick={handleClick}>
-        <CardImg
+        <img
           src={imgURL}
           // src="/images/BallardMarket.png" //TODO: should come from firestore (props.logosrc) // need to style image to be a circle
           alt={business.name + " image"}
@@ -154,12 +173,12 @@ function BusinessCard(props) {
             {
               business.category +
                 " " +
-                "$$" +
+                // "$$" +
                 " " /*TODO: replace "$$" with business["price"]*/
             }
-            <img src="/images/lightning.png" />{" "}
+            {/* <img src="/images/lightning.png" alt="fish icon" />{" "} */}
             {/*TODO: should come from json */}
-            <img src="/images/fish.png" />
+            {/* <img src="/images/fish.png" alt="lightning icon" /> */}
           </CardSubtitle>
         </CardBody>
       </Card>
@@ -186,7 +205,7 @@ function BusinessCardSearchList(props) {
           let data = doc.data();
           businessesHolder.push(
             <BusinessCard
-              key={data}
+              key={data.name}
               business={data}
               logosrc={props.logos[counter]}
               id={doc.id}
@@ -203,20 +222,16 @@ function BusinessCardSearchList(props) {
   let filteredBusinesses = [];
   for (let business of businesses) {
     let data = business.props.business;
-    if (data.name.toLowerCase().includes(props.query.toLowerCase())) {
+    if (
+      data.name.toLowerCase().includes(props.query.toLowerCase()) &&
+      data.published === "true"
+    ) {
       filteredBusinesses.push(business);
     }
   }
-  console.log(filteredBusinesses);
 
   return (
-    <Container className="businesses-container">
-      {/* <Col className="businesses-col"> */}
-      {/* <Row className="businesses-row"> */}
-      {filteredBusinesses}
-      {/* </Row> */}
-      {/* </Col> */}
-    </Container>
+    <Container className="businesses-container">{filteredBusinesses}</Container>
   );
 }
 
@@ -269,9 +284,15 @@ function FilterButton(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   let filterOptions = [];
-  for (let i of props.options) {
-    filterOptions.push(<DropdownItem>{i}</DropdownItem>);
-  }
+  let propOp = {};
+  let options = [];
+
+  Object.assign(propOp, props.options);
+  options = Object.values(propOp);
+
+  options.forEach((option) => {
+    filterOptions.push(<DropdownItem key={option}>{option}</DropdownItem>);
+  });
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>

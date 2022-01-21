@@ -9,9 +9,8 @@ export function NavbarContainer() {
     <Navbar>
       <Navbar.Title to={ROUTES.LANDING} />
       <Burger open={open} setOpen={setOpen} />
-      <Burger.Menu open={open} setOpen={setOpen}>
-        <Burger.Heading>Hi there!</Burger.Heading>
-        <Burger.Links>
+      <Burger.Menu open={open} setOpen={setOpen} className="menu">
+        <Burger.Links className="links">
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.LANDING}>
             Home
           </Burger.Link>
@@ -34,19 +33,20 @@ export function NavbarContainer() {
             Sign Up
           </Burger.Link> */}
         </Burger.Links>
-        <Burger.Squiggle />
         <Burger.Socials>
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fas fa-envelope"></i>
+          <a href="https://www.facebook.com/ReThinkUW/" target="_blank">
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/rethinkuw/" target="_blank">
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:  info@rethinkuw.org">
+            <i className="fas fa-envelope"></i>
+          </a>
         </Burger.Socials>
       </Burger.Menu>
       <Navbar.Links>
-        <Navbar.Link
-          to={ROUTES.BUSINESSES}
-        >
-          Find Businesses
-        </Navbar.Link>
+        <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>

@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  overflow-x: clip;
 `;
 
 export const LeftSect = styled.div`
@@ -14,12 +15,12 @@ export const LeftSect = styled.div`
   padding-left: 2%;
 
   @media (max-width: 1200px) {
-    width: 90%;
+    width: 100%;
     margin: 0
     height: 100%;
     margin-top: auto;
     margin-bottom: auto;
-    padding: 0
+    padding: 2em;
   }
 `;
 
@@ -35,6 +36,15 @@ export const RightSect = styled.div`
   }
   postion: relative;
   justify-content: space-around;
+`;
+
+export const InnerSect = styled.div`
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  postion: relative;
+  justify-content: space-between;
 `;
 
 export const Navbar = styled.div`
@@ -61,7 +71,7 @@ export const Link = styled.h2`
   align-items: center;
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
   }
 `;
 
@@ -109,13 +119,13 @@ export const CardOne = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
     }
   }
@@ -164,13 +174,13 @@ export const CardTwo = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
     }
   }
@@ -220,14 +230,65 @@ export const CardThree = styled.div`
     p {
       font-weight: normal;
       font-size: 13px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.6rem;
     }
 
     i {
       font-size: 15px;
-      color: #00cc92;
+      color: #67923d;
       margin-right: 0.4rem;
+    }
+  }
+`;
+
+export const CardSmall = styled.div`
+  display: none;
+
+  @media (max-width: 1200px) {
+    width: 180px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+    padding: 1.2rem 0;
+    z-index: 3;
+  }
+
+  img {
+    width: 140px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2421;
+    margin-bottom: 0.5rem;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-weight: normal;
+      font-size: 10px;
+      color: #67923d;
+      margin-right: 0.6rem;
+    }
+
+    i {
+      font-size: 11px;
+      color: #67923d;
+      margin-right: 0.2rem;
     }
   }
 `;
@@ -266,35 +327,28 @@ export const Title = styled.h2`
 `;
 
 export const SubTitle = styled.h3`
-  font-weight: 800;
-  font-size: 56px;
-  color: #67923D;
+  font-weight: 1000;
+  font-size: 40px;
+  color: #67923d;
   margin: 2em 0rem 2.5rem 5rem;
 
-  @media (max-width: 1650px) {
-    font-size: 52px;
-  }
-
   @media (max-width: 1200px) {
-    width: 100%;
-    margin: 0
-    
-    margin-top: auto;
-    margin-bottom: auto;
+    font-size: 24px;
+    margin: 1.2em 0em 0.5em 0em;
   }
-
 `;
 
 export const Description = styled.p`
-  font-weight: 500;
+  font-weight: 600;
   font-size: 19px;
   color: #828282;
   line-height: 30px;
-  width: 35%;
-  margin: 0em 0em 3rem 5rem;
+  width: 40%;
+  margin: 0em 0rem 0rem 5rem;
 
-  @media (max-width: 1650px) {
+  @media (max-width: 1200px) {
     font-size: 18px;
+    margin: 0em;
   }
 `;
 
@@ -314,7 +368,7 @@ export const Button = styled.button`
   box-shadow: 0px 10px 60px rgba(57, 57, 57, 0.1);
 
   &:hover {
-    background: #00cc92;
+    background: #67923d;
   }
 `;
 
@@ -345,4 +399,8 @@ export const LeftCard = styled.div`
     position: absolute;
     margin-top: 25%;
   }
+`;
+
+export const MobileCard = styled.div`
+  position: relative;
 `;

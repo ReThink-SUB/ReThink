@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+//merge pls
+.criteria-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #535461;
+  margin-bottom: .5em !important;
+  font-size: 2em;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.criteria-txt {
+  width: 89%;
+  margin: 2em 0;
+}
+
+em, i {
+  color: #67923D;
+  font-style: normal;
+}
+
+.fa {
+  line-height: 2em;
+  margin-right: .3em;
+}
+
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+}
+
+.line-border {
+  width: 100%;
+  max-width: 1160px;
+  height: 2px;
+  background-color: #e4e4e4;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  display: none;
+
+  @media (min-width: 800px) {
+    display: unset;
+  }
+}
+
+.filter-selections {
+  display: flex;
+  align-items: left;
+  width: 100%;
+  
+  overflow-x: auto;
+  scroll-padding: 0 50%;
+  scroll-snap-type: x mandatory;
+  max-width: 1040px;
+  padding: 1rem 0;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 1440px) {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+
+  .filter-select {
+      height: auto;
+      background: #C4C4C4;
+      color: #FFFFFF;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 19.4315px;
+      line-height: 23px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      margin-right: 3.5rem;
+      padding: 0.8rem 2rem;
+
+      &.selected {
+        background: #67923D;
+      }
+
+      @media (max-width: 800px) {
+        margin-right: 1rem;
+      }
+  }
+}
+
+.description {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  flex-direction: row;
+  padding: 0 2rem;
+
+  @media (min-width: 800px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    float: left;
+    width: 50%;
+    max-width: 213px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30.8732px;
+    line-height: 37px;
+    color: #535461;
+
+    @media (max-width: 300px) {
+      font-size: 18px;
+    }
+    
+    @media (min-width: 800px) {
+      font-size: 36px;
+      line-height: 57px;
+
+      color: #67923D;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 48px;
+      margin-right: 20%;
+    }
+  }
+
+  p {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    color: #535461;
+
+
+
+    @media (min-width: 800px) {
+      width: 300px;
+    }
+    
+    @media (min-width: 1200px) {
+      width: 400px;
+      font-weight: 600;
+    }
+
+    @media (min-width: 1400px) {
+      width: 50%;
+      font-weight: 600;
+    }
+  }
+}
+
+.criteria-section {
+  position: relative;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 2rem;
+
+  flex-direction: row;
+  padding: 0 2rem;
+
+  @media (min-width: 800px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .industry-card {
+    width: 30%;
+    align-items: center;
+    position: relative;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    padding: 3rem 3rem;
+    align-content: center;
+
+    background: #F2F2F2;
+    border-radius: 16.0622px;
+
+    @media (max-width: 350px) {
+      padding: 1rem 1rem;
+    }
+
+    @media (min-width: 550px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 800px) {
+      text-align: left;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 1150px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 1200px) {
+      width: 90%;
+    }
+
+    .industry-title {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 28.912px;
+      line-height: 35px;
+      /* identical to box height */
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 0.035em;
+      color: #67923D;
+      margin: 0.5rem 0;
+      line-height: 1.5rem;
+
+      color: #67923D;
+
+      @media (max-width: 300px) {
+        font-size: 18px;
+      }
+    }
+
+    .industry-criteria {
+      @media (max-width: 300px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

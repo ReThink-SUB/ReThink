@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import "./styles/style.css";
+import "./styles/style.scss";
+import { storage } from "../../firebase";
 import {
   Container,
   Side,
@@ -48,6 +49,7 @@ import {
   SecCircles,
   DownloadBtn,
 } from "./styles/aboutUs";
+// import { securityRules } from "firebase-admin";
 
 export default function AboutUs({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
@@ -186,14 +188,25 @@ AboutUs.Frame = function AboutUsFrame({
   src,
   person,
   position,
+  pronouns,
   children,
   ...restProps
 }) {
+  // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/profiles/${src}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    });
+  });
   return (
     <Frame color={color} background={background} {...restProps}>
-      <img src={`/images/profile_pics/${src}.jpg`} alt="Card" />
+      <img src={imgURL} alt="Card" />
       <h2>{person}</h2>
       <p color={color}>{position}</p>
+      <p>{pronouns}</p>
       {children}
     </Frame>
   );
@@ -212,7 +225,7 @@ AboutUs.TextArea = function AboutUsTextArea({
         <a href={linkedin} target="_blank" rel="noopener noreferrer">
           <img src="/images/Linkedin.png" alt="Linkedin" />
         </a>
-        <img src="/images/Mail.png" alt="Email" />
+        {/* <img src="/images/Mail.png" alt="Email" /> */}
       </div>
     </TextArea>
   );
@@ -228,9 +241,11 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 
 AboutUs.Btn = function AboutUsBtn({ href, children, ...restProps }) {
   return (
-    <a href={href} target="_new" {...restProps}>
-      <Btn>{children}</Btn>
-    </a>
+    <Btn>
+      <a href={href} target="_new" {...restProps}>
+        {children}
+      </a>
+    </Btn>
   );
 };
 

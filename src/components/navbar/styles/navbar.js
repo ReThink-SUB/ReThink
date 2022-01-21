@@ -4,12 +4,17 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   z-index: 5;
   position: relative;
+  overflow-x: clip;
 
   @media (min-width: 800px) {
     justify-content: space-between;
+    min-width: 35rem;
+    padding: 0 2rem;
+  }
+  @media (min-width: 1200px) {
     padding: 0 3rem;
   }
 `;
@@ -18,17 +23,31 @@ export const Title = styled.div`
   cursor: pointer;
   display: flex;
   img {
+    min-width: 50%;
+    max-width: 250px;
     margin-top: 1em;
-    width: 40%;
+    width: 20%;
     height: auto;
     @media (max-width: 800px) {
-      width: 70px;
+      width: 80px;
+    }
+  }
+  .mobile-logo {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    width: 80px;
+    .mobile-logo {
+      display: block;
+    }
+    .desktop-logo {
+      display: none;
     }
   }
 `;
 
 export const Links = styled.div`
-  width: 50%;
+  width: 500px;
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -37,11 +56,13 @@ export const Links = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 500px;
   }
 
-  @media (max-width: 950px) {
-    width: 65%;
-  }
+  // @media (max-width: 950px) {
+
+  //   min-width: 30rem;
+  // }
 `;
 
 export const Link = styled.h2`
@@ -56,7 +77,7 @@ export const Link = styled.h2`
   transition: 0.5s ease all;
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
     text-decoration: none;
   }
 `;
@@ -78,6 +99,6 @@ export const Button = styled.button`
   background: #67923d;
 
   &:hover {
-    background: #00cc92;
+    background: #67923d;
   }
 `;

@@ -2,7 +2,7 @@ import React, { useState, useEffect, Suspense, lazy } from "react";
 import * as ROUTES from "./constants/routes";
 import { db } from "./firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Loading } from "./components";
+import { Loading, ScrollToTop } from "./components";
 import { BusinessContext } from "./context/business";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
@@ -41,16 +41,16 @@ export default function App() {
   const [image, setImage] = useState(null);
 
   // fetch profiles json
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("./profiles.json")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  // const [data, setData] = useState([]);
+  // useEffect(() => {
+  //   fetch("./profiles.json")
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setData(data);
+  //     });
+  // }, []);
 
   useEffect(() => {
     db.collection("businesses")
@@ -61,8 +61,6 @@ export default function App() {
         });
       });
   }, []);
-
-  // console.log(businesses);
 
   return (
     <>
@@ -148,21 +146,27 @@ export default function App() {
                 <Criteria />
               </Route>
               {/* FOR DEBUGGING ONLY */}
-              <Route exact path={ROUTES.DETAILS + "/:business"} component={Details}>
-                {/* <Details /> */}
-              </Route>
               <Route
+                exact
+                path={ROUTES.DETAILS + "/:business"}
+                key=""
+                component={Details}
+              />
+              {/* <Details /> */}
+              {/* <Route
                 path={ROUTES.TEAM}
                 render={(...routerProps) => (
                   <Team {...routerProps} profiles={data} />
                 )}
-              />
+              /> */}
               <Route path={ROUTES.BUSINESSES} component={Businesses} />
               <Route path={ROUTES.ABOUT} component={About} />
             </Suspense>
           </Switch>
         </Router>
+        <ScrollToTop />
       </BusinessContext.Provider>
+      <ScrollToTop />
     </>
   );
 }

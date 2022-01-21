@@ -47,6 +47,6 @@ export const Link = styled.h2`
   align-items: center;
 
   &:hover {
-    color: #00cc92;
+    color: #67923d;
   }
 `;

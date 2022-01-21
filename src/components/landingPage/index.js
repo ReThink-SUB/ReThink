@@ -8,6 +8,7 @@ import {
   Navbar,
   LeftSect,
   RightSect,
+  InnerSect,
   Title,
   SubTitle,
   Description,
@@ -15,10 +16,12 @@ import {
   CardOne,
   CardTwo,
   CardThree,
+  CardSmall,
   Ellipse,
   SmallEllipse,
   LeftCard,
   RightCard,
+  MobileCard,
   CirclePattern1,
   CirclePattern2,
 } from "./styles/landingPage";
@@ -41,19 +44,26 @@ LandingPage.RightSect = function LandingPageRightSect({
   return <RightSect {...restProps}>{children}</RightSect>;
 };
 
+LandingPage.InnerSect = function LandingPageInnerSect({
+  children,
+  ...restProps
+}) {
+  return <InnerSect {...restProps}>{children}</InnerSect>;
+};
+
 LandingPage.LeftCard = function LandingPageLeftCard({
   src, type, label, children, ...restProps
 }) {
   return (
     <LeftCard {...restProps}>
-    <CardOne>
-    <img src={`/images/${src}`} alt="CardThree" />
-      <h2>{label}</h2>
-      <div>
-        <p>{type}</p>
-        <i className="fas fa-lightbulb"></i>
-        <i className="fas fa-leaf"></i>
-      </div>
+      <CardOne>
+        <img src={`/images/${src}`} alt="CardThree" />
+        <h2>{label}</h2>
+        <div>
+          <p>{type}</p>
+          <i className="fas fa-lightbulb"></i>
+          <i className="fas fa-leaf"></i>
+        </div>
       </CardOne>
       <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </LeftCard>
@@ -79,6 +89,27 @@ LandingPage.RightCard = function LandingPageRightCard({
     </CardThree>
     <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </RightCard>
+  )
+}
+
+LandingPage.MobileCard = function LandingPageMobileCard({
+  type,
+  label,
+  src,
+  children, ...restProps
+}) {
+  return (
+    <MobileCard {...restProps}>
+      <CardSmall>
+        <img src={`/images/${src}`} alt="CardThree" />
+        <h2>{label}</h2>
+        <div>
+          <p>{type}</p>
+          <i className="fas fa-lightbulb"></i>
+          <i className="fas fa-leaf"></i>
+        </div>
+      </CardSmall>
+    </MobileCard>
   )
 }
 
@@ -139,6 +170,26 @@ LandingPage.CardThree = function LandingPageCardThree({
         <i className="fas fa-leaf"></i>
       </div>
     </CardThree>
+  );
+};
+
+LandingPage.CardSmall = function LandingPageCardSmall({
+  type,
+  label,
+  src,
+  children,
+  ...restProps
+}) {
+  return (
+    <CardSmall {...restProps}>
+      <img src={`/images/${src}`} alt="CardThree" />
+      <h2>{label}</h2>
+      <div>
+        <p>{type}</p>
+        <i className="fas fa-lightbulb"></i>
+        <i className="fas fa-leaf"></i>
+      </div>
+    </CardSmall>
   );
 };
 
