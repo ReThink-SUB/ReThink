@@ -35,33 +35,39 @@ export function AboutUsContainer() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          profilesHolder.push(
-            <ProfileCard
-              key={doc.data().profile_img}
-              data={doc.data()}
-              back_color={backColor}
-              color={color}
-            />
-          );
+          console.log(doc.data());
+          if (
+            doc.data().isAlum.includes("n") ||
+            doc.data().isAlum.includes("N")
+          ) {
+            profilesHolder.push(
+              <ProfileCard
+                key={doc.data().profile_img}
+                data={doc.data()}
+                back_color={backColor}
+                color={color}
+              />
+            );
 
-          // switch for the first one
-          if (counter === 3) {
-            backColor = "#ffffff";
-            color = "#BBBBBD";
-            counter = 0;
-          }
+            // switch for the first one
+            if (counter === 3) {
+              backColor = "#ffffff";
+              color = "#BBBBBD";
+              counter = 0;
+            }
 
-          // every two, switch colors
-          if (counter === 2 && backColor === "#D4E9D6") {
-            backColor = "#ffffff";
-            color = "#BBBBBD";
-            counter = 0;
-          } else if (counter === 2 && backColor === "#ffffff") {
-            backColor = "#D4E9D6";
-            color = "#ffffff";
-            counter = 0;
+            // every two, switch colors
+            if (counter === 2 && backColor === "#D4E9D6") {
+              backColor = "#ffffff";
+              color = "#BBBBBD";
+              counter = 0;
+            } else if (counter === 2 && backColor === "#ffffff") {
+              backColor = "#D4E9D6";
+              color = "#ffffff";
+              counter = 0;
+            }
+            counter++;
           }
-          counter++;
         });
         setProfiles(profilesHolder);
       });
@@ -70,10 +76,6 @@ export function AboutUsContainer() {
       setWidth(window["window"]["width"]);
     });
   }, []);
-
-  // const generateProfiles = (pro) => {
-  //   setProfiles([mobile, desktop]);
-  // };
 
   const setAboutSection = (dimm) => {
     let mobile = (
@@ -84,26 +86,32 @@ export function AboutUsContainer() {
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
-            ReThink is a University of Washington Michael G. Foster School of Business 
-            Registered Student Organization. We are a team of students advocating for 
-            sustainable consumer behavior.            
+            ReThink is a University of Washington Michael G. Foster School of
+            Business Registered Student Organization. We are a team of students
+            advocating for sustainable consumer behavior.
           </AboutUs.Description>
           <AboutUs.Description>
-            Through business outreach and thorough research, 
-            we determine what local companies follow guidelines that certify them as “sustainable”. 
-            Following an eco-friendly lifestyle can be challenging, which is why our organization aims
-            to connect consumers to sustainable businesses in the Seattle area.
-            <br/><br/>
-            Interested in joining our team? We are looking for UW students to help in either 
-            marketing, research, development, or design. Minimum commitment of two quarters with 
-            about 6 hours of work per week including a weekly ReThink meeting and a weekly team meeting.
+            Through business outreach and thorough research, we determine what
+            local companies follow guidelines that certify them as
+            “sustainable”. Following an eco-friendly lifestyle can be
+            challenging, which is why our organization aims to connect consumers
+            to sustainable businesses in the Seattle area.
+            <br />
+            <br />
+            Interested in joining our team? We are looking for UW students to
+            help in either marketing, research, development, or design. Minimum
+            commitment of two quarters with about 6 hours of work per week
+            including a weekly ReThink meeting and a weekly team meeting.
           </AboutUs.Description>
           <AboutUs.Heading>Who we support</AboutUs.Heading>
           <AboutUs.Description>
-            We feature businesses that incorporate sustainability in their everyday operations. From the 
-            ingredients on their menus, to the materials in their products, these businesses have a 
-            multitude of avenues to introduce sustainability within their company. If you know of a business
-            that is sustainable and is not currently featured, [let us know].
+            We feature businesses that incorporate sustainability in their
+            everyday operations. From the ingredients on their menus, to the
+            materials in their products, these businesses have a multitude of
+            avenues to introduce sustainability within their company. If you
+            know of a business that is sustainable and is not currently
+            featured, send us an <a href="mailto:join@rethinkuw.org">email</a>{" "}
+            at join@rethinkuw.org.
           </AboutUs.Description>
         </AboutUs.Text>
         <AboutUs.Images className="about-images">
@@ -130,26 +138,31 @@ export function AboutUsContainer() {
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
-            ReThink is a University of Washington Michael G. Foster School of Business 
-            Registered Student Organization. We are a team of students advocating for 
-            sustainable consumer behavior.            
+            ReThink is a University of Washington Michael G. Foster School of
+            Business Registered Student Organization. We are a team of students
+            advocating for sustainable consumer behavior.
           </AboutUs.Description>
           <AboutUs.Description>
-            Through business outreach and thorough research, 
-            we determine what local companies follow guidelines that certify them as “sustainable”. 
-            Following an eco-friendly lifestyle can be challenging, which is why our organization aims
-            to connect consumers to sustainable businesses in the Seattle area.
-            <br/><br/>
-            Interested in joining our team? We are looking for UW students to help in either 
-            marketing, research, development, or design. Minimum commitment of two quarters with 
-            about 6 hours of work per week including a weekly ReThink meeting and a weekly team meeting.
+            Through business outreach and thorough research, we determine what
+            local companies follow guidelines that certify them as
+            “sustainable”. Following an eco-friendly lifestyle can be
+            challenging, which is why our organization aims to connect consumers
+            to sustainable businesses in the Seattle area.
+            <br />
+            <br />
+            Interested in joining our team? We are looking for UW students to
+            help in either marketing, research, development, or design. Minimum
+            commitment of two quarters with about 6 hours of work per week
+            including a weekly ReThink meeting and a weekly team meeting.
           </AboutUs.Description>
           <AboutUs.Heading>Who we support</AboutUs.Heading>
           <AboutUs.Description>
-            We feature businesses that incorporate sustainability in their everyday operations. From the 
-            ingredients on their menus, to the materials in their products, these businesses have a 
-            multitude of avenues to introduce sustainability within their company. If you know of a business
-            that is sustainable and is not currently featured, [let us know].
+            We feature businesses that incorporate sustainability in their
+            everyday operations. From the ingredients on their menus, to the
+            materials in their products, these businesses have a multitude of
+            avenues to introduce sustainability within their company. If you
+            know of a business that is sustainable and is not currently
+            featured, send us an email at join@rethinkuw.org.
           </AboutUs.Description>
         </AboutUs.Text>
       </AboutUs.AboutSec>
@@ -178,12 +191,11 @@ export function AboutUsContainer() {
               <span id="team">Meet the team</span>
             </AboutUs.Title>
             <AboutUs.SecDescription>
-              We have rolling applications to join our team. Keep an eye out on our social media if you're interested.
+              We have rolling applications to join our team. Keep an eye out on
+              our social media if you're interested.
             </AboutUs.SecDescription>
           </AboutUs.Text>
-          <AboutUs.Cards className="team-cards">
-            {profiles}
-          </AboutUs.Cards>
+          <AboutUs.Cards className="team-cards">{profiles}</AboutUs.Cards>
         </AboutUs.SubSec>
         <AboutUs.InvolvedSec id="involved" className="about-involved">
           <AboutUs.Text>
@@ -191,9 +203,15 @@ export function AboutUsContainer() {
             {/* <AboutUs.Heading className="small-heading" >
               How to get involved
             </AboutUs.Heading> */}
-            <AboutUs.Title className="small-title" style={{'font-size': '16px'}}>ReThink Team</AboutUs.Title>
+            <AboutUs.Title
+              className="small-title"
+              style={{ "font-size": "16px" }}
+            >
+              ReThink Team
+            </AboutUs.Title>
             <AboutUs.Description>
-              University of Washington students, <i>APPLY NOW</i> to join the ReThink Team.
+              University of Washington students, <i>APPLY NOW</i> to join the
+              ReThink Team.
             </AboutUs.Description>
             <AboutUs.Description>
               {width < 800 ? (
@@ -222,7 +240,12 @@ export function AboutUsContainer() {
         </AboutUs.InvolvedSec>
         <AboutUs.OtherClubsSec className="other-sec">
           <AboutUs.Text>
-            <AboutUs.Title className="small-title" style={{'font-size': '16px'}}>Other Sustainability Clubs at the University of Washington</AboutUs.Title>
+            <AboutUs.Title
+              className="small-title"
+              style={{ "font-size": "16px" }}
+            >
+              Other Sustainability Clubs at the University of Washington
+            </AboutUs.Title>
           </AboutUs.Text>
           <div className="about-cards">
             <div className="about-card">
@@ -269,9 +292,7 @@ export function AboutUsContainer() {
         </AboutUs.OtherClubsSec>
         <AboutUs.LocalOrgsSec className="local-sec">
           <AboutUs.Text>
-            <AboutUs.Heading>
-              Other local organizations
-            </AboutUs.Heading>
+            <AboutUs.Heading>Other local organizations</AboutUs.Heading>
             <AboutUs.Description>
               These organizations are working hard to help the environment.
             </AboutUs.Description>
@@ -297,7 +318,8 @@ function ProfileCard(props) {
   let data = props.data;
   return (
     <AboutUs.Card className="prof-card">
-      <AboutUs.Frame className="frame"
+      <AboutUs.Frame
+        className="frame"
         background={[props.back_color]}
         src={data.profile_img}
         person={data.name}
@@ -305,7 +327,8 @@ function ProfileCard(props) {
         color={props.color}
       ></AboutUs.Frame>
       <AboutUs.SecCircles />
-      <AboutUs.TextArea className="textArea"
+      <AboutUs.TextArea
+        className="textArea"
         linkedin={"http://www.linkedin.com/in/" + data.linkedin_url}
       >
         {data.bio}

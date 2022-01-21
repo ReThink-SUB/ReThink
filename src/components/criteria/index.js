@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { Dimensions } from 'react-native';
+import React, { useEffect, useState } from "react";
+import { Dimensions } from "react-native";
 import { db } from "../../firebase";
 import "./styles/criteria.scss";
 import {
@@ -12,7 +12,7 @@ import {
   SubDescription,
 } from "./styles/criteria";
 
-const windowWidth = Dimensions.get('window').width;
+const windowWidth = Dimensions.get("window").width;
 // merge pls
 export default function Container() {
   const [width, setWidth] = useState(windowWidth);
@@ -23,27 +23,55 @@ export default function Container() {
 
   useEffect(() => {
     let industryHolder = [];
-    db.collection('criteria').get().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        industryHolder.push(<Industry data={doc.data()} value={doc.data()["name"]} setActive={setActive} setCriteria={setCriteria} activeTab={activeTab} setActiveTab={setActiveTab}/>);
+    db.collection("criteria")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          industryHolder.push(
+            <Industry
+              data={doc.data()}
+              value={doc.data()["name"]}
+              setActive={setActive}
+              setCriteria={setCriteria}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+          );
+        });
+        setIndustries(industryHolder);
+        if (criteria.title == null) {
+          let defaultIndustry = industryHolder[0].props.data;
+
+          let newList = Object.entries(defaultIndustry.criteria_boxes).map(
+            ([key, value]) => {
+              return <CriteriaCard title={value.title} desc={value.desc} />;
+            }
+          );
+          setActive(newList);
+          setCriteria({
+            title: defaultIndustry.name,
+            desc: defaultIndustry.industry_description,
+          });
+          console.log(criteria);
+          setActiveTab(defaultIndustry.name);
+        }
       });
-      setIndustries(industryHolder);
+    Dimensions.addEventListener("change", (window) => {
+      setWidth(window["window"]["width"]);
     });
-    Dimensions.addEventListener(
-      "change", (window => {
-      setWidth(window['window']['width']);
-    }));
   }, [activeTab]);
 
-  return <CritContainer className="about-container">
+  return (
+    <CritContainer className="about-container">
       <Main className="about-main">
         <CriteriaSec className="criteriaSec">
           <Text>
             <Heading>
-            Wondering how we evaluate businesses?{width < 800 ? <br/> : null }
+              Wondering how we evaluate businesses?{width < 800 ? <br /> : null}
             </Heading>
             <Description>
-              Choose an industry below, then the selected criteria will be available to view.
+              Choose an industry below, then the selected criteria will be
+              available to view.
             </Description>
             {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses
@@ -53,53 +81,71 @@ export default function Container() {
             </SubDescription> */}
           </Text>
         </CriteriaSec>
-        <div className='line-border'/>
+        <div className="line-border" />
+        <div className="filter-selections">{industries}</div>
+        <br />
         <div className="description">
           <h1>{criteria.title}</h1>
           <p>{criteria.desc}</p>
         </div>
-        <div className="filter-selections">
-          {industries}
-        </div>
-        <div className="criteria-section">
-          {active}
-        </div>
+
+        <div className="criteria-section">{active}</div>
       </Main>
     </CritContainer>
-  ;
+  );
 }
 
-function Industry ({data, value, setActive, setCriteria, activeTab, setActiveTab}) {
+function Industry({
+  data,
+  value,
+  setActive,
+  setCriteria,
+  activeTab,
+  setActiveTab,
+}) {
   let desc = data.industry_description;
   let criterias = data.criteria_boxes;
 
   useEffect(() => {
     const clickHandler = ({ target }) => {
       const container = document.getElementById(`${value}`);
-      if ((container != null) && container.contains(target)) return;
-    }
+      if (container != null && container.contains(target)) return;
+    };
     document.addEventListener("click", clickHandler);
 
     return () => document.removeEventListener("click", clickHandler);
-  })
+  });
 
   const handleClick = () => {
     let newList = Object.entries(criterias).map(([key, value]) => {
-      return <CriteriaCard title={value.title} desc={value.desc}/>;
+      return <CriteriaCard title={value.title} desc={value.desc} />;
     });
     setActive(newList);
     setActiveTab(value);
-    setCriteria({'title': value, 'desc': desc});
-  }
+    setCriteria({ title: value, desc: desc });
+    console.log(value);
+  };
 
-  return <button id={value} className={"filter-select" + (activeTab === value ? " selected" : "")} onClick={handleClick}>{value}</button>;
+  return (
+    <button
+      id={value}
+      className={"filter-select" + (activeTab === value ? " selected" : "")}
+      onClick={handleClick}
+    >
+      {value}
+    </button>
+  );
 }
 
-function CriteriaCard ({title, desc}) {
+function CriteriaCard({ title, desc }) {
   return (
     <div className="industry-card">
-      <h2 className="industry-title">{title}</h2><br/>
-      <p dangerouslySetInnerHTML={{ __html: desc }} className='industry-criteria'/>
+      <h2 className="industry-title">{title}</h2>
+      <br />
+      <p
+        dangerouslySetInnerHTML={{ __html: desc }}
+        className="industry-criteria"
+      />
     </div>
   );
 }

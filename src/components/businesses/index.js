@@ -73,7 +73,7 @@ function Businesses() {
             areaHolder.push(data.area);
           }
           if (data.badges != null) {
-            data.badges.forEach(badge => {
+            data.badges.forEach((badge) => {
               if (!badgeHolder.includes(badge)) {
                 badgeHolder.push(badge);
               }

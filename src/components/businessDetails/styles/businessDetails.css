@@ -125,7 +125,7 @@ body {
 }
 
 .business-details-buttons > a {
-  flex-grow: 2 !important;
+  flex-grow: 3 !important;
 }
 
 .business-details-buttons a:hover {
@@ -141,11 +141,11 @@ body {
 
 .business-details-social-buttons {
   display: flex;
-  width: 38%;
 }
 
-.business-details-social-buttons a:nth-child(2n) {
-  margin-right: 0 !important;
+.visit-website {
+  background-color: #67923d !important;
+  color: white !important;
 }
 
 .specific-card {
@@ -260,4 +260,12 @@ body {
   .business-details-text {
     width: 100%;
   }
+}
+
+.business-details-images .main-img {
+  border-radius: 30px 30px 0 0;
+}
+
+.business-details-images .temp-img {
+  border-radius: 0 0 30px 30px;
 }
