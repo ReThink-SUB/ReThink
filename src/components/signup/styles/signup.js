@@ -36,7 +36,7 @@ export const Slogan = styled.div`
   }
 
   span {
-    color: #00cc92;
+    color: #67923d;
   }
 
   @media (min-width: 1300px) {
@@ -174,16 +174,16 @@ export const Input = styled.div`
     width: 100%;
     height: 43px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
 
     @media (min-width: 1500px) {
@@ -208,16 +208,16 @@ export const SecondaryInput = styled.div`
     width: 100%;
     height: 43px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
 
     @media (min-width: 1500px) {
@@ -242,16 +242,16 @@ export const HalfInput = styled.div`
     width: 100%;
     height: 43px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 1.3rem;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
 
     @media (min-width: 1500px) {
@@ -290,11 +290,11 @@ export const Select = styled.div`
     width: 40%;
     height: 43px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 15px;
 
@@ -309,9 +309,11 @@ export const Select = styled.div`
     margin-bottom: 2%;
   }
 
-  ${"" /* @media (min-width: 1500px) {
+  ${
+    "" /* @media (min-width: 1500px) {
     margin-bottom: 2%;
-  } */}
+  } */
+  }
 `;
 
 export const Button = styled.button`
@@ -329,7 +331,7 @@ export const Button = styled.button`
   margin: 0 auto;
 
   &:hover {
-    background: #00cc92;
+    background: #67923d;
   }
 
   @media (min-width: 1300px) {
@@ -463,7 +465,7 @@ export const ImageInput = styled.div`
   input:focus + label,
   input.has-focus + label,
   input + label:hover {
-    background-color: #00cc92;
+    background-color: #67923d;
   }
 
   input + label svg {
@@ -508,7 +510,7 @@ export const Progress = styled.progress`
         transparent 66%
       ),
       -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-      -webkit-linear-gradient(left, #00cc92, #00cc92);
+      -webkit-linear-gradient(left, #67923d, #67923d);
 
     border-radius: 10px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
@@ -558,7 +560,7 @@ export const UploadButton = styled.button`
   }
 
   &:hover {
-    background-color: #00cc92;
+    background-color: #67923d;
   }
 
   &:disabled {

@@ -36,7 +36,7 @@ export const Slogan = styled.div`
   }
 
   span {
-    color: #00cc92;
+    color: #67923d;
   }
 
   @media (min-width: 1300px) {
@@ -88,16 +88,16 @@ export const Input = styled.div`
     width: 100%;
     height: 150px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 1rem 1.3rem;
 
     &::placeholder {
-      color: #00cc92;
+      color: #67923d;
     }
 
     @media (min-width: 1300px) {
@@ -132,11 +132,11 @@ export const Select = styled.div`
     width: 40%;
     height: 50px;
     background: #ffffff;
-    border: 2px solid #00cc92;
+    border: 2px solid #67923d;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #00cc92;
+    color: #67923d;
     filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
     padding: 0 15px;
 
@@ -184,7 +184,7 @@ export const Button = styled.div`
     margin: 0 auto;
 
     &:hover {
-      background: #00cc92;
+      background: #67923d;
     }
   }
 

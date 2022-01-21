@@ -146,7 +146,6 @@ export const AboutSec = styled.div`
 
 export const Images = styled.div`
   height: 387px;
-  top: 7%;
   left: 50%;
   position: absolute;
   width: 50%;
@@ -355,8 +354,8 @@ export const SecCircles = styled.div`
   display: none;
 
   img {
-    width: 39px;
-    height: auto;
+    width: 54px;
+    height: 39px;
 
     @media (min-width: 1400px) {
       width: 45px;
@@ -364,12 +363,12 @@ export const SecCircles = styled.div`
   }
   
   @media (min-width: 1300px) {
-    left: 37%;
+    left: 43%;
     display: block;
   }
 
-  @media (min-width: 1440px) {
-    left: 177px;
+  @media (min-width: 1400px) {
+    left: 40%;
   }
 `;
 
@@ -546,16 +545,25 @@ export const SubSec = styled.div`
 `;
 
 export const Cards = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   flex-wrap: wrap;
   width: 100%;
 
-  flex-direction: row;
-  padding: 0 1rem;
-  padding-left: 2rem;
+  align-content: left;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @media (min-width: 800px) {
+    left: unset;
+    align-content: unset;
+
+    padding: 0 1rem;
+    padding-left: 2rem;
+    align-items: center;
+    flex-direction: row;
+  }
 
   @media (min-width: 1050px) {
     padding-left: unset;
@@ -563,65 +571,110 @@ export const Cards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 50%;
-  align-items: left;
+  width: 138px;
+  height: 145px;
+  margin-right: 0.5rem;
+  box-sizing: border-box;
+  flex-basis: 150px;
+  margin-bottom: 5%;
+  
+  display: flex;
+  align-items: center;
   position: relative;
-  padding-bottom: 3rem;
-  margin-right: 0;
-  align-content: left;
-  text-align: left;
-  flex-wrap: wrap;
+  border-radius: 30px;
+  
+  @media (min-width: 800px) {
+    width: 45%;
+    height: unset;
+    margin-right: 0;
+    box-sizing: unset;
+    flex-basis: unset;
+    margin-bottom: unset;
+    display: unset;
+    align-items: left;
+    border-radius: unset;
+
+    padding-left: 5%;
+    padding-bottom: 3rem;
+    margin-right: 0;
+    align-content: left;
+    text-align: left;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 376px) {
+    margin-right: 2%;
+  }
+
+  @media (max-width: 347px) {
+    margin-right: 0.4%;
+    flex-basis: 140px;
+  }
 
   @media (min-width: 1150px) {
     justify-content: center;
     width: 45%
   }
-
   @media (min-width: 1250px) {
     justify-content: center;
     width: 45%;
   }
-
   @media (min-width: 1440px) {
-    width: 50%;
     max-width: 600px;
   }
 `;
 
 export const Frame = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: ${({ background }) => background};
-  width: 160px;
-  height: 172px;
-  padding-top: 1rem;
-  box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
+  box-sizing: border-box;
+  height: 145px;
+  width: 138px;
+  padding: 0.6rem;
+  position: absolute;
+  background: #D4E9D6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 30px;
-  margin: 0 0;
 
   @media (min-width: 800px) {
-    width: 160px;
+    box-sizing: unset;
     height: 172px;
+    width: 160px;
+    padding: unset;
+    position: unset;
+    background: ${({ background }) => background};
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    margin: 0 0;
   }
 
   @media (min-width: 1000px) {
     width: 200px;
     height: 212px
   }
-
   @media (min-width: 1290px) {
     width: 201px;
-    // padding: 2.3rem;
   }
 
   img {
+    align-items: center;
+    display: flex;
     width: 89px;
     height: 89px;
     border-radius: 50%;
     object-fit: cover;
     filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
-    margin-bottom: 0.5rem;
+    margin: 0.3rem 1rem;
+
+    @media (min-width: 800px) {
+      align-items: unset;
+      display: unset;
+      margin: unset;
+
+      margin-bottom: 0.5rem;
+    }
 
     @media (min-width: 1000px) {
       width: 130px;
@@ -636,44 +689,66 @@ export const Frame = styled.div`
   h2 {
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 9px;
+    line-height: 17px;
     text-align: center;
     color: #6a6565;
-    padding-bottom: 0.5rem;
-  }
+    bottom: 10%;
+    margin-bottom: 0.5rem;
+    padding: 0;
 
+    @media (min-width: 800px) {
+      font-size: 14px;
+      line-height: 16px;
+      bottom: unset;
+      margin-bottom: unset;
+      padding-bottom: 0.5rem;
+    }
+  }
   p {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 15px;
+    color: #FFFFFF;
+    font-size: 8px;
+    line-height: 10px;
     text-align: center;
-    color: ${({ color }) => color};
+    padding: 0;
+    position: relative;
+    bottom: 6%;
+
+    @media (min-width: 800px) {
+      color: ${({ color }) => color};
+      font-size: 13px;
+      line-height: 15px;
+      padding: unset;
+      position: unset;
+      bottom: unset;
+
+      font-style: normal;
+      font-weight: bold;
+    }
   }
 `;
 
 export const TextArea = styled.div`
+  @media (max-width: 799px) {
+    display: none;
+  }  
+
   flex-direction: column;
   justify-content: center;
-
-  height: 212px;
+  // height: 212px;
   top: 0;
-  left: 50%;
+  left: 60%;
   position: absolute;
   width: 50%;
-
   text-align: left;
-  padding: 0.25rem 0.5rem;
-  padding-left: 0;
-
+  padding: 1rem 0;
 
   @media (min-width: 1290px) {
-    left: 46%;
+    left: 53%;
   }
 
   @media(min-width: 1400px) {
-    left: 46%;
+    left: 50%;
     width: 229px;
   }
 
@@ -684,32 +759,42 @@ export const TextArea = styled.div`
     line-height: 17px;
     letter-spacing: 0.025em;
     color: #6a6565;
-    width: 90%;
-    height: 80%;
-    padding: 1rem 0;
-    text-align: left;
-    vertical-align: center;
 
-    overflow-y: auto;
-    resize: none;
-
-    @media (min-width: 1400px) {
-      font-size: 12px;
+    @media (min-width: 800px) {
+      width: 90%;
+      height: 80%;
+      padding: 1rem 0;
+      text-align: left;
+      vertical-align: center;
+      overflow-y: auto;
+      resize: none;
     }
   }
-
   div {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 1rem;
-    margin-right: 1rem;
+    margin: 1rem 0;
+    
+    @media (min-width: 800px) {
+      margin: unset;
+
+      margin-top: 1rem;
+      margin-right: 1rem;
+    }
 
     img {
       width: 15px;
-      height: 10%;
-      margin-right: 0.5rem;
+      height: auto;
+      margin: 0 1rem;
       cursor: pointer;
+
+      @media (min-width: 800px) {
+        height: 10%;
+        margin: unset; 
+        
+        margin-right: 0.5rem;
+      }
     }
   }
 `;
