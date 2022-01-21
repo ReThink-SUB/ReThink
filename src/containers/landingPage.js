@@ -7,12 +7,12 @@ export function LandingPageContainer() {
       <LandingPage>
         <LandingPage.LeftSect>
           <LandingPage.SubTitle>
-            Sustainable consumerism made{" "}
+            Sustainability made {" "}
             <em style={{ color: "black" }}>easy.</em>
           </LandingPage.SubTitle>
           <LandingPage.InnerSect>
             <LandingPage.Description>
-              Shop, eat, and dine at climate concious businesses in your area{" "}
+            Discover eco-friendly businesses for your next shopping and dining experience.{" "}
             </LandingPage.Description>
             <LandingPage.MobileCard
               src="BallardMarket.jpg"

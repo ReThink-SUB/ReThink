@@ -18,12 +18,8 @@ export default function Footer() {
 function FooterDesc() {
     return (
         <div className="footer-desc">
-            <h6>Sustainability
-            Upheld in
-            Business</h6>
-            <p>We promote economic lifestyles that
-            support and sustain our planet for future generations. </p>
-            <p className="footer-green">Rethink consumerism.</p>
+            <h6>ReThink UW</h6>
+            <p>ReThinking consumerism one sustainable step at a time.</p>
         </div>
     );
 }

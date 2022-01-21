@@ -3,6 +3,8 @@
   background: #e5e5e5;
   bottom: 0;
   width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .footer-content {
@@ -23,13 +25,12 @@
 }
 
 .footer-desc {
-  margin-top: 3em;
   width: inherit;
 }
 
 .footer-desc h6 {
   font-weight: bold;
-  width: 5em;
+  width: 10em;
 }
 
 .footer-desc p {
