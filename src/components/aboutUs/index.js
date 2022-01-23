@@ -241,11 +241,9 @@ AboutUs.SecTitle = function AboutUsSecTitle({ children, ...restProps }) {
 
 AboutUs.Btn = function AboutUsBtn({ href, children, ...restProps }) {
   return (
-    <Btn>
-      <a href={href} target="_new" {...restProps}>
-        {children}
-      </a>
-    </Btn>
+    <a href={href} target="_new" {...restProps}>
+      <Btn>{children}</Btn>
+    </a>
   );
 };
 
