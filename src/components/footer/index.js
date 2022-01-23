@@ -23,12 +23,12 @@ export default function Footer() {
 }
 
 function FooterDesc() {
-    return (
-        <div className="footer-desc">
-            <h6>ReThink UW</h6>
-            <p>ReThinking consumerism one sustainable step at a time.</p>
-        </div>
-    );
+  return (
+    <div className="footer-desc">
+      <h6>ReThink UW</h6>
+      <p>ReThinking consumerism one sustainable step at a time.</p>
+    </div>
+  );
 }
 
 function FooterSocials() {
@@ -107,8 +107,8 @@ function FooterMenu() {
     <div className="footer-menu">
       <h6>Menu</h6>
       <div className="footer-links">
-        <Link to={ROUTES.ABOUT}>About Us</Link>
-        <Link to={ROUTES.BUSINESSES}>Find Businesses</Link>
+        <Link to={ROUTES.ABOUT}>About us</Link>
+        <Link to={ROUTES.BUSINESSES}>Find businesses</Link>
         <Link to={ROUTES.CRITERIA}>Criteria</Link>
         <Link to={ROUTES.CONTACT}>Contact us</Link>
       </div>

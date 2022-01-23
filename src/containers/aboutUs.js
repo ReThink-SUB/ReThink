@@ -220,12 +220,17 @@ export function AboutUsContainer() {
                   <li>• Marketing</li>
                   <li>• Business Development</li>
                   <li>• Researchers</li>
-                  <li>• Back End Developers</li>
                   <li>• Front End Developers</li>
                 </ul>
               ) : (
-                `Positions Available: Marketing, Business Development, Researchers, Back End Developers, Front End Developers`
+                `Positions Available: Marketing, Business Development, Researchers, Front End Developers`
               )}
+              <br />
+              Reach out to{" "}
+              <a href="mailto:join@rethinkuw.org" className="a-tag-clear">
+                join@rethinkuw.org
+              </a>{" "}
+              with any questions!
             </AboutUs.Description>
           </AboutUs.Text>
           <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app">
@@ -288,6 +293,17 @@ export function AboutUsContainer() {
               </p>
               {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
             </div>
+            {/* <div className="about-card">
+              <div className="club-image">
+                <img src={`/images/net impact.png`} alt="club" />
+              </div>
+              <h3 className="club-name">Net Impact</h3>
+              <p className="club-desc">
+                Foster RSO providing professional experiences to emerging
+                leaders.
+              </p>
+              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
+            {/* </div> */}
           </div>
         </AboutUs.OtherClubsSec>
         <AboutUs.LocalOrgsSec className="local-sec">
