@@ -21,6 +21,8 @@ export function AboutUsContainer() {
   }
 
   const [profiles, setProfiles] = useState([]);
+  const [clubs, setClubs] = useState([]);
+  const [organizations, setOrgs] = useState([]);
   const [width, setWidth] = useState(windowWidth);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export function AboutUsContainer() {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.data());
+          // console.log(doc.data());
           if (
             doc.data().isAlum.includes("n") ||
             doc.data().isAlum.includes("N")
@@ -70,7 +72,40 @@ export function AboutUsContainer() {
           }
         });
         setProfiles(profilesHolder);
-      });
+    });
+
+    let clubsHolder = [];
+    db.collection("otherClubs")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.data());
+          clubsHolder.push(
+            <OtherClubs
+              data={doc.data()}
+            />
+          );
+        });
+        setClubs(clubsHolder);
+    });
+
+    let orgHolder = [];
+    db.collection("otherOrganizations")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.data());
+          orgHolder.push(
+            <AboutUs.Organization
+              src={doc.data().img}
+              name={doc.data().name}
+            />
+          );
+        });
+        setOrgs(orgHolder);
+    });
 
     Dimensions.addEventListener("change", (window) => {
       setWidth(window["window"]["width"]);
@@ -248,46 +283,7 @@ export function AboutUsContainer() {
             </AboutUs.Title>
           </AboutUs.Text>
           <div className="about-cards">
-            <div className="about-card">
-              <div className="club-image">
-                <img src={`/images/seed.png`} alt="club" />
-              </div>
-              <h3 className="club-name">SEED</h3>
-              <p className="club-desc">
-                Sustainability club for students living in residence halls.
-              </p>
-              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
-            </div>
-            <div className="about-card">
-              <div className="club-image">
-                <img src={`/images/Farm.png`} alt="club" />
-              </div>
-              <h3 className="club-name">UW Farm</h3>
-              <p className="club-desc">
-                Opportunities for hands-on agricultural learning at UW.
-              </p>
-              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
-            </div>
-            <div className="about-card">
-              <div className="club-image">
-                <img src={`/images/EcoReps.png`} alt="club" />
-              </div>
-              <h3 className="club-name">UW EcoReps</h3>
-              <p className="club-desc">
-                Sustainability club for students living in residence halls.
-              </p>
-              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
-            </div>
-            <div className="about-card">
-              <div className="club-image">
-                <img src={`/images/Solar.png`} alt="club" />
-              </div>
-              <h3 className="club-name">UW Solar</h3>
-              <p className="club-desc">
-                Students working to increase and promote solar power at UW.
-              </p>
-              {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
-            </div>
+            {clubs}
           </div>
         </AboutUs.OtherClubsSec>
         <AboutUs.LocalOrgsSec className="local-sec">
@@ -298,15 +294,7 @@ export function AboutUsContainer() {
             </AboutUs.Description>
           </AboutUs.Text>
           <AboutUs.Organizations className="organizations">
-            <AboutUs.Organization src="Sustainable">
-              Sustainable Seattle
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Interweave">
-              INTERWEAVE
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Earthshare">
-              EarthShare Washington
-            </AboutUs.Organization>
+            {organizations}
           </AboutUs.Organizations>
         </AboutUs.LocalOrgsSec>
       </AboutUs.Main>
@@ -335,5 +323,30 @@ function ProfileCard(props) {
         {data.bio}
       </AboutUs.TextArea>
     </AboutUs.Card>
+  );
+}
+
+function OtherClubs(props) {
+  let data = props.data;
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/clubs/${data.img}.png`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    });
+  });
+
+  return (
+    <div className="about-card">
+      <div className="club-image">
+        <img src={imgURL} alt="club" />
+      </div>
+      <h3 className="club-name">{data.name}</h3>
+      <p className="club-desc">
+        {data.desc}
+      </p>
+      {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
+    </div>
   );
 }
