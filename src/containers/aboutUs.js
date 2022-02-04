@@ -22,6 +22,7 @@ export function AboutUsContainer() {
 
   const [profiles, setProfiles] = useState([]);
   const [clubs, setClubs] = useState([]);
+  const [organizations, setOrgs] = useState([]);
   const [width, setWidth] = useState(windowWidth);
 
   useEffect(() => {
@@ -71,7 +72,7 @@ export function AboutUsContainer() {
           }
         });
         setProfiles(profilesHolder);
-      });
+    });
 
     let clubsHolder = [];
     db.collection("otherClubs")
@@ -87,8 +88,24 @@ export function AboutUsContainer() {
           );
         });
         setClubs(clubsHolder);
-        console.log(clubsHolder);
-      });
+    });
+
+    let orgHolder = [];
+    db.collection("otherOrganizations")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.data());
+          orgHolder.push(
+            <AboutUs.Organization
+              src={doc.data().img}
+              name={doc.data().name}
+            />
+          );
+        });
+        setOrgs(orgHolder);
+    });
 
     Dimensions.addEventListener("change", (window) => {
       setWidth(window["window"]["width"]);
@@ -277,15 +294,7 @@ export function AboutUsContainer() {
             </AboutUs.Description>
           </AboutUs.Text>
           <AboutUs.Organizations className="organizations">
-            <AboutUs.Organization src="Sustainable">
-              Sustainable Seattle
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Interweave">
-              INTERWEAVE
-            </AboutUs.Organization>
-            <AboutUs.Organization src="Earthshare">
-              EarthShare Washington
-            </AboutUs.Organization>
+            {organizations}
           </AboutUs.Organizations>
         </AboutUs.LocalOrgsSec>
       </AboutUs.Main>
@@ -319,7 +328,6 @@ function ProfileCard(props) {
 
 function OtherClubs(props) {
   let data = props.data;
-  console.log(data);
   const [imgURL, setURL] = useState([]);
 
   useEffect(() => {
