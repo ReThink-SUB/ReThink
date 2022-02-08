@@ -1,9 +1,10 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import * as ROUTES from "./constants/routes";
 import { db } from "./firebase";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 import { Loading, ScrollToTop } from "./components";
 import { BusinessContext } from "./context/business";
+import usePageTracking from "./googleanalytics";
 
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
@@ -39,6 +40,7 @@ export default function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [image, setImage] = useState(null);
+ 
 
   // fetch profiles json
   // const [data, setData] = useState([]);
@@ -51,6 +53,8 @@ export default function App() {
   //       setData(data);
   //     });
   // }, []);
+
+  usePageTracking();
 
   useEffect(() => {
     db.collection("businesses")
@@ -110,7 +114,7 @@ export default function App() {
           setImage,
         }}
       >
-        <Router>
+        
           <Switch>
             <Suspense
               fallback={
@@ -163,10 +167,10 @@ export default function App() {
               <Route path={ROUTES.ABOUT} component={About} />
             </Suspense>
           </Switch>
-        </Router>
         <ScrollToTop />
       </BusinessContext.Provider>
       <ScrollToTop />
+      
     </>
   );
 }
