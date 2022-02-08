@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 const usePageTracking = () => {
     const location = useLocation();
     const [initialized, setInitialized] = useState(false);
-    const TRACKING_ID = process.env.GOOGLE_ANALYTICS_TRACKING_ID;
+    const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID;
 
     useEffect(() => {
         ReactGA.initialize(TRACKING_ID);    
