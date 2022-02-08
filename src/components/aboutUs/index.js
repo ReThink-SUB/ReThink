@@ -315,13 +315,23 @@ AboutUs.Organizations = function AboutUsOrganizations({
 
 AboutUs.Organization = function AboutUsOrganization({
   src,
+  name,
   children,
   ...restProps
 }) {
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/organizations/${src}.png`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    });
+  });
+  
   return (
     <Organization {...restProps}>
-      <img src={`/images/${src}.png`} alt="Organization" />
-      <h3>{children}</h3>
+      <img src={imgURL} alt="Organization" />
+      <h3>{name}</h3>
     </Organization>
   );
 };
