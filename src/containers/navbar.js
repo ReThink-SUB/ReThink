@@ -29,9 +29,9 @@ export function NavbarContainer() {
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.CONTACT}>
             Contact Us
           </Burger.Link>
-          {/* <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
-            Sign Up
-          </Burger.Link> */}
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP} className="promote">
+          <span style={{color: "#67923D"}}>Promote Business</span>
+          </Burger.Link>
         </Burger.Links>
         <Burger.Socials>
           <a href="https://www.facebook.com/ReThinkUW/" target="_blank">
@@ -45,12 +45,12 @@ export function NavbarContainer() {
           </a>
         </Burger.Socials>
       </Burger.Menu>
-      <Navbar.Links>
+      <Navbar.Links className="links">
         <Navbar.Link to={ROUTES.BUSINESSES}>Find Businesses</Navbar.Link>
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
-        {/* <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button> */}
+        <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button>
       </Navbar.Links>
     </Navbar>
   );
