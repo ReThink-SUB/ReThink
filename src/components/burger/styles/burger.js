@@ -109,6 +109,10 @@ export const Link = styled.a`
     letter-spacing: 0.6px;
   }
 
+  span {
+    color: #67923d;
+  }
+
   img {
     width: 30px;
     height: auto;

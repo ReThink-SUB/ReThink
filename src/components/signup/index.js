@@ -4,6 +4,8 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import {
   Container,
   Slogan,
+  BenefitSec,
+  SecCircles,
   Description,
   SecondaryDescription,
   Inputs,
@@ -34,6 +36,21 @@ SignUp.Slogan = function SignUpSlogan({ children, ...restProps }) {
     <Slogan {...restProps}>
       <h2>{children}</h2>
     </Slogan>
+  );
+};
+
+SignUp.BenefitSec = function SignUpBenefitSec({
+  children,
+  ...restProps
+}) {
+  return <BenefitSec {...restProps}>{children}</BenefitSec>;
+};
+
+SignUp.SecCircles = function SignUpSecCircles({ children, ...restProps }) {
+  return (
+    <SecCircles {...restProps}>
+      <img src="/images/CirclePattern.png" alt="SecCircles" />
+    </SecCircles>
   );
 };
 

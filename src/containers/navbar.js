@@ -30,7 +30,9 @@ export function NavbarContainer() {
             Contact Us
           </Burger.Link>
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP} className="promote">
-          <span style={{color: "#67923D"}}>Promote Business</span>
+            <span>
+            Promote Business
+            </span>
           </Burger.Link>
         </Burger.Links>
         <Burger.Socials>

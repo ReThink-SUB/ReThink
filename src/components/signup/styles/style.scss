@@ -282,27 +282,34 @@ a {
     margin-bottom: 5rem;
 }
 
-.about-cards {
+.benefit-cards {
     display: flex;
     align-items: left;
-    margin: 1rem 0;
+    // margin: 1rem 0;
     width: 100%;
+    // height: auto;
     
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-padding: 0 50%;
     scroll-snap-type: x mandatory;
-    max-width: 1440px;
+    max-width: 1040px;
 
     @media (min-width: 800px) {
-        width: 90%;
+        // width: 90%;
     }
 
-    @media (min-width: 1500px) {
-        margin-left: 0;
+    @media (min-width: 1300px) {
+        margin-left: 10%;
     }
-    .about-card {
-        width: 226px;
-        height: 295px;
+
+    @media (min-width: 1300px) {
+        margin-left: 15%;
+        max-width: unset;
+    }
+    .benefit-card {
+        width: 146px;
+        height: 181px;
         background: #ffffff;
         box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
         border-radius: 30px;
@@ -310,38 +317,62 @@ a {
         flex-direction: column;
         align-items: center;
         margin: 1rem;
+        flex: 0 0 auto;
         
-        // scroll-snap-align: start;
+        scroll-snap-align: start;
+        @media (min-width: 900px) {
+            width: 310px;
+            height: 385px;
+            margin: unset;
+        }
 
-        .club-image {
+        .benefit-image {
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
+            margin-top: 1rem;
+            @media (min-width: 900px) {
+                margin-top: 3rem;
+            }
 
             img {
-                height: 100%;
+                padding: 0.5rem;
+                width: 4rem;
+                height: auto;
                 object-fit: cover;
+                @media (min-width: 900px) {
+                    width: 40%;
+                    padding: unset;
+                }
             }
         }
-        .club-name {
+        .benefit-title {
             font-style: normal;
-            font-weight: 600;
-            font-size: 15px;
-            line-height: 18px;
-            color: #1f2421;
+            font-weight: bold;
+            font-size: 10px;
+            line-height: 113.84%;
+            color: #3F3D56;
             opacity: 0.75;
             margin: 0.5rem 0;
-            margin-top: 1rem;
+            @media (min-width: 900px) {
+                font-size: 18px;
+                margin: 1.5rem 0;
+            }
         }
-        .club-desc {
+        .benefit-desc {
             font-style: normal;
             font-weight: normal;
-            font-size: 9px;
-            line-height: 11px;
-            color: #000000;
+            font-size: 10px;
+            line-height: 113.84%;
+            color: #3F3D56;
             opacity: 0.75;
             text-align: center;
             width: 85%;
             margin-bottom: 0.5rem;
+            @media (min-width: 900px) {
+                font-size: 16px;
+                line-height: 18.21px;
+                margin: 1.5rem 0;
+            }
         }
     }
 }

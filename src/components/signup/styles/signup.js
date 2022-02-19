@@ -20,32 +20,28 @@ export const Container = styled.div`
 `;
 
 export const Slogan = styled.div`
-  width: 100%;
+  width: 80%;
   margin-bottom: 2%;
   display: flex;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  // margin-bottom: 2.5rem;
+  margin: auto;
 
   h2 {
-    width: 80%;
+    width: 100%;
     font-weight: 600;
-    font-size: 37px;
-    color: #3e3b3b;
-    line-height: 43px;
-    text-align: center;
-  }
-
-  span {
-    color: #67923d;
+    font-size: 32px;
+    color: #3F3D56;
+    line-height: 38px;
   }
 
   @media (min-width: 1300px) {
     justify-content: start;
     margin-bottom: 3rem;
+    width: 75%;
 
     h2 {
-      width: 35%;
-      font-size: 45px;
+      font-size: 48px;
       line-height: 50px;
       text-align: left;
     }
@@ -54,6 +50,73 @@ export const Slogan = styled.div`
   @media (min-width: 1300px) {
     margin-bottom: 2.5rem;
   }
+`;
+
+export const BenefitSec = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+  position: relative;
+  // left: calc(-50vw + 50%);
+  text-align: center;
+  align-items: center;
+
+  margin: auto;
+  // top-margin: 1rem;
+  // margin-bottom: 2.5rem;
+
+  // padding-left: 1.6rem;
+  // padding-bottom: 3.5rem;
+
+  @media (min-width: 800px) {
+    text-align: center;
+    align-items: center;
+    padding-left: unset;
+    padding-bottom: 3rem;
+
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1300px) {
+    // left: 2rem;
+    margin: 0 2rem;
+  }
+`;
+export const SecCircles = styled.div`
+  position: relative;
+  top: 5%;
+  right: 16%;
+  display: flex;
+  width: 44px;
+    height: 34px;
+
+  @media (min-width: 500px) {
+    right: 10%;
+  }
+
+  @media (min-width: 800px) {
+    right: 7%;
+
+
+  img {
+    width: 44px;
+    height: 34px;
+
+    @media (min-width: 900px) {
+      width: 66px;
+      height: 51px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    top: 10%;
+    right: 3%;
+  }
+
+  // @media (min-width: 1400px) {
+  //   left: 40%;
+  // }
 `;
 
 export const Description = styled.p`

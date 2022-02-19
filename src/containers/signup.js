@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 import { Alert } from "@material-ui/lab";
-import { storage } from "../firebase";
+import { db, storage } from "../firebase";
+import "../components/signup/styles/style.scss";
 
 export function SignUpContainer() {
   const {
@@ -35,11 +36,28 @@ export function SignUpContainer() {
     setProgress,
   } = useContext(BusinessContext);
 
+  const [benefits, setBenefits] = useState([]);
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       console.log("timeout for 5 sec");
       setSubmit(false);
     }, 5000);
+
+    let benefitsHolder = [];
+    db.collection("benefits")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          benefitsHolder.push(
+            <Benefit
+              data={doc.data()}
+            />
+          );
+        });
+        console.log(benefitsHolder);
+        setBenefits(benefitsHolder);
+    });
 
     return () => clearTimeout(timeout);
   }, [submit]);
@@ -91,9 +109,13 @@ export function SignUpContainer() {
           </Alert>
         )}
         <SignUp.Slogan>
-          Sign up <br />
-          <span>with us, you'll like it here</span>
+          Here's why you should join!
         </SignUp.Slogan>
+        <SignUp.BenefitSec className="benefit-section">
+          <div className="benefit-cards">
+            {benefits}
+          </div>
+        </SignUp.BenefitSec>
         <SignUp.Description>
           Start by entering details about your business
         </SignUp.Description>
@@ -173,6 +195,34 @@ export function SignUpContainer() {
         <SignUp.TallPlant />
         <SignUp.WebLady />
       </SignUp>
+    </>
+  );
+}
+
+function Benefit(props) {
+  let data = props.data;
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/${data.img}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    });
+  });
+
+  return (
+    <>
+    <div className="benefit-card">
+      <div className="benefit-image">
+        <img src={imgURL} alt="club" />
+      </div>
+      <h3 className="benefit-title">{data.title}</h3>
+      <p className="benefit-desc">
+        {data.desc}
+      </p>
+      {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
+    </div>
+    <SignUp.SecCircles />
     </>
   );
 }
