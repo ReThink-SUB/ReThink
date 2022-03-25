@@ -1,0 +1,33 @@
+.complete-status {
+    width: 32%;
+    height: 4px;
+    left: calc(50% - 244.67px/2);
+    top: 0px;
+
+    background: #67923D;
+    border-radius: 100px;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 20px;
+}
+
+.incomplete-status {
+    width: 32%;
+    height: 4px;
+    left: calc(50% - 244.67px/2);
+    top: 0px;
+
+    /* Gray / 200 */
+
+    background: #C1C9D2;
+    border-radius: 100px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 20px;
+}

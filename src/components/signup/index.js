@@ -1,11 +1,14 @@
 import React from "react";
+import { useState } from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
-
+import "./styles/style.scss";
 import {
   Container,
+  Main,
   Slogan,
   BenefitSec,
   SecCircles,
+  FormCircles,
   Description,
   SecondaryDescription,
   Inputs,
@@ -15,13 +18,17 @@ import {
   InputsAndButton,
   HalfInputs,
   HalfInput,
+  ThirdInput,
   LeafDots,
   Select,
   Button,
+  NavigationSec,
+  Progress,
+  Completed,
+  Incompleted,
   TallPlant,
   WebLady,
   ImageInput,
-  Progress,
   UploadButton,
   UploadContainer,
   BusinessImg,
@@ -30,6 +37,10 @@ import {
 export default function SignUp({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+SignUp.Main = function SignUpMain({ children, ...restProps }) {
+  return <Main {...restProps}>{children}</Main>;
+};
 
 SignUp.Slogan = function SignUpSlogan({ children, ...restProps }) {
   return (
@@ -51,6 +62,18 @@ SignUp.SecCircles = function SignUpSecCircles({ children, ...restProps }) {
     <SecCircles {...restProps}>
       <img src="/images/CirclePattern.png" alt="SecCircles" />
     </SecCircles>
+  );
+};
+
+SignUp.FormCircles = function SignUpFormCircles({
+  bottom,
+  right,
+  children,
+  ...restProps }) {
+  return (
+    <FormCircles bottom={bottom} right={right} {...restProps}>
+      <img src="/images/CirclePattern.png" alt="SecCircles" />
+    </FormCircles>
   );
 };
 
@@ -96,17 +119,45 @@ SignUp.SecondaryInputs = function SignUpSecondaryInputs({
 SignUp.Input = function SignUpInput({
   setValue,
   value,
-  placeholder,
+  type,
+  label,
   children,
   ...restProps
 }) {
+  // const [inputType, setInputType] = useState("");
+  
+  const setInputs = () => {
+    if (type === "tel") {
+      return (
+        <input
+          onChange={(event) => setValue(event.target.value)}
+          value={value} type={type} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        ></input>
+      );
+    } else if (type === "preffered") {
+      let defaultSel = <option selected hidden value="">Select</option>;
+
+      return (
+        <select onChange={(event) => setValue(event.target.value)} value={value} defaultValue={defaultSel} required>
+          {defaultSel}
+          <option value="email">Email</option>
+          <option value="phone">Phone Number</option>
+        </select>
+      )
+    } else {
+      return (
+        <input
+          onChange={(event) => setValue(event.target.value)}
+          value={value}
+        ></input>
+      )
+    }
+  }
+  
   return (
-    <Input {...restProps}>
-      <input
-        onChange={(event) => setValue(event.target.value)}
-        value={value}
-        placeholder={placeholder}
-      ></input>
+    <Input {...restProps} className="input">
+      <label>{label}</label><br/><br/>
+      {setInputs()}
     </Input>
   );
 };
@@ -132,18 +183,36 @@ SignUp.SecondaryInput = function SignUpSecondaryInput({
 SignUp.HalfInput = function SignUpHalfInput({
   setValue,
   value,
-  placeholder,
+  label,
   children,
   ...restProps
 }) {
   return (
-    <HalfInput {...restProps}>
+    <HalfInput {...restProps} className="half-input">
+      <label>{label}</label>
       <input
         onChange={(event) => setValue(event.target.value)}
         value={value}
-        placeholder={placeholder}
       ></input>
     </HalfInput>
+  );
+};
+
+SignUp.ThirdInput = function SignUpThirdInput({
+  setValue,
+  value,
+  label,
+  children,
+  ...restProps
+}) {
+  return (
+    <ThirdInput {...restProps} className="third-input">
+      <label>{label}</label>
+      <input
+        onChange={(event) => setValue(event.target.value)}
+        value={value}
+      ></input>
+    </ThirdInput>
   );
 };
 
@@ -176,8 +245,54 @@ SignUp.Select = function SignUpSelect({
 SignUp.Button = function SignUpButton({ to, children, ...restProps }) {
   return (
     <ReactRouterLink to={to}>
-      <Button {...restProps}>{children}</Button>;
+      <Button {...restProps}>{children}</Button>
     </ReactRouterLink>
+  );
+};
+
+SignUp.NavigationSec = function SignUpNavigationSec({ placeholder, children, ...restProps }) {
+  return <NavigationSec {...restProps}>{children}</NavigationSec>;
+};
+
+SignUp.Progress = function SignUpProgress({
+  placeholder,
+  children,
+  ...restProps
+}) {
+  return <Progress {...restProps}>{children}</Progress>;
+};
+
+SignUp.Completed = function SignUpCompleted({
+  setValue,
+  value,
+  type,
+  label,
+  children,
+  ...restProps
+}) {
+  return (
+    <>
+    <Completed {...restProps} className="completed">
+      <input type="radio" checked disabled/>
+      <label>{label}</label>
+    </Completed>
+    </>
+  );
+};
+
+SignUp.Incompleted = function SignUpIncompleted({
+  setValue,
+  value,
+  type,
+  label,
+  children,
+  ...restProps
+}) {
+  return (
+    <Incompleted {...restProps} className="incompleted">
+      <input type="radio" disabled/>
+      <label>{label}</label>
+    </Incompleted>
   );
 };
 
@@ -230,14 +345,6 @@ SignUp.ImageInput = function SignUpImageInput({
       <label for="file-1">{children}</label>
     </ImageInput>
   );
-};
-
-SignUp.Progress = function SignUpProgress({
-  progress,
-  children,
-  ...restProps
-}) {
-  return <Progress value={progress} max="100" {...restProps} />;
 };
 
 SignUp.UploadButton = function SignUpUploadButton({
