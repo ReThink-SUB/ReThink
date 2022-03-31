@@ -3,7 +3,7 @@ import { Dimensions } from "react-native";
 import { SignUp2 } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
-import "../components/signup2/styles/style.scss";
+import "../components/signup/styles/style.scss";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -54,9 +54,9 @@ export function SignUp2Container() {
           </SignUp2.InputsAndButton>
           <SignUp2.NavigationSec className="navSec">
             <SignUp2.Progress className="progressSec">
-              <div className="complete-status" />
-              <div className="complete-status" />
-              <div className="incomplete-status" />
+              <div className="complete-status second" />
+              <div className="complete-status second" />
+              <div className="incomplete-status second" />
               <SignUp2.Completed
                 label="Sign up"
                 align={width < 900}

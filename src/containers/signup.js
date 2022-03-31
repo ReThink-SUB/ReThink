@@ -219,6 +219,18 @@ export function SignUpContainer() {
               label="Name of business"
             />
             {getAddressInputs(width)}
+            <SignUp.HalfInputs>
+              <SignUp.HalfInput
+                setValue={setFirst}
+                value={first}
+                label="First Name"
+              />
+              <SignUp.HalfInput
+                setValue={setLast}
+                value={last}
+                label="Last Name"
+              />
+            </SignUp.HalfInputs>
             <SignUp.Input
               setValue={setEmail}
               value={email}

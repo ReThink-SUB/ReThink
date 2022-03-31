@@ -74,7 +74,7 @@ SignUp2.Select = function SignUp2Select({
   return (
     <Select {...restProps}>
       <select onChange={(event) => setValue(event.target.value)} value={value}>
-        <option value="">Select:</option>
+        <option selected hidden value="">Select</option>
         <option value="Retailer">Retailer</option>
         <option value="Food Services">Food Service</option>
       </select>
@@ -104,7 +104,7 @@ SignUp2.NextButton = function SignUp2NextButton({ to, children, ...restProps }) 
   return (
     <NextButton {...restProps}>
       <ReactRouterLink to={to}>
-        <button>{children}</button>;
+        <button>{children}</button>
       </ReactRouterLink>
     </NextButton>
   );

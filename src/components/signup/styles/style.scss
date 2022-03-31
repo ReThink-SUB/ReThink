@@ -104,33 +104,6 @@ a {
     }
 }
 
-.form-circles {
-    left: 50%;
-    // top: 2rem;
-    position: absolute;
-    top: 50%;
-    right: 9%;
-    display: flex;
-    width: 44px;
-    height: 34px;
-    
-    img {
-        display: none;
-        width: 44px;
-        height: 34px;
-
-        @media (min-width: 800px) {
-            display: block;
-        }
-    
-        @media (min-width: 1200px) {
-            display: block;
-            width: 66px;
-            height: 51px;
-        }
-      }
-}
-
 .complete-status {
     width: 32%;
     height: 4px;
@@ -163,4 +136,9 @@ a {
     align-self: stretch;
     flex-grow: 0;
     margin: 4px 0px;
+}
+
+.second {
+    margin: unset;
+    margin-bottom: 20px;
 }

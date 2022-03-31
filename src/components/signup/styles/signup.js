@@ -22,13 +22,14 @@ export const Main = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 
   margin: 0;
   // overflow-x: hidden;
 
   @media (min-width: 800px) {
     padding: 0 3rem;
+    padding-top: 2rem;
   }
 
   @media (min-width: 1050px) {
@@ -81,7 +82,7 @@ export const BenefitSec = styled.div`
 
   margin: 0;
   top-margin: 1rem;
-  margin-bottom: 2.5rem;
+  // margin-bottom: 2.5rem;
 
   padding-left: 1.6rem;
   // padding-bottom: 3.5rem;
@@ -413,7 +414,7 @@ export const HalfInput = styled.div`
     border-radius: 10px;
     outline: none;
     font-size: 16px;
-    color: #ECECEC;
+    color: #585858;
     padding: 0 1.3rem;
 
     @media (min-width: 1500px) {
@@ -531,7 +532,9 @@ export const Button = styled.button`
   margin: 0 auto;
 
   &:hover {
-    background: #67923d;
+    background: unset;
+    color: #67923D;
+    border: 1px solid #67923D
   }
 
   @media (min-width: 800px) {

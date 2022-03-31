@@ -23,7 +23,7 @@ export const Main = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 
   margin: 0;
   // overflow-x: hidden;
@@ -46,12 +46,12 @@ export const Slogan = styled.div`
   margin-bottom: 1.5rem;
 
   h2 {
-    width: 80%;
+    width: 100%;
     font-weight: 600;
-    font-size: 37px;
+    font-size: 32px;
     color: #3e3b3b;
     line-height: 43px;
-    text-align: center;
+    text-align: left;
   }
 
   span {
@@ -100,27 +100,31 @@ export const Description = styled.p`
   font-weight: 400;
   font-size: 18px;
   color: #1f2421;
+  margin: 0 auto;
   margin-bottom: 8%;
   line-height: 20.49px;
-  text-align: center;
+  text-align: left;
 
   @media (min-width: 500px) {
+    width: 80%
     margin-bottom: 1.5%;
   }
   
   @media (min-width: 800px) {
+    margin: 0 auto;
     margin-bottom: 1.5%;
     text-align: left;
     line-height: 28px;
+    max-width: 702px;
   }
 
   @media (min-width: 1200px) {
-    width: 90%;
+    // width: 90%;
     font-size: 20px;
   }
 
   @media (min-width: 1300px) {
-    width: 65%;
+    // width: 65%;
   }
 `;
 
@@ -169,7 +173,9 @@ export const Input = styled.div`
 export const Select = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
   justify-content: center;
+  margin: 0 auto;
   margin-bottom: 10%;
 
   select {
@@ -185,18 +191,13 @@ export const Select = styled.div`
     color: #828282;
     padding: 0 15px;
 
-    @media (min-width: 1500px) {
-      height: 43px;
-    }
-
     @media (min-width: 500px) {
       // width: 75%;
     }
   }
 
   @media (min-width: 1300px) {
-    justify-content: start;
-    width: 75%;
+    width: 85%;
     margin-bottom: 5%;
   }
 
@@ -205,7 +206,7 @@ export const Select = styled.div`
   }
 
   @media (min-width: 1400px) {
-    width: 65%;
+    // width: 65%;
   }
 `;
 
@@ -217,6 +218,7 @@ export const NavigationSec = styled.div`
   align-items: center;
   z-index: 1;
   padding: 0 1rem;
+  margin: 0 auto;
   margin-top: 2rem;
 
   @media (min-width: 500px) {
@@ -228,8 +230,8 @@ export const NavigationSec = styled.div`
   }
 
   @media (min-width: 1300px) {
-    max-width: 80%;
-    margin-left: 10%;
+    max-width: 710px;
+    // margin-left: 10%;
   }
 `;
 
@@ -375,7 +377,8 @@ export const InputsAndButton = styled.div`
   align-items: center;
   flex-wrap: wrap;
   z-index: 1;
-  margin-bottom: 3rem;
+  margin: 0 auto;
+  margin-bottom: 1.3rem;
 
   // @media (min-width: 675px) {
   //   margin-bottom: 0%;
@@ -386,9 +389,9 @@ export const InputsAndButton = styled.div`
   //   margin-left: 80%;
   // }
 
-  // @media (min-width: 1299px) {
-  //   align-items: center;
-  // }
+  @media (min-width: 1000px) {
+    max-width: 710px;
+  }
 `;
 
 export const BackButton = styled.div`
@@ -415,7 +418,8 @@ export const BackButton = styled.div`
     line-height: 22px;
     
     &:hover {
-      background: #67923d;
+      background: #C4C4C4;
+      color: #FFFFFF;
     }
 
     @media (min-width: 800px) {
@@ -450,7 +454,9 @@ export const NextButton = styled.div`
     line-height: 22px;
     
     &:hover {
-      background: #67923d;
+      background: unset;
+      color: #67923D;
+      border: 1px solid #67923D;
     }
 
     @media (min-width: 800px) {
