@@ -22,10 +22,8 @@ export const Main = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  // padding-top: 2rem;
 
   margin: 0;
-  // overflow-x: hidden;
 
   @media (min-width: 800px) {
     padding: 0 3rem;
@@ -82,10 +80,8 @@ export const BenefitSec = styled.div`
 
   margin: 0;
   top-margin: 1rem;
-  // margin-bottom: 2.5rem;
 
   padding-left: 1.6rem;
-  // padding-bottom: 3.5rem;
 
   @media (min-width: 800px) {
     text-align: center;
@@ -135,15 +131,6 @@ export const SecCircles = styled.div`
       height: 51px;
     }
   }
-
-  // @media (min-width: 1400px) {
-  //   top: 10%;
-  //   right: 3%;
-  // }
-
-  // @media (min-width: 1400px) {
-  //   left: 40%;
-  // }
 `;
 
 export const FormCircles = styled.div`
@@ -319,7 +306,6 @@ export const Input = styled.div`
     border: none;
     font-size: 16px;
     padding: 0 1.3rem;
-    // color: #ECECEC91;
 
     @media (min-width: 1500px) {
       height: 43px;
@@ -649,7 +635,6 @@ export const Incompleted = styled.div`
     border-radius: 50%;
     background-clip: content-box;
     padding: 3px;
-    // border-color: #67923D;
   }
 
   label {

@@ -19,7 +19,6 @@ a {
     overflow-x: auto;
     scroll-padding: 0 50%;
     scroll-snap-type: x mandatory;
-    // max-width: 1040px;
     padding-left: 0.7rem;
 
     @media (min-width: 800px) {
@@ -45,8 +44,6 @@ a {
         align-items: center;
         margin: 1rem 0;
         flex: 0 0 auto;
-        
-        // scroll-snap-align: start;
         @media (min-width: 1200px) {
             width: 310px;
             height: 385px;
@@ -123,14 +120,8 @@ a {
     height: 4px;
     left: calc(50% - 244.67px/2);
     top: 0px;
-
-    /* Gray / 200 */
-
     background: #C1C9D2;
     border-radius: 100px;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     align-self: stretch;
@@ -141,4 +132,69 @@ a {
 .second {
     margin: unset;
     margin-bottom: 20px;
+}
+
+.checkmark-finished {
+    margin: 2rem auto;
+
+    @media (min-width: 800px) {
+        margin: 3rem auto;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        @media (min-width: 800px) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+.bullet-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 2;
+    margin: 0 auto;
+
+    @media (min-width: 800px) {
+        width: 85%;
+        margin: 2rem auto;
+    }
+}
+
+.bullet {
+    width: 10%;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    .circle {
+        width: 9px;
+        height: 9px;
+        background: #FFFFFF;
+        left: 60%;
+        position: relative;
+        border: 1px solid #ADADAF;
+        border-radius: 50%;
+    
+        &.completed {
+            background: #96B479;
+        }
+    }    
+}
+
+.step-line {
+    height: 90px;
+    border: 1px solid #DADADA;
+    position: absolute;
+    top: 15%;
+    left: 10.5%;
+    z-index: 1;
+
+    @media (min-width: 800px) {
+        width: 128px;
+    }
 }

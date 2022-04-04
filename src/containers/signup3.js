@@ -76,7 +76,7 @@ export function SignUp3Container() {
   };
 
   const submitValues = () => {
-    db.collection("businesses").add({
+    db.collection("promoteBusinesses").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
       address: addressOne,
       address2: addressTwo,
@@ -120,7 +120,7 @@ export function SignUp3Container() {
     setContact("");
     setSubmit(true);
     setImageUrl("");
-    setProgress(0);
+    setProgress(4);
     setImage(null);
   };
 
@@ -158,7 +158,7 @@ export function SignUp3Container() {
           </SignUp3.Rectangle>
           <SignUp3.InputsAndButton className="inputs-n-buttons">
             <SignUp3.BackButton to={ROUTES.SIGNUP2} className="back-button">Back</SignUp3.BackButton>
-            <SignUp3.NextButton onClick={() => submitValues()} to={ROUTES.SIGNUP} className="submit-button">Submit</SignUp3.NextButton>
+            <SignUp3.NextButton onClick={() => submitValues()} to={ROUTES.SIGNUP4} className="submit-button">Submit</SignUp3.NextButton>
           </SignUp3.InputsAndButton>
           <SignUp3.NavigationSec className="nav-section">
             <SignUp3.Progress className="progress-section">

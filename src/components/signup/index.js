@@ -124,7 +124,6 @@ SignUp.Input = function SignUpInput({
   children,
   ...restProps
 }) {
-  // const [inputType, setInputType] = useState("");
   
   const setInputs = () => {
     if (type === "tel") {
