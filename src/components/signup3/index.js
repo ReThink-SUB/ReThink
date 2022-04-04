@@ -3,10 +3,17 @@ import { Link as ReactRouterLink } from "react-router-dom";
 
 import {
   Container,
+  Main,
   Slogan,
   Description,
   Label,
   Button,
+  InputsAndButton,
+  BackButton,
+  NextButton,
+  NavigationSec,
+  Progress,
+  Completed,
   DarkTallPlant,
   TallPlant,
   Rectangle,
@@ -19,6 +26,10 @@ import {
 export default function SignUp3({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
+
+SignUp3.Main = function SignUp3Main({ children, ...restProps }) {
+  return <Main {...restProps}>{children}</Main>;
+};
 
 SignUp3.Slogan = function SignUp3Slogan({ children, ...restProps }) {
   return (
@@ -63,9 +74,68 @@ SignUp3.Button = function SignUp3Button({ to, children, ...restProps }) {
   return (
     <Button {...restProps}>
       <ReactRouterLink to={to}>
-        <button>{children}</button>;
+        <button>{children}</button>
       </ReactRouterLink>
     </Button>
+  );
+};
+
+SignUp3.InputsAndButton = function SignUp3InputsAndButton({
+  placeholder,
+  children,
+  ...restProps
+}) {
+  return <InputsAndButton {...restProps}>{children}</InputsAndButton>;
+};
+
+SignUp3.BackButton = function SignUp3BackButton({ to, children, ...restProps }) {
+  return (
+    <BackButton {...restProps}>
+      <ReactRouterLink to={to}>
+        <button>{children}</button>
+      </ReactRouterLink>
+    </BackButton>
+  );
+};
+
+SignUp3.NextButton = function SignUp3NextButton({ to, children, ...restProps }) {
+  return (
+    <NextButton {...restProps}>
+      <ReactRouterLink to={to}>
+        <button>{children}</button>
+      </ReactRouterLink>
+    </NextButton>
+  );
+};
+
+SignUp3.NavigationSec = function SignUp3NavigationSec({ placeholder, children, ...restProps }) {
+  return <NavigationSec {...restProps}>{children}</NavigationSec>;
+};
+
+SignUp3.Progress = function SignUp3Progress({
+  placeholder,
+  children,
+  ...restProps
+}) {
+  return <Progress {...restProps}>{children}</Progress>;
+};
+
+SignUp3.Completed = function SignUp3Completed({
+  setValue,
+  value,
+  type,
+  label,
+  align,
+  children,
+  ...restProps
+}) {
+  return (
+    <>
+    <Completed {...restProps} className="completed">
+      <input type="radio" checked disabled/>{align ? <br/> : null }
+      <label>{label}</label>
+    </Completed>
+    </>
   );
 };
 

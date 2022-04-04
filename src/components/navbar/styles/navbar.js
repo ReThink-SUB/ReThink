@@ -56,13 +56,16 @@ export const Links = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 90%;
   }
 
-  // @media (max-width: 950px) {
+  @media (min-width: 1000px) {
+    width: 70%;
+  }
 
-  //   min-width: 30rem;
-  // }
+  @media (min-width: 1300px) {
+    width: 50%;
+  }
 `;
 
 export const Link = styled.h2`

@@ -11,6 +11,7 @@ const SignUp = lazy(() => import("./pages/signup"));
 const Contact = lazy(() => import("./pages/contact"));
 const SignUp2 = lazy(() => import("./pages/signup2"));
 const SignUp3 = lazy(() => import("./pages/signup3"));
+const SignUp4 = lazy(() => import("./pages/signup4"));
 const Team = lazy(() => import("./pages/team"));
 const Businesses = lazy(() => import("./pages/businesses"));
 const Criteria = lazy(() => import("./pages/criteria"));
@@ -142,6 +143,9 @@ export default function App() {
               </Route>
               <Route path={ROUTES.SIGNUP3} exact>
                 <SignUp3 />
+              </Route>
+              <Route path={ROUTES.SIGNUP4} exact>
+                <SignUp4 />
               </Route>
               <Route path={ROUTES.CONTACT} exact>
                 <Contact />

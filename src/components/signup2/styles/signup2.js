@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +18,23 @@ export const Container = styled.div`
   }
 `;
 
+export const Main = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  @media (min-width: 800px) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: 1050px) {
+    width: 86%;
+    padding: 0 2rem;
+  }
+`;
+
 export const Slogan = styled.div`
   width: 100%;
   margin-bottom: 2%;
@@ -27,12 +43,12 @@ export const Slogan = styled.div`
   margin-bottom: 1.5rem;
 
   h2 {
-    width: 80%;
+    width: 100%;
     font-weight: 600;
-    font-size: 37px;
+    font-size: 32px;
     color: #3e3b3b;
     line-height: 43px;
-    text-align: center;
+    text-align: left;
   }
 
   span {
@@ -40,11 +56,11 @@ export const Slogan = styled.div`
   }
 
   @media (min-width: 1300px) {
+    max-width: 700px;
     justify-content: start;
     margin-bottom: 3rem;
 
     h2 {
-      width: 35%;
       font-size: 45px;
       line-height: 50px;
       text-align: left;
@@ -56,27 +72,46 @@ export const Slogan = styled.div`
   }
 `;
 
+export const Inputs = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  @media (min-width: 675px) {
+    margin-bottom: 2%;
+  }
+`;
+
 export const Description = styled.p`
-  width: 80%;
+  width: 100%;
   font-weight: 400;
   font-size: 18px;
   color: #1f2421;
+  margin: 0 auto;
   margin-bottom: 8%;
-  line-height: 28px;
-  text-align: center;
+  line-height: 20.49px;
+  text-align: left;
 
   @media (min-width: 500px) {
+    width: 80%
     margin-bottom: 1.5%;
   }
-
-  @media (min-width: 1300px) {
-    width: 75%;
+  
+  @media (min-width: 800px) {
+    margin: 0 auto;
+    margin-bottom: 1.5%;
     text-align: left;
-    font-size: 20px;
+    line-height: 28px;
+    max-width: 702px;
   }
 
-  @media (min-width: 1400px) {
-    width: 65%;
+  @media (min-width: 1200px) {
+    font-size: 20px;
   }
 `;
 
@@ -125,83 +160,253 @@ export const Input = styled.div`
 export const Select = styled.div`
   width: 100%;
   display: flex;
+  position: relative;
   justify-content: center;
+  margin: 0 auto;
   margin-bottom: 10%;
 
   select {
-    width: 40%;
-    height: 50px;
-    background: #ffffff;
-    border: 2px solid #67923d;
+    width: 100%;
+    max-width: 702px;
+    height: 43px;
+    background: #FFFFFF;
+    border: 2px solid #DADADA;
+    box-sizing: border-box;
     border-radius: 25px;
     outline: none;
     font-size: 16px;
-    color: #67923d;
-    filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
+    color: #828282;
     padding: 0 15px;
-
-    @media (min-width: 1500px) {
-      height: 43px;
-    }
-
-    @media (max-width: 500px) {
-      width: 75%;
-    }
   }
 
   @media (min-width: 1300px) {
-    justify-content: start;
-    width: 75%;
+    width: 85%;
     margin-bottom: 5%;
   }
 
   @media (min-width: 1500px) {
     margin-bottom: 2%;
   }
+`;
 
-  @media (min-width: 1400px) {
-    width: 65%;
+export const NavigationSec = styled.div`
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  @media (min-width: 500px) {
+    display: flex;
+  }
+
+  @media (min-width: 675px) {
+    margin-bottom: 2%;
+  }
+
+  @media (min-width: 1300px) {
+    max-width: 710px;
   }
 `;
 
-export const Button = styled.div`
+export const Progress = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
 
+  @media (min-width: 500px) {
+    margin-bottom: 5%;
+  }
+`;
+
+export const Completed = styled.div`
+  width: 32%;
+  max-height: 44px;
+
+  input[type="radio"] {
+    appearance: none;
+    width: 12.39px;
+    height: 12.39px;
+    border: 4px solid #8792A2;
+    border-radius: 50%;
+    background-clip: content-box;
+    padding: 3px;
+    margin-bottom: 0.5rem;
+    border-color: #67923D;
+
+    @media (min-width: 900px) {
+      margin-right: 0.5rem;
+      margin-bottom: unset;
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 25%;
+  }
+
+  label {
+    max-height: 20px;
+    left: calc(50% - 224.67px/2 + 10px);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3C4257;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+
+    letter-spacing: 0.035em;
+
+    color: #585858;
+  }
+`;
+
+export const Incompleted = styled.div`
+  width: 32%;
+  max-height: 44px;
+
+  input[type="radio"] {
+    appearance: none;
+    width: 12.39px;
+    height: 12.39px;
+    border: 1px solid #8792A2;
+    border-radius: 50%;
+    background-clip: content-box;
+    padding: 3px;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 900px) {
+      margin-right: 0.5rem;
+      margin-bottom: unset;
+    }
+  }
+
+  label {
+    max-height: 20px;
+    left: calc(50% - 224.67px/2 + 10px);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3C4257;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+    letter-spacing: 0.035em;
+
+    color: #585858;
+  }
+`;
+
+export const InputsAndButton = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  margin: 0 auto;
+  margin-bottom: 1.3rem;
+
+  @media (min-width: 1000px) {
+    max-width: 710px;
+  }
+`;
+
+export const BackButton = styled.div`
+  width: 45%;
   button {
+
     width: 128px;
     height: 41px;
     outline: none;
     border: none;
-    background: #86b390;
-    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
-    border-radius: 30px;
+    background: #EFEFEF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 45px rgba(57, 57, 57, 0.06);
+    border-radius: 10px;
+    cursor: pointer;
+    color: #1F2421;
+    transition: 0.5s ease all;
+    margin: 0 auto;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    
+    &:hover {
+      background: #C4C4C4;
+      color: #FFFFFF;
+    }
+
+    @media (min-width: 800px) {
+      margin-right: auto;
+      border-radius: 30px;
+    }
+  }
+`;
+
+export const NextButton = styled.div`
+  width: 45%;
+  button {
+
+    width: 128px;
+    height: 41px;
+    outline: none;
+    border: none;
+    background: #67923D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 45px rgba(57, 57, 57, 0.06);
+    border-radius: 10px;
     cursor: pointer;
     color: #ffffff;
     margin-bottom: 10%;
     transition: 0.5s ease all;
     margin: 0 auto;
 
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    
     &:hover {
-      background: #67923d;
+      background: unset;
+      color: #67923D;
+      border: 1px solid #67923D;
     }
-  }
 
-  @media (min-width: 1300px) {
-    width: 75%;
-    justify-content: flex-end;
-  }
-
-  @media (min-width: 1400px) {
-    width: 65%;
+    @media (min-width: 800px) {
+      margin-right: auto;
+      border-radius: 30px;
+    }
   }
 `;
 
 export const TallPlant = styled.div`
   position: absolute;
-  top: -12%;
-  right: -7%;
+  display: none;
+
+  @media (min-width: 800px) {
+    display: unset;
+    top: 1%;
+    right: -27%;
+  }
+
+  @media (min-width: 1000px) {
+    right: -19%;
+  }
+
+  @media (min-width: 1300px) {
+    top: 12%;
+    right: -16%;
+  }
 
   img {
     width: auto;
@@ -223,26 +428,13 @@ export const TallPlant = styled.div`
       width: auto;
     }
   }
-
-  @media (max-width: 1200px) {
-    top: -20%;
-    right: -17%;
-  }
-
-  @media (max-width: 500px) {
-    top: -15%;
-    right: -20%;
-  }
-
-  @media (max-width: 500px) {
-    display: none;
-  }
 `;
 
 export const WebLady = styled.div`
   position: absolute;
   bottom: 15%;
   left: 0;
+  display: none;
 
   img {
     height: 432px;
@@ -267,7 +459,7 @@ export const WebLady = styled.div`
     left: -8%;
   }
 
-  @media (max-width: 700px) {
-    display: none;
+  @media (min-width: 800px) {
+    display: unset;
   }
 `;

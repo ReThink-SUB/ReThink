@@ -194,7 +194,6 @@ AboutUs.Frame = function AboutUsFrame({
 }) {
   // const path = storage().ref(`img/profiles/${src}`).getDownloadURL()
   const [imgURL, setURL] = useState([]);
-
   useEffect(() => {
     var ref = storage.ref(`img/profiles/${src}.jpg`);
     ref.getDownloadURL().then(function (url) {

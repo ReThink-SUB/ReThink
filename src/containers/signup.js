@@ -1,9 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Dimensions } from "react-native";
 import { SignUp } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
 import { Alert } from "@material-ui/lab";
-import { storage } from "../firebase";
+import { db, storage } from "../firebase";
+import "../components/signup/styles/style.scss";
+
+const windowWidth = Dimensions.get("window").width;
 
 export function SignUpContainer() {
   const {
@@ -33,13 +37,38 @@ export function SignUpContainer() {
     setImage,
     progress,
     setProgress,
+    phone,
+    setPhone,
+    contact,
+    setContact
   } = useContext(BusinessContext);
+
+  const [benefits, setBenefits] = useState([]);
+  const [width, setWidth] = useState(windowWidth);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       console.log("timeout for 5 sec");
-      setSubmit(false);
+      setSubmit(true);
     }, 5000);
+
+    let benefitsHolder = [];
+    db.collection("benefits")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          benefitsHolder.push(
+            <Benefit
+              data={doc.data()}
+            />
+          );
+        });
+        setBenefits(benefitsHolder);
+    });
+
+    Dimensions.addEventListener("change", (window) => {
+      setWidth(window["window"]["width"]);
+    });
 
     return () => clearTimeout(timeout);
   }, [submit]);
@@ -79,100 +108,186 @@ export function SignUpContainer() {
     );
   };
 
+  const getAddressInputs = (dimm) => {
+    if (dimm < 800) {
+      return (
+        <>
+        <SignUp.Input
+          setValue={setAddressOne}
+          value={addressOne}
+          label="Address Line 1"
+          name="address"
+        />
+        <SignUp.Input
+          setValue={setAddressTwo}
+          value={addressTwo}
+          label="Address Line 2"
+          name="address"
+        />
+        <SignUp.Input
+          setValue={setCity}
+          value={city}
+          label="City"
+        />
+        <SignUp.HalfInputs>
+          <SignUp.HalfInput
+            setValue={setState}
+            value={state}
+            label="State"
+          />
+          <SignUp.HalfInput
+            setValue={setZipCode}
+            value={zipCode}
+            label="Zip Code"
+          />
+        </SignUp.HalfInputs>
+        </>
+      );
+    } else {
+      let thirdWidth = {"width" : "32%"};
+      return (
+        <>
+        <SignUp.HalfInputs>
+          <SignUp.HalfInput
+            setValue={setAddressOne}
+            value={addressOne}
+            label="Address Line 1"
+          />
+          <SignUp.HalfInput
+            setValue={setAddressTwo}
+            value={addressTwo}
+            label="Address Line 2"
+          />
+        </SignUp.HalfInputs>
+        <SignUp.HalfInputs>
+          <SignUp.HalfInput
+            setValue={setCity}
+            value={city}
+            label="City"
+            style={thirdWidth}
+          />
+          <SignUp.HalfInput
+            setValue={setState}
+            value={state}
+            label="State"
+            style={thirdWidth}
+          />
+          <SignUp.HalfInput
+            setValue={setZipCode}
+            value={zipCode}
+            label="Zip Code"
+            style={thirdWidth}
+          />
+        </SignUp.HalfInputs>
+        </>
+      );
+    }
+  }
+
   return (
     <>
       <SignUp>
-        {submit && (
-          <Alert
-            style={{ marginBottom: "15px" }}
-            onClose={() => setSubmit(false)}
-          >
-            Business information Sent!
-          </Alert>
-        )}
-        <SignUp.Slogan>
-          Sign up <br />
-          <span>with us, you'll like it here</span>
-        </SignUp.Slogan>
-        <SignUp.Description>
-          Start by entering details about your business
-        </SignUp.Description>
-        <SignUp.Inputs>
-          <SignUp.Input
-            setValue={setBusinessName}
-            value={businessName}
-            placeholder="Name of business"
-          />
-          <SignUp.HalfInputs>
-            <SignUp.HalfInput
-              setValue={setAddressOne}
-              value={addressOne}
-              placeholder="Address Line 1"
-            />
-            <SignUp.HalfInput
-              setValue={setAddressTwo}
-              value={addressTwo}
-              placeholder="Address Line 2"
-            />
-          </SignUp.HalfInputs>
-          <SignUp.HalfInputs>
-            <SignUp.HalfInput
-              setValue={setCity}
-              value={city}
-              placeholder="City"
-            />
-            <SignUp.HalfInput
-              setValue={setState}
-              value={state}
-              placeholder="State"
-            />
-            <SignUp.HalfInput
-              setValue={setZipCode}
-              value={zipCode}
-              placeholder="Zip Code"
-            />
-          </SignUp.HalfInputs>
-        </SignUp.Inputs>
-        <SignUp.SecondaryDescription>
-          Upload an image for your business profile
-        </SignUp.SecondaryDescription>
-        <SignUp.UploadContainer>
-          <SignUp.ImageInput handleChange={handleChange}>
-            {image ? <span>Ready to Upload</span> : <span>Upload image</span>}
-          </SignUp.ImageInput>
-          <SignUp.Progress progress={progress} />
-          <SignUp.UploadButton handleUpload={handleUpload} image={image} />
-        </SignUp.UploadContainer>
-        {imageUrl && <SignUp.BusinessImg src={imageUrl} />}
-        <SignUp.SecondaryDescription>
-          How should we contact you?
-        </SignUp.SecondaryDescription>
-        <SignUp.InputsAndButton>
-          <SignUp.SecondaryInputs>
+        <SignUp.Main className="signup-main">
+          <SignUp.Slogan className="signup-slogan">
+            Here's why you should join!
+          </SignUp.Slogan>
+          <SignUp.BenefitSec className="benefit-section">
+            <div className="benefit-cards">
+              {benefits}
+            </div>
+          </SignUp.BenefitSec>
+          <SignUp.Slogan className="signup-slogan">
+            Let's get to know your business {/*width*/}
+          </SignUp.Slogan>
+          <SignUp.Inputs className="signup-inputs">
             <SignUp.Input
-              setValue={setEmail}
-              value={email}
-              placeholder="Email Address"
+              setValue={setBusinessName}
+              value={businessName}
+              label="Name of business"
             />
+            {getAddressInputs(width)}
             <SignUp.HalfInputs>
               <SignUp.HalfInput
                 setValue={setFirst}
                 value={first}
-                placeholder="First Name"
+                label="First Name"
               />
               <SignUp.HalfInput
                 setValue={setLast}
                 value={last}
-                placeholder="Last Name"
+                label="Last Name"
               />
             </SignUp.HalfInputs>
-          </SignUp.SecondaryInputs>
-          <SignUp.Button to={ROUTES.SIGNUP2}>Next</SignUp.Button>
-        </SignUp.InputsAndButton>
-        <SignUp.LeafDots />
-        <SignUp.TallPlant />
-        <SignUp.WebLady />
+            <SignUp.Input
+              setValue={setEmail}
+              value={email}
+              label="Email Address"
+            />
+            <SignUp.Input
+              setValue={setPhone}
+              value={phone}
+              type="tel"
+              label="Phone Number"
+            />
+            <SignUp.Input
+              setValue={setContact}
+              value={contact}
+              type="preffered"
+              label="Preffered Method of Contact"
+            ></SignUp.Input>
+          </SignUp.Inputs>
+          <SignUp.InputsAndButton className="next-section">
+            <SignUp.Button to={ROUTES.SIGNUP2} className="button">Next</SignUp.Button>
+          </SignUp.InputsAndButton>
+          <SignUp.NavigationSec className="navSec">
+            <SignUp.Progress className="progressSec">
+              <div className="complete-status" />
+              <div className="incomplete-status" />
+              <div className="incomplete-status" />
+              <SignUp.Completed
+                label="Sign up"
+              />
+              <SignUp.Incompleted
+                label="Additional Information"
+              />
+              <SignUp.Incompleted
+                label="Review and submit"
+              />
+            </SignUp.Progress>
+          </SignUp.NavigationSec>
+          {/* <SignUp.FormCircles className="form-circles" bottom="10%" right="35%" /> */}
+          <SignUp.LeafDots />
+          <SignUp.TallPlant />
+          <SignUp.WebLady />
+        </SignUp.Main>
       </SignUp>
+    </>
+  );
+}
+
+function Benefit(props) {
+  let data = props.data;
+  const [imgURL, setURL] = useState([]);
+
+  useEffect(() => {
+    var ref = storage.ref(`img/${data.img}.jpg`);
+    ref.getDownloadURL().then(function (url) {
+      setURL(url);
+    });
+  });
+
+  return (
+    <>
+    <div className="benefit-card">
+      <div className="benefit-image">
+        <img src={imgURL} alt="club" />
+      </div>
+      <h3 className="benefit-title">{data.title}</h3>
+      <p className="benefit-desc">
+        {data.desc}
+      </p>
+    </div>
+    <SignUp.SecCircles />
     </>
   );
 }
