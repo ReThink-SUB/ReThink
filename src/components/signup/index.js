@@ -156,7 +156,7 @@ SignUp.Input = function SignUpInput({
   
   return (
     <Input {...restProps} className="input">
-      <label>{label}</label><br/><br/>
+      <label>{label}</label> {label !== 'Address Line 2' ? <span style={{"color": "#EF767A"}}>*</span> : null} <br/><br/>
       {setInputs()}
     </Input>
   );
@@ -189,7 +189,7 @@ SignUp.HalfInput = function SignUpHalfInput({
 }) {
   return (
     <HalfInput {...restProps} className="half-input">
-      <label>{label}</label>
+      <label>{label}</label> {label !== 'Address Line 2' ? <span style={{"color": "#EF767A"}}>*</span> : null}
       <input
         onChange={(event) => setValue(event.target.value)}
         value={value}

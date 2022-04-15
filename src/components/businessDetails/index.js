@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 // import { Breadcrumb, BreadcrumbItem } from "reactstrap";
 import { db, storage } from "../../firebase";
 import "./styles/businessDetails.css";
