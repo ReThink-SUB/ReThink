@@ -1,12 +1,12 @@
 import React from "react";
-import { SignUp3Container, NavbarContainer } from "../containers";
+import { SignUp4Container, NavbarContainer } from "../containers";
 import Footer from "../components/footer/index";
 
-export default function SignUp3() {
+export default function SignUp4() {
   return (
     <>
       <NavbarContainer />
-      <SignUp3Container />
+      <SignUp4Container />
       <Footer />
     </>
   );

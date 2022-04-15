@@ -45,12 +45,11 @@ export function SignUpContainer() {
 
   const [benefits, setBenefits] = useState([]);
   const [width, setWidth] = useState(windowWidth);
-  const [halfInputs, setHalfInputs] = useState([])
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       console.log("timeout for 5 sec");
-      setSubmit(false);
+      setSubmit(true);
     }, 5000);
 
     let benefitsHolder = [];
@@ -110,7 +109,6 @@ export function SignUpContainer() {
   };
 
   const getAddressInputs = (dimm) => {
-
     if (dimm < 800) {
       return (
         <>
@@ -190,14 +188,6 @@ export function SignUpContainer() {
     <>
       <SignUp>
         <SignUp.Main className="signup-main">
-          {submit && (
-            <Alert
-              style={{ marginBottom: "15px" }}
-              onClose={() => setSubmit(false)}
-            >
-              Business information Sent!
-            </Alert>
-          )}
           <SignUp.Slogan className="signup-slogan">
             Here's why you should join!
           </SignUp.Slogan>
@@ -209,9 +199,6 @@ export function SignUpContainer() {
           <SignUp.Slogan className="signup-slogan">
             Let's get to know your business {/*width*/}
           </SignUp.Slogan>
-          {/* <SignUp.Description>
-            Start by entering details about your business
-          </SignUp.Description> */}
           <SignUp.Inputs className="signup-inputs">
             <SignUp.Input
               setValue={setBusinessName}
@@ -299,7 +286,6 @@ function Benefit(props) {
       <p className="benefit-desc">
         {data.desc}
       </p>
-      {/* <AboutUs.LearnMore>Learn More</AboutUs.LearnMore> */}
     </div>
     <SignUp.SecCircles />
     </>

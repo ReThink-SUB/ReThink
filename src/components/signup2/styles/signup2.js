@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  // height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,10 +22,8 @@ export const Main = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  // padding-top: 2rem;
 
   margin: 0;
-  // overflow-x: hidden;
 
   @media (min-width: 800px) {
     padding: 0 3rem;
@@ -88,11 +85,6 @@ export const Inputs = styled.div`
   @media (min-width: 675px) {
     margin-bottom: 2%;
   }
-
-  @media (min-width: 1300px) {
-    // width: 90%;
-    // margin-left: 25%;
-  }
 `;
 
 export const Description = styled.p`
@@ -119,12 +111,7 @@ export const Description = styled.p`
   }
 
   @media (min-width: 1200px) {
-    // width: 90%;
     font-size: 20px;
-  }
-
-  @media (min-width: 1300px) {
-    // width: 65%;
   }
 `;
 
@@ -190,10 +177,6 @@ export const Select = styled.div`
     font-size: 16px;
     color: #828282;
     padding: 0 15px;
-
-    @media (min-width: 500px) {
-      // width: 75%;
-    }
   }
 
   @media (min-width: 1300px) {
@@ -203,10 +186,6 @@ export const Select = styled.div`
 
   @media (min-width: 1500px) {
     margin-bottom: 2%;
-  }
-
-  @media (min-width: 1400px) {
-    // width: 65%;
   }
 `;
 
@@ -231,7 +210,6 @@ export const NavigationSec = styled.div`
 
   @media (min-width: 1300px) {
     max-width: 710px;
-    // margin-left: 10%;
   }
 `;
 
@@ -250,7 +228,6 @@ export const Progress = styled.div`
 
 export const Completed = styled.div`
   width: 32%;
-  // margin-bottom: 7%;
   max-height: 44px;
 
   input[type="radio"] {
@@ -274,36 +251,17 @@ export const Completed = styled.div`
     width: 25%;
   }
 
-  @media (min-width: 550px) {
-    // margin-bottom: 4%;
-  }
-
-  @media (min-width: 1300px) {
-    // margin-bottom: 2.5%;
-  }
-
   label {
     max-height: 20px;
     left: calc(50% - 224.67px/2 + 10px);
-    // top: 0px;
-
-    // font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-
     color: #3C4257;
-
-
     flex: none;
     order: 1;
     flex-grow: 1;
-    // margin: 0.5rem 4px;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 113.84%;
 
     letter-spacing: 0.035em;
 
@@ -313,16 +271,7 @@ export const Completed = styled.div`
 
 export const Incompleted = styled.div`
   width: 32%;
-  // margin-bottom: 7%;
   max-height: 44px;
-
-  @media (min-width: 550px) {
-    // margin-bottom: 4%;
-  }
-
-  @media (min-width: 1300px) {
-    // margin-bottom: 2.5%;
-  }
 
   input[type="radio"] {
     appearance: none;
@@ -333,7 +282,6 @@ export const Incompleted = styled.div`
     background-clip: content-box;
     padding: 3px;
     margin-bottom: 0.5rem;
-    // border-color: #67923D;
 
     @media (min-width: 900px) {
       margin-right: 0.5rem;
@@ -344,26 +292,14 @@ export const Incompleted = styled.div`
   label {
     max-height: 20px;
     left: calc(50% - 224.67px/2 + 10px);
-    // top: 0px;
-
-    // font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-
     color: #3C4257;
-
-
     flex: none;
     order: 1;
     flex-grow: 1;
-    // margin: 0.5rem 4px;
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 113.84%;
-
     letter-spacing: 0.035em;
 
     color: #585858;
@@ -380,15 +316,6 @@ export const InputsAndButton = styled.div`
   margin: 0 auto;
   margin-bottom: 1.3rem;
 
-  // @media (min-width: 675px) {
-  //   margin-bottom: 0%;
-  // }
-
-  // @media (min-width: 800px) {
-  //   flex-direction: row;
-  //   margin-left: 80%;
-  // }
-
   @media (min-width: 1000px) {
     max-width: 710px;
   }
@@ -397,8 +324,6 @@ export const InputsAndButton = styled.div`
 export const BackButton = styled.div`
   width: 45%;
   button {
-    // padding: 10% 10%;
-    // background: #EFEFEF;
 
     width: 128px;
     height: 41px;
@@ -432,8 +357,6 @@ export const BackButton = styled.div`
 export const NextButton = styled.div`
   width: 45%;
   button {
-    // padding: 10% 10%;
-    // background: #EFEFEF;
 
     width: 128px;
     height: 41px;

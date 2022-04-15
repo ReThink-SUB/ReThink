@@ -5,6 +5,7 @@ export { default as SignUp2 } from "./signup2";
 export { default as AboutUs } from "./aboutUs";
 export { default as Contact } from "./contact";
 export { default as SignUp3 } from "./signup3";
+export { default as SignUp4 } from "./signup4";
 export { default as LandingPage } from "./landingPage";
 export { default as Loading } from "./loading";
 export { default as Navbar } from "./navbar";

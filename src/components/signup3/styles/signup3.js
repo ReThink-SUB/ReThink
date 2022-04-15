@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  // height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +27,6 @@ export const Main = styled.div`
   flex-direction: column;
 
   margin: 0;
-  // overflow-x: hidden;
 
   @media (min-width: 800px) {
     padding: 0 3rem;
@@ -118,10 +116,6 @@ export const InfoTitle = styled.h3`
   @media (min-width: 1000px) {
     font-size: 25px;
   }
-
-  // @media (max-width: 500px) {
-  //   font-size: 20px;
-  // }
 `;
 
 export const InfoDescr = styled.h3`
@@ -135,10 +129,6 @@ export const InfoDescr = styled.h3`
     font-size: 20px;
     width: 80%;
   }
-
-  // @media (max-width: 500px) {
-  //   font-size: 15px;
-  // }
 `;
 
 export const InfoSecDescr = styled.h3`
@@ -147,14 +137,6 @@ export const InfoSecDescr = styled.h3`
   color: #67923d;
   margin-bottom: 7%;
   display: flex;
-
-  // @media (max-width: 750px) {
-  //   font-size: 18px;
-  // }
-
-  // @media (max-width: 500px) {
-  //   font-size: 15px;
-  // }
 `;
 
 export const Button = styled.div`
@@ -162,21 +144,12 @@ export const Button = styled.div`
   position: relative;
   justify-content: right;
   margin: 0 auto;
-  // margin-top: 4%;
   z-index: 2;
-
-  // top: 30%;
-  // left: 12%;
 
   @media (min-width: 600px) {
     position: absolute;
     bottom: 5px;
     right: -23px;
-  }
-
-  @media (min-width: 1000px) {
-    // top: 51%;
-    // right: 25%;
   }
 
   button {
@@ -217,7 +190,6 @@ export const InputsAndButton = styled.div`
 export const BackButton = styled.div`
   width: 45%;
   button {
-    // padding: 10% 10%;
 
     width: 128px;
     height: 41px;
@@ -251,8 +223,6 @@ export const BackButton = styled.div`
 export const NextButton = styled.div`
   width: 45%;
   button {
-    // padding: 10% 10%;
-    // background: #EFEFEF;
 
     width: 128px;
     height: 41px;
@@ -305,7 +275,6 @@ export const NavigationSec = styled.div`
 
   @media (min-width: 1300px) {
     max-width: 710px;
-    // margin-left: 10%;
   }
 `;
 
@@ -324,7 +293,6 @@ export const Progress = styled.div`
 
 export const Completed = styled.div`
   width: 32%;
-  // margin-bottom: 7%;
   max-height: 44px;
 
   input[type="radio"] {
@@ -348,20 +316,9 @@ export const Completed = styled.div`
     width: 25%;
   }
 
-  @media (min-width: 550px) {
-    // margin-bottom: 4%;
-  }
-
-  @media (min-width: 1300px) {
-    // margin-bottom: 2.5%;
-  }
-
   label {
     max-height: 20px;
     left: calc(50% - 224.67px/2 + 10px);
-    // top: 0px;
-
-    // font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -373,7 +330,6 @@ export const Completed = styled.div`
     flex: none;
     order: 1;
     flex-grow: 1;
-    // margin: 0.5rem 4px;
 
     font-weight: 500;
     font-size: 14px;
@@ -388,8 +344,6 @@ export const Completed = styled.div`
 export const Rectangle = styled.div`
   width: 100%;
   max-width: 626px;
-  // position: relative;
-  // height: auto;
   background: #D4E9D6;
   border-radius: 15px;
   display: flex;
