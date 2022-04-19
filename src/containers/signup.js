@@ -29,6 +29,12 @@ export function SignUpContainer() {
     setFirst,
     last,
     setLast,
+    mock,
+    setMock,
+    phone,
+    setPhone,
+    contact,
+    setContact,
     imageUrl,
     setImageUrl,
     submit,
@@ -36,16 +42,12 @@ export function SignUpContainer() {
     image,
     setImage,
     progress,
-    setProgress,
-    phone,
-    setPhone,
-    contact,
-    setContact
+    setProgress
   } = useContext(BusinessContext);
 
   const [benefits, setBenefits] = useState([]);
   const [width, setWidth] = useState(windowWidth);
-  const [click, setClicked] = useState('')
+  const [disabled, setDisabled] = useState(true)
   const [alert, setAlert] = useState('')
 
   useEffect(() => {
@@ -74,6 +76,19 @@ export function SignUpContainer() {
 
     return () => clearTimeout(timeout);
   }, [submit]);
+
+  useEffect(() => {
+    
+    // TODO:
+    // Some reason phone, contact, and hearaboutus are never saved in state??
+    if (!businessName || !addressOne || !city || !state || !zipCode || !first, !last || !email) {
+      console.log('somethings missing')
+      setDisabled(true)
+    } else {
+      setDisabled(false)
+      console.log('everything is there!')
+    }
+  }, [businessName, addressOne, city, state, zipCode, first, last, email, mock, phone, contact]);
 
   const AlertMessage = () => {
     return (
@@ -234,9 +249,13 @@ export function SignUpContainer() {
               label="Email Address"
             />
             <SignUp.Input
+              setValue={setMock}
+              value={mock}
+              label="Mockery"
+            />
+            <SignUp.Input
               setValue={setPhone}
               value={phone}
-              type="tel"
               label="Phone Number"
             />
             <SignUp.Input
@@ -249,7 +268,7 @@ export function SignUpContainer() {
           {alert ? AlertMessage() : null}
           <SignUp.InputsAndButton className="next-section">
             <SignUp.Button className="button" to={ROUTES.SIGNUP2} setAlert={setAlert} alert={alert}
-            disabled={!businessName || !addressOne || !city || !state || !zipCode || !first || !last || !email || !phone || !contact}>Next</SignUp.Button>
+            disabled={disabled}>Next</SignUp.Button>
           </SignUp.InputsAndButton>
           <SignUp.NavigationSec className="navSec">
             <SignUp.Progress className="progressSec">

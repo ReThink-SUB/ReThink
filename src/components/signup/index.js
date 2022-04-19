@@ -129,7 +129,9 @@ SignUp.Input = function SignUpInput({
     if (type === "tel") {
       return (
         <input
-          onChange={(event) => setValue(event.target.value)}
+          onChange={(event) => {
+            event.preventDefault();
+            setValue(event.target.value)}}
           value={value} type={type} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         ></input>
       );
@@ -242,19 +244,20 @@ SignUp.Select = function SignUpSelect({
 };
 
 SignUp.Button = function SignUpButton({ to, setAlert, alert, disabled, children, ...restProps }) {
-  var nextPage;
-  const checkStatus = (disableStatus) => {
+  var nextPage = disabled;
+  const checkStatus = () => {
     console.log('button was clicked');
-    if (disableStatus) {
+    if (disabled) {
       setAlert(true)
     } else {
       nextPage = to;
+      console.log(nextPage, 'next page')
     }
   }
   return (
     <>
-    <ReactRouterLink to={nextPage}>
-      <Button {...restProps} onClick={() => checkStatus(disabled)}>{children}</Button>
+    <ReactRouterLink to={disabled ? null : to}>
+      <Button {...restProps} onClick={() => checkStatus()}>{children}</Button>
     </ReactRouterLink>
     </>
   );
