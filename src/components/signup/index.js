@@ -134,10 +134,10 @@ SignUp.Input = function SignUpInput({
         ></input>
       );
     } else if (type === "preffered") {
-      let defaultSel = <option selected hidden value="">Select</option>;
+      let defaultSel = <option defaultValue={"Select"} hidden value="">Select</option>;
 
       return (
-        <select onChange={(event) => setValue(event.target.value)} value={value} defaultValue={defaultSel} required>
+        <select onChange={(event) => setValue(event.target.value)} value={value} required>
           {defaultSel}
           <option value="email">Email</option>
           <option value="phone">Phone Number</option>
@@ -241,11 +241,22 @@ SignUp.Select = function SignUpSelect({
   );
 };
 
-SignUp.Button = function SignUpButton({ to, children, ...restProps }) {
+SignUp.Button = function SignUpButton({ to, setAlert, alert, disabled, children, ...restProps }) {
+  var nextPage;
+  const checkStatus = (disableStatus) => {
+    console.log('button was clicked');
+    if (disableStatus) {
+      setAlert(true)
+    } else {
+      nextPage = to;
+    }
+  }
   return (
-    <ReactRouterLink to={to}>
-      <Button {...restProps}>{children}</Button>
+    <>
+    <ReactRouterLink to={nextPage}>
+      <Button {...restProps} onClick={() => checkStatus(disabled)}>{children}</Button>
     </ReactRouterLink>
+    </>
   );
 };
 

@@ -45,6 +45,8 @@ export function SignUpContainer() {
 
   const [benefits, setBenefits] = useState([]);
   const [width, setWidth] = useState(windowWidth);
+  const [click, setClicked] = useState('')
+  const [alert, setAlert] = useState('')
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -72,6 +74,14 @@ export function SignUpContainer() {
 
     return () => clearTimeout(timeout);
   }, [submit]);
+
+  const AlertMessage = () => {
+    return (
+      <SignUp.Description>
+        Please fill out all the required questions!
+      </SignUp.Description>
+    )
+  }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -236,8 +246,10 @@ export function SignUpContainer() {
               label="Preffered Method of Contact"
             ></SignUp.Input>
           </SignUp.Inputs>
+          {alert ? AlertMessage() : null}
           <SignUp.InputsAndButton className="next-section">
-            <SignUp.Button to={ROUTES.SIGNUP2} className="button">Next</SignUp.Button>
+            <SignUp.Button className="button" to={ROUTES.SIGNUP2} setAlert={setAlert} alert={alert}
+            disabled={!businessName || !addressOne || !city || !state || !zipCode || !first || !last || !email || !phone || !contact}>Next</SignUp.Button>
           </SignUp.InputsAndButton>
           <SignUp.NavigationSec className="navSec">
             <SignUp.Progress className="progressSec">
