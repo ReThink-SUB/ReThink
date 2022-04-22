@@ -79,24 +79,45 @@ export function SignUp3Container() {
   };
 
   const submitValues = () => {
+    console.log("i was submitted?")
     db.collection("promoteBusinesses").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
       address: addressOne,
       address2: addressTwo,
-      category: category,
+      // category: category,
       city: city,
-      contact: contact,
-      phone: phone,
+      // contact: contact,
+      // // phone: phone,
       email: email,
       firstName: first,
       lastName: last,
       name: businessName,
-      signUpReason: signUpReason,
+      // signUpReason: signUpReason,
       state: state,
-      sustainablePractices: sustainablePractices,
+      // sustainablePractices: sustainablePractices,
       zipcode: zipCode,
-      imageUrl: imageUrl,
+      // imageUrl: imageUrl,
     });
+    console.log("address:", addressOne)
+    console.log("address2:", addressTwo)
+    
+    console.log("city:", city)
+    
+    
+    console.log("email:", email)
+    console.log("firstName:", first)
+    console.log("lastName:", last)
+    console.log("name:", businessName)
+    console.log("state:", state)
+    
+    console.log("zipcode:", zipCode)
+    // console.log("imageUrl:", imageUrl)
+
+    // console.log("category:", category)
+    // console.log("contact:", contact)
+    // console.log("phone:", phone)
+    // console.log("signUpReason:", signUpReason)
+    // console.log("sustainablePractices:", sustainablePractices)
 
     emailjs
       .send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, templateParams)
@@ -153,7 +174,7 @@ export function SignUp3Container() {
                 {first} {last}
               </SignUp3.InfoDescr>
               <SignUp3.InfoDescr>
-                {email}
+                {email} {phone}
               </SignUp3.InfoDescr>
               <SignUp3.Button to={ROUTES.SIGNUP} className="edit-button">
                 Edit

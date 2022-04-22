@@ -150,7 +150,7 @@ SignUp2.Incompleted = function SignUp2Incompleted({
   children,
   ...restProps
 }) {
-  console.log(align);
+  console.log(align, "page two");
   return (
     <Incompleted {...restProps} className="incompleted">
       <input type="radio" disabled/>{align ? <br/> : null }
