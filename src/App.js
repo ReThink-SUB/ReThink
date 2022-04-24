@@ -40,7 +40,6 @@ export default function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [image, setImage] = useState(null);
- 
 
   // fetch profiles json
   // const [data, setData] = useState([]);
@@ -114,63 +113,62 @@ export default function App() {
           setImage,
         }}
       >
-        
-          <Switch>
-            <Suspense
-              fallback={
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100vh",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Loading />
-                </div>
-              }
-            >
-              <Route path={ROUTES.LANDING} exact>
-                <LandingPage />
-              </Route>
-              <Route path={ROUTES.SIGNUP} exact>
-                <SignUp />
-              </Route>
-              <Route path={ROUTES.SIGNUP2} exact>
-                <SignUp2 businesses={businesses} />
-              </Route>
-              <Route path={ROUTES.SIGNUP3} exact>
-                <SignUp3 />
-              </Route>
-              <Route path={ROUTES.CONTACT} exact>
-                <Contact />
-              </Route>
-              <Route path={ROUTES.CRITERIA} exact>
-                <Criteria />
-              </Route>
-              {/* FOR DEBUGGING ONLY */}
-              <Route
-                exact
-                path={ROUTES.DETAILS + "/:business"}
-                key=""
-                component={Details}
-              />
-              {/* <Details /> */}
-              {/* <Route
+        <Switch>
+          <Suspense
+            fallback={
+              <div
+                style={{
+                  width: "100%",
+                  height: "100vh",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Loading />
+              </div>
+            }
+          >
+            <Route path={ROUTES.LANDING} exact>
+              <LandingPage />
+            </Route>
+            <Route path={ROUTES.SIGNUP} exact>
+              <SignUp />
+            </Route>
+            <Route path={ROUTES.SIGNUP2} exact>
+              <SignUp2 businesses={businesses} />
+            </Route>
+            <Route path={ROUTES.SIGNUP3} exact>
+              <SignUp3 />
+            </Route>
+            <Route path={ROUTES.CONTACT} exact>
+              <Contact />
+            </Route>
+            <Route path={ROUTES.CRITERIA} exact>
+              <Criteria />
+            </Route>
+            {/* FOR DEBUGGING ONLY */}
+            <Route
+              exact
+              path={ROUTES.DETAILS + "/:business"}
+              key=""
+              component={Details}
+            />
+            {/* <Details /> */}
+            {/* <Route
                 path={ROUTES.TEAM}
                 render={(...routerProps) => (
                   <Team {...routerProps} profiles={data} />
                 )}
               /> */}
-              <Route path={ROUTES.BUSINESSES} component={Businesses} />
-              <Route path={ROUTES.ABOUT} component={About} />
-            </Suspense>
-          </Switch>
+            <Route path={ROUTES.BUSINESSES} component={Businesses} />
+            <Route path={ROUTES.ABOUT} component={About} />
+            <Route path="*" element={<LandingPage />} />
+          </Suspense>
+        </Switch>
         <ScrollToTop />
       </BusinessContext.Provider>
       <ScrollToTop />
-      
     </>
   );
 }
