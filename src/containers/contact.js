@@ -19,6 +19,13 @@ export function ContactContainer() {
     setContactAlert,
   } = useContext(BusinessContext);
 
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
+  };
+
   const submitValues = () => {
     db.collection("contacted").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
@@ -33,6 +40,7 @@ export function ContactContainer() {
     setSubject("");
     setMessage("");
     setContactAlert(true);
+    scrollToTop();
   };
 
   return (
