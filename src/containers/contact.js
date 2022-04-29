@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Contact } from "../components";
 import { db } from "../firebase";
 import firebase from "firebase";
@@ -18,6 +18,7 @@ export function ContactContainer() {
     contactAlert,
     setContactAlert,
   } = useContext(BusinessContext);
+  const [alert, setAlert] = useState('');
 
   const scrollToTop = () =>{
     window.scrollTo({
@@ -27,6 +28,13 @@ export function ContactContainer() {
   };
 
   const submitValues = () => {
+
+    if(subject === "") {
+      scrollToTop();
+      setContactAlert(true);
+      return setAlert('Please fill out all the boxes!');
+      
+    }
     db.collection("contacted").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
       name: name,
@@ -36,6 +44,7 @@ export function ContactContainer() {
     });
 
     setName("");
+    setAlert("Message Sent!")
     setEmail("");
     setSubject("");
     setMessage("");
@@ -47,10 +56,11 @@ export function ContactContainer() {
     <Contact>
       {contactAlert && (
         <Alert
+          color={alert === "Message Sent!" ? 'success' : 'warning'}
           style={{ marginBottom: "15px" }}
           onClose={() => setContactAlert(false)}
         >
-          Message Sent!
+          {alert}
         </Alert>
       )}
       <Contact.Plant />
