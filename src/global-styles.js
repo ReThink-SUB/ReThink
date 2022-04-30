@@ -27,12 +27,14 @@ export const GlobalStyles = createGlobalStyle`
 
         &::-webkit-scrollbar {
             width: 10px;
+            height: 10px;
             background-color: #F6F6F2;
 
             border-radius: 15px;
         }
 
         &::-webkit-scrollbar-thumb {
+            height: 10px;
             background-color: #c4c4c4;
             border-radius: 15px;
         }
