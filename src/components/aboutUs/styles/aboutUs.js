@@ -631,8 +631,6 @@ export const Frame = styled.div`
     0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 30px;
 
-  ${console.log(({ background }) => background)}
-
   @media (min-width: 800px) {
     box-sizing: unset;
     height: 172px;

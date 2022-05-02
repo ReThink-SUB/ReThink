@@ -176,10 +176,10 @@ export const Description = styled.p`
   font-weight: 400;
   font-size: 20px;
   color: #1f2421;
+  margin: 0 auto;
   margin-bottom: 8%;
   line-height: 28px;
   text-align: center;
-  display: none;
 
   @media (min-width: 1000px) {
     display: block;

@@ -23,12 +23,16 @@ export function SignUpContainer() {
     setState,
     zipCode,
     setZipCode,
-    email,
-    setEmail,
     first,
     setFirst,
     last,
     setLast,
+    email,
+    setEmail,
+    phone,
+    setPhone,
+    contact,
+    setContact,
     imageUrl,
     setImageUrl,
     submit,
@@ -36,15 +40,13 @@ export function SignUpContainer() {
     image,
     setImage,
     progress,
-    setProgress,
-    phone,
-    setPhone,
-    contact,
-    setContact
+    setProgress
   } = useContext(BusinessContext);
 
   const [benefits, setBenefits] = useState([]);
   const [width, setWidth] = useState(windowWidth);
+  const [disabled, setDisabled] = useState(true)
+  const [alert, setAlert] = useState('')
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -72,6 +74,24 @@ export function SignUpContainer() {
 
     return () => clearTimeout(timeout);
   }, [submit]);
+
+  useEffect(() => {
+    if (!businessName || !addressOne || !city || !state || !zipCode || !first, !last || !email || !phone || !contact) {
+      console.log('somethings missing')
+      setDisabled(true)
+    } else {
+      setDisabled(false)
+      console.log('everything is there!')
+    }
+  }, [businessName, addressOne, city, state, zipCode, first, last, email, phone, contact]);
+
+  const AlertMessage = () => {
+    return (
+      <SignUp.Description>
+        Please fill out all the required questions!
+      </SignUp.Description>
+    )
+  }
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -226,7 +246,6 @@ export function SignUpContainer() {
             <SignUp.Input
               setValue={setPhone}
               value={phone}
-              type="tel"
               label="Phone Number"
             />
             <SignUp.Input
@@ -236,8 +255,10 @@ export function SignUpContainer() {
               label="Preffered Method of Contact"
             ></SignUp.Input>
           </SignUp.Inputs>
+          {alert ? AlertMessage() : null}
           <SignUp.InputsAndButton className="next-section">
-            <SignUp.Button to={ROUTES.SIGNUP2} className="button">Next</SignUp.Button>
+            <SignUp.Button className="button" to={ROUTES.SIGNUP2} setAlert={setAlert} alert={alert}
+            disabled={disabled}>Next</SignUp.Button>
           </SignUp.InputsAndButton>
           <SignUp.NavigationSec className="navSec">
             <SignUp.Progress className="progressSec">

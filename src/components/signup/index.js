@@ -129,15 +129,17 @@ SignUp.Input = function SignUpInput({
     if (type === "tel") {
       return (
         <input
-          onChange={(event) => setValue(event.target.value)}
+          onChange={(event) => {
+            event.preventDefault();
+            setValue(event.target.value)}}
           value={value} type={type} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         ></input>
       );
     } else if (type === "preffered") {
-      let defaultSel = <option selected hidden value="">Select</option>;
+      let defaultSel = <option defaultValue={"Select"} hidden value="">Select</option>;
 
       return (
-        <select onChange={(event) => setValue(event.target.value)} value={value} defaultValue={defaultSel} required>
+        <select onChange={(event) => setValue(event.target.value)} value={value} required>
           {defaultSel}
           <option value="email">Email</option>
           <option value="phone">Phone Number</option>
@@ -155,7 +157,7 @@ SignUp.Input = function SignUpInput({
   
   return (
     <Input {...restProps} className="input">
-      <label>{label}</label><br/><br/>
+      <label>{label}</label> {label !== 'Address Line 2' ? <span style={{"color": "#EF767A"}}>*</span> : null} <br/><br/>
       {setInputs()}
     </Input>
   );
@@ -188,7 +190,7 @@ SignUp.HalfInput = function SignUpHalfInput({
 }) {
   return (
     <HalfInput {...restProps} className="half-input">
-      <label>{label}</label>
+      <label>{label}</label> {label !== 'Address Line 2' ? <span style={{"color": "#EF767A"}}>*</span> : null}
       <input
         onChange={(event) => setValue(event.target.value)}
         value={value}
@@ -241,11 +243,23 @@ SignUp.Select = function SignUpSelect({
   );
 };
 
-SignUp.Button = function SignUpButton({ to, children, ...restProps }) {
+SignUp.Button = function SignUpButton({ to, setAlert, alert, disabled, children, ...restProps }) {
+  var nextPage = disabled;
+  const checkStatus = () => {
+    console.log('button was clicked');
+    if (disabled) {
+      setAlert(true)
+    } else {
+      nextPage = to;
+      console.log(nextPage, 'next page')
+    }
+  }
   return (
-    <ReactRouterLink to={to}>
-      <Button {...restProps}>{children}</Button>
+    <>
+    <ReactRouterLink to={disabled ? null : to}>
+      <Button {...restProps} onClick={() => checkStatus()}>{children}</Button>
     </ReactRouterLink>
+    </>
   );
 };
 
