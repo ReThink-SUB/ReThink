@@ -7,43 +7,6 @@ import "../components/signup/styles/style.scss";
 
 export function SignUp4Container() {
   const [checkImg, setCheckImg] = useState([]);
-  const {
-    businessName,
-    setBusinessName,
-    addressOne,
-    setAddressOne,
-    addressTwo,
-    setAddressTwo,
-    category,
-    setCategory,
-    city,
-    setCity,
-    state,
-    setState,
-    zipCode,
-    setZipCode,
-    email,
-    setEmail,
-    phone,
-    setPhone,
-    first,
-    setFirst,
-    last,
-    setLast,
-    signUpReason,
-    setSignUpReason,
-    sustainablePractices,
-    setSustainablePractices,
-    setContact,
-    contact,
-    setSubmit,
-    imageUrl,
-    setImageUrl,
-    image,
-    setImage,
-    progress,
-    setProgress,
-  } = useContext(BusinessContext);
 
   useEffect(() => {
     var ref = storage.ref(`img/checkmark.jpg`);

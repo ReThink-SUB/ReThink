@@ -27,10 +27,12 @@ export default function App() {
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [signUpReason, setSignUpReason] = useState("");
   const [sustainablePractices, setSustainablePractices] = useState("");
+  const [hearAboutUs, setHearAboutUs] = useState("");
   const [contact, setContact] = useState("Yes");
   const [submit, setSubmit] = useState(false);
   const [name, setName] = useState("");
@@ -73,26 +75,30 @@ export default function App() {
           setAddressOne,
           addressTwo,
           setAddressTwo,
-          category,
-          setCategory,
           city,
           setCity,
           state,
           setState,
           zipCode,
           setZipCode,
-          email,
-          setEmail,
           first,
           setFirst,
           last,
           setLast,
+          email,
+          setEmail,
+          phone,
+          setPhone,
+          contact,
+          setContact,
+          category,
+          setCategory,
           signUpReason,
           setSignUpReason,
           sustainablePractices,
           setSustainablePractices,
-          contact,
-          setContact,
+          hearAboutUs,
+          setHearAboutUs,
           submit,
           setSubmit,
           name,

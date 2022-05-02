@@ -74,7 +74,7 @@ SignUp2.Select = function SignUp2Select({
   return (
     <Select {...restProps}>
       <select onChange={(event) => setValue(event.target.value)} value={value}>
-        <option selected hidden value="">Select</option>
+        <option selected disabled hidden value="">Select</option>
         <option value="Retailer">Retailer</option>
         <option value="Food Services">Food Service</option>
       </select>
@@ -150,7 +150,6 @@ SignUp2.Incompleted = function SignUp2Incompleted({
   children,
   ...restProps
 }) {
-  console.log(align, "page two");
   return (
     <Incompleted {...restProps} className="incompleted">
       <input type="radio" disabled/>{align ? <br/> : null }

@@ -54,6 +54,8 @@ export function SignUp3Container() {
     setSignUpReason,
     sustainablePractices,
     setSustainablePractices,
+    hearAboutUs,
+    setHearAboutUs,
     setContact,
     contact,
     setSubmit,
@@ -67,57 +69,39 @@ export function SignUp3Container() {
 
   let templateParams = {
     name: businessName,
-    email: email,
-    phone: phone,
     address: addressOne,
-    category: category,
+    address2: addressTwo,
     city: city,
     state: state,
-    zipCode: zipCode,
-    signUpReason: signUpReason,
-    sustainablePractices: sustainablePractices,
+    zipcode: zipCode,
+    firstName: first,
+    lastName: last,
+    contact: contact,
+    phone: phone,
+    email: email,
+    category: category,
+    hearAboutUs: hearAboutUs,
+    signUpReason: signUpReason
   };
 
   const submitValues = () => {
-    console.log("i was submitted?")
     db.collection("promoteBusinesses").add({
       timestamp: firebase.firestore.FieldValue.serverTimestamp(), // allows the most recent image to be on top
+      name: businessName,
       address: addressOne,
       address2: addressTwo,
-      // category: category,
       city: city,
-      // contact: contact,
-      // // phone: phone,
-      email: email,
+      state: state,
+      zipcode: zipCode,
       firstName: first,
       lastName: last,
-      name: businessName,
-      // signUpReason: signUpReason,
-      state: state,
-      // sustainablePractices: sustainablePractices,
-      zipcode: zipCode,
-      // imageUrl: imageUrl,
+      contact: contact,
+      phone: phone,
+      email: email,
+      category: category,
+      hearAboutUs: hearAboutUs,
+      signUpReason: signUpReason
     });
-    console.log("address:", addressOne)
-    console.log("address2:", addressTwo)
-    
-    console.log("city:", city)
-    
-    
-    console.log("email:", email)
-    console.log("firstName:", first)
-    console.log("lastName:", last)
-    console.log("name:", businessName)
-    console.log("state:", state)
-    
-    console.log("zipcode:", zipCode)
-    // console.log("imageUrl:", imageUrl)
-
-    // console.log("category:", category)
-    // console.log("contact:", contact)
-    // console.log("phone:", phone)
-    // console.log("signUpReason:", signUpReason)
-    // console.log("sustainablePractices:", sustainablePractices)
 
     emailjs
       .send(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, templateParams)
@@ -133,16 +117,18 @@ export function SignUp3Container() {
     setBusinessName("");
     setAddressOne("");
     setAddressTwo("");
-    setCategory("");
     setCity("");
     setState("");
     setZipCode("");
-    setEmail("");
     setFirst("");
     setLast("");
+    setEmail("");
+    setPhone("");
+    setContact("");
+    setCategory("");
+    setHearAboutUs("");
     setSignUpReason("");
     setSustainablePractices("");
-    setContact("");
     setSubmit(true);
     setImageUrl("");
     setProgress(4);
@@ -174,7 +160,10 @@ export function SignUp3Container() {
                 {first} {last}
               </SignUp3.InfoDescr>
               <SignUp3.InfoDescr>
-                {email} {phone}
+                {email}
+              </SignUp3.InfoDescr>
+              <SignUp3.InfoDescr>
+                {phone}
               </SignUp3.InfoDescr>
               <SignUp3.Button to={ROUTES.SIGNUP} className="edit-button">
                 Edit

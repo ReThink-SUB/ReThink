@@ -23,14 +23,12 @@ export function SignUpContainer() {
     setState,
     zipCode,
     setZipCode,
-    email,
-    setEmail,
     first,
     setFirst,
     last,
     setLast,
-    mock,
-    setMock,
+    email,
+    setEmail,
     phone,
     setPhone,
     contact,
@@ -78,17 +76,14 @@ export function SignUpContainer() {
   }, [submit]);
 
   useEffect(() => {
-    
-    // TODO:
-    // Some reason phone, contact, and hearaboutus are never saved in state??
-    if (!businessName || !addressOne || !city || !state || !zipCode || !first, !last || !email) {
+    if (!businessName || !addressOne || !city || !state || !zipCode || !first, !last || !email || !phone || !contact) {
       console.log('somethings missing')
       setDisabled(true)
     } else {
       setDisabled(false)
       console.log('everything is there!')
     }
-  }, [businessName, addressOne, city, state, zipCode, first, last, email, mock, phone, contact]);
+  }, [businessName, addressOne, city, state, zipCode, first, last, email, phone, contact]);
 
   const AlertMessage = () => {
     return (
@@ -247,11 +242,6 @@ export function SignUpContainer() {
               setValue={setEmail}
               value={email}
               label="Email Address"
-            />
-            <SignUp.Input
-              setValue={setMock}
-              value={mock}
-              label="Mockery"
             />
             <SignUp.Input
               setValue={setPhone}
