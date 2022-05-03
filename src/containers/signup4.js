@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SignUp4 } from "../components";
 import * as ROUTES from "../constants/routes";
+import { BusinessContext } from "../context/business";
 import { db, storage } from "../firebase";
 import "../components/signup/styles/style.scss";
 
 export function SignUp4Container() {
   const [checkImg, setCheckImg] = useState([]);
-  
+
   useEffect(() => {
     var ref = storage.ref(`img/checkmark.jpg`);
     ref.getDownloadURL().then(function (url) {
