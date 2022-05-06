@@ -23,7 +23,7 @@ export default function App() {
   const [businessName, setBusinessName] = useState("");
   const [addressOne, setAddressOne] = useState("");
   const [addressTwo, setAddressTwo] = useState("");
-  const [category, setCategory] = useState("Retailer");
+  const [category, setCategory] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");

@@ -76,14 +76,14 @@ SignUp2.Select = function SignUp2Select({
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const setSelections = () => {
-    console.log(options, id)
+    // console.log(options, id)
     var optionsHolder = []
     for (let i = 0; i < options.length; i++) {
       optionsHolder.push(<option value={`${options[i]}`} >{options[i]} </option>)
     }
     if (id == "signUpReason") {
       // console.log(options)
-      console.log("signUpReason")
+      // console.log(options, "signUpReason")
       return (
         <select name="selectMultiple" onChange={(event) => handleChange(event.target.value)} value={value} multiple={true}>
           <option selected disabled hidden value="">Select</option>
@@ -102,18 +102,18 @@ SignUp2.Select = function SignUp2Select({
     }
   }
 
-  const handleChange = (value) => {
+  const handleChange = (targetValue) => {
     // let name = target.
     var updatedSelection = selectedOptions;
-    console.log(updatedSelection);
-    console.log(value)
-    if (!updatedSelection.includes(value)) {
-      updatedSelection.push(value);
-    } else if (updatedSelection.includes(value)) {
-      console.log(updatedSelection.indexOf(value))
-      updatedSelection.splice(updatedSelection.indexOf(value), 1);
+    console.log(updatedSelection, 'selectedOptions');
+    console.log(targetValue, 'targetValue')
+    if (!updatedSelection.includes(targetValue)) {
+      updatedSelection.push(targetValue);
+    } else if (updatedSelection.includes(targetValue)) {
+      console.log(updatedSelection.indexOf(targetValue), 'removed')
+      updatedSelection.splice(updatedSelection.indexOf(targetValue), 1);
     }
-    console.log(updatedSelection)
+    console.log(updatedSelection, 'updatedSelection')
     setSelectedOptions(updatedSelection)
     setValue(updatedSelection)
   }

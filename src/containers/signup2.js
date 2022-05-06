@@ -21,6 +21,8 @@ export function SignUp2Container() {
   } = useContext(BusinessContext);
 
   const [width, setWidth] = useState(windowWidth);
+  const [fakeAnswer, setFakeAnswer] = useState([]);
+  const [fakeAnswer2, setFakeAnswer2] = useState([]);
   const [selections, setSelections] = useState([]);
 
   useEffect(() => {
@@ -31,8 +33,8 @@ export function SignUp2Container() {
         querySnapshot.forEach((doc) => {
           let options = doc.data()["options"]
           if (doc.id === "hearAboutUs") {
-            console.log("hearAboutUs")
-            console.log(options)
+            console.log(options, "hearAboutUs")
+            console.log(hearAboutUs)
             selectionHolder.push(
               <SignUp2.Select
                 options={options} id={doc.id}
@@ -40,8 +42,7 @@ export function SignUp2Container() {
               />
             );
           } else if (doc.id === "signUpReason") {
-            console.log("signUpReason")
-            console.log(options)
+            console.log(options, "signUpReason")
             selectionHolder.push(
               <SignUp2.Select
               options={options} id={doc.id}
@@ -54,7 +55,7 @@ export function SignUp2Container() {
             selectionHolder.push(
               <SignUp2.Select
               options={doc.data()["options"]} id={doc.id}
-                setValue={setSignUpReason} value={signUpReason}
+                setValue={setCategory} value={category}
               />
             );
           }
@@ -66,7 +67,8 @@ export function SignUp2Container() {
       setWidth(window["window"]["width"]);
     });
   }, []);
-
+  let fakeArr = ["a", "b", "c"]
+  let fakeArr2 = ["1", "2", "3", "4"]
   return (
     <>
       <SignUp2>
@@ -82,11 +84,13 @@ export function SignUp2Container() {
             <SignUp2.Description>
               How did you hear about us?
             </SignUp2.Description>
+            <SignUp2.Select setValue={setFakeAnswer} value={fakeAnswer} id={"type"} options={fakeArr}/>
             {console.log(selections)}
             {selections[0]}
             <SignUp2.Description>
               Why do you want to sign up with us?
             </SignUp2.Description>
+            <SignUp2.Select setValue={setFakeAnswer2} value={fakeAnswer2} id={"signUpReason"} options={fakeArr2}/>
             {selections[1]}
           </SignUp2.Inputs>
           <SignUp2.InputsAndButton className="inputs-n-buttons">
