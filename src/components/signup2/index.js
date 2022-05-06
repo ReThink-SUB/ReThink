@@ -78,15 +78,17 @@ SignUp2.Select = function SignUp2Select({
   const setSelections = () => {
     // console.log(options, id)
     var optionsHolder = []
-    for (let i = 0; i < options.length; i++) {
-      optionsHolder.push(<option value={`${options[i]}`} >{options[i]} </option>)
-    }
-    if (id == "signUpReason") {
+    optionsHolder = options.map(item => <option value={item}>{item}</option>)
+    // for (let i = 0; i < options.length; i++) {
+    //   optionsHolder.push(<option value={`${options[i]}`} >{options[i]} </option>)
+    // }
+    if (id == "signUpReason" || id == "fakeAnswer2") {
       // console.log(options)
       // console.log(options, "signUpReason")
       return (
         <select name="selectMultiple" onChange={(event) => handleChange(event.target.value)} value={value} multiple={true}>
-          <option selected disabled hidden value="">Select</option>
+          {/* <option selected disabled hidden value="">Select</option> */}
+          {/* {options.map(item => <option value={item}>{item}</option>)} */}
           {optionsHolder}
         </select>
       )
@@ -96,6 +98,7 @@ SignUp2.Select = function SignUp2Select({
       return (
         <select onChange={(event) => {console.log(event.target.value); setValue(event.target.value)}} value={value}>
           <option selected disabled hidden value="">Select</option>
+          {/* {options.map(item => <option value={item}>{item}</option>)} */}
           {optionsHolder}
         </select>
       )
@@ -110,10 +113,10 @@ SignUp2.Select = function SignUp2Select({
     if (!updatedSelection.includes(targetValue)) {
       updatedSelection.push(targetValue);
     } else if (updatedSelection.includes(targetValue)) {
-      console.log(updatedSelection.indexOf(targetValue), 'removed')
+      console.log(updatedSelection.indexOf(targetValue), targetValue, 'removed')
       updatedSelection.splice(updatedSelection.indexOf(targetValue), 1);
     }
-    console.log(updatedSelection, 'updatedSelection')
+    console.log(updatedSelection, 'updatedSelection', id)
     setSelectedOptions(updatedSelection)
     setValue(updatedSelection)
   }

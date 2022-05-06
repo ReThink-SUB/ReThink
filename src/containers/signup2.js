@@ -85,12 +85,11 @@ export function SignUp2Container() {
               How did you hear about us?
             </SignUp2.Description>
             <SignUp2.Select setValue={setFakeAnswer} value={fakeAnswer} id={"type"} options={fakeArr}/>
-            {console.log(selections)}
             {selections[0]}
             <SignUp2.Description>
               Why do you want to sign up with us?
             </SignUp2.Description>
-            <SignUp2.Select setValue={setFakeAnswer2} value={fakeAnswer2} id={"signUpReason"} options={fakeArr2}/>
+            <SignUp2.Select setValue={setFakeAnswer2} value={fakeAnswer2} id={"fakeAnswer2"} options={fakeArr2}/>
             {selections[1]}
           </SignUp2.Inputs>
           <SignUp2.InputsAndButton className="inputs-n-buttons">
