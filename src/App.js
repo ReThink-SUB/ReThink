@@ -43,7 +43,6 @@ export default function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [image, setImage] = useState(null);
- 
 
   // fetch profiles json
   // const [data, setData] = useState([]);
@@ -121,7 +120,6 @@ export default function App() {
           setImage,
         }}
       >
-        
           <Switch>
             <Suspense
               fallback={
@@ -173,14 +171,14 @@ export default function App() {
                   <Team {...routerProps} profiles={data} />
                 )}
               /> */}
-              <Route path={ROUTES.BUSINESSES} component={Businesses} />
-              <Route path={ROUTES.ABOUT} component={About} />
-            </Suspense>
-          </Switch>
+            <Route path={ROUTES.BUSINESSES} component={Businesses} />
+            <Route path={ROUTES.ABOUT} component={About} />
+            <Route path="*" element={<LandingPage />} />
+          </Suspense>
+        </Switch>
         <ScrollToTop />
       </BusinessContext.Provider>
       <ScrollToTop />
-      
     </>
   );
 }

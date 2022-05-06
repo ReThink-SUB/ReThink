@@ -255,12 +255,17 @@ export function AboutUsContainer() {
                   <li>• Marketing</li>
                   <li>• Business Development</li>
                   <li>• Researchers</li>
-                  <li>• Back End Developers</li>
                   <li>• Front End Developers</li>
                 </ul>
               ) : (
-                `Positions Available: Marketing, Business Development, Researchers, Back End Developers, Front End Developers`
+                `Positions Available: Marketing, Business Development, Researchers, Front End Developers`
               )}
+              <br />
+              Reach out to{" "}
+              <a href="mailto:join@rethinkuw.org" className="a-tag-clear">
+                join@rethinkuw.org
+              </a>{" "}
+              with any questions!
             </AboutUs.Description>
           </AboutUs.Text>
           <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app">
