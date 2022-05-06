@@ -5,9 +5,15 @@ import * as ROUTES from "../constants/routes";
 export function NavbarContainer() {
   const [open, setOpen] = useState(false);
 
+  function reloadHomePage(){
+    if(window.location.pathname === ROUTES.LANDING){
+      window.location.reload(false);
+    }
+  }
+
   return (
     <Navbar>
-      <Navbar.Title to={ROUTES.LANDING} />
+      <Navbar.Title to={ROUTES.LANDING} onClick={reloadHomePage}/>
       <Burger open={open} setOpen={setOpen} />
       <Burger.Menu open={open} setOpen={setOpen} className="menu">
         <Burger.Links className="links">
