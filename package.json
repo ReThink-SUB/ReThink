@@ -30,13 +30,13 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.3.0",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "^4.0.0",
+    "react-scripts": "^5.0.0",
     "reactstrap": "^8.9.0",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "set PORT=3001&& react-scripts --openssl-legacy-provider start",
+    "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -60,6 +60,6 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.49.10"
+    "sass": "^1.50.1"
   }
 }

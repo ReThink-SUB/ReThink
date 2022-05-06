@@ -50,6 +50,7 @@ Contact.Input = function ContactInput({
         onChange={(event) => setValue(event.target.value)}
         value={value}
         placeholder={placeholder}
+        required
       ></input>
       <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </Input>
@@ -71,6 +72,7 @@ Contact.MessageInput = function ContactMessageInput({
         onChange={(event) => setValue(event.target.value)}
         value={value}
         placeholder={placeholder}
+        required
       ></textarea>
       <img src="/images/CirclePattern.png" alt="Circle Pattern" />
     </MessageInput>
