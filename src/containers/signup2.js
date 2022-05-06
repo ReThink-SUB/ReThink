@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Dimensions } from "react-native";
-import { SignUp2 } from "../components";
+import { SignUp, SignUp2 } from "../components";
 import * as ROUTES from "../constants/routes";
 import { BusinessContext } from "../context/business";
+import { db, storage } from "../firebase";
 import "../components/signup/styles/style.scss";
 
 const windowWidth = Dimensions.get("window").width;
@@ -20,8 +21,47 @@ export function SignUp2Container() {
   } = useContext(BusinessContext);
 
   const [width, setWidth] = useState(windowWidth);
+  const [selections, setSelections] = useState([]);
 
   useEffect(() => {
+    let selectionHolder = []
+    db.collection("selections")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          let options = doc.data()["options"]
+          if (doc.id === "hearAboutUs") {
+            console.log("hearAboutUs")
+            console.log(options)
+            selectionHolder.push(
+              <SignUp2.Select
+                options={options} id={doc.id}
+                setValue={setHearAboutUs} value={hearAboutUs} 
+              />
+            );
+          } else if (doc.id === "signUpReason") {
+            console.log("signUpReason")
+            console.log(options)
+            selectionHolder.push(
+              <SignUp2.Select
+              options={options} id={doc.id}
+                setValue={setSignUpReason} value={signUpReason}
+              />
+            );
+          } else {
+            console.log("type")
+            console.log(options)
+            selectionHolder.push(
+              <SignUp2.Select
+              options={doc.data()["options"]} id={doc.id}
+                setValue={setSignUpReason} value={signUpReason}
+              />
+            );
+          }
+        });
+        setSelections(selectionHolder);
+        // console.log(selectionHolder)
+    });
     Dimensions.addEventListener("change", (window) => {
       setWidth(window["window"]["width"]);
     });
@@ -38,15 +78,16 @@ export function SignUp2Container() {
             <SignUp2.Description>
               What category best describes your business?
             </SignUp2.Description>
-            <SignUp2.Select setValue={setCategory} value={category} />
+            {selections[2]}
             <SignUp2.Description>
               How did you hear about us?
             </SignUp2.Description>
-            <SignUp2.Select setValue={setHearAboutUs} value={hearAboutUs} />
+            {console.log(selections)}
+            {selections[0]}
             <SignUp2.Description>
               Why do you want to sign up with us?
             </SignUp2.Description>
-            <SignUp2.Select setValue={setSignUpReason} value={signUpReason} />
+            {selections[1]}
           </SignUp2.Inputs>
           <SignUp2.InputsAndButton className="inputs-n-buttons">
             <SignUp2.BackButton to={ROUTES.SIGNUP} className="back-button">Back</SignUp2.BackButton>

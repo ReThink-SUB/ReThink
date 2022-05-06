@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 import {
@@ -65,19 +65,67 @@ SignUp2.Input = function SignUp2Input({
 };
 
 SignUp2.Select = function SignUp2Select({
+  options,
+  id,
   setValue,
   value,
   placeholder,
   children,
   ...restProps
 }) {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const setSelections = () => {
+    console.log(options, id)
+    var optionsHolder = []
+    for (let i = 0; i < options.length; i++) {
+      optionsHolder.push(<option value={`${options[i]}`} >{options[i]} </option>)
+    }
+    if (id == "signUpReason") {
+      // console.log(options)
+      console.log("signUpReason")
+      return (
+        <select name="selectMultiple" onChange={(event) => handleChange(event.target.value)} value={value} multiple={true}>
+          <option selected disabled hidden value="">Select</option>
+          {optionsHolder}
+        </select>
+      )
+    } else {
+      // console.log(options)
+      // console.log("otherSel")
+      return (
+        <select onChange={(event) => {console.log(event.target.value); setValue(event.target.value)}} value={value}>
+          <option selected disabled hidden value="">Select</option>
+          {optionsHolder}
+        </select>
+      )
+    }
+  }
+
+  const handleChange = (value) => {
+    // let name = target.
+    var updatedSelection = selectedOptions;
+    console.log(updatedSelection);
+    console.log(value)
+    if (!updatedSelection.includes(value)) {
+      updatedSelection.push(value);
+    } else if (updatedSelection.includes(value)) {
+      console.log(updatedSelection.indexOf(value))
+      updatedSelection.splice(updatedSelection.indexOf(value), 1);
+    }
+    console.log(updatedSelection)
+    setSelectedOptions(updatedSelection)
+    setValue(updatedSelection)
+  }
+  
   return (
     <Select {...restProps}>
-      <select onChange={(event) => setValue(event.target.value)} value={value}>
+      {/* {<select onChange={(event) => setValue(event.target.value)} value={value}>
         <option selected disabled hidden value="">Select</option>
         <option value="Retailer">Retailer</option>
         <option value="Food Services">Food Service</option>
-      </select>
+      </select>} */}
+      {setSelections()}
     </Select>
   );
 };
