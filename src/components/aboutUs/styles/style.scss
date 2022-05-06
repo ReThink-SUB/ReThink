@@ -283,6 +283,21 @@ a {
 }
 
 .about-cards {
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background-color: #F6F6F2;
+
+        border-radius: 15px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 10px;
+        background-color: #c4c4c4;
+        border-radius: 15px;
+    }
+
     display: flex;
     align-items: left;
     margin: 1rem 0;
@@ -292,6 +307,7 @@ a {
     scroll-padding: 0 50%;
     scroll-snap-type: x mandatory;
     max-width: 1040px;
+    
 
     @media (min-width: 800px) {
         width: 90%;
