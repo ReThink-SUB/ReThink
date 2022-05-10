@@ -160,11 +160,12 @@ body {
 .specific-card {
   border-radius: 0.5em !important;
   position: relative;
-  width: 17rem;
+  width: 15rem;
   box-shadow: 0 5px 8px #6a65652a;
   margin-top: 5em;
   margin-left: 2%;
   margin-right: 2%;
+  justify-content: space-evenly;
 }
 
 .specific-card > p {
@@ -219,7 +220,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .specific-card-header > p:first-child {
