@@ -99,7 +99,24 @@ export default function Details(props) {
     getImgURL();
   }, [urlParams.business]);
 
+/* The original 3-card method
   let num = [1, 2, 3];
+  let cards = num.map((key) => {
+    return (
+      <ImpactCard
+        key={key}
+        name={businessDetails["impact" + key + "_title"]}
+        desc={businessDetails["impact" + key + "_text"]}
+        num={key}
+      />
+    );
+  });
+*/
+
+  let num = [1, 2, 3];
+  if (businessDetails["impact4_text"] != null) {
+    num = [...num, 4]
+  }
   let cards = num.map((key) => {
     return (
       <ImpactCard
