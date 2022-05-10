@@ -12,12 +12,12 @@ Navbar.Title = function NavbarTitle({ to, children, ...restProps }) {
     <ReactRouterLink to={to}>
       <Title {...restProps}>
         <img
-          src="/images/rethink_new_full_logo.png"
+          src="/images/dark_rethink_full_logo.png"
           alt="Logo"
           className="mobile-logo"
         />
         <img
-          src="/images/Horizontal transparent.png"
+          src="/images/dark_rethink_horizontal_transparent_logo.png"
           alt="Logo"
           className="desktop-logo"
         />
