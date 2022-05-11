@@ -63,35 +63,26 @@ export function ContactContainer() {
           {alert}
         </Alert>
       )}
-      <Contact.Plant />
-      <Contact.Slogan>
-        Contact us! <br />
-        <span>We'll be in touch soon</span>
-      </Contact.Slogan>
       <Contact.Inputs>
         <Contact.Input
           setValue={setName}
           value={name}
           label="Your name"
-          placeholder="Name"
         />
         <Contact.Input
           setValue={setEmail}
           value={email}
           label="Your email"
-          placeholder="Email"
         />
         <Contact.Input
           setValue={setSubject}
           value={subject}
           label="Subject"
-          placeholder="Subject"
         />
         <Contact.MessageInput
           setValue={setMessage}
           value={message}
           label="Message"
-          placeholder="Message"
         />
       </Contact.Inputs>
       <Contact.Button onClick={() => submitValues()}>Submit</Contact.Button>

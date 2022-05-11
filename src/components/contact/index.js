@@ -2,6 +2,8 @@ import React from "react";
 
 import {
   Container,
+  RightContainer,
+  LeftContainer,
   Slogan,
   Inputs,
   MessageInput,
@@ -12,8 +14,23 @@ import {
 } from "./styles/contact";
 
 export default function Contact({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+  return (
+    <Container>
+      <LeftContainer>
+      <Contact.Slogan>
+        <span>We'd like to <br/>
+           talk to you too!</span> <br/>
+           We'll be in touch soon.
+      </Contact.Slogan>
+      </LeftContainer>
+      <RightContainer {...restProps}>
+        {children}
+      </RightContainer>
+    </Container>
+  ) ;
 }
+
+
 
 Contact.Plant = function ContactPlant({ children, ...restProps }) {
   return (

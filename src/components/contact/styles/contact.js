@@ -2,18 +2,42 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
   position: relative;
-  width: 100%;
+  width: 95vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 8%;
+  margin-top: 2%;
+`
 
+export const RightContainer = styled.div`
+  position: relative; 
+  flex: 12;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   // background: #ffffff;
   padding: 0 5%;
-  padding-top: 1.5rem;
-  ${"" /* overflow-x: hidden; */}
-  ${"" /* overflow-y: scroll; */}
-  ${"" /* overflow: hidden; */}
+  padding-top: 4.5rem;
+  margin: 0% 0%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 45px rgba(57, 57, 57, 0.06);
+  border-radius: 50px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow: hidden;
 `;
+
+export const LeftContainer = styled.div`
+  position: relative;
+  flex: 8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+`
 
 export const Plant = styled.div`
   position: absolute;
@@ -33,7 +57,7 @@ export const Plant = styled.div`
 export const Slogan = styled.h2`
   width: 70%;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 20px;
   color: #3e3b3b;
   line-height: 43px;
   padding-left: 0.5rem;
@@ -41,23 +65,25 @@ export const Slogan = styled.h2`
   margin-bottom: 4rem;
 
   span {
-    color: #67923d;
+    color: #67923D;
+    font-style: bold;
+    font-size: 1.5em;
   }
 
   @media (min-width: 400px) {
     width: 90%;
-    font-size: 35px;
+    font-size: 24px;
   }
 
   @media (min-width: 100px) {
     width: 90%;
-    font-size: 44px;
+    font-size: 32px;
     line-height: 55px;
   }
 
   @media (min-width: 1550px) {
     margin-bottom: 3.5rem;
-    font-size: 48px;
+    font-size: 40px;
   }
 `;
 
@@ -112,17 +138,18 @@ export const Input = styled.div`
   position: relative;
   width: 100%;
   margin-bottom: 2rem;
+  margin-right: 30%;
 
   input {
     width: 100%;
     height: 55px;
-    background: #ffffff;
-    border: 2px solid #67923d;
-    border-radius: 25px;
+    background: rgba(236, 236, 236, 0.57);
+    border: none;
+    border-radius: 10px;
     outline: none;
     font-size: 16px;
-    color: #67923d;
-    filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
+    color: #000;
+    
     padding: 0 1.3rem;
     z-index: 2;
 
@@ -148,17 +175,17 @@ export const Input = styled.div`
 export const MessageInput = styled.div`
   position: relative;
   width: 100%;
+  margin-right: 30%;
 
   textarea {
     width: 100%;
     height: 229px;
-    background: #ffffff;
-    border: 2px solid #67923d;
-    border-radius: 25px;
+    background: rgba(236, 236, 236, 0.57);
+    border: none;
+    border-radius: 10px;
     outline: none;
     font-size: 16px;
-    color: #67923d;
-    filter: drop-shadow(4px 7px 9px rgba(0, 0, 0, 0.25));
+    color: #000;
     padding: 0 1.3rem;
     padding-top: 5%;
     display: flex;
@@ -191,19 +218,20 @@ export const Label = styled.p`
 
 export const Button = styled.div`
   width: 100%;
+  margin-right: 30%;
   display: flex;
   justify-content: center;
   z-index: 2;
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
   padding-bottom: 3em;
   button {
     width: 128px;
     height: 41px;
     outline: none;
     border: none;
-    background: #86b390;
+    background: #67923D;
     box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
     color: #ffffff;
     margin-bottom: 10%;
