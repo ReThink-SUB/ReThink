@@ -29,7 +29,7 @@ export function ContactContainer() {
 
   const submitValues = () => {
 
-    if(subject === "") {
+    if(subject === "" || name === "" || email === "" || message === "") {
       scrollToTop();
       setContactAlert(true);
       return setAlert('Please fill out all the boxes!');
