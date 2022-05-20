@@ -111,6 +111,7 @@ function FooterMenu() {
         <Link to={ROUTES.BUSINESSES}>Find Businesses</Link>
         <Link to={ROUTES.CRITERIA}>Criteria</Link>
         <Link to={ROUTES.CONTACT}>Contact us</Link>
+        <Link to={ROUTES.BLOG}>Blog</Link>
       </div>
     </div>
   );

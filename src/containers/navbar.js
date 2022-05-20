@@ -29,6 +29,9 @@ export function NavbarContainer() {
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.CONTACT}>
             Contact Us
           </Burger.Link>
+          <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BLOG}>
+            Blog
+          </Burger.Link>
           <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP} className="promote">
             <span>
             Promote Business
@@ -52,6 +55,7 @@ export function NavbarContainer() {
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
+        <Navbar.Link to={ROUTES.BLOG}>Blog</Navbar.Link>
         <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button>
       </Navbar.Links>
     </Navbar>

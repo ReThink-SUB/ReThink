@@ -34,6 +34,9 @@ export function HeaderContainer() {
             <Burger.Link open={open} setOpen={setOpen} to={ROUTES.SIGNUP}>
               Sign Up
             </Burger.Link>
+            <Burger.Link open={open} setOpen={setOpen} to={ROUTES.BLOG}>
+              Blog
+            </Burger.Link>
           </Burger.Links>
           <Burger.Squiggle />
           <Burger.Socials>
@@ -49,6 +52,7 @@ export function HeaderContainer() {
           <Header.Link to={ROUTES.CRITERIA}>Criteria</Header.Link>
           <Header.Link to={ROUTES.TEAM}>Meet The Team</Header.Link>
           <Header.Link to={ROUTES.CONTACT}>Contact Us</Header.Link>
+          <Header.Link to={ROUTES.BLOG}>Blog</Header.Link>
           <Header.Link to={ROUTES.SIGNUP}>Sign Up</Header.Link>
         </Header.Links>
       </Header>

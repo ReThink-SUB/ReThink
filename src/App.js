@@ -9,6 +9,7 @@ import usePageTracking from "./googleanalytics";
 const LandingPage = lazy(() => import("./pages/landingPage"));
 const SignUp = lazy(() => import("./pages/signup"));
 const Contact = lazy(() => import("./pages/contact"));
+const Blog = lazy(() => import("./pages/blog"));
 const SignUp2 = lazy(() => import("./pages/signup2"));
 const SignUp3 = lazy(() => import("./pages/signup3"));
 const SignUp4 = lazy(() => import("./pages/signup4"));
@@ -149,6 +150,9 @@ export default function App() {
               </Route>
               <Route path={ROUTES.CONTACT} exact>
                 <Contact />
+              </Route>
+              <Route path={ROUTES.BLOG} exact>
+                <Blog />
               </Route>
               <Route path={ROUTES.CRITERIA} exact>
                 <Criteria />

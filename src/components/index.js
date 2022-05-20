@@ -10,3 +10,5 @@ export { default as LandingPage } from "./landingPage";
 export { default as Loading } from "./loading";
 export { default as Navbar } from "./navbar";
 export { default as ScrollToTop } from "./scrollToTop";
+
+export { default as Blog } from "./blog";

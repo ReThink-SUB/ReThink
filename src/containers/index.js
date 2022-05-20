@@ -9,3 +9,4 @@ export { TeamContainer } from "./team";
 export { BusinessesContainer } from "./businesses";
 export { NavbarContainer } from "./navbar";
 export { AboutUsContainer } from "./aboutUs";
+export { BlogContainer } from "./blog";
