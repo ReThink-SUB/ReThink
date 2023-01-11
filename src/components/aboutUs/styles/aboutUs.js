@@ -849,7 +849,6 @@ export const Btn = styled.button`
   background: #67923d;
   padding: 0.8rem 8rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 45px rgba(57, 57, 57, 0.06);
   border-radius: 10px;
@@ -857,10 +856,13 @@ export const Btn = styled.button`
   font-weight: bold;
   font-size: 15px;
   line-height: 22px;
-  color: #ffffff;
+  color: #ff0000;
   cursor: pointer;
   transition: 0.5s ease all;
   height: 41px;
+  position: relative;
+  left: -3.7vw;
+
   &:hover {
     background: #8cce4b;
   }
