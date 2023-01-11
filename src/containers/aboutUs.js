@@ -263,9 +263,11 @@ export function AboutUsContainer() {
               )}
             </AboutUs.Description>
           </AboutUs.Text>
-          <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app" style = {{"color" : "white"}}>
-            Apply
-          </AboutUs.Btn>
+          <a href="http://www.bit.ly/rethink-sub-app">
+            <AboutUs.Btn style = {{"color" : "white"}}>
+                Apply
+            </AboutUs.Btn>
+          </a>
           {/* <AboutUs.DownloadBtn
             downloadImage={downloadImage}
             href="https://i.imgur.com/mhTBjpQ.png"

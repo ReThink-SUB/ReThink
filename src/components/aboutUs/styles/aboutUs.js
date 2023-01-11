@@ -845,7 +845,7 @@ export const SecTitle = styled.h3`
   }
 `;
 
-export const Btn = styled.button`
+export const Btn = styled.a`
   background: #67923d;
   padding: 0.8rem 8rem;
   display: flex;
@@ -860,7 +860,7 @@ export const Btn = styled.button`
   transition: 0.5s ease all;
   height: 41px;
   position: relative;
-  left: -3.7vw;
+  left: -27vw;
 
   &:hover {
     background: #8cce4b;
