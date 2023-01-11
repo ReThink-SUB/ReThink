@@ -856,7 +856,6 @@ export const Btn = styled.button`
   font-weight: bold;
   font-size: 15px;
   line-height: 22px;
-  color: #ff0000;
   cursor: pointer;
   transition: 0.5s ease all;
   height: 41px;
