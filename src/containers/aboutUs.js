@@ -263,7 +263,7 @@ export function AboutUsContainer() {
               )}
             </AboutUs.Description>
           </AboutUs.Text>
-          <a href="http://www.bit.ly/rethink-sub-app">
+          <a href="http://www.bit.ly/rethink-sub-app" target = "_blank">
             <AboutUs.Btn style = {{"color" : "white"}}>
                 Apply
             </AboutUs.Btn>
