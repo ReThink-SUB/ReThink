@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: relative;
   overflow-x: clip;
 
+
   @media (min-width: 800px) {
     justify-content: space-between;
     min-width: 35rem;
@@ -51,6 +52,10 @@ export const Links = styled.div`
   display: none;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  top: 3.65rem;
+  right: 4rem;
+  padding: 1rem;
 
   @media (min-width: 800px) {
     display: flex;
@@ -72,10 +77,11 @@ export const Link = styled.h2`
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
+  font-family: 'Averia Sans Libre', sans-serif;
   line-height: 21px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #3e3b3b;
+  color: #3B2B23;
   text-decoration: none;
   transition: 0.5s ease all;
 
