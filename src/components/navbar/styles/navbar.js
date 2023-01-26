@@ -93,15 +93,14 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  color: #ffffff;
-  width: 175px;
-  height: 40px;
+  font-family: 'Averia Sans Libre', sans-serif;
+  color: #324F52;
+  width: 12.063rem;
+  height: 2.375rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.5s ease all;
-  background: #67923d;
+  background: #C2D8B9;
 
-  &:hover {
-    background: #67923d;
-  }
+  
 `;
