@@ -100,7 +100,5 @@ export const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.5s ease all;
-  background: #C2D8B9;
-
-  
+  background: #C2D8B9;  
 `;
