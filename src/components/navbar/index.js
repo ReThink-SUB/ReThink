@@ -17,7 +17,7 @@ Navbar.Title = function NavbarTitle({ to, children, ...restProps }) {
           className="mobile-logo"
         />
         <img
-          src="/images/ReThink-Logo-Winter-23.png"
+          src="/images/logo_with_text.png"
           alt="Logo"
           className="desktop-logo"
         />
