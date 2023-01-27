@@ -115,6 +115,7 @@ export const Title = styled.h1`
 export const Heading = styled.h2`
   font-weight: 800;
   font-size: 22px;
+  font-family
   color: #535461;
   margin-bottom: 0.5rem;
   line-height: 2rem;
