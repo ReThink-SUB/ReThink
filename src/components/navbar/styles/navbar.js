@@ -53,8 +53,8 @@ export const Links = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  top: 3.65rem;
-  right: 4rem;
+  top: 3.7rem;
+  right: 7rem;
   padding: 1rem;
 
   @media (min-width: 800px) {
@@ -106,5 +106,7 @@ export const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.5s ease all;
-  background: #C2D8B9;  
+  background: #C2D8B9;
+  position: relative;
+  left: 3.2rem;  
 `;
