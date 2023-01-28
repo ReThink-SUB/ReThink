@@ -1,3 +1,4 @@
+import { PlayArrow as PlayArrowIcon } from '@material-ui/icons'
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
@@ -109,4 +110,12 @@ export const Button = styled.button`
   background: #C2D8B9;
   position: relative;
   left: 3.2rem;  
+`;
+
+export const StyledPlayArrowIcon = styled(PlayArrowIcon)`
+  position: relative;
+  left: 0.5rem;
+  color: #324F52;
+  height: 1.2rem;
+  width: 1.5rem;
 `;
