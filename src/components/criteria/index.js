@@ -7,7 +7,8 @@ import {
   Main,
   CriteriaSec,
   Text,
-  Heading,
+  HeadingQuestion,
+  HeadingReply,
   Description,
   SubDescription,
 } from "./styles/criteria";
@@ -66,9 +67,12 @@ export default function Container() {
       <Main className="about-main">
         <CriteriaSec className="criteriaSec">
           <Text>
-            <Heading>
-              Wondering how we evaluate businesses?{width < 800 ? <br /> : null}
-            </Heading>
+            <HeadingQuestion>
+              How are businesses sustainable?{width < 800 ? <br /> : null}
+            </HeadingQuestion>
+            <HeadingReply>
+              Glad you asked.{width < 800 ? <br /> : null}
+            </HeadingReply>
             <Description>
               Choose an industry below, then the selected criteria will be
               available to view.

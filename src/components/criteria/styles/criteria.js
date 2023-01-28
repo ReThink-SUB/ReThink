@@ -10,6 +10,9 @@ export const CritContainer = styled.div`
   @media (min-width: 800px) {
     overflow-x: unset;
     
+    position: relative;
+    top: 3.6rem;
+
     margin-bottom: 5rem;
     margin-right: auto;
     margin-left: auto;
@@ -114,9 +117,8 @@ export const Title = styled.h1`
 
 export const Heading = styled.h2`
   font-weight: 800;
-  font-size: 22px;
-  font-family
-  color: #535461;
+  font-size: 30px;
+  font-family: 'Averia Sans Libre', sans-serif;
   margin-bottom: 0.5rem;
   line-height: 2rem;
   text-align: left;
@@ -126,12 +128,20 @@ export const Heading = styled.h2`
   @media(min-width: 800px) {
     width: unset;
     
-    font-size: 30px;
-    margin-bottom: 0.5rem;
+    font-size: 48px;
+    margin-bottom: 1.6rem;
     line-height: 40px;
     padding: 0;
     max-width: 800px;
   }
+`;
+
+export const HeadingQuestion = styled(Heading)`
+  color: #3B2B23;
+`;
+
+export const HeadingReply = styled(Heading)`
+  color: #324F52;
 `;
 
 export const Description = styled.p`
