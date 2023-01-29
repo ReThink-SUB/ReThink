@@ -149,7 +149,10 @@ export const Description = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 1em;
-  color: #535461;
+  font-family: 'Karma', sans-serif;
+  font-weight: bold;
+  color: #3B2B23;
+  letter-spacing: 0.75px;
   line-height: 1.5em;
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -168,14 +171,24 @@ export const Description = styled.p`
 
     width: 100%;
     padding: 0;
-    font-size: 16px;
+    font-size: 24px;
     font-family: 'Karma', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    color: #3B2B23;
     line-height: 43px;
   }
   
   @media (min-width: 1150px) {
     width: 90%;
-    font-size: 18px;
+    font-family: 'Karma', sans-serif;
+    font-style: normal;
+    font-size: 36px;
+    letter-spacing: 0.75px;
+    line-height: 59px;
+    color: #3B2B23;
+    position: relative;
+    top: 0.7rem;
   }
 `;
 
