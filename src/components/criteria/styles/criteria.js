@@ -194,7 +194,8 @@ export const Description = styled.p`
 
 export const SubDescription = styled.p`
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
+  font-family: 'Karma', sans-serif;
   font-size: 1em;
   color: #000000;
   line-height: 1.5em;
@@ -206,6 +207,10 @@ export const SubDescription = styled.p`
 
   @media (min-width: 600px) {
     width: 85vw;
+    font-style: normal;
+    font-weight: 300;
+    font-family: 'Karma', sans-serif;
+    color: #000000;
   }
 
   @media (min-width: 800px) {
@@ -215,23 +220,40 @@ export const SubDescription = styled.p`
     
     width: 100%;
     max-width: 486px;
-    padding: 0;
-    font-size: 18px;
-    line-height: 35.36px;
-    font-weight: 200;
+    font-size: 24px;
+    line-height: 35px;
+
+    font-style: normal;
+    font-weight: 300;
+    font-family: 'Karma', sans-serif;
+    color: #000000;
   }
   
   @media (min-width: 1150px) {
     width: 90%;
     font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    font-family: 'Karma', sans-serif;
+    color: #000000;
   }
   
   @media (min-width: 1299px) {
-    font-size: 16px;
+    font-size: 24px;
     width: 80%;
+    font-style: normal;
+    font-weight: 300;
+    font-family: 'Karma', sans-serif;
+    color: #000000;
   }
   
   @media (min-width: 1550px) {
     width: 70%;
+    font-style: normal;
+    font-weight: 300;
+    font-family: 'Karma', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    line-height: 35px;
   }
 `;

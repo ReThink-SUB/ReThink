@@ -76,6 +76,9 @@ export default function Container() {
             <Description>
               First, choose an industry. Then we'll show you the criteria. {width < 800 ? <br /> : null}
             </Description>
+            <SubDescription>
+              In commodo, arcu et porttitor aliquam, magna eros aliquam diam, vitae fringilla ipsum lorem ac turpis.
+            </SubDescription>
             {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses
             that maximize sustainbility. We have implemented a certification{" "}
