@@ -74,8 +74,7 @@ export default function Container() {
               Glad you asked.{width < 800 ? <br /> : null}
             </HeadingReply>
             <Description>
-              Choose an industry below, then the selected criteria will be
-              available to view.
+              First, choose an industry. Then we'll show you the criteria. {width < 800 ? <br /> : null}
             </Description>
             {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses

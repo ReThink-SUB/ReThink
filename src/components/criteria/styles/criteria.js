@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import './criteria.css';
 // merge pls
 export const CritContainer = styled.div`
   width: 100%;
@@ -168,6 +169,7 @@ export const Description = styled.p`
     width: 100%;
     padding: 0;
     font-size: 16px;
+    font-family: 'Karma', sans-serif;
     line-height: 43px;
   }
   
