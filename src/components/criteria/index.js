@@ -7,7 +7,8 @@ import {
   Main,
   CriteriaSec,
   Text,
-  Heading,
+  HeadingQuestion,
+  HeadingReply,
   Description,
   SubDescription,
 } from "./styles/criteria";
@@ -66,13 +67,18 @@ export default function Container() {
       <Main className="about-main">
         <CriteriaSec className="criteriaSec">
           <Text>
-            <Heading>
-              Wondering how we evaluate businesses?{width < 800 ? <br /> : null}
-            </Heading>
+            <HeadingQuestion>
+              How are businesses sustainable?{width < 800 ? <br /> : null}
+            </HeadingQuestion>
+            <HeadingReply>
+              Glad you asked.{width < 800 ? <br /> : null}
+            </HeadingReply>
             <Description>
-              Choose an industry below, then the selected criteria will be
-              available to view.
+              First, choose an industry. Then we'll show you the criteria. {width < 800 ? <br /> : null}
             </Description>
+            <SubDescription>
+            Sustainability criteria are crucial for ensuring the long-term health and well-being of our planet and its inhabitants. These criteria consider the environmental, social, and economic impacts of our actions, and aim to balance these impacts for a better future.
+            </SubDescription>
             {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses
             that maximize sustainbility. We have implemented a certification{" "}

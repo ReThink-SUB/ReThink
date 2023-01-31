@@ -40,11 +40,13 @@ em, i {
 .line-border {
   width: 100%;
   max-width: 1160px;
-  height: 2px;
-  background-color: #e4e4e4;
+  height: 1px;
+  background-color: #A49999;
   margin: 0 auto;
   margin-bottom: 3rem;
   display: none;
+  position: relative;
+  bottom: 1.8rem;
 
   @media (min-width: 800px) {
     display: unset;

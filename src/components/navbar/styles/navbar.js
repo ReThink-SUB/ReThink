@@ -25,11 +25,14 @@ export const Title = styled.div`
   cursor: pointer;
   display: flex;
   img {
-    min-width: 50%;
+    min-width: 40%;
     max-width: 250px;
     margin-top: 1em;
     width: 20%;
     height: auto;
+    position: relative;
+    left: 2rem;
+    top: 1.5rem;
     @media (max-width: 800px) {
       width: 80px;
     }
