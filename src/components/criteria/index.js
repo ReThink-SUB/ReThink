@@ -77,7 +77,7 @@ export default function Container() {
               First, choose an industry. Then we'll show you the criteria. {width < 800 ? <br /> : null}
             </Description>
             <SubDescription>
-              In commodo, arcu et porttitor aliquam, magna eros aliquam diam, vitae fringilla ipsum lorem ac turpis.
+            Sustainability criteria are crucial for ensuring the long-term health and well-being of our planet and its inhabitants. These criteria consider the environmental, social, and economic impacts of our actions, and aim to balance these impacts for a better future.
             </SubDescription>
             {/* <SubDescription>
             We have conducted <em>research</em> on characteristics of businesses

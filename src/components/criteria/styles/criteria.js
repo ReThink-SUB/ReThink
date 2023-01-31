@@ -187,8 +187,6 @@ export const Description = styled.p`
     letter-spacing: 0.75px;
     line-height: 59px;
     color: #3B2B23;
-    position: relative;
-    top: 0.7rem;
   }
 `;
 
@@ -203,7 +201,9 @@ export const SubDescription = styled.p`
   margin-bottom: 2rem;
   width: 70%;
   text-align: left;
-  max-width: 260px;
+  max-width: 300px;
+  position: relative;
+  bottom: 0.5rem;
 
   @media (min-width: 600px) {
     width: 85vw;
@@ -219,8 +219,9 @@ export const SubDescription = styled.p`
     padding-left: unset;
     
     width: 100%;
-    max-width: 486px;
-    font-size: 24px;
+    /* This changes the width of the subdescription */
+    max-width: 750px;
+    font-size: 20px;
     line-height: 35px;
 
     font-style: normal;
@@ -231,7 +232,7 @@ export const SubDescription = styled.p`
   
   @media (min-width: 1150px) {
     width: 90%;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 300;
     font-family: 'Karma', sans-serif;
@@ -239,7 +240,8 @@ export const SubDescription = styled.p`
   }
   
   @media (min-width: 1299px) {
-    font-size: 24px;
+    /* This changes the font size */
+    font-size: 20px;
     width: 80%;
     font-style: normal;
     font-weight: 300;
@@ -248,11 +250,11 @@ export const SubDescription = styled.p`
   }
   
   @media (min-width: 1550px) {
-    width: 70%;
+    width: 90%;
     font-style: normal;
     font-weight: 300;
     font-family: 'Karma', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     color: #000000;
     line-height: 35px;
   }
