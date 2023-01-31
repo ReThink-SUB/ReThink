@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navbar, Burger } from "../components";
 import * as ROUTES from "../constants/routes";
+import { StyledPlayArrowIcon } from "../components/navbar/styles/navbar";
 
 export function NavbarContainer() {
   const [open, setOpen] = useState(false);
@@ -58,7 +59,7 @@ export function NavbarContainer() {
         <Navbar.Link to={ROUTES.ABOUT}>About us</Navbar.Link>
         <Navbar.Link to={ROUTES.CRITERIA}>Criteria </Navbar.Link>
         <Navbar.Link to={ROUTES.CONTACT}>Contact us</Navbar.Link>
-        <Navbar.Button to={ROUTES.SIGNUP}>Promote Business</Navbar.Button>
+        <Navbar.Button to={ROUTES.SIGNUP}>Promote Business <StyledPlayArrowIcon/> </Navbar.Button>
       </Navbar.Links>
     </Navbar>
   );
