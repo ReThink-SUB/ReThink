@@ -57,9 +57,9 @@ export const Links = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  top: 3.7rem;
+  top: 2.5rem;
   right: 7rem;
-  padding: 1rem;
+  margin: 1rem;
 
   @media (min-width: 800px) {
     display: flex;
@@ -112,7 +112,7 @@ export const Button = styled.button`
   transition: 0.5s ease all;
   background: #C2D8B9;
   position: relative;
-  left: 3.2rem;  
+  left: 2.5rem;  
 `;
 
 export const StyledPlayArrowIcon = styled(PlayArrowIcon)`

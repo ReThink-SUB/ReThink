@@ -12,7 +12,7 @@ export const CritContainer = styled.div`
     overflow-x: unset;
     
     position: relative;
-    top: 3.6rem;
+    top: 0rem;
 
     margin-bottom: 5rem;
     margin-right: auto;
