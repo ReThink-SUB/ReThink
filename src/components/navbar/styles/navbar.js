@@ -52,29 +52,42 @@ export const Title = styled.div`
 `;
 
 export const Links = styled.div`
-  width: 500px;
   display: none;
   justify-content: space-between;
   align-items: center;
   position: relative;
   top: 2.5rem;
-  right: 7rem;
   margin: 1rem;
 
   @media (min-width: 800px) {
+    min-width: 550px;
+    max-width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-  }
-
-  @media (min-width: 1000px) {
-    width: 70%;
+    width: 100%;
+    position: relative;
+    left: 0.5rem;
   }
 
   @media (min-width: 1300px) {
-    width: 50%;
+    min-width: 700px;
   }
+
+  @media (min-width: 1500px) {
+    min-width: 800px;
+  }
+
+  @media (min-width: 1700px) {
+    position: relative;
+    top: 3rem; 
+    max-width: 900px;
+  }
+
+  @media (min-width: 2000px) {
+    max-width: 1100px;
+  }
+  
 `;
 
 export const Link = styled.h2`
@@ -88,6 +101,27 @@ export const Link = styled.h2`
   color: #3B2B23;
   text-decoration: none;
   transition: 0.5s ease all;
+
+  @media (min-width: 800px) {
+    margin: 0px;
+    font-size: 11px;
+  }
+
+  @media (min-width: 1100px) {
+    font-size: 12px;
+  }
+
+  @media (min-width: 1300px) {
+    font-size: 13.5px;
+  }
+
+  @media (min-width: 1700px) { 
+    font-size: 15px;
+  }
+
+  @media (min-width: 2000px) {
+    font-size: 17px;
+  }
 
   &:hover {
     color: #67923d;
@@ -113,6 +147,34 @@ export const Button = styled.button`
   background: #C2D8B9;
   position: relative;
   left: 2.5rem;  
+
+  @media (min-width: 800px) {
+    position: relative;
+    left: -1rem;
+    width: 10rem;
+    height: 2rem;
+    font-size: 10px;
+  }
+
+  @media (min-width: 1100px) {
+    width: 12.063rem;
+    height: 2.375rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  @media (min-width: 1700px) {
+    font-size: 15px;
+    width: 13rem;
+    height: 3rem;
+  }
+
+  @media (min-width: 2000px) {
+    font-size: 17px;
+    width: 15rem;
+    height: 3.5rem;
+  }
 `;
 
 export const StyledPlayArrowIcon = styled(PlayArrowIcon)`
@@ -121,4 +183,27 @@ export const StyledPlayArrowIcon = styled(PlayArrowIcon)`
   color: #324F52;
   height: 1.2rem;
   width: 1.5rem;
+
+  @media (min-width: 800px) {
+    height: 1rem;
+    width: 1.25rem;
+  }
+
+  @media (min-width: 1100px) {
+    position: relative;
+    left: 0.5rem;
+    color: #324F52;
+    height: 1.2rem;
+    width: 1.5rem;
+  }
+
+  @media (min-width: 1700px) {
+    height: 1.5rem;
+    width: 2rem;
+  }
+
+  @media (min-width: 2000px) {
+    height: 1.75rem;
+    width: 2.25rem;
+  }
 `;
