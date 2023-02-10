@@ -25,7 +25,7 @@ export const Title = styled.div`
   cursor: pointer;
   display: flex;
   img {
-    min-width: 40%;
+    min-width: 50%;
     max-width: 250px;
     margin-top: 1em;
     width: 20%;
@@ -33,6 +33,8 @@ export const Title = styled.div`
     position: relative;
     left: 2rem;
     top: 1.5rem;
+
+    /* This is for the mobile */
     @media (max-width: 800px) {
       width: 80px;
     }
@@ -61,13 +63,13 @@ export const Links = styled.div`
 
   @media (min-width: 800px) {
     min-width: 550px;
-    max-width: 700px;
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     position: relative;
-    left: 0.5rem;
+    right: 1rem;
   }
 
   @media (min-width: 1300px) {
@@ -109,10 +111,6 @@ export const Link = styled.h2`
 
   @media (min-width: 1100px) {
     font-size: 12px;
-  }
-
-  @media (min-width: 1300px) {
-    font-size: 13.5px;
   }
 
   @media (min-width: 1700px) { 
