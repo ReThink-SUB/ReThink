@@ -173,9 +173,7 @@ export function AboutUsContainer() {
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
-            ReThink is a University of Washington Michael G. Foster School of
-            Business Registered Student Organization. We are a team of students
-            advocating for sustainable consumer behavior.
+            TESTING TESTING NONON
           </AboutUs.Description>
           <AboutUs.Description>
             Through business outreach and thorough research, we determine what
