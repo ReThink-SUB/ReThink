@@ -169,7 +169,7 @@ export function AboutUsContainer() {
         </AboutUs.Images>
         <AboutUs.Text className="about-text first">
           <AboutUs.Title id="about" className="about-us">
-            About Us
+            About Us Test
           </AboutUs.Title>
           <AboutUs.Heading>Who we are</AboutUs.Heading>
           <AboutUs.Description className="about-desc">
