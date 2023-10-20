@@ -1,5 +1,8 @@
 import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+import "./styles/landingPage.css";
 
 import {
   Container,
@@ -271,3 +274,20 @@ LandingPage.CirclePattern2 = function LandingPageCirclePattern2({
     </CirclePattern2>
   )
 }
+
+export const ImageCarousel = () => {
+  const items = [
+    <img src="/images/carousel-image1.png" className="sliderimg" alt="Slider Image 1" />,
+    <img src="/images/Banner.png" className="sliderimg" alt="Slider Image 2" />,
+    <img src="/images/fb.png" className="sliderimg" alt="Slider Image 1" />,
+  ];
+
+  return (
+    <AliceCarousel 
+      autoPlay 
+      autoPlayInterval={300000} // Change image every 3 seconds
+      items={items}
+      disableButtonsControls
+    />
+  );
+};

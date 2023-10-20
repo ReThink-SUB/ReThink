@@ -1,11 +1,11 @@
 import React from "react";
 import { LandingPage } from "../components";
+import { ImageCarousel } from "../components/landingPage/index"
 
 export function LandingPageContainer() {
   return (
     <>
       <LandingPage>
-        <LandingPage.LeftSect>
           <LandingPage.SubTitle>
             Sustainability made {" "}
             <em style={{ color: "black" }}>easy.</em>
@@ -14,25 +14,8 @@ export function LandingPageContainer() {
             <LandingPage.Description>
             Discover eco-friendly businesses for your next shopping and dining experience.{" "}
             </LandingPage.Description>
-            <LandingPage.MobileCard
-              src="BallardMarket.jpg"
-              label="Ballard Market"
-              type="Grocery Store"
-            />
           </LandingPage.InnerSect>
-        </LandingPage.LeftSect>
-        <LandingPage.RightSect>
-          <LandingPage.RightCard
-            src="BallardMarket.jpg"
-            label="Ballard Market"
-            type="Grocery Store"
-          />
-          <LandingPage.LeftCard
-            src="IndianMarket.png"
-            label="Indian Market"
-            type="Grocery Store"
-          />
-        </LandingPage.RightSect>
+          <ImageCarousel />
       </LandingPage>
     </>
   );
