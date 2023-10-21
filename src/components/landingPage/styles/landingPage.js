@@ -7,16 +7,21 @@ export const Container = styled.div`
 `;
 
 export const LeftSect = styled.div`
-  width: 55%;
-  height: 100%;
+  width: 534.79px;
+  height: 472.09px;
+  background: #E9F3E7D9;
   display: flex;
   flex-direction: column;
   padding-left: 2%;
-
+  position: absolute;
+  top: 216px;
+  left: 0;
+  z-index: 1;
+  
   @media (max-width: 1200px) {
     width: 100%;
-    margin: 0
     height: 100%;
+    margin: 0;
     margin-top: auto;
     margin-bottom: auto;
     padding: 2em;

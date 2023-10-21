@@ -6,17 +6,19 @@ export function LandingPageContainer() {
   return (
     <>
       <LandingPage>
-          <LandingPage.SubTitle>
-            Sustainability made {" "}
-            <em style={{ color: "black" }}>easy.</em>
-          </LandingPage.SubTitle>
-          <LandingPage.InnerSect>
-            <LandingPage.Description>
-            Discover eco-friendly businesses for your next shopping and dining experience.{" "}
+          <LandingPage.LeftSect>
+            <LandingPage.SubTitle>
+              Sustainability made {" "}
+              <em style={{ color: "black" }}>easy.</em>
+            </LandingPage.SubTitle>
+              <LandingPage.Description>
+              Discover eco-friendly businesses for your next shopping and dining experience.{" "}
             </LandingPage.Description>
-          </LandingPage.InnerSect>
+          </LandingPage.LeftSect>
+          <div className="carousel-container">
           <ImageCarousel />
-      </LandingPage>
+        </div>
+        </LandingPage>
     </>
   );
 }

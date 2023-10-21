@@ -279,14 +279,15 @@ export const ImageCarousel = () => {
   const items = [
     <img src="/images/carousel-image1.png" className="sliderimg" alt="Slider Image 1" />,
     <img src="/images/Banner.png" className="sliderimg" alt="Slider Image 2" />,
-    <img src="/images/fb.png" className="sliderimg" alt="Slider Image 1" />,
+    <img src="/images/fb.png" className="sliderimg" alt="Slider Image 3" />,
   ];
 
   return (
     <AliceCarousel 
       autoPlay 
-      autoPlayInterval={300000} // Change image every 3 seconds
+      autoPlayInterval={3000} // Change image every 3 seconds
       items={items}
+      infinite
       disableButtonsControls
     />
   );
