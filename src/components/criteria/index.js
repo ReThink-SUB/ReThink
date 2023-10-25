@@ -122,12 +122,12 @@ function Industry({
     return () => document.removeEventListener("click", clickHandler);
   });
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    await setActiveTab(value);
     let newList = Object.entries(criterias).map(([key, value]) => {
       return <CriteriaCard title={value.title} desc={value.desc} />;
     });
     setActive(newList);
-    setActiveTab(value);
     setCriteria({ title: value, desc: desc });
     console.log(value);
   };
