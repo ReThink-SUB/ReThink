@@ -268,7 +268,7 @@ export function AboutUsContainer() {
               with any questions!
             </AboutUs.Description>
           </AboutUs.Text>
-          <AboutUs.Btn href="http://www.bit.ly/rethink-sub-app">
+          <AboutUs.Btn href="https://tinyurl.com/applyrethink">
             Apply
           </AboutUs.Btn>
           {/* <AboutUs.DownloadBtn
