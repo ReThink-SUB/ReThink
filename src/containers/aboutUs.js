@@ -258,7 +258,7 @@ export function AboutUsContainer() {
                   <li>• Front End Developers</li>
                 </ul>
               ) : (
-                `Positions Available: Marketing, Business Development, Researchers, Front End Developers`
+                `Positions Available: Marketing, UI/UX, Researchers, Front End Developers`
               )}
               <br />
               Reach out to{" "}
